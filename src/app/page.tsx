@@ -64,9 +64,9 @@ export default async function Home() {
         <div className="container px-4">
             <div className="grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 className="font-headline text-4xl md:text-5xl font-bold">Terpercaya oleh Ribuan Pelanggan</h2>
+                    <h2 className="font-headline text-4xl md:text-5xl font-bold">Sewa Motor Jakarta Pusat (RMJP): Cepat, Terpercaya, & Transparan</h2>
                     <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                        Dengan lebih dari 25,000+ perjalanan sukses, kami bangga menjadi pilihan utama para petualang urban di Jakarta.
+                        RMJP adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Jakarta. Apakah Anda seorang wisatawan, pekerja, atau pendatang, kami memastikan perjalanan Anda di ibu kota menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
                     </p>
                     <div className="mt-8 grid grid-cols-2 gap-6">
                         <div className="bg-background/50 text-center p-6 rounded-lg border border-border/20">
