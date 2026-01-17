@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { FloatingActionButton } from '@/components/floating-action-button';
 
 export const metadata: Metadata = {
   title: 'RMJP Rental | The Urban Traveler Experience',
@@ -26,6 +27,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <Toaster />
+        <FloatingActionButton />
       </body>
     </html>
   );
