@@ -31,7 +31,7 @@ export default async function Home() {
         )}
         <div className="absolute inset-0 bg-background/80 z-10" />
         <div className="z-20 container px-4">
-          <AnimatedText text={slogan} className="font-headline text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
+          <AnimatedText text={slogan} className="font-headline text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
             Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik.
           </p>
