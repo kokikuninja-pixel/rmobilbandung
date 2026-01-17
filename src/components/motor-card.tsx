@@ -5,8 +5,10 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import type { Motor } from '@/lib/data';
-import { ArrowRight, Gauge, Fuel, Wind } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { ArrowRight, Gauge, Wind } from 'lucide-react';
 
 interface MotorCardProps {
   motor: Motor;
@@ -38,7 +40,21 @@ export function MotorCard({ motor }: MotorCardProps) {
             <CardTitle className="font-headline text-xl">{motor.name}</CardTitle>
           </div>
         </CardHeader>
-        <CardContent className="flex-grow">
+        <CardContent className="flex-grow pt-2">
+          {motor.specialLabel && (
+            <Badge
+              variant="outline"
+              className={cn("mb-3 font-semibold", {
+                "bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/50 dark:text-blue-200 dark:border-blue-800": motor.specialLabel === "Bagasi Luas",
+                "bg-green-100 text-green-800 border-green-200 dark:bg-green-900/50 dark:text-green-200 dark:border-green-800": motor.specialLabel === "Paling Irit",
+                "bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-900/50 dark:text-purple-200 dark:border-purple-800": motor.specialLabel === "Eco Friendly",
+              })}
+            >
+              {motor.specialLabel === "Bagasi Luas" && "👜 Bagasi Luas"}
+              {motor.specialLabel === "Paling Irit" && "⛽ Paling Irit"}
+              {motor.specialLabel === "Eco Friendly" && "⚡ Eco Friendly"}
+            </Badge>
+          )}
           <ul className="space-y-2 text-muted-foreground">
             <li className="flex items-center gap-2">
               <Gauge className="w-4 h-4 text-primary" />
@@ -47,10 +63,6 @@ export function MotorCard({ motor }: MotorCardProps) {
             <li className="flex items-center gap-2">
               <Wind className="w-4 h-4 text-primary" />
               <span>{motor.specs.torque}</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Fuel className="w-4 h-4 text-primary" />
-              <span>{motor.specs.tankCapacity} Tank</span>
             </li>
           </ul>
         </CardContent>

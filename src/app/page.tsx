@@ -14,6 +14,15 @@ export default async function Home() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-jakarta');
   const sloganData = await generatePersuasiveSlogan({ businessDescription: "Rental motor di Jakarta Pusat dan Bandung yang modern, premium, dan terpercaya." });
   const slogan = sloganData.slogan || "Mobilitas Modern, Tanpa Batas.";
+  
+  const motorClasses: Array<'Premium' | 'Menengah' | 'Ekonomis' | 'Khusus'> = ['Premium', 'Menengah', 'Ekonomis', 'Khusus'];
+
+  const classDescriptions = {
+    Premium: 'Tenaga besar, gaya, dan kenyamanan maksimal untuk jarak jauh.',
+    Menengah: 'Keseimbangan tenaga untuk tanjakan/boncengan dan efisiensi.',
+    Ekonomis: 'Sangat irit bensin, ringan, dan paling lincah di kemacetan.',
+    Khusus: 'Bebas polusi, suara senyap, dan teknologi modern.',
+  };
 
   return (
     <>
@@ -44,16 +53,32 @@ export default async function Home() {
       {/* Fleet Section */}
       <section id="armada" className="py-16 md:py-24 bg-background">
         <div className="container px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Pilihan Armada Kami</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Pilih motor yang paling sesuai dengan gaya dan kebutuhan perjalanan Anda.
+              Pilih motor yang paling sesuai dengan gaya dan kebutuhan perjalanan Anda dari berbagai kelas yang kami sediakan.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {motorInventory.map((motor) => (
-              <MotorCard key={motor.id} motor={motor} />
-            ))}
+          
+          <div className="space-y-20">
+            {motorClasses.map(motorClass => {
+              const motorsInClass = motorInventory.filter(motor => motor.class === motorClass);
+              if (motorsInClass.length === 0) return null;
+
+              return (
+                <div key={motorClass}>
+                  <div className="mb-10 text-center">
+                    <h3 className="font-headline text-2xl md:text-3xl font-bold">{motorClass}</h3>
+                    <p className="mt-2 text-md text-muted-foreground">{classDescriptions[motorClass]}</p>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {motorsInClass.map((motor) => (
+                      <MotorCard key={motor.id} motor={motor} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
