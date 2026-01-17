@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-jakarta",
+      "description": "Hero image showing Jakarta city scape",
+      "imageUrl": "https://images.unsplash.com/photo-1538582709238-0a503bd5ae04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxqYWthcnRhJTIwY2l0eXxlbnwwfHx8fDE3Njg2NDEzMDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jakarta city"
+    },
+    {
+      "id": "honda-vario-1",
+      "description": "Image of Honda Vario",
+      "imageUrl": "https://images.unsplash.com/photo-1561811565-6ed172b54cbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxob25kYSUyMG1vdG9yY3ljbGV8ZW58MHx8fHwxNzY4NjQxMzA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "honda motorcycle"
+    },
+    {
+      "id": "honda-scoopy-1",
+      "description": "Image of Honda Scoopy",
+      "imageUrl": "https://images.unsplash.com/photo-1719642357410-e2910048087c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxob25kYSUyMHNjb290ZXJ8ZW58MHx8fHwxNzY4NjQxMzA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "honda scooter"
+    },
+    {
+      "id": "yamaha-nmax-1",
+      "description": "Image of Yamaha NMAX",
+      "imageUrl": "https://images.unsplash.com/photo-1653834048900-b5eeb9decd6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx5YW1haGElMjBtb3RvcmN5Y2xlfGVufDB8fHx8MTc2ODY0MTMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yamaha motorcycle"
+    },
+    {
+      "id": "yamaha-aerox-1",
+      "description": "Image of Yamaha Aerox",
+      "imageUrl": "https://images.unsplash.com/photo-1596429937219-3e599dca7135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx5YW1haGElMjBzY29vdGVyfGVufDB8fHx8MTc2ODY0MTMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yamaha scooter"
+    },
+    {
+      "id": "honda-vario-detail",
+      "description": "Detailed image of Honda Vario",
+      "imageUrl": "https://images.unsplash.com/photo-1762264089486-9625a72ad91c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb3RvcmN5Y2xlJTIwZW5naW5lfGVufDB8fHx8MTc2ODU5MjM0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "motorcycle engine"
+    },
+    {
+      "id": "honda-scoopy-detail",
+      "description": "Detailed image of Honda Scoopy",
+      "imageUrl": "https://images.unsplash.com/photo-1736196749652-8c7f3ee58aac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzY29vdGVyJTIwZGV0YWlsc3xlbnwwfHx8fDE3Njg2NDEzMDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "scooter details"
+    },
+    {
+      "id": "yamaha-nmax-detail",
+      "description": "Detailed image of Yamaha NMAX",
+      "imageUrl": "https://images.unsplash.com/photo-1583409276676-85f9987a9a86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtb3RvcmN5Y2xlJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc2ODY0MTMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "motorcycle dashboard"
+    },
+    {
+      "id": "yamaha-aerox-detail",
+      "description": "Detailed image of Yamaha Aerox",
+      "imageUrl": "https://images.unsplash.com/photo-1767105191884-cbf2275ddd70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzY29vdGVyJTIwc2VhdHxlbnwwfHx8fDE3Njg2NDEzMDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "scooter seat"
+    }
+  ]
 }
