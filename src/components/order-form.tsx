@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon, Loader2 } from 'lucide-react';
 import { id } from 'date-fns/locale';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
 import { summarizeOrderForWhatsApp } from '@/ai/flows/summarize-order-whatsapp';
@@ -135,21 +136,31 @@ export function OrderForm() {
               </FormItem>
             )}
           />
+          <AnimatePresence>
           {showWorkDuration && (
-             <FormField
-                control={form.control}
-                name="workDurationInJakarta"
-                render={({ field }) => (
-                  <FormItem className="animate-in fade-in-20">
-                    <FormLabel>Berapa lama bekerja di Jakarta?</FormLabel>
-                    <FormControl>
-                      <Input placeholder="cth: 2 tahun" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+             <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="overflow-hidden"
+              >
+                <FormField
+                    control={form.control}
+                    name="workDurationInJakarta"
+                    render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>Berapa lama bekerja di Jakarta?</FormLabel>
+                        <FormControl>
+                        <Input placeholder="cth: 2 tahun" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                    )}
+                />
+             </motion.div>
           )}
+          </AnimatePresence>
           <FormField
             control={form.control}
             name="rentalDates"
@@ -162,7 +173,7 @@ export function OrderForm() {
                       <Button
                         variant={'outline'}
                         className={cn(
-                          'w-full justify-start text-left font-normal',
+                          'w-full justify-start text-left font-normal bg-card/80',
                           !field.value?.from && 'text-muted-foreground'
                         )}
                       >
@@ -213,7 +224,6 @@ export function OrderForm() {
           />
         </div>
         
-        {/* Honeypot field for bot protection */}
         <FormField
           control={form.control}
           name="honeypot"
@@ -226,10 +236,17 @@ export function OrderForm() {
           )}
         />
         
-        <Button type="submit" disabled={isLoading} className="w-full md:w-auto">
-          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          Kirim via WhatsApp
+        <Button type="submit" disabled={isLoading} size="lg" className="w-full md:w-auto shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 animate-pulse hover:animate-none">
+          {isLoading ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Memproses...
+            </>
+          ) : (
+            'Kirim via WhatsApp'
+          )}
         </Button>
+        <p className="text-xs text-muted-foreground pt-4">Dengan menekan tombol, Anda akan diarahkan ke WhatsApp untuk mengirim ringkasan pesanan.</p>
       </form>
     </Form>
   );

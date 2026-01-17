@@ -8,7 +8,7 @@ const getImage = (id: string): ImagePlaceholder => {
     return {
       id: 'fallback',
       description: 'Fallback image',
-      imageUrl: 'https://picsum.photos/seed/fallback/600/400',
+      imageUrl: 'https://w7.pngwing.com/pngs/303/344/png-transparent-yamaha-motor-company-motorcycle-scooter-car-yamaha-mio-sporty-white-motorcycle-vehicle.png',
       imageHint: 'placeholder'
     };
   }
@@ -35,7 +35,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Aerox',
     class: 'Premium',
     specs: { cc: '155cc', torque: '13.9 Nm' },
-    feature: 'The Sporty King. Mesin VVA paling kencang, ban lebar, dan tampilan sangat gagah untuk wisatawan.',
+    feature: 'Mesin VVA paling kencang dan ban lebar untuk stabilitas maksimal.',
     cardImage: getImage('yamaha-aerox-card'),
     detailImage: getImage('yamaha-aerox-detail')
   },
@@ -44,7 +44,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Vario 150cc',
     class: 'Premium',
     specs: { cc: '150cc', torque: '13.4 Nm' },
-    feature: 'Smart & Powerful. Akselerasi instan, bodi aerodinamis, dan fitur Keyless (tanpa kunci).',
+    feature: 'Akselerasi instan dengan fitur Smart Key (Keyless) untuk keamanan ekstra.',
     cardImage: getImage('honda-vario-150-card'),
     detailImage: getImage('honda-vario-150-detail')
   },
@@ -53,7 +53,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Vario 125 LED',
     class: 'Menengah',
     specs: { cc: '125cc', torque: '10.8 Nm' },
-    feature: 'Stabil untuk boncengan, lampu LED terang, dan bagasi muat banyak barang.',
+    feature: 'Sangat stabil untuk boncengan dan bagasi muat banyak barang.',
     specialLabel: 'Bagasi Luas',
     cardImage: getImage('honda-vario-125-card'),
     detailImage: getImage('honda-vario-125-detail')
@@ -63,7 +63,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Gear',
     class: 'Menengah',
     specs: { cc: '125cc', torque: '9.5 Nm' },
-    feature: 'Practical Choice. Fitur Double Hook (dua gantungan) sangat membantu membawa belanjaan/oleh-oleh.',
+    feature: 'Dilengkapi Double Hook (dua gantungan) untuk membawa banyak belanjaan.',
     cardImage: getImage('yamaha-gear-card'),
     detailImage: getImage('yamaha-gear-detail')
   },
@@ -72,7 +72,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha X-Ride',
     class: 'Menengah',
     specs: { cc: '125cc', torque: '9.6 Nm' },
-    feature: 'Adventure Style. Suspensi tabung empuk, setang lebar, sangat nyaman di jalanan tidak rata.',
+    feature: 'Suspensi tabung yang sangat empuk dan nyaman di jalan bergelombang.',
     cardImage: getImage('yamaha-x-ride-card'),
     detailImage: getImage('yamaha-x-ride-detail')
   },
@@ -81,7 +81,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Fino',
     class: 'Menengah',
     specs: { cc: '125cc', torque: '9.6 Nm' },
-    feature: 'Classic Chic. Desain retro elegan, sangat pas untuk keliling kota dengan gaya santai.',
+    feature: 'Desain retro yang elegan untuk keliling kota dengan gaya santai.',
     cardImage: getImage('yamaha-fino-card'),
     detailImage: getImage('yamaha-fino-detail')
   },
@@ -90,7 +90,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Mio Z',
     class: 'Menengah',
     specs: { cc: '125cc', torque: '9.6 Nm' },
-    feature: 'Agile & Steady. Mesin 125cc bertenaga dengan ban lebih lebar dari varian Mio lainnya.',
+    feature: 'Mesin Blue Core bertenaga dengan ban lebar agar lebih stabil.',
     cardImage: getImage('yamaha-mio-z-card'),
     detailImage: getImage('yamaha-mio-z-detail')
   },
@@ -99,7 +99,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Soul GT',
     class: 'Menengah',
     specs: { cc: '125cc', torque: '9.6 Nm' },
-    feature: 'Bold Design. Tampilan kokoh dan lampu depan tajam, memberikan kesan berkendara yang mantap.',
+    feature: 'Tampilan maskulin dengan lampu depan tajam dan bodi kokoh.',
     cardImage: getImage('yamaha-soul-gt-card'),
     detailImage: getImage('yamaha-soul-gt-detail')
   },
@@ -108,7 +108,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Xeon GT',
     class: 'Menengah',
     specs: { cc: '125cc', torque: '9.8 Nm' },
-    feature: 'Liquid Cooled. Mesin berpendingin cairan membuat performa tetap stabil meski dipakai keliling Jakarta seharian.',
+    feature: 'Mesin berpendingin cairan (Radiator) untuk performa jarak jauh.',
     cardImage: getImage('yamaha-xeon-gt-card'),
     detailImage: getImage('yamaha-xeon-gt-detail')
   },
@@ -117,7 +117,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Beat New',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.3 Nm' },
-    feature: 'Teknologi rangka eSAF terbaru, sangat ringan dan super hemat bahan bakar.',
+    feature: 'Rangka eSAF terbaru yang sangat ringan dan super hemat bbm.',
     specialLabel: 'Paling Irit',
     cardImage: getImage('honda-beat-new-card'),
     detailImage: getImage('honda-beat-new-detail')
@@ -127,7 +127,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Beat Street',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.3 Nm' },
-    feature: 'Setang terbuka gaya petualang, posisi tangan lebih lebar dan tidak cepat pegal.',
+    feature: 'Setang gaya petualang untuk posisi berkendara santai dan tidak pegal.',
     specialLabel: 'Paling Irit',
     cardImage: getImage('honda-beat-street-card'),
     detailImage: getImage('honda-beat-street-detail')
@@ -137,7 +137,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Beat ESP',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.0 Nm' },
-    feature: 'Starter halus (ACG), pilihan paling bandel dan ekonomis untuk wisatawan.',
+    feature: 'Starter halus (ACG) dan mesin bandel untuk pemakaian harian.',
     specialLabel: 'Paling Irit',
     cardImage: getImage('honda-beat-esp-card'),
     detailImage: getImage('honda-beat-esp-detail')
@@ -147,7 +147,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Beat Pop',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.0 Nm' },
-    feature: 'Bodi paling ramping dan membulat, sangat lincah untuk selap-selip di gang sempit.',
+    feature: 'Bodi paling ramping dan lincah untuk menembus kemacetan parah.',
     specialLabel: 'Paling Irit',
     cardImage: getImage('honda-beat-pop-card'),
     detailImage: getImage('honda-beat-pop-detail')
@@ -157,7 +157,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Genio',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.3 Nm' },
-    feature: 'Desain modern-retro yang ringan, sangat cocok untuk pengendara pemula.',
+    feature: 'Desain modern-retro yang ringan dan sangat mudah dikendalikan.',
     specialLabel: 'Paling Irit',
     cardImage: getImage('honda-genio-card'),
     detailImage: getImage('honda-genio-detail')
@@ -167,7 +167,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Spacy',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '8.9 Nm' },
-    feature: 'Fitur Helm-In, bagasi ekstra lega untuk menyimpan tas atau jaket di dalam jok.',
+    feature: 'Bagasi ekstra besar (Helm-In) untuk menyimpan tas di dalam jok.',
     specialLabel: 'Bagasi Luas',
     cardImage: getImage('honda-spacy-card'),
     detailImage: getImage('honda-spacy-detail')
@@ -177,7 +177,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Scoopy (New)',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.3 Nm' },
-    feature: 'Iconic & Trendy. Ban ring 12 yang stabil, lampu depan projector, dan ada slot charger HP.',
+    feature: 'Ban ring 12 yang stabil dan fitur slot charger HP di laci.',
     cardImage: getImage('honda-scoopy-new-card'),
     detailImage: getImage('honda-scoopy-new-detail')
   },
@@ -186,7 +186,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Scoopy Old',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.1 Nm' },
-    feature: 'Original Retro. Velg jari-jari klasik yang memberikan kesan otentik untuk jalan-jalan santai.',
+    feature: 'Velg jari-jari klasik untuk kesan retro yang otentik.',
     cardImage: getImage('honda-scoopy-old-card'),
     detailImage: getImage('honda-scoopy-old-detail')
   },
@@ -195,7 +195,7 @@ export const motorInventory: Motor[] = [
     name: 'Honda Vario 110cc',
     class: 'Ekonomis',
     specs: { cc: '110cc', torque: '9.1 Nm' },
-    feature: 'Comfort Matik. Dek kaki sangat luas dan dilengkapi fitur remote Answer Back System.',
+    feature: 'Dek kaki luas dan dilengkapi fitur remote Answer Back System.',
     cardImage: getImage('honda-vario-110-card'),
     detailImage: getImage('honda-vario-110-detail')
   },
@@ -204,7 +204,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Mio GT',
     class: 'Ekonomis',
     specs: { cc: '113cc', torque: '8.5 Nm' },
-    feature: 'Sporty Look. Desain legendaris yang tangguh dan sangat mudah perawatannya.',
+    feature: 'Desain sporty legendaris yang tangguh dan perawatan mudah.',
     cardImage: getImage('yamaha-mio-gt-card'),
     detailImage: getImage('yamaha-mio-gt-detail')
   },
@@ -213,7 +213,7 @@ export const motorInventory: Motor[] = [
     name: 'Yamaha Mio J',
     class: 'Ekonomis',
     specs: { cc: '113cc', torque: '8.5 Nm' },
-    feature: 'Simple & Light. Motor sangat ringan, memudahkan wisatawan saat harus parkir atau mundur.',
+    feature: 'Motor paling ringan memudahkan saat parkir atau manuver.',
     cardImage: getImage('yamaha-mio-j-card'),
     detailImage: getImage('yamaha-mio-j-detail')
   },
@@ -222,7 +222,7 @@ export const motorInventory: Motor[] = [
     name: 'Polytron Fox R',
     class: 'Khusus',
     specs: { cc: '3000 Watt', torque: 'N/A' },
-    feature: 'The Future Drive. Tanpa suara, torsi instan, dan ada fitur mundur (reverse) untuk kemudahan parkir.',
+    feature: 'Motor listrik tanpa suara dengan fitur mundur (Reverse Mode).',
     specialLabel: 'Eco Friendly',
     cardImage: getImage('polytron-fox-r-card'),
     detailImage: getImage('polytron-fox-r-detail')
@@ -230,9 +230,30 @@ export const motorInventory: Motor[] = [
 ];
 
 export const standardFacilities = [
-  '2 Helm',
-  '2 Jas Hujan',
-  'Phone Holder',
+  { icon: 'Helmet', text: '2 Helm' },
+  { icon: 'Wind', text: '2 Jas Hujan' },
+  { icon: 'Smartphone', text: 'Phone Holder' },
 ];
 
 export const aboutUsText = 'RMJP (Rental Motor Jakarta Pusat) adalah partner mobilitas terpercaya Anda di jantung kota Jakarta dan Bandung. Kami berdedikasi untuk menyediakan armada motor berkualitas dengan pelayanan terbaik, memastikan setiap perjalanan Anda aman, nyaman, dan efisien. Dengan proses pemesanan yang mudah dan fasilitas lengkap, kami siap mendukung segala kebutuhan perjalanan Anda, baik untuk bekerja, berlibur, atau aktivitas harian lainnya.';
+
+export const testimonials = [
+    {
+        name: "Andi Susanto",
+        role: "Software Engineer",
+        avatarUrl: "https://randomuser.me/api/portraits/men/32.jpg",
+        comment: "Proses sewa di RMJP cepat dan motornya dalam kondisi prima. Sangat membantu mobilitas saya selama dinas di Jakarta. Pasti akan sewa di sini lagi!"
+    },
+    {
+        name: "Citra Dewi",
+        role: "Travel Blogger",
+        avatarUrl: "https://randomuser.me/api/portraits/women/44.jpg",
+        comment: "Armadanya lengkap dan terawat. Saya sewa Scoopy untuk keliling Bandung, seru banget! Pelayanannya juga ramah dan sangat informatif."
+    },
+    {
+        name: "Bagus Prasetyo",
+        role: "Mahasiswa",
+        avatarUrl: "https://randomuser.me/api/portraits/men/46.jpg",
+        comment: "Harga sewanya terjangkau untuk kantong mahasiswa. Vario 125-nya irit dan bertenaga, cocok untuk kuliah dan jalan-jalan. Recommended!"
+    }
+];

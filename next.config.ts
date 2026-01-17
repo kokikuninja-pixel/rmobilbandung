@@ -34,6 +34,18 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'e7.pngegg.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'p7.hiclipart.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

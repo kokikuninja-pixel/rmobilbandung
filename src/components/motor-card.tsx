@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import type { Motor } from '@/lib/data';
@@ -21,33 +21,37 @@ export function MotorCard({ motor }: MotorCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
       className="h-full"
     >
-      <Card className="overflow-hidden h-full flex flex-col bg-card hover:bg-card/80 transition-colors duration-300">
+      <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-border/20 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20">
         <CardHeader className="p-0">
-          <div className="aspect-video relative">
+          <motion.div 
+            className="aspect-video relative"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
             <Image
               src={motor.cardImage.imageUrl}
               alt={motor.name}
               fill
-              className="object-cover"
+              className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               data-ai-hint={motor.cardImage.imageHint}
             />
-          </div>
+          </motion.div>
           <div className="p-6 pb-2">
-            <CardTitle className="font-headline text-xl">{motor.name}</CardTitle>
+            <CardTitle className="font-headline text-xl font-bold">{motor.name}</CardTitle>
+            <CardDescription className="text-muted-foreground mt-1 text-sm">{motor.class} Class</CardDescription>
           </div>
         </CardHeader>
-        <CardContent className="flex-grow pt-2">
-          {motor.specialLabel && (
+        <CardContent className="flex-grow pt-2 flex flex-col">
+           {motor.specialLabel && (
             <Badge
               variant="outline"
-              className={cn("mb-3 font-semibold", {
-                "bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/50 dark:text-blue-200 dark:border-blue-800": motor.specialLabel === "Bagasi Luas",
-                "bg-green-100 text-green-800 border-green-200 dark:bg-green-900/50 dark:text-green-200 dark:border-green-800": motor.specialLabel === "Paling Irit",
-                "bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-900/50 dark:text-purple-200 dark:border-purple-800": motor.specialLabel === "Eco Friendly",
+              className={cn("w-fit mb-4 font-semibold text-xs", {
+                "bg-blue-500/20 text-blue-300 border-blue-500/30": motor.specialLabel === "Bagasi Luas",
+                "bg-green-500/20 text-green-300 border-green-500/30": motor.specialLabel === "Paling Irit",
+                "bg-purple-500/20 text-purple-300 border-purple-500/30": motor.specialLabel === "Eco Friendly",
               })}
             >
               {motor.specialLabel === "Bagasi Luas" && "👜 Bagasi Luas"}
@@ -55,24 +59,26 @@ export function MotorCard({ motor }: MotorCardProps) {
               {motor.specialLabel === "Eco Friendly" && "⚡ Eco Friendly"}
             </Badge>
           )}
-          <ul className="space-y-2 text-muted-foreground">
-            <li className="flex items-center gap-2">
-              <Gauge className="w-4 h-4 text-primary" />
-              <span>{motor.specs.cc}</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Wind className="w-4 h-4 text-primary" />
-              <span>{motor.specs.torque}</span>
-            </li>
-          </ul>
+
+          <div className="mt-auto">
+            <div className="flex items-center justify-between text-muted-foreground mb-4">
+                <div className="flex items-center gap-2">
+                    <Gauge className="w-4 h-4 text-primary" />
+                    <span className="text-sm">{motor.specs.cc}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Wind className="w-4 h-4 text-primary" />
+                    <span className="text-sm">{motor.specs.torque}</span>
+                </div>
+            </div>
+
+            <Button asChild variant="outline" className="w-full bg-transparent hover:bg-primary hover:text-primary-foreground">
+                <Link href={`/armada/${motor.id}`}>
+                Lihat Detail <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </Button>
+          </div>
         </CardContent>
-        <CardFooter>
-          <Button asChild variant="outline" className="w-full">
-            <Link href={`/armada/${motor.id}`}>
-              Lihat Detail <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </CardFooter>
       </Card>
     </motion.div>
   );

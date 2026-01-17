@@ -5,8 +5,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: 'RMJP Rental Landing',
-  description: 'Rental motor terpercaya di Jakarta Pusat dan Bandung.',
+  title: 'RMJP Rental | The Urban Traveler Experience',
+  description: 'Rental motor matic terpercaya di Jakarta Pusat dan Bandung.',
 };
 
 export default function RootLayout({
@@ -15,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
         <Header />

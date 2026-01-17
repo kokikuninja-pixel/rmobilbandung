@@ -2,259 +2,259 @@
   "placeholderImages": [
     {
       "id": "hero-jakarta",
-      "description": "Hero image showing Jakarta city scape",
-      "imageUrl": "https://images.unsplash.com/photo-1538582709238-0a503bd5ae04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxqYWthcnRhJTIwY2l0eXxlbnwwfHx8fDE3Njg2NDEzMDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "jakarta city"
+      "description": "Hero image showing Jakarta city scape at night",
+      "imageUrl": "https://images.unsplash.com/photo-1596706917999-6047c503b4d2?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "jakarta night"
     },
     {
       "id": "yamaha-aerox-card",
-      "imageUrl": "https://images.unsplash.com/photo-1625411704295-fbf924ec1241?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx5YW1haGElMjBhZXJveHxlbnwwfHx8fDE3Njg2NDM4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://img.pngwing.com/www/png-min/753/101/png-yamaha-aerox-155-scooter-motorcycle-car-yamaha-mio-sporty-motor-vehicle-transport-rim-thumbnail.png",
       "description": "Yamaha Aerox",
       "imageHint": "yamaha aerox"
     },
     {
       "id": "yamaha-aerox-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1662049373531-67bdace371d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx5YW1haGElMjBhZXJveCUyMHNpZGV8ZW58MHx8fHwxNzY4NjQzODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://img.pngwing.com/www/png-min/753/101/png-yamaha-aerox-155-scooter-motorcycle-car-yamaha-mio-sporty-motor-vehicle-transport-rim-thumbnail.png",
       "description": "Yamaha Aerox detail",
       "imageHint": "yamaha aerox side"
     },
     {
       "id": "honda-vario-150-card",
-      "imageUrl": "https://images.unsplash.com/photo-1650807486058-2dd55fa78831?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxob25kYSUyMHZhcmlvJTIwMTUwfGVufDB8fHx8MTc2ODY0Mzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/274/353/png-clipart-honda-vario-150-esp-honda-click-honda-vario-125-esp-motorcycle-honda-scooter-motorcycle.png",
       "description": "Honda Vario 150cc",
       "imageHint": "honda vario 150"
     },
     {
       "id": "honda-vario-150-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1742780829222-4d5e74f1b922?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxob25kYSUyMHZhcmlvJTIwMTUwJTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/274/353/png-clipart-honda-vario-150-esp-honda-click-honda-vario-125-esp-motorcycle-honda-scooter-motorcycle.png",
       "description": "Honda Vario 150cc detail",
       "imageHint": "honda vario 150 side"
     },
     {
       "id": "honda-vario-125-card",
-      "imageUrl": "https://images.unsplash.com/photo-1603465833396-5ee350acca47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxob25kYSUyMHZhcmlvJTIwMTI1fGVufDB8fHx8MTc2ODY0Mzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://p7.hiclipart.com/preview/45/295/304/honda-vario-125-esp-honda-beat-honda-click-motorcycle-honda.jpg",
       "description": "Honda Vario 125 LED",
       "imageHint": "honda vario 125"
     },
     {
       "id": "honda-vario-125-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1580894736003-7f5f057c9f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxob25kYSUyMHZhcmlvJTIwMTI1JTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://p7.hiclipart.com/preview/45/295/304/honda-vario-125-esp-honda-beat-honda-click-motorcycle-honda.jpg",
       "description": "Honda Vario 125 LED detail",
       "imageHint": "honda vario 125 side"
     },
     {
       "id": "yamaha-gear-card",
-      "imageUrl": "https://images.unsplash.com/photo-1750773105942-1f0e59effb27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx5YW1haGElMjBnZWFyfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/303/344/png-transparent-yamaha-motor-company-motorcycle-scooter-car-yamaha-mio-sporty-white-motorcycle-vehicle.png",
       "description": "Yamaha Gear",
       "imageHint": "yamaha gear"
     },
     {
       "id": "yamaha-gear-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1662049373330-b22c93d21c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8eWFtYWhhJTIwZ2VhciUyMHNpZGV8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/303/344/png-transparent-yamaha-motor-company-motorcycle-scooter-car-yamaha-mio-sporty-white-motorcycle-vehicle.png",
       "description": "Yamaha Gear detail",
       "imageHint": "yamaha gear side"
     },
     {
       "id": "yamaha-x-ride-card",
-      "imageUrl": "https://images.unsplash.com/photo-1761034798043-d9f0a3dfcebb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5YW1haGElMjB4LXJpZGV8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/418/1010/png-clipart-yamaha-motor-company-yamaha-mio-scooter-motorcycle-car-motor-scooter-car-motorcycle.png",
       "description": "Yamaha X-Ride",
       "imageHint": "yamaha x-ride"
     },
     {
       "id": "yamaha-x-ride-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1627531425848-516eddd62b65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5YW1haGElMjB4LXJpZGUlMjBzaWRlfGVufDB8fHx8MTc2ODY0Mzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/418/1010/png-clipart-yamaha-motor-company-yamaha-mio-scooter-motorcycle-car-motor-scooter-car-motorcycle.png",
       "description": "Yamaha X-Ride detail",
       "imageHint": "yamaha x-ride side"
     },
     {
       "id": "yamaha-fino-card",
-      "imageUrl": "https://images.unsplash.com/photo-1662049373531-67bdace371d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx5YW1haGElMjBmaW5vfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/123/250/png-transparent-yamaha-fino-125-blue-core-yamaha-motor-company-motorcycle-scooter-price-motor-scooter-exhaust-system-car.png",
       "description": "Yamaha Fino",
       "imageHint": "yamaha fino"
     },
     {
       "id": "yamaha-fino-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1662049373330-b22c93d21c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5YW1haGElMjBmaW5vJTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/123/250/png-transparent-yamaha-fino-125-blue-core-yamaha-motor-company-motorcycle-scooter-price-motor-scooter-exhaust-system-car.png",
       "description": "Yamaha Fino detail",
       "imageHint": "yamaha fino side"
     },
     {
       "id": "yamaha-mio-z-card",
-      "imageUrl": "https://images.unsplash.com/photo-1600092426775-08fcb6cf1d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx5YW1haGElMjBtaW8lMjB6fGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/468/412/png-clipart-yamaha-mio-j-yamaha-motor-company-motorcycle-scooter-underbone-motorcycle-white-exhaust-system.png",
       "description": "Yamaha Mio Z",
       "imageHint": "yamaha mio z"
     },
     {
       "id": "yamaha-mio-z-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1627531425848-516eddd62b65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5YW1haGElMjBtaW8lMjB6JTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/468/412/png-clipart-yamaha-mio-j-yamaha-motor-company-motorcycle-scooter-underbone-motorcycle-white-exhaust-system.png",
       "description": "Yamaha Mio Z detail",
       "imageHint": "yamaha mio z side"
     },
     {
       "id": "yamaha-soul-gt-card",
-      "imageUrl": "https://images.unsplash.com/photo-1627911080825-fdf06dccb9c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5YW1haGElMjBzb3VsJTIwZ3R8ZW58MHx8fHwxNzY4NjQzODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/307/133/png-transparent-yamaha-mio-soul-i-125-yamaha-motor-company-scooter-motorcycle-underbone-motorcycle-exhaust-system-car.png",
       "description": "Yamaha Soul GT",
       "imageHint": "yamaha soul gt"
     },
     {
       "id": "yamaha-soul-gt-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1625411704295-fbf924ec1241?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx5YW1haGElMjBzb3VsJTIwZ3QlMjBzaWRlfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/307/133/png-transparent-yamaha-mio-soul-i-125-yamaha-motor-company-scooter-motorcycle-underbone-motorcycle-exhaust-system-car.png",
       "description": "Yamaha Soul GT detail",
       "imageHint": "yamaha soul gt side"
     },
     {
       "id": "yamaha-xeon-gt-card",
-      "imageUrl": "https://images.unsplash.com/photo-1765109445623-3556073b51fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx5YW1haGElMjB4ZW9uJTIwZ3R8ZW58MHx8fHwxNzY4NjQzODQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/58/119/png-transparent-yamaha-cygnus-x-scooter-yamaha-motor-company-motorcycle-yamaha-xeon-gt-125-motorcycle-car-motorcycle-accessories.png",
       "description": "Yamaha Xeon GT",
       "imageHint": "yamaha xeon gt"
     },
     {
       "id": "yamaha-xeon-gt-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1625411704295-fbf924ec1241?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx5YW1haGElMjB4ZW9uJTIwZ3QlMjBzaWRlfGVufDB8fHx8MTc2ODY0Mzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/58/119/png-transparent-yamaha-cygnus-x-scooter-yamaha-motor-company-motorcycle-yamaha-xeon-gt-125-motorcycle-car-motorcycle-accessories.png",
       "description": "Yamaha Xeon GT detail",
       "imageHint": "yamaha xeon gt side"
     },
     {
       "id": "honda-beat-new-card",
-      "imageUrl": "https://images.unsplash.com/photo-1595952831483-1568adfed9a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxob25kYSUyMGJlYXR8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/838/461/png-clipart-honda-beat-honda-vario-car-motorcycle-honda-scoopy-esp-honda-white-car.png",
       "description": "Honda Beat New",
       "imageHint": "honda beat"
     },
     {
       "id": "honda-beat-new-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1603465833396-5ee350acca47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxob25kYSUyMGJlYXQlMjBzaWRlfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/838/461/png-clipart-honda-beat-honda-vario-car-motorcycle-honda-scoopy-esp-honda-white-car.png",
       "description": "Honda Beat New detail",
       "imageHint": "honda beat side"
     },
     {
       "id": "honda-beat-street-card",
-      "imageUrl": "https://images.unsplash.com/photo-1720623867275-db4c9a2ca12e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxob25kYSUyMGJlYXQlMjBzdHJlZXR8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://p7.hiclipart.com/preview/277/915/700/honda-beat-honda-vario-honda-supra-x-125-fi-motorcycle-car-honda.jpg",
       "description": "Honda Beat Street",
       "imageHint": "honda beat street"
     },
     {
       "id": "honda-beat-street-detail",
-      "imageUrl": "https://picsum.photos/seed/hbeatstreetd/600/600",
+      "imageUrl": "https://p7.hiclipart.com/preview/277/915/700/honda-beat-honda-vario-honda-supra-x-125-fi-motorcycle-car-honda.jpg",
       "description": "Honda Beat Street detail",
       "imageHint": "honda beat street side"
     },
     {
       "id": "honda-beat-esp-card",
-      "imageUrl": "https://images.unsplash.com/photo-1603465833396-5ee350acca47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxob25kYSUyMGJlYXQlMjBlc3B8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/949/963/png-transparent-honda-beat-honda-vario-honda-click-motorcycle-car-honda-white-car-motorcycle.png",
       "description": "Honda Beat ESP",
       "imageHint": "honda beat esp"
     },
     {
       "id": "honda-beat-esp-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1695950682652-86b73812a9b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob25kYSUyMGJlYXQlMjBlc3AlMjBzaWRlfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/949/963/png-transparent-honda-beat-honda-vario-honda-click-motorcycle-car-honda-white-car-motorcycle.png",
       "description": "Honda Beat ESP detail",
       "imageHint": "honda beat esp side"
     },
     {
       "id": "honda-beat-pop-card",
-      "imageUrl": "https://images.unsplash.com/photo-1720623867275-db4c9a2ca12e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxob25kYSUyMGJlYXQlMjBwb3B8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/418/343/png-clipart-honda-beat-car-honda-vario-honda-click-motorcycle-honda-white-motorcycle.png",
       "description": "Honda Beat Pop",
       "imageHint": "honda beat pop"
     },
     {
       "id": "honda-beat-pop-detail",
-      "imageUrl": "https://picsum.photos/seed/hbeatpopd/600/600",
+      "imageUrl": "https://e7.pngegg.com/pngimages/418/343/png-clipart-honda-beat-car-honda-vario-honda-click-motorcycle-honda-white-motorcycle.png",
       "description": "Honda Beat Pop detail",
       "imageHint": "honda beat pop side"
     },
     {
       "id": "honda-genio-card",
-      "imageUrl": "https://images.unsplash.com/photo-1742780829222-4d5e74f1b922?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxob25kYSUyMGdlbmlvfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/774/914/png-clipart-honda-genio-honda-beat-car-honda-scoopy-esp-motor-scooter-blue-car.png",
       "description": "Honda Genio",
       "imageHint": "honda genio"
     },
     {
       "id": "honda-genio-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1735643539133-65b2ff5cfbb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxob25kYSUyMGdlbmlvJTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/774/914/png-clipart-honda-genio-honda-beat-car-honda-scoopy-esp-motor-scooter-blue-car.png",
       "description": "Honda Genio detail",
       "imageHint": "honda genio side"
     },
     {
       "id": "honda-spacy-card",
-      "imageUrl": "https://images.unsplash.com/photo-1735643539133-65b2ff5cfbb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aG9uZGElMjBzcGFjeXxlbnwwfHx8fDE3Njg2NDM4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/303/526/png-transparent-honda-spacy-helmet-motorcycle-fuel-injection-honda-vision-honda-motorcycle-car-scooter.png",
       "description": "Honda Spacy",
       "imageHint": "honda spacy"
     },
     {
       "id": "honda-spacy-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1596791727065-ceeb09d5911b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob25kYSUyMHNwYWN5JTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/303/526/png-transparent-honda-spacy-helmet-motorcycle-fuel-injection-honda-vision-honda-motorcycle-car-scooter.png",
       "description": "Honda Spacy detail",
       "imageHint": "honda spacy side"
     },
     {
       "id": "honda-scoopy-new-card",
-      "imageUrl": "https://images.unsplash.com/photo-1720236177685-b62ffa6377aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxob25kYSUyMHNjb29weXxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/1018/1023/png-transparent-honda-scoopy-esp-honda-beat-honda-vario-car-motorcycle-tires-car-motorcycle-motor-vehicle.png",
       "description": "Honda Scoopy (New)",
       "imageHint": "honda scoopy"
     },
     {
       "id": "honda-scoopy-new-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1755483326354-c9c5e3893ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aG9uZGElMjBzY29vcHklMjBzaWRlfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/1018/1023/png-transparent-honda-scoopy-esp-honda-beat-honda-vario-car-motorcycle-tires-car-motorcycle-motor-vehicle.png",
       "description": "Honda Scoopy (New) detail",
       "imageHint": "honda scoopy side"
     },
     {
       "id": "honda-scoopy-old-card",
-      "imageUrl": "https://images.unsplash.com/photo-1767105191884-cbf2275ddd70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbGFzc2ljJTIwc2Nvb3RlcnxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/270/25/png-clipart-honda-scoopy-esp-honda-beat-car-motorcycle-honda-vario-car-motorcycle.png",
       "description": "Honda Scoopy Old",
       "imageHint": "classic scooter"
     },
     {
       "id": "honda-scoopy-old-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1616254113637-22cfb4f54878?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGFzc2ljJTIwc2Nvb3RlciUyMHNpZGV8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/270/25/png-clipart-honda-scoopy-esp-honda-beat-car-motorcycle-honda-vario-car-motorcycle.png",
       "description": "Honda Scoopy Old detail",
       "imageHint": "classic scooter side"
     },
     {
       "id": "honda-vario-110-card",
-      "imageUrl": "https://images.unsplash.com/photo-1681857239369-15ebd70bdad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxob25kYSUyMHZhcmlvJTIwMTEwfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://p7.hiclipart.com/preview/44/287/679/honda-vario-honda-click-car-scooter-honda-beat-honda.jpg",
       "description": "Honda Vario 110cc",
       "imageHint": "honda vario 110"
     },
     {
       "id": "honda-vario-110-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1580894736003-7f5f057c9f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxob25kYSUyMHZhcmlvJTIwMTEwJTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://p7.hiclipart.com/preview/44/287/679/honda-vario-honda-click-car-scooter-honda-beat-honda.jpg",
       "description": "Honda Vario 110cc detail",
       "imageHint": "honda vario 110 side"
     },
     {
       "id": "yamaha-mio-gt-card",
-      "imageUrl": "https://images.unsplash.com/photo-1600092426775-08fcb6cf1d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx5YW1haGElMjBtaW8lMjBndHxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/303/344/png-transparent-yamaha-motor-company-motorcycle-scooter-car-yamaha-mio-sporty-white-motorcycle-vehicle.png",
       "description": "Yamaha Mio GT",
       "imageHint": "yamaha mio gt"
     },
     {
       "id": "yamaha-mio-gt-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1627531425848-516eddd62b65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5YW1haGElMjBtaW8lMjBndCUyMHNpZGV8ZW58MHx8fHwxNzY4NjQzODQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://w7.pngwing.com/pngs/303/344/png-transparent-yamaha-motor-company-motorcycle-scooter-car-yamaha-mio-sporty-white-motorcycle-vehicle.png",
       "description": "Yamaha Mio GT detail",
       "imageHint": "yamaha mio gt side"
     },
     {
       "id": "yamaha-mio-j-card",
-      "imageUrl": "https://images.unsplash.com/photo-1662049373330-b22c93d21c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx5YW1haGElMjBtaW8lMjBqfGVufDB8fHx8MTc2ODY0Mzg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/468/412/png-clipart-yamaha-mio-j-yamaha-motor-company-motorcycle-scooter-underbone-motorcycle-white-exhaust-system.png",
       "description": "Yamaha Mio J",
       "imageHint": "yamaha mio j"
     },
     {
       "id": "yamaha-mio-j-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1620937843955-a177ceba979e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx5YW1haGElMjBtaW8lMjBqJTIwc2lkZXxlbnwwfHx8fDE3Njg2NDM4NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/468/412/png-clipart-yamaha-mio-j-yamaha-motor-company-motorcycle-scooter-underbone-motorcycle-white-exhaust-system.png",
       "description": "Yamaha Mio J detail",
       "imageHint": "yamaha mio j side"
     },
     {
       "id": "polytron-fox-r-card",
-      "imageUrl": "https://images.unsplash.com/photo-1614226170075-d338afcd9c53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWxlY3RyaWMlMjBzY29vdGVyfGVufDB8fHx8MTc2ODU4MzE1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/77/824/png-clipart-electric-motorcycle-car-electric-vehicle-bajaj-auto-car-scooter-electric-vehicle.png",
       "description": "Polytron Fox R",
       "imageHint": "electric scooter"
     },
     {
       "id": "polytron-fox-r-detail",
-      "imageUrl": "https://images.unsplash.com/photo-1684938165113-de976f24f6d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlbGVjdHJpYyUyMHNjb290ZXIlMjBzaWRlfGVufDB8fHx8MTc2ODY0Mzg0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://e7.pngegg.com/pngimages/77/824/png-clipart-electric-motorcycle-car-electric-vehicle-bajaj-auto-car-scooter-electric-vehicle.png",
       "description": "Polytron Fox R detail",
       "imageHint": "electric scooter side"
     }

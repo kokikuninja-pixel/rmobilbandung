@@ -17,7 +17,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-lg">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -30,7 +30,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-primary"
+              className="font-medium text-muted-foreground transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
@@ -39,7 +39,7 @@ export function Header() {
         </nav>
 
         <div className="flex flex-1 items-center justify-end gap-2">
-          <Button asChild className="hidden md:flex">
+          <Button asChild>
             <Link href="#pesan">Sewa Sekarang</Link>
           </Button>
           <Button
@@ -72,9 +72,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild>
-              <Link href="#pesan" onClick={() => setIsMenuOpen(false)}>Sewa Sekarang</Link>
-            </Button>
           </nav>
         </div>
       )}

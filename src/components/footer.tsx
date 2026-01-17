@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border/40 bg-card">
+    <footer className="w-full border-t border-border/40 bg-background/60 backdrop-blur-lg">
       <div className="container mx-auto grid max-w-screen-2xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3">
         <div className="flex flex-col items-start gap-4">
           <Logo />
-          <p className="text-sm text-muted-foreground">Partner mobilitas terpercaya Anda.</p>
+          <p className="text-sm text-muted-foreground">Your Freedom to Explore Starts Here.</p>
           <div className="flex gap-4">
             <Link href="#" aria-label="Twitter"><Twitter className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
             <Link href="#" aria-label="Instagram"><Instagram className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
@@ -20,7 +20,6 @@ export function Footer() {
             <h3 className="mb-4 font-semibold text-foreground">Produk</h3>
             <ul className="space-y-2">
               <li><Link href="/#armada" className="text-muted-foreground hover:text-primary">Motor Matic</Link></li>
-              <li><Link href="/#armada" className="text-muted-foreground hover:text-primary">Motor Sport</Link></li>
             </ul>
           </div>
           <div>
