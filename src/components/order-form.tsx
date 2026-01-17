@@ -31,6 +31,8 @@ export function OrderForm() {
       currentDomicile: '',
       workLocation: '',
       workDurationInJakarta: '',
+      numberOfUnits: 1,
+      numberOfPeople: 1,
       purpose: '',
       honeypot: '',
     },
@@ -55,6 +57,8 @@ export function OrderForm() {
         rentalStartDate: format(data.rentalDates.from, 'dd MMMM yyyy', { locale: id }),
         rentalEndDate: format(data.rentalDates.to, 'dd MMMM yyyy', { locale: id }),
         purpose: data.purpose,
+        numberOfUnits: String(data.numberOfUnits),
+        numberOfPeople: String(data.numberOfPeople),
       };
 
       const result = await summarizeOrderForWhatsApp(summaryInput);
@@ -161,6 +165,32 @@ export function OrderForm() {
              </motion.div>
           )}
           </AnimatePresence>
+          <FormField
+            control={form.control}
+            name="numberOfUnits"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Sewa Berapa Unit?</FormLabel>
+                <FormControl>
+                  <Input type="number" min={1} placeholder="1" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="numberOfPeople"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Untuk Berapa Orang?</FormLabel>
+                <FormControl>
+                  <Input type="number" min={1} placeholder="1" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="rentalDates"
