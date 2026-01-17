@@ -8,19 +8,32 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '#armada', label: 'Armada' },
-  { href: '#tentang-kami', label: 'Tentang Kami' },
-  { href: '#lokasi', label: 'Lokasi' },
+  { href: '/#armada', label: 'Armada' },
+  { href: '/#tentang-kami', label: 'Tentang Kami' },
+  { href: '/#lokasi', label: 'Lokasi' },
+  { href: '/snk', label: 'S&K' },
 ];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.substring(2);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-lg">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Link href="/" className="mr-6 flex items-center space-x-2" onClick={(e) => handleLinkClick(e, '/')}>
             <Logo />
           </Link>
         </div>
@@ -31,7 +44,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               className="font-medium text-muted-foreground transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.label}
             </Link>
@@ -40,7 +53,7 @@ export function Header() {
 
         <div className="flex flex-1 items-center justify-end gap-2">
           <Button asChild>
-            <Link href="#pesan">Sewa Sekarang</Link>
+            <Link href="/#pesan" onClick={(e) => handleLinkClick(e, '/#pesan')}>Sewa Sekarang</Link>
           </Button>
           <Button
             variant="ghost"
@@ -62,12 +75,12 @@ export function Header() {
           )}
         >
           <nav className="grid gap-4 p-4">
-            {[...navLinks, { href: '#pesan', label: 'Pesan Sekarang' }].map((link) => (
+            {[...navLinks, { href: '/#pesan', label: 'Pesan Sekarang' }].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="text-lg font-medium transition-colors hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleLinkClick(e, link.href)}
               >
                 {link.label}
               </Link>
