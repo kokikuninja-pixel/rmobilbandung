@@ -33,7 +33,7 @@ export default async function Home() {
         <div className="z-20 container px-4">
           <AnimatedText text={slogan} className="font-headline text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
-            Solusi rental motor matic premium di Jakarta & Bandung dengan proses cepat dan armada terbaik.
+            Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik.
           </p>
           <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
             <Link href="#pesan">Mulai Menyewa</Link>
@@ -66,7 +66,7 @@ export default async function Home() {
                 <div>
                     <h2 className="font-headline text-4xl md:text-5xl font-bold">Terpercaya oleh Ribuan Pelanggan</h2>
                     <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                        Dengan lebih dari 25,000+ perjalanan sukses, kami bangga menjadi pilihan utama para petualang urban di Jakarta dan Bandung.
+                        Dengan lebih dari 25,000+ perjalanan sukses, kami bangga menjadi pilihan utama para petualang urban di Jakarta.
                     </p>
                     <div className="mt-8 grid grid-cols-2 gap-6">
                         <div className="bg-background/50 text-center p-6 rounded-lg border border-border/20">
@@ -121,7 +121,7 @@ export default async function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border border-border/20">
               <MapPin className="mx-auto h-10 w-10 text-primary mb-4" />
               <h3 className="font-headline text-2xl font-bold">Temukan Kami</h3>
-              <p className="text-muted-foreground mt-2">Kantor pusat kami di Jakarta Pusat & cabang di Bandung.</p>
+              <p className="text-muted-foreground mt-2">Kantor pusat kami berlokasi di Jakarta Pusat.</p>
           </div>
       </section>
 

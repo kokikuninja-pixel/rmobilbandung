@@ -117,7 +117,7 @@ export function OrderForm() {
               <FormItem>
                 <FormLabel>Domisili Sekarang</FormLabel>
                 <FormControl>
-                  <Input placeholder="cth: Bandung" {...field} />
+                  <Input placeholder="cth: Jakarta Selatan" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

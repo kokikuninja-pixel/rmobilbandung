@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: 'RMJP Rental | The Urban Traveler Experience',
-  description: 'Rental motor matic terpercaya di Jakarta Pusat dan Bandung.',
+  description: 'Rental motor matic terpercaya di Jakarta Pusat.',
 };
 
 export default function RootLayout({
