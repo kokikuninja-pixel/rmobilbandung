@@ -29,10 +29,10 @@ export default async function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-background/70 z-10" />
+        <div className="absolute inset-0 bg-background/80 z-10" />
         <div className="z-20 container px-4">
-          <AnimatedText text={slogan} className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white drop-shadow-lg mb-6" />
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-200 mb-8">
+          <AnimatedText text={slogan} className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-foreground drop-shadow-lg mb-6" />
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
             Solusi rental motor premium di Jakarta & Bandung dengan proses cepat dan armada terbaik.
           </p>
           <Button asChild size="lg">
@@ -93,7 +93,7 @@ export default async function Home() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Lokasi RMJP Rental"
-            className="grayscale invert-[90%] contrast-[80%]"
+            className=""
           ></iframe>
           <div className="absolute inset-0 bg-transparent pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm">
