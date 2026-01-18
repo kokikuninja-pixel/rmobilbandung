@@ -100,10 +100,16 @@ export default function HargaPage() {
                         <span>Jam Operasional</span>
                     </CardTitle>
                 </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">Rental melayani pemesanan dan pengantaran unit setiap hari pada:</p>
-                    <p className="text-2xl font-bold text-foreground mt-2">05:30 - 21:00 WIB</p>
-                    <p className="text-xs text-muted-foreground mt-4">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
+                <CardContent className="space-y-4">
+                   <div>
+                        <h4 className="font-semibold text-muted-foreground">Pemesanan & Pengantaran Unit</h4>
+                        <p className="text-2xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
+                    </div>
+                     <div>
+                        <h4 className="font-semibold text-muted-foreground">Garasi (Ambil/Kembalikan Sendiri)</h4>
+                        <p className="text-2xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
+                    </div>
+                    <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
                 </CardContent>
             </Card>
         </div>
