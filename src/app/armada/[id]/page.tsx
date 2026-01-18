@@ -101,6 +101,13 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
                 </div>
                  
                 <div className="mt-auto">
+                    <div className="mb-6 text-center lg:text-left">
+                        <p className="text-muted-foreground">Mulai dari</p>
+                        <p className="text-4xl font-extrabold text-primary">
+                            Rp {motor.price.toLocaleString('id-ID')}
+                            <span className="text-xl font-medium text-muted-foreground">/hari</span>
+                        </p>
+                    </div>
                     <Button asChild size="lg" className="w-full shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
                         <Link href="/#pesan">Sewa Sekarang</Link>
                     </Button>
@@ -144,3 +151,5 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
     </div>
   );
 }
+
+    

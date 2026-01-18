@@ -44,7 +44,14 @@ export function MotorCard({ motor }: MotorCardProps) {
             <CardDescription className="text-muted-foreground mt-1 text-sm">{motor.class} Class</CardDescription>
           </div>
         </CardHeader>
-        <CardContent className="flex-grow pt-2 flex flex-col">
+        <CardContent className="flex-grow pt-2 flex flex-col p-6">
+          <div className="mb-4">
+              <p className="text-sm text-muted-foreground">Mulai dari</p>
+              <p className="text-xl font-bold text-primary">
+                  Rp {motor.price.toLocaleString('id-ID')}{' '}
+                  <span className="text-sm font-normal text-muted-foreground">/hari</span>
+              </p>
+          </div>
            {motor.specialLabel && (
             <Badge
               variant="outline"
@@ -83,3 +90,5 @@ export function MotorCard({ motor }: MotorCardProps) {
     </motion.div>
   );
 }
+
+    
