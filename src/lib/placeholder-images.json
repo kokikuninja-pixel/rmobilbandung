@@ -7,6 +7,18 @@
       "imageHint": "jakarta night"
     },
     {
+      "id": "hero-jakarta-day",
+      "description": "Hero image showing Jakarta during the day",
+      "imageUrl": "https://images.unsplash.com/photo-1579584705533-316c8e762c2f?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "jakarta day"
+    },
+    {
+      "id": "hero-jakarta-traffic",
+      "description": "Hero image showing Jakarta traffic",
+      "imageUrl": "https://images.unsplash.com/photo-1588263529320-a61d19d6781c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "jakarta traffic"
+    },
+    {
       "id": "yamaha-aerox-card",
       "imageUrl": "https://img.pngwing.com/www/png-min/753/101/png-yamaha-aerox-155-scooter-motorcycle-car-yamaha-mio-sporty-motor-vehicle-transport-rim-thumbnail.png",
       "description": "Yamaha Aerox",
