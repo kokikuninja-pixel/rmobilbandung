@@ -7,13 +7,16 @@ import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, MapPin, Award } from 'lucide-react';
+import { Users, MapPin, Award, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default async function Home() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-jakarta');
   const slogan = "Your Freedom to Explore Starts Here.";
+
+  const favoriteMotorIds = ['honda-genio', 'honda-beat-new', 'yamaha-mio-z'];
+  const favoriteMotors = motorInventory.filter(motor => favoriteMotorIds.includes(motor.id));
 
   return (
     <>
@@ -31,7 +34,7 @@ export default async function Home() {
         )}
         <div className="absolute inset-0 bg-background/80 z-10" />
         <div className="z-20 container px-4">
-          <AnimatedText text={slogan} className="font-headline text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
+          <AnimatedText text={slogan} className="font-headline text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
             Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik.
           </p>
@@ -45,16 +48,24 @@ export default async function Home() {
       <section id="armada" className="py-16 md:py-24 bg-background">
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">Pilihan Armada Matic Kami</h2>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Armada Favorit Pelanggan</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Kami hanya menyediakan motor matic untuk kemudahan dan kenyamanan Anda menjelajahi kota.
+              Pilihan paling populer yang ringan, irit, dan lincah untuk mobilitas harian di perkotaan.
             </p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {motorInventory.map((motor) => (
+            {favoriteMotors.map((motor) => (
               <MotorCard key={motor.id} motor={motor} />
             ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <Button asChild variant="outline" size="lg">
+              <Link href="/armada">
+                Lihat Semua Armada <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

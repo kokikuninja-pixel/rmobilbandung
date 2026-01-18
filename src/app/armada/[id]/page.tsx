@@ -58,7 +58,7 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
       <div className="container mx-auto max-w-screen-xl px-4 py-12 md:py-24">
         
         <div className="mb-12">
-            <Link href="/#armada" className="text-sm text-muted-foreground hover:text-primary mb-4 inline-flex items-center">
+            <Link href="/armada" className="text-sm text-muted-foreground hover:text-primary mb-4 inline-flex items-center">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Kembali ke Semua Armada
             </Link>

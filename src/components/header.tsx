@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '/#armada', label: 'Armada' },
+  { href: '/armada', label: 'Armada' },
   { href: '/#tentang-kami', label: 'Tentang Kami' },
   { href: '/#lokasi', label: 'Lokasi' },
   { href: '/snk', label: 'S&K' },
@@ -33,7 +33,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-lg">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2" onClick={(e) => handleLinkClick(e, '/')}>
+          <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
             <Logo />
           </Link>
         </div>

@@ -19,7 +19,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4 font-semibold text-foreground">Produk</h3>
             <ul className="space-y-2">
-              <li><Link href="/#armada" className="text-muted-foreground hover:text-primary">Motor Matic</Link></li>
+              <li><Link href="/armada" className="text-muted-foreground hover:text-primary">Motor Matic</Link></li>
             </ul>
           </div>
           <div>
