@@ -6,8 +6,8 @@ import { AnimatedText } from '@/components/animations/animated-text';
 import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
-import { Card, CardContent } from '@/components/ui/card';
-import { Users, MapPin, Award, ArrowRight } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Users, MapPin, Award, ArrowRight, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -107,7 +107,7 @@ export default async function Home() {
       {/* Social Proof Section */}
       <section id="tentang-kami" className="py-16 md:py-24 bg-card/30">
         <div className="container px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid md:grid-cols-2 gap-16 items-start">
                 <div>
                     <h2 className="font-headline text-4xl md:text-5xl font-bold">Sewa Motor Jakarta Pusat (RMJP): Cepat, Terpercaya, & Transparan</h2>
                     <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -125,6 +125,27 @@ export default async function Home() {
                             <p className="text-muted-foreground">Perjalanan Sukses</p>
                         </div>
                     </div>
+
+                    <Card className="bg-card/50 mt-12">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-3 text-2xl">
+                                <Clock className="h-6 w-6 text-primary" />
+                                <span>Jam Operasional</span>
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4 !pt-2">
+                           <div>
+                                <h4 className="font-semibold text-muted-foreground">Pemesanan & Pengantaran Unit</h4>
+                                <p className="text-xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
+                            </div>
+                             <div>
+                                <h4 className="font-semibold text-muted-foreground">Garasi (Ambil/Kembalikan Sendiri)</h4>
+                                <p className="text-xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
+                            </div>
+                            <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
+                        </CardContent>
+                    </Card>
+
                 </div>
                 <div className="space-y-8">
                     {testimonials.map((testimonial, index) => (
