@@ -160,14 +160,19 @@ export default async function Home() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Lokasi RMJP Rental"
-            className="grayscale contrast-125 opacity-50"
+            className=""
           ></iframe>
-          <div className="absolute inset-0 bg-transparent pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border border-border/20">
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
+          <a 
+            href="https://www.google.com/maps/place/Rental+Motor+Jakarta+Pusat+RMJP/data=!4m6!3m5!1s0x2e69f54b3c734435:0x556e59c79268065c!8m2!3d-6.1681335!4d106.8442235!16s%2Fg%2F11fkl_4v94?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border border-border/20 hover:bg-background/95 transition-all cursor-pointer"
+          >
               <MapPin className="mx-auto h-10 w-10 text-primary mb-4" />
-              <h3 className="font-headline text-2xl font-bold">Temukan Kami</h3>
-              <p className="text-muted-foreground mt-2">Kantor pusat kami berlokasi di Jakarta Pusat.</p>
-          </div>
+              <h3 className="font-headline text-2xl font-bold">Temukan & Arahkan</h3>
+              <p className="text-muted-foreground mt-2">Klik untuk membuka di Google Maps</p>
+          </a>
       </section>
 
       {/* Order Section */}
