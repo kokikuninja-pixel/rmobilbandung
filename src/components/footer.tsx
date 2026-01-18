@@ -1,6 +1,7 @@
 import { Logo } from '@/components/icons/logo';
-import { Github, Twitter, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import Link from 'next/link';
+import { Tiktok } from './icons/tiktok';
 
 export function Footer() {
   return (
@@ -10,9 +11,8 @@ export function Footer() {
           <Logo />
           <p className="text-sm text-muted-foreground">Your Freedom to Explore Starts Here.</p>
           <div className="flex gap-4">
-            <Link href="#" aria-label="Twitter"><Twitter className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
             <Link href="#" aria-label="Instagram"><Instagram className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
-            <Link href="#" aria-label="Github"><Github className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
+            <Link href="#" aria-label="Tiktok"><Tiktok className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-3">

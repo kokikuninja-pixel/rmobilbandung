@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, MapPin, Award, ArrowRight, Clock } from 'lucide-react';
+import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -113,7 +113,41 @@ export default async function Home() {
                     <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                         RMJP adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Jakarta. Apakah Anda seorang wisatawan, pekerja, atau pendatang, kami memastikan perjalanan Anda di ibu kota menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
                     </p>
-                    <div className="mt-8 grid grid-cols-2 gap-6">
+
+                    <div className="mt-12">
+                      <h3 className="text-3xl font-bold mb-6">Fasilitas Standar Kami</h3>
+                      <div className="space-y-4">
+                          <div className="flex items-start gap-4">
+                              <div className="bg-primary/10 border border-primary/20 rounded-full p-2">
+                                  <ShieldCheck className="h-6 w-6 text-primary" />
+                              </div>
+                              <div>
+                                  <h4 className="font-semibold text-lg">2 Helm SNI</h4>
+                                  <p className="text-muted-foreground">Untuk keamanan Anda dan penumpang.</p>
+                              </div>
+                          </div>
+                          <div className="flex items-start gap-4">
+                              <div className="bg-primary/10 border border-primary/20 rounded-full p-2">
+                                  <Umbrella className="h-6 w-6 text-primary" />
+                              </div>
+                              <div>
+                                  <h4 className="font-semibold text-lg">Jas Hujan</h4>
+                                  <p className="text-muted-foreground">Agar perjalanan tetap lancar saat hujan.</p>
+                              </div>
+                          </div>
+                          <div className="flex items-start gap-4">
+                              <div className="bg-primary/10 border border-primary/20 rounded-full p-2">
+                                  <Smartphone className="h-6 w-6 text-primary" />
+                              </div>
+                              <div>
+                                  <h4 className="font-semibold text-lg">Phone Holder</h4>
+                                  <p className="text-muted-foreground">Memudahkan navigasi Anda di jalan.</p>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-12 grid grid-cols-2 gap-6">
                         <div className="bg-background/50 text-center p-6 rounded-lg border border-border/20">
                             <Users className="mx-auto h-10 w-10 text-primary mb-4" />
                             <p className="text-3xl font-bold">1000+</p>
