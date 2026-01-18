@@ -6,6 +6,7 @@ export const rentalFormSchema = z.object({
   currentDomicile: z.string().min(3, { message: "Domisili sekarang harus diisi." }),
   workLocation: z.string().min(3, { message: "Lokasi kerja harus diisi." }),
   workDurationInJakarta: z.string().optional(),
+  desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
   numberOfUnits: z.coerce.number().int().min(1, { message: "Jumlah unit harus diisi (minimal 1)." }),
   numberOfPeople: z.coerce.number().int().min(1, { message: "Jumlah orang harus diisi (minimal 1)." }),
   rentalDates: z.object({

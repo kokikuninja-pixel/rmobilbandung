@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
 import { summarizeOrderForWhatsApp } from '@/ai/flows/summarize-order-whatsapp';
+import { motorInventory } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
@@ -17,6 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 
 export function OrderForm() {
@@ -31,6 +33,7 @@ export function OrderForm() {
       currentDomicile: '',
       workLocation: '',
       workDurationInJakarta: '',
+      desiredMotor: undefined,
       numberOfUnits: 1,
       numberOfPeople: 1,
       purpose: '',
@@ -54,6 +57,7 @@ export function OrderForm() {
         currentDomicile: data.currentDomicile,
         workLocation: data.workLocation,
         workDurationInJakarta: data.workDurationInJakarta,
+        desiredMotor: data.desiredMotor,
         rentalStartDate: format(data.rentalDates.from, 'dd MMMM yyyy', { locale: id }),
         rentalEndDate: format(data.rentalDates.to, 'dd MMMM yyyy', { locale: id }),
         purpose: data.purpose,
@@ -147,7 +151,7 @@ export function OrderForm() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
+                className="overflow-hidden md:col-span-2"
               >
                 <FormField
                     control={form.control}
@@ -165,6 +169,30 @@ export function OrderForm() {
              </motion.div>
           )}
           </AnimatePresence>
+           <FormField
+            control={form.control}
+            name="desiredMotor"
+            render={({ field }) => (
+              <FormItem className="md:col-span-2">
+                <FormLabel>Motor yang Diinginkan</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Pilih motor..." />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {motorInventory.map((motor) => (
+                      <SelectItem key={motor.id} value={motor.name}>
+                        {motor.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="numberOfUnits"

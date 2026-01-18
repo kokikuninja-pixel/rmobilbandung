@@ -20,6 +20,7 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
     .string()
     .optional()
     .describe('How long the customer has been working in Jakarta (if applicable).'),
+  desiredMotor: z.string().describe('The desired motorcycle.'),
   rentalStartDate: z.string().describe('The rental start date.'),
   rentalEndDate: z.string().describe('The rental end date.'),
   purpose: z.string().describe('The purpose of the rental.'),
@@ -54,6 +55,7 @@ const summarizeOrderPrompt = ai.definePrompt({
   {{#if workDurationInJakarta}}
   - Work Duration in Jakarta: {{{workDurationInJakarta}}}
   {{/if}}
+  - Motor: {{{desiredMotor}}}
   - Rental Start Date: {{{rentalStartDate}}}
   - Rental End Date: {{{rentalEndDate}}}
   - Jumlah Unit: {{{numberOfUnits}}}
