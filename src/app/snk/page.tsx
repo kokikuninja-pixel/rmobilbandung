@@ -37,9 +37,9 @@ export default function SnKPage() {
       icon: <Ban className="h-6 w-6 text-destructive" />,
       points: [
         'Status Sewa: Masa sewa tidak dapat diperpanjang secara otomatis kecuali ada kesepakatan baru.',
-        'Tanggung Jawab: Penyewa bertanggung jawab penuh atas kondisi kendaraan dan keselamatan selama masa sewa.',
-        'Larangan Kriminal: Unit tidak boleh digunakan untuk tindakan yang melanggar hukum/kriminal.',
-        'Larangan Pindah Tangan: Unit tidak boleh dipinjamkan atau disewakan kembali kepada pihak lain.',
+        'Penyewa bertanggung jawab penuh atas kondisi kendaraan dan keselamatan selama masa sewa.',
+        'Unit tidak boleh digunakan untuk tindakan yang melanggar hukum/kriminal.',
+        'Unit tidak boleh dipinjamkan atau disewakan kembali kepada pihak lain.',
       ],
     },
     {
@@ -74,7 +74,7 @@ export default function SnKPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl">
                     <Milestone className="h-6 w-6 text-primary" />
-                    <span>Fasilitas Maksimal</span>
+                    <span>Fasilitas Termasuk</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -111,7 +111,7 @@ export default function SnKPage() {
             
             <div>
                 <h2 className="text-3xl font-bold text-center mb-8">Ketentuan Penggunaan (Penting)</h2>
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {terms.map((section) => (
                         <Card key={section.title} className="bg-card/50">
                             <CardHeader>
@@ -138,18 +138,15 @@ export default function SnKPage() {
             <Separator />
             
             <div className="text-center">
-                <h2 className="text-3xl font-bold mb-4">Harga Sewa & Kontak</h2>
+                <h2 className="text-3xl font-bold mb-4">Masih ada pertanyaan?</h2>
                 <p className="max-w-2xl mx-auto text-muted-foreground mb-6">
-                Kami menawarkan tarif kompetitif mulai dari Rp 70.000-an. Karena ketersediaan unit dan durasi sewa yang beragam (harian, mingguan, bulanan), silakan hubungi kami langsung untuk mendapatkan penawaran harga terbaik sesuai rencana perjalanan Anda.
+                Jangan ragu untuk menghubungi kami jika ada ketentuan yang kurang jelas. Tim kami siap membantu Anda.
                 </p>
                 <Button asChild>
                     <a href="https://wa.me/6285189976267" target="_blank" rel="noopener noreferrer">
                         <Phone className="mr-2 h-4 w-4" /> Hubungi via WhatsApp
                     </a>
                 </Button>
-                <p className="text-sm text-muted-foreground mt-4">
-                    Alamat: Jl. Kepu Dalam VIII, Kemayoran, Jakarta Pusat.
-                </p>
             </div>
 
         </div>
