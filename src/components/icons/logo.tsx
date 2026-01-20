@@ -8,7 +8,7 @@ export function Logo() {
       width={1024}
       height={1024}
       priority
-      className="h-28 w-28 object-contain drop-shadow-lg translate-y-2"
+      className="h-28 w-28 object-contain drop-shadow-lg translate-y-4"
     />
   );
 }
