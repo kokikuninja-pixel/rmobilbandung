@@ -12,7 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default async function Home() {
   const heroSlide = {
-    image: PlaceHolderImages.find(img => img.id === 'hero-jakarta-collage'),
+    image: PlaceHolderImages.find(img => img.id === 'hero-rmjp-logo-bg'),
     title: "Your Freedom to Explore Starts Here.",
     subtitle: "Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik."
   };
@@ -23,28 +23,25 @@ export default async function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full bg-background flex items-center justify-center text-center pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="container px-4">
-          <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
+      <section className="relative w-full h-[60vh] min-h-[450px] flex items-center justify-center text-center text-white">
+        {heroSlide.image && (
+           <Image
+            src={heroSlide.image.imageUrl}
+            alt={heroSlide.image.description}
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint={heroSlide.image.imageHint}
+          />
+        )}
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <div className="relative z-20 container px-4">
+           <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
             {heroSlide.title}
           </h1>
-          <p className="max-w-2xl mx-auto text-lg text-muted-foreground mb-10">
+          <p className="max-w-2xl mx-auto text-lg text-neutral-200 mb-10">
             {heroSlide.subtitle}
           </p>
-
-          <div className="relative h-64 md:h-96 max-w-4xl mx-auto mb-10 rounded-lg overflow-hidden shadow-2xl">
-            {heroSlide.image && (
-              <Image
-                src={heroSlide.image.imageUrl}
-                alt={heroSlide.image.description}
-                fill
-                className="object-cover"
-                priority
-                data-ai-hint={heroSlide.image.imageHint}
-              />
-            )}
-          </div>
-          
           <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
             <Link href="#pesan">Mulai Menyewa</Link>
           </Button>
