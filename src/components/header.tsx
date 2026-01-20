@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram } from 'lucide-react';
 import { useState } from 'react';
 import { Logo } from '@/components/icons/logo';
 import { Button } from '@/components/ui/button';
@@ -56,6 +56,11 @@ export function Header() {
           <Button asChild>
             <Link href="/#pesan" onClick={(e) => handleLinkClick(e, '/#pesan')}>Sewa Sekarang</Link>
           </Button>
+          <Button asChild variant="ghost" size="icon" className="hidden md:inline-flex text-primary hover:bg-primary/20">
+            <Link href="https://www.instagram.com/rentalmotorjakartapusatrmjp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Instagram />
+            </Link>
+          </Button>
           <Button
             variant="ghost"
             size="icon"
@@ -76,7 +81,7 @@ export function Header() {
           )}
         >
           <nav className="grid gap-4 p-4">
-            {[...navLinks, { href: '/#pesan', label: 'Pesan Sekarang' }].map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -86,6 +91,15 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+             <Link
+                href="https://www.instagram.com/rentalmotorjakartapusatrmjp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-secondary-foreground transition-colors hover:text-primary flex items-center gap-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Instagram className="h-5 w-5" /> Instagram
+            </Link>
           </nav>
         </div>
       )}
