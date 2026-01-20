@@ -84,7 +84,7 @@ export function OrderForm() {
   }
 
   const inputStyles = "bg-white text-black placeholder:text-slate-500";
-  const labelStyles = "md:text-right text-foreground/80";
+  const labelStyles = "md:text-right text-secondary-foreground/80";
   const itemGridStyles = "grid grid-cols-1 md:grid-cols-4 items-center gap-x-4 space-y-2 md:space-y-0";
   const messageStyles = "md:col-start-2 md:col-span-3";
 
@@ -285,7 +285,7 @@ export function OrderForm() {
                 </>
             )}
             </Button>
-            <p className="text-xs text-muted-foreground text-center">
+            <p className="text-xs text-secondary-foreground/70 text-center">
                 Pesan di atas jam 21.00 akan dibalas besok pagi pukul 05:30.
                 <br />
                  Data Anda aman bersama kami.

@@ -186,18 +186,18 @@ export default async function Home() {
       </section>
 
       {/* Order Section */}
-      <section id="pesan" className="py-16 md:py-24 bg-background">
+      <section id="pesan" className="py-16 md:py-24 bg-secondary text-secondary-foreground">
         <div className="container px-4 max-w-4xl mx-auto">
-          <Card className="bg-card backdrop-blur-sm border-primary/20 border-2 shadow-primary/20 shadow-2xl">
+          <Card className="bg-transparent border-0 shadow-none">
             <CardHeader className="text-center">
-              <CardTitle className="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-wider" style={{ textShadow: '2px 2px 0px hsl(var(--background)), 4px 4px 0px hsl(var(--primary-foreground))' }}>
+              <CardTitle className="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-wider">
                 FORM RMJP
               </CardTitle>
-              <CardDescription className="text-muted-foreground pt-2">
+              <CardDescription className="text-secondary-foreground/80 pt-2">
                 Isi formulir di bawah ini untuk mengirim pesanan Anda langsung ke admin kami via WhatsApp.
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-6 md:p-8">
+            <CardContent className="p-0 md:p-8">
               <OrderForm />
             </CardContent>
           </Card>
