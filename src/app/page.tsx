@@ -36,10 +36,10 @@ export default async function Home() {
         )}
         <div className="relative z-10 h-full flex flex-col justify-end items-center container px-4 pb-20 md:pb-24">
            <div className="max-w-4xl text-center" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)' }}>
-             <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">
+             <h1 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tighter mb-4">
               {heroSlide.title}
             </h1>
-            <p className="text-lg md:text-xl text-neutral-100 mb-8">
+            <p className="text-base md:text-lg text-neutral-100 mb-8">
               {heroSlide.subtitle}
             </p>
             <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
