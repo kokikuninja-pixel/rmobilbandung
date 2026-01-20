@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] min-h-[450px] flex items-center justify-center text-center text-white">
+      <section className="relative w-full h-screen text-white">
         {heroSlide.image && (
            <Image
             src={heroSlide.image.imageUrl}
@@ -34,17 +34,18 @@ export default async function Home() {
             data-ai-hint={heroSlide.image.imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="relative z-20 container px-4">
-           <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
-            {heroSlide.title}
-          </h1>
-          <p className="max-w-2xl mx-auto text-lg text-neutral-200 mb-10">
-            {heroSlide.subtitle}
-          </p>
-          <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
-            <Link href="#pesan">Mulai Menyewa</Link>
-          </Button>
+        <div className="relative z-10 h-full flex flex-col justify-end items-start container px-4 pb-20 md:pb-32">
+           <div className="max-w-3xl text-left" style={{ textShadow: '2px 2px 10px rgba(0, 0, 0, 0.8)' }}>
+             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-6">
+              {heroSlide.title}
+            </h1>
+            <p className="text-lg md:text-xl text-neutral-100 mb-10">
+              {heroSlide.subtitle}
+            </p>
+            <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
+              <Link href="#pesan">Mulai Menyewa</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
