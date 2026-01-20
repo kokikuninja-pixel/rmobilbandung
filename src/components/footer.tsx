@@ -12,7 +12,7 @@ export function Footer() {
           <p className="text-sm text-secondary-foreground/70">Your Freedom to Explore Starts Here.</p>
           <div className="flex gap-4">
             <Link href="https://www.instagram.com/rentalmotorjakartapusatrmjp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
-            <Link href="#" aria-label="Tiktok"><Tiktok className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
+            <Link href="https://www.tiktok.com/@rentalmotorjakart2" target="_blank" rel="noopener noreferrer" aria-label="Tiktok"><Tiktok className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-3">
