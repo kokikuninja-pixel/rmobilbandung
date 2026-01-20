@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { format } from 'date-fns';
-import { Calendar as CalendarIcon, Loader2 } from 'lucide-react';
+import { Calendar as CalendarIcon, Loader2, Send } from 'lucide-react';
 import { id } from 'date-fns/locale';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -34,8 +34,6 @@ export function OrderForm() {
       workLocation: '',
       workDurationInJakarta: '',
       desiredMotor: undefined,
-      numberOfUnits: 1,
-      numberOfPeople: 1,
       purpose: '',
       honeypot: '',
     },
@@ -46,7 +44,6 @@ export function OrderForm() {
 
   async function onSubmit(data: RentalFormValues) {
     if (data.honeypot) {
-      // Bot submission
       return;
     }
     setIsLoading(true);
@@ -61,8 +58,6 @@ export function OrderForm() {
         rentalStartDate: format(data.rentalDates.from, 'dd MMMM yyyy', { locale: id }),
         rentalEndDate: format(data.rentalDates.to, 'dd MMMM yyyy', { locale: id }),
         purpose: data.purpose,
-        numberOfUnits: String(data.numberOfUnits),
-        numberOfPeople: String(data.numberOfPeople),
       };
 
       const result = await summarizeOrderForWhatsApp(summaryInput);
@@ -88,199 +83,181 @@ export function OrderForm() {
     }
   }
 
+  const inputStyles = "bg-white text-black placeholder:text-slate-500";
+  const labelStyles = "md:text-right text-foreground/80";
+  const itemGridStyles = "grid grid-cols-1 md:grid-cols-4 items-center gap-x-4 space-y-2 md:space-y-0";
+  const messageStyles = "md:col-start-2 md:col-span-3";
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Nama Lengkap</FormLabel>
-                <FormControl>
-                  <Input placeholder="John Doe" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="ktpOrigin"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>KTP Asal</FormLabel>
-                <FormControl>
-                  <Input placeholder="cth: Jakarta" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="currentDomicile"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Domisili Sekarang</FormLabel>
-                <FormControl>
-                  <Input placeholder="cth: Jakarta Selatan" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="workLocation"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Lokasi Kerja</FormLabel>
-                <FormControl>
-                  <Input placeholder="cth: Jakarta Pusat" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <AnimatePresence>
-          {showWorkDuration && (
-             <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden md:col-span-2"
-              >
-                <FormField
-                    control={form.control}
-                    name="workDurationInJakarta"
-                    render={({ field }) => (
-                    <FormItem>
-                        <FormLabel>Berapa lama bekerja di Jakarta?</FormLabel>
-                        <FormControl>
-                        <Input placeholder="cth: 2 tahun" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                    )}
-                />
-             </motion.div>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Nama</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Input placeholder="Nama Lengkap Anda" {...field} className={inputStyles} />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
           )}
-          </AnimatePresence>
-           <FormField
-            control={form.control}
-            name="desiredMotor"
-            render={({ field }) => (
-              <FormItem className="md:col-span-2">
-                <FormLabel>Motor yang Diinginkan</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Pilih motor..." />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {motorInventory.map((motor) => (
-                      <SelectItem key={motor.id} value={motor.name}>
-                        {motor.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="numberOfUnits"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Sewa Berapa Unit?</FormLabel>
-                <FormControl>
-                  <Input type="number" min={1} placeholder="1" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="numberOfPeople"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Untuk Berapa Orang?</FormLabel>
-                <FormControl>
-                  <Input type="number" min={1} placeholder="1" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="rentalDates"
-            render={({ field }) => (
-              <FormItem className="flex flex-col md:col-span-2">
-                <FormLabel>Tanggal Sewa</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={'outline'}
-                        className={cn(
-                          'w-full justify-start text-left font-normal bg-card/80',
-                          !field.value?.from && 'text-muted-foreground'
-                        )}
-                      >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
-                        {field.value?.from ? (
-                          field.value.to ? (
-                            <>
-                              {format(field.value.from, 'dd LLL, yyyy')} -{' '}
-                              {format(field.value.to, 'dd LLL, yyyy')}
-                            </>
-                          ) : (
-                            format(field.value.from, 'dd LLL, yyyy')
-                          )
-                        ) : (
-                          <span>Pilih tanggal</span>
-                        )}
-                      </Button>
+        />
+        <FormField
+          control={form.control}
+          name="ktpOrigin"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Asal KTP</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Input placeholder="cth: Jakarta" {...field} className={inputStyles} />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="currentDomicile"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Domisili</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Input placeholder="cth: Jakarta Selatan" {...field} className={inputStyles} />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="workLocation"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Lokasi Kerja</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Input placeholder="cth: Jakarta Pusat" {...field} className={inputStyles} />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <AnimatePresence>
+          {showWorkDuration && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <FormField
+                control={form.control}
+                name="workDurationInJakarta"
+                render={({ field }) => (
+                  <FormItem className={itemGridStyles}>
+                    <FormLabel className={labelStyles}>Lama di Jakarta</FormLabel>
+                    <FormControl className="md:col-span-3">
+                      <Input placeholder="cth: 2 tahun" {...field} className={inputStyles} />
                     </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      initialFocus
-                      mode="range"
-                      defaultMonth={field.value?.from}
-                      selected={{ from: field.value?.from, to: field.value?.to }}
-                      onSelect={(range) => field.onChange({ from: range?.from, to: range?.to })}
-                      numberOfMonths={2}
-                      disabled={{ before: new Date() }}
-                    />
-                  </PopoverContent>
-                </Popover>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="purpose"
-            render={({ field }) => (
-              <FormItem className="md:col-span-2">
-                <FormLabel>Tujuan Penggunaan</FormLabel>
-                <FormControl>
-                  <Textarea placeholder="cth: Untuk bekerja dan jalan-jalan akhir pekan" {...field} />
+                    <FormMessage className={messageStyles} />
+                  </FormItem>
+                )}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <FormField
+          control={form.control}
+          name="desiredMotor"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Unit Motor</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl className="md:col-span-3">
+                  <SelectTrigger className={cn(inputStyles, !field.value && "text-slate-500")}>
+                    <SelectValue placeholder="Pilih motor..." />
+                  </SelectTrigger>
                 </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
+                <SelectContent>
+                  {motorInventory.map((motor) => (
+                    <SelectItem key={motor.id} value={motor.name}>
+                      {motor.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="rentalDates"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Tgl. Sewa</FormLabel>
+              <Popover>
+                <PopoverTrigger asChild className="md:col-span-3">
+                  <FormControl>
+                    <Button
+                      variant={'outline'}
+                      className={cn(
+                        'w-full justify-start text-left font-normal',
+                        !field.value?.from && "text-slate-500",
+                        inputStyles
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {field.value?.from ? (
+                        field.value.to ? (
+                          <>
+                            {format(field.value.from, 'dd LLL, yyyy')} -{' '}
+                            {format(field.value.to, 'dd LLL, yyyy')}
+                          </>
+                        ) : (
+                          format(field.value.from, 'dd LLL, yyyy')
+                        )
+                      ) : (
+                        <span>Pilih tanggal</span>
+                      )}
+                    </Button>
+                  </FormControl>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    initialFocus
+                    mode="range"
+                    defaultMonth={field.value?.from}
+                    selected={{ from: field.value?.from, to: field.value?.to }}
+                    onSelect={(range) => field.onChange({ from: range?.from, to: range?.to })}
+                    numberOfMonths={2}
+                    disabled={{ before: new Date() }}
+                  />
+                </PopoverContent>
+              </Popover>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="purpose"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Tujuan</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Textarea
+                  placeholder="cth: Untuk bekerja dan jalan-jalan akhir pekan"
+                  {...field}
+                  className={inputStyles}
+                />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
         
         <FormField
           control={form.control}
@@ -294,17 +271,26 @@ export function OrderForm() {
           )}
         />
         
-        <Button type="submit" disabled={isLoading} size="lg" className="w-full md:w-auto shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 animate-pulse hover:animate-none">
-          {isLoading ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Memproses...
-            </>
-          ) : (
-            'Kirim via WhatsApp'
-          )}
-        </Button>
-        <p className="text-xs text-muted-foreground pt-4">Dengan menekan tombol, Anda akan diarahkan ke WhatsApp untuk mengirim ringkasan pesanan.</p>
+        <div className="flex flex-col items-center gap-4 pt-4">
+            <Button type="submit" disabled={isLoading} size="lg" className="w-full md:w-auto shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300">
+            {isLoading ? (
+                <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Memproses...
+                </>
+            ) : (
+                <>
+                Pesan Sekaran!
+                <Send className="ml-2 h-4 w-4" />
+                </>
+            )}
+            </Button>
+            <p className="text-xs text-muted-foreground text-center">
+                Pesan di atas jam 21.00 akan dibalas besok pagi pukul 05:30.
+                <br />
+                 Data Anda aman bersama kami.
+            </p>
+        </div>
       </form>
     </Form>
   );

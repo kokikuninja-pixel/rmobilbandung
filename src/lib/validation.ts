@@ -7,8 +7,6 @@ export const rentalFormSchema = z.object({
   workLocation: z.string().min(3, { message: "Lokasi kerja harus diisi." }),
   workDurationInJakarta: z.string().optional(),
   desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
-  numberOfUnits: z.coerce.number().int().min(1, { message: "Jumlah unit harus diisi (minimal 1)." }),
-  numberOfPeople: z.coerce.number().int().min(1, { message: "Jumlah orang harus diisi (minimal 1)." }),
   rentalDates: z.object({
     from: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
     to: z.date({ required_error: "Tanggal selesai sewa harus diisi." }),

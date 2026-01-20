@@ -5,7 +5,7 @@ import { motorInventory, testimonials } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
@@ -188,13 +188,15 @@ export default async function Home() {
       {/* Order Section */}
       <section id="pesan" className="py-16 md:py-24 bg-background">
         <div className="container px-4 max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">Sewa Motor Anda Sekarang</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Isi formulir di bawah ini untuk mengirim pesanan Anda langsung ke admin kami via WhatsApp.
-            </p>
-          </div>
-          <Card className="bg-card backdrop-blur-sm border shadow-xl">
+          <Card className="bg-card backdrop-blur-sm border-primary/20 border-2 shadow-primary/20 shadow-2xl">
+            <CardHeader className="text-center">
+              <CardTitle className="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-wider" style={{ textShadow: '2px 2px 0px hsl(var(--background)), 4px 4px 0px hsl(var(--primary-foreground))' }}>
+                FORM RMJP
+              </CardTitle>
+              <CardDescription className="text-muted-foreground pt-2">
+                Isi formulir di bawah ini untuk mengirim pesanan Anda langsung ke admin kami via WhatsApp.
+              </CardDescription>
+            </CardHeader>
             <CardContent className="p-6 md:p-8">
               <OrderForm />
             </CardContent>

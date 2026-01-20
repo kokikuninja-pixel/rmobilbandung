@@ -24,8 +24,6 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
   rentalStartDate: z.string().describe('The rental start date.'),
   rentalEndDate: z.string().describe('The rental end date.'),
   purpose: z.string().describe('The purpose of the rental.'),
-  numberOfUnits: z.string().describe('The number of units being rented.'),
-  numberOfPeople: z.string().describe('The number of people the rental is for.'),
 });
 export type SummarizeOrderForWhatsAppInput = z.infer<typeof SummarizeOrderForWhatsAppInputSchema>;
 
@@ -58,8 +56,6 @@ const summarizeOrderPrompt = ai.definePrompt({
   - Motor: {{{desiredMotor}}}
   - Rental Start Date: {{{rentalStartDate}}}
   - Rental End Date: {{{rentalEndDate}}}
-  - Jumlah Unit: {{{numberOfUnits}}}
-  - Jumlah Orang: {{{numberOfPeople}}}
   - Purpose: {{{purpose}}}
 
   Please provide a summary of these details suitable for sending in a WhatsApp message to RMJP admin.
