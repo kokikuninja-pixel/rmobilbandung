@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { motorInventory, testimonials } from '@/lib/data';
-import { AnimatedText } from '@/components/animations/animated-text';
 import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
@@ -26,13 +25,20 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="w-full bg-background flex items-center justify-center text-center pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="container px-4">
-          <div className="relative h-32 md:h-48 max-w-3xl mx-auto mb-10">
+          <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
+            {heroSlide.title}
+          </h1>
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground mb-10">
+            {heroSlide.subtitle}
+          </p>
+
+          <div className="relative h-64 md:h-96 max-w-4xl mx-auto mb-10 rounded-lg overflow-hidden shadow-2xl">
             {heroSlide.image && (
               <Image
                 src={heroSlide.image.imageUrl}
                 alt={heroSlide.image.description}
                 fill
-                className="object-contain"
+                className="object-cover"
                 priority
                 data-ai-hint={heroSlide.image.imageHint}
               />

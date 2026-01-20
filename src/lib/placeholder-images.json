@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-jakarta-collage",
-      "description": "RMJP Rental Logo",
-      "imageUrl": "https://i.imgur.com/C9EEM4W.png",
-      "imageHint": "company logo"
+      "description": "A bustling street in Jakarta with diverse people and transportation.",
+      "imageUrl": "https://images.unsplash.com/photo-1676288490432-b5661b1bfe09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxqYWthcnRhJTIwc3RyZWV0fGVufDB8fHx8MTc2ODkwMjg0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jakarta street"
     },
     {
       "id": "hero-jakarta",
