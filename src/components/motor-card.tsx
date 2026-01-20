@@ -23,7 +23,7 @@ export function MotorCard({ motor }: MotorCardProps) {
       transition={{ duration: 0.5 }}
       className="h-full"
     >
-      <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-border/20 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20">
+      <Card className="overflow-hidden h-full flex flex-col bg-card border hover:border-secondary transition-all duration-300 shadow-lg hover:shadow-secondary/20">
         <CardHeader className="p-0">
           <motion.div 
             className="aspect-video relative"
@@ -34,7 +34,7 @@ export function MotorCard({ motor }: MotorCardProps) {
               src={motor.cardImage.imageUrl}
               alt={motor.name}
               fill
-              className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
+              className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.2)]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               data-ai-hint={motor.cardImage.imageHint}
             />
@@ -56,9 +56,9 @@ export function MotorCard({ motor }: MotorCardProps) {
             <Badge
               variant="outline"
               className={cn("w-fit mb-4 font-semibold text-xs", {
-                "bg-blue-500/20 text-blue-300 border-blue-500/30": motor.specialLabel === "Bagasi Luas",
-                "bg-green-500/20 text-green-300 border-green-500/30": motor.specialLabel === "Paling Irit",
-                "bg-purple-500/20 text-purple-300 border-purple-500/30": motor.specialLabel === "Eco Friendly",
+                "bg-blue-500/20 text-blue-500 border-blue-500/30": motor.specialLabel === "Bagasi Luas",
+                "bg-green-500/20 text-green-500 border-green-500/30": motor.specialLabel === "Paling Irit",
+                "bg-purple-500/20 text-purple-500 border-purple-500/30": motor.specialLabel === "Eco Friendly",
               })}
             >
               {motor.specialLabel === "Bagasi Luas" && "👜 Bagasi Luas"}
@@ -70,16 +70,16 @@ export function MotorCard({ motor }: MotorCardProps) {
           <div className="mt-auto">
             <div className="flex items-center justify-between text-muted-foreground mb-4">
                 <div className="flex items-center gap-2">
-                    <Gauge className="w-4 h-4 text-primary" />
+                    <Gauge className="w-4 h-4 text-secondary" />
                     <span className="text-sm">{motor.specs.cc}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Wind className="w-4 h-4 text-primary" />
+                    <Wind className="w-4 h-4 text-secondary" />
                     <span className="text-sm">{motor.specs.torque}</span>
                 </div>
             </div>
 
-            <Button asChild variant="outline" className="w-full bg-transparent hover:bg-primary hover:text-primary-foreground">
+            <Button asChild variant="outline" className="w-full bg-transparent hover:bg-secondary hover:text-secondary-foreground">
                 <Link href={`/armada/${motor.id}`}>
                 Lihat Detail <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -90,5 +90,3 @@ export function MotorCard({ motor }: MotorCardProps) {
     </motion.div>
   );
 }
-
-    

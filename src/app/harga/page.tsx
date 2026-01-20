@@ -33,7 +33,7 @@ export default function HargaPage() {
     <div className="bg-background text-foreground min-h-screen">
       <div className="container mx-auto max-w-screen-lg px-4 py-12 md:py-24">
         <div className="mb-12 text-center">
-          <Link href="/" className="text-sm text-muted-foreground hover:text-primary mb-4 inline-flex items-center">
+          <Link href="/" className="text-sm text-muted-foreground hover:text-secondary mb-4 inline-flex items-center">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Kembali ke Halaman Utama
           </Link>
@@ -41,7 +41,7 @@ export default function HargaPage() {
           <p className="text-lg text-muted-foreground">Transparan, kompetitif, dan fleksibel untuk Anda.</p>
         </div>
 
-        <Card className="bg-card/50 shadow-lg">
+        <Card className="shadow-lg">
           <CardHeader>
             <CardTitle>Harga Sewa Per Hari</CardTitle>
           </CardHeader>
@@ -65,8 +65,8 @@ export default function HargaPage() {
               </TableBody>
             </Table>
             <Alert className="mt-6 border-primary/30 bg-primary/10">
-              <Info className="h-4 w-4" />
-              <AlertTitle>Harga Dinamis</AlertTitle>
+              <Info className="h-4 w-4 text-primary" />
+              <AlertTitle className="text-primary">Harga Dinamis</AlertTitle>
               <AlertDescription>
                 Harga dasar dapat berubah sewaktu-waktu tergantung pada ketersediaan unit, musim (high season), dan durasi sewa (mingguan/bulanan).
               </AlertDescription>
@@ -75,10 +75,10 @@ export default function HargaPage() {
         </Card>
 
         <div className="grid md:grid-cols-2 gap-8 mt-12">
-            <Card className="bg-card/50">
+            <Card>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-2xl">
-                        <PlusCircle className="h-6 w-6 text-primary" />
+                        <PlusCircle className="h-6 w-6 text-secondary" />
                         <span>Ketentuan Biaya Tambahan</span>
                     </CardTitle>
                 </CardHeader>
@@ -89,14 +89,14 @@ export default function HargaPage() {
                    </div>
                    <div>
                      <h4 className="font-semibold">Promo Durasi</h4>
-                     <p className="text-muted-foreground">Biaya tambahan weekend <span className="text-green-400 font-bold">GRATIS</span> untuk pemakaian sewa lebih dari 3 hari.</p>
+                     <p className="text-muted-foreground">Biaya tambahan weekend <span className="text-green-500 font-bold">GRATIS</span> untuk pemakaian sewa lebih dari 3 hari.</p>
                    </div>
                 </CardContent>
             </Card>
-            <Card className="bg-card/50">
+            <Card>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-2xl">
-                        <Clock className="h-6 w-6 text-primary" />
+                        <Clock className="h-6 w-6 text-secondary" />
                         <span>Jam Operasional</span>
                     </CardTitle>
                 </CardHeader>

@@ -25,7 +25,7 @@ export default function SnKPage() {
   const terms = [
     {
       title: 'Batas Wilayah Operasional',
-      icon: <MapPin className="h-6 w-6 text-primary" />,
+      icon: <MapPin className="h-6 w-6 text-secondary" />,
       points: [
         'Motor hanya boleh digunakan di wilayah Jakarta (Pusat, Utara, Selatan, Barat, dan Timur).',
         'Penggunaan di luar wilayah tersebut memerlukan kesepakatan baru dengan pihak RMJP.',
@@ -44,7 +44,7 @@ export default function SnKPage() {
     },
     {
         title: 'Ketentuan Denda & Kehilangan',
-        icon: <Wallet className="h-6 w-6 text-yellow-500" />,
+        icon: <Wallet className="h-6 w-6 text-secondary" />,
         points: [
           'STNK Hilang: Denda Rp 1.000.000,-.',
           'Helm Hilang: Denda Rp 100.000,- per helm.',
@@ -60,7 +60,7 @@ export default function SnKPage() {
       <div className="container mx-auto max-w-screen-lg px-4 py-12 md:py-24">
         
         <div className="mb-12 text-center">
-            <Link href="/" className="text-sm text-muted-foreground hover:text-primary mb-4 inline-flex items-center">
+            <Link href="/" className="text-sm text-muted-foreground hover:text-secondary mb-4 inline-flex items-center">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Kembali ke Halaman Utama
             </Link>
@@ -70,10 +70,10 @@ export default function SnKPage() {
 
         <div className="space-y-12">
             
-            <Card className="bg-card/50">
+            <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl">
-                    <Milestone className="h-6 w-6 text-primary" />
+                    <Milestone className="h-6 w-6 text-secondary" />
                     <span>Fasilitas Termasuk</span>
                 </CardTitle>
               </CardHeader>
@@ -82,7 +82,7 @@ export default function SnKPage() {
                 <ul className="space-y-2">
                     {facilities.map((item, index) => (
                         <li key={index} className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-green-500" />
+                            <CheckCircle className="h-5 w-5 text-secondary" />
                             <span>{item.text}</span>
                         </li>
                     ))}
@@ -90,10 +90,10 @@ export default function SnKPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50">
+            <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl">
-                    <FileText className="h-6 w-6 text-primary" />
+                    <FileText className="h-6 w-6 text-secondary" />
                     <span>Syarat & Cara Booking</span>
                 </CardTitle>
               </CardHeader>
@@ -113,7 +113,7 @@ export default function SnKPage() {
                 <h2 className="text-3xl font-bold text-center mb-8">Ketentuan Penggunaan (Penting)</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {terms.map((section) => (
-                        <Card key={section.title} className="bg-card/50">
+                        <Card key={section.title}>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-3">
                                     {section.icon}
@@ -124,7 +124,7 @@ export default function SnKPage() {
                                 <ul className="space-y-2 text-muted-foreground text-sm">
                                     {section.points.map((point, index) => (
                                          <li key={index} className="flex items-start gap-2">
-                                            <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary/50" />
+                                            <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-secondary/50" />
                                             <span>{point}</span>
                                          </li>
                                     ))}

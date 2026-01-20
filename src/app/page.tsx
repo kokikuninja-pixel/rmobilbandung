@@ -35,11 +35,11 @@ export default async function Home() {
           />
         )}
         <div className="relative z-10 h-full flex flex-col justify-end items-center container px-4 pb-20 md:pb-24">
-           <div className="max-w-4xl text-center" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)' }}>
+           <div className="max-w-4xl text-center bg-black/25 backdrop-blur-md p-6 rounded-xl">
              <h1 className="font-headline text-2xl md:text-3xl font-extrabold tracking-tighter mb-4">
               {heroSlide.title}
             </h1>
-            <p className="text-xs md:text-sm text-neutral-100 mb-8">
+            <p className="text-xs md:text-sm text-neutral-200 mb-8">
               {heroSlide.subtitle}
             </p>
             <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
@@ -76,7 +76,7 @@ export default async function Home() {
       </section>
 
       {/* Social Proof Section */}
-      <section id="tentang-kami" className="py-16 md:py-24 bg-card/30">
+      <section id="tentang-kami" className="py-16 md:py-24 bg-muted">
         <div className="container px-4">
             <div className="grid md:grid-cols-2 gap-16 items-start">
                 <div>
@@ -89,8 +89,8 @@ export default async function Home() {
                       <h3 className="text-3xl font-bold mb-6">Fasilitas Standar Kami</h3>
                       <div className="space-y-4">
                           <div className="flex items-start gap-4">
-                              <div className="bg-primary/10 border border-primary/20 rounded-full p-2">
-                                  <ShieldCheck className="h-6 w-6 text-primary" />
+                              <div className="bg-secondary/10 border border-secondary/20 rounded-full p-2">
+                                  <ShieldCheck className="h-6 w-6 text-secondary" />
                               </div>
                               <div>
                                   <h4 className="font-semibold text-lg">2 Helm SNI</h4>
@@ -98,8 +98,8 @@ export default async function Home() {
                               </div>
                           </div>
                           <div className="flex items-start gap-4">
-                              <div className="bg-primary/10 border border-primary/20 rounded-full p-2">
-                                  <Umbrella className="h-6 w-6 text-primary" />
+                              <div className="bg-secondary/10 border border-secondary/20 rounded-full p-2">
+                                  <Umbrella className="h-6 w-6 text-secondary" />
                               </div>
                               <div>
                                   <h4 className="font-semibold text-lg">Jas Hujan</h4>
@@ -107,8 +107,8 @@ export default async function Home() {
                               </div>
                           </div>
                           <div className="flex items-start gap-4">
-                              <div className="bg-primary/10 border border-primary/20 rounded-full p-2">
-                                  <Smartphone className="h-6 w-6 text-primary" />
+                              <div className="bg-secondary/10 border border-secondary/20 rounded-full p-2">
+                                  <Smartphone className="h-6 w-6 text-secondary" />
                               </div>
                               <div>
                                   <h4 className="font-semibold text-lg">Phone Holder</h4>
@@ -119,22 +119,22 @@ export default async function Home() {
                     </div>
 
                     <div className="mt-12 grid grid-cols-2 gap-6">
-                        <div className="bg-background/50 text-center p-6 rounded-lg border border-border/20">
-                            <Users className="mx-auto h-10 w-10 text-primary mb-4" />
+                        <div className="bg-background/50 text-center p-6 rounded-lg border">
+                            <Users className="mx-auto h-10 w-10 text-secondary mb-4" />
                             <p className="text-3xl font-bold">1000+</p>
                             <p className="text-muted-foreground">Pelanggan Puas</p>
                         </div>
-                        <div className="bg-background/50 text-center p-6 rounded-lg border border-border/20">
-                            <Award className="mx-auto h-10 w-10 text-primary mb-4" />
+                        <div className="bg-background/50 text-center p-6 rounded-lg border">
+                            <Award className="mx-auto h-10 w-10 text-secondary mb-4" />
                             <p className="text-3xl font-bold">25k+</p>
                             <p className="text-muted-foreground">Perjalanan Sukses</p>
                         </div>
                     </div>
 
-                    <Card className="bg-card/50 mt-12">
+                    <Card className="bg-card mt-12">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-3 text-2xl">
-                                <Clock className="h-6 w-6 text-primary" />
+                                <Clock className="h-6 w-6 text-secondary" />
                                 <span>Jam Operasional</span>
                             </CardTitle>
                         </CardHeader>
@@ -154,7 +154,7 @@ export default async function Home() {
                 </div>
                 <div className="space-y-8">
                     {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-background/50 p-6 border-border/20">
+                        <Card key={index} className="bg-background/50 p-6 border">
                             <CardContent className="p-0 flex flex-col items-start gap-4">
                                 <div className="flex items-center gap-4">
                                     <Avatar>
@@ -192,9 +192,9 @@ export default async function Home() {
             href="https://maps.app.goo.gl/uR4G9S9sAUNS81XQ9"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border border-border/20 hover:bg-background/95 transition-all cursor-pointer"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border hover:bg-background/95 transition-all cursor-pointer"
           >
-              <MapPin className="mx-auto h-10 w-10 text-primary mb-4" />
+              <MapPin className="mx-auto h-10 w-10 text-secondary mb-4" />
               <h3 className="font-headline text-2xl font-bold">Buka di Google Maps</h3>
               <p className="text-muted-foreground mt-2">Dapatkan petunjuk arah</p>
           </a>
@@ -209,7 +209,7 @@ export default async function Home() {
               Isi formulir di bawah ini untuk mengirim pesanan Anda langsung ke admin kami via WhatsApp.
             </p>
           </div>
-          <Card className="bg-card/50 backdrop-blur-sm border-border/20 shadow-xl shadow-black/20">
+          <Card className="bg-card backdrop-blur-sm border shadow-xl">
             <CardContent className="p-6 md:p-8">
               <OrderForm />
             </CardContent>

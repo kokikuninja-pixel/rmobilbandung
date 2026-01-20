@@ -5,42 +5,42 @@ import { Tiktok } from './icons/tiktok';
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border/40 bg-background/60 backdrop-blur-lg">
+    <footer className="w-full border-t border-secondary-foreground/10 bg-secondary text-secondary-foreground">
       <div className="container mx-auto grid max-w-screen-2xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3">
         <div className="flex flex-col items-start gap-4">
           <Logo />
-          <p className="text-sm text-muted-foreground">Your Freedom to Explore Starts Here.</p>
+          <p className="text-sm text-secondary-foreground/70">Your Freedom to Explore Starts Here.</p>
           <div className="flex gap-4">
-            <Link href="#" aria-label="Instagram"><Instagram className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
-            <Link href="#" aria-label="Tiktok"><Tiktok className="h-5 w-5 text-muted-foreground hover:text-primary" /></Link>
+            <Link href="#" aria-label="Instagram"><Instagram className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
+            <Link href="#" aria-label="Tiktok"><Tiktok className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-3">
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Produk</h3>
+            <h3 className="mb-4 font-semibold text-secondary-foreground">Produk</h3>
             <ul className="space-y-2">
-              <li><Link href="/armada" className="text-muted-foreground hover:text-primary">Motor Matic</Link></li>
-              <li><Link href="/harga" className="text-muted-foreground hover:text-primary">Daftar Harga</Link></li>
+              <li><Link href="/armada" className="text-secondary-foreground/70 hover:text-primary">Motor Matic</Link></li>
+              <li><Link href="/harga" className="text-secondary-foreground/70 hover:text-primary">Daftar Harga</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Perusahaan</h3>
+            <h3 className="mb-4 font-semibold text-secondary-foreground">Perusahaan</h3>
             <ul className="space-y-2">
-              <li><Link href="/#tentang-kami" className="text-muted-foreground hover:text-primary">Tentang Kami</Link></li>
-              <li><Link href="/#lokasi" className="text-muted-foreground hover:text-primary">Lokasi Kami</Link></li>
+              <li><Link href="/#tentang-kami" className="text-secondary-foreground/70 hover:text-primary">Tentang Kami</Link></li>
+              <li><Link href="/#lokasi" className="text-secondary-foreground/70 hover:text-primary">Lokasi Kami</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Legal</h3>
+            <h3 className="mb-4 font-semibold text-secondary-foreground">Legal</h3>
             <ul className="space-y-2">
-              <li><Link href="/snk" className="text-muted-foreground hover:text-primary">Syarat & Ketentuan</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary">Kebijakan Privasi</Link></li>
+              <li><Link href="/snk" className="text-secondary-foreground/70 hover:text-primary">Syarat & Ketentuan</Link></li>
+              <li><Link href="#" className="text-secondary-foreground/70 hover:text-primary">Kebijakan Privasi</Link></li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="border-t border-border/40 py-6">
-        <p className="text-center text-sm text-muted-foreground">
+      <div className="border-t border-secondary-foreground/10 py-6">
+        <p className="text-center text-sm text-secondary-foreground/70">
           © {new Date().getFullYear()} RMJP Rental. All Rights Reserved.
         </p>
       </div>

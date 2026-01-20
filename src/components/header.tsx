@@ -31,8 +31,8 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-lg">
-      <div className="container flex h-20 max-w-screen-2xl items-center">
+    <header className="sticky top-0 z-50 w-full border-b border-transparent bg-secondary text-secondary-foreground shadow-md">
+      <div className="container flex h-24 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
             <Logo />
@@ -44,7 +44,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="font-medium text-secondary-foreground/80 transition-colors hover:text-primary"
               onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.label}
@@ -59,7 +59,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden text-primary hover:bg-primary/20"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
@@ -71,7 +71,7 @@ export function Header() {
       {isMenuOpen && (
         <div
           className={cn(
-            'md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm pb-4',
+            'md:hidden absolute top-full left-0 w-full bg-secondary pb-4',
             'animate-in fade-in-20 slide-in-from-top-2'
           )}
         >
@@ -80,7 +80,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg font-medium transition-colors hover:text-primary"
+                className="text-lg font-medium text-secondary-foreground transition-colors hover:text-primary"
                 onClick={(e) => handleLinkClick(e, link.href)}
               >
                 {link.label}
