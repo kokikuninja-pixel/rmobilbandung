@@ -13,8 +13,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default async function Home() {
   const heroSlide = {
     image: PlaceHolderImages.find(img => img.id === 'hero-rmjp-logo-bg'),
-    title: "Your Freedom to Explore Starts Here.",
-    subtitle: "Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik."
+    title: "Sewa Motor Jakarta Pusat – Praktis, Murah & Terpercaya.",
+    subtitle: "Keliling Jakarta tanpa macet dengan armada terbaru. Jemput unitmu di Kemayoran atau kirim ke hotel/stasiun terdekat."
   };
 
   const favoriteMotorIds = ['honda-genio', 'honda-beat-new', 'yamaha-mio-z'];
@@ -34,16 +34,16 @@ export default async function Home() {
             data-ai-hint={heroSlide.image.imageHint}
           />
         )}
-        <div className="relative z-10 h-full flex flex-col justify-end items-start container px-4 pb-20 md:pb-32">
-           <div className="max-w-3xl text-left" style={{ textShadow: '2px 2px 10px rgba(0, 0, 0, 0.8)' }}>
-             <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-6">
+        <div className="relative z-10 h-full flex flex-col justify-end items-center container px-4 pb-20 md:pb-24">
+           <div className="max-w-4xl text-center" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)' }}>
+             <h1 className="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">
               {heroSlide.title}
             </h1>
-            <p className="text-lg md:text-xl text-neutral-100 mb-10">
+            <p className="text-lg md:text-xl text-neutral-100 mb-8">
               {heroSlide.subtitle}
             </p>
             <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
-              <Link href="#pesan">Mulai Menyewa</Link>
+              <Link href="#pesan">Cek Ketersediaan via WhatsApp</Link>
             </Button>
           </div>
         </div>
