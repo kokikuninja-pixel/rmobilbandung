@@ -24,19 +24,21 @@ export default async function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
-        {heroSlide.image && (
-          <Image
-            src={heroSlide.image.imageUrl}
-            alt={heroSlide.image.description}
-            fill
-            className="object-cover z-0"
-            priority
-            data-ai-hint={heroSlide.image.imageHint}
-          />
-        )}
-        <div className="absolute inset-0 bg-background/80 z-10" />
-        <div className="z-20 container px-4">
+      <section className="w-full bg-background flex items-center justify-center text-center pt-24 pb-16 md:pt-32 md:pb-24">
+        <div className="container px-4">
+          <div className="relative h-20 md:h-28 max-w-xl mx-auto mb-10">
+            {heroSlide.image && (
+              <Image
+                src={heroSlide.image.imageUrl}
+                alt={heroSlide.image.description}
+                fill
+                className="object-contain"
+                priority
+                data-ai-hint={heroSlide.image.imageHint}
+              />
+            )}
+          </div>
+          
           <AnimatedText text={heroSlide.title} className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
             {heroSlide.subtitle}
@@ -186,16 +188,16 @@ export default async function Home() {
             title="Lokasi RMJP Rental"
             className=""
           ></iframe>
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-transparent pointer-events-none" />
           <a 
-            href="https://www.google.com/maps/place/Rental+Motor+Jakarta+Pusat+RMJP/data=!4m6!3m5!1s0x2e69f54b3c734435:0x556e59c79268065c!8m2!3d-6.1681335!4d106.8442235!16s%2Fg%2F11fkl_4v94?entry=ttu"
+            href="https://maps.app.goo.gl/uR4G9S9sAUNS81XQ9"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border border-border/20 hover:bg-background/95 transition-all cursor-pointer"
           >
               <MapPin className="mx-auto h-10 w-10 text-primary mb-4" />
-              <h3 className="font-headline text-2xl font-bold">Temukan & Arahkan</h3>
-              <p className="text-muted-foreground mt-2">Klik untuk membuka di Google Maps</p>
+              <h3 className="font-headline text-2xl font-bold">Buka di Google Maps</h3>
+              <p className="text-muted-foreground mt-2">Dapatkan petunjuk arah</p>
           </a>
       </section>
 
