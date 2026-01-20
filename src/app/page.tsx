@@ -26,7 +26,7 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="w-full bg-background flex items-center justify-center text-center pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="container px-4">
-          <div className="relative h-20 md:h-28 max-w-xl mx-auto mb-10">
+          <div className="relative h-32 md:h-48 max-w-3xl mx-auto mb-10">
             {heroSlide.image && (
               <Image
                 src={heroSlide.image.imageUrl}
@@ -39,10 +39,6 @@ export default async function Home() {
             )}
           </div>
           
-          <AnimatedText text={heroSlide.title} className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
-            {heroSlide.subtitle}
-          </p>
           <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
             <Link href="#pesan">Mulai Menyewa</Link>
           </Button>
@@ -186,7 +182,6 @@ export default async function Home() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Lokasi RMJP Rental"
-            className=""
           ></iframe>
           <div className="absolute inset-0 bg-transparent pointer-events-none" />
           <a 
