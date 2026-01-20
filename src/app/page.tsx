@@ -13,7 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default async function Home() {
   const heroSlide = {
-    image: PlaceHolderImages.find(img => img.id === 'hero-jakarta'),
+    image: PlaceHolderImages.find(img => img.id === 'hero-jakarta-collage'),
     title: "Your Freedom to Explore Starts Here.",
     subtitle: "Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik."
   };

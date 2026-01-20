@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "hero-jakarta-collage",
+      "description": "Hero image collage of Jakarta landmarks and culture",
+      "imageUrl": "https://i.imgur.com/jMvN0eY.jpg",
+      "imageHint": "jakarta collage"
+    },
+    {
       "id": "hero-jakarta",
       "description": "Hero image showing Jakarta city scape at night",
       "imageUrl": "https://images.unsplash.com/photo-1596706917999-6047c503b4d2?q=80&w=1974&auto=format&fit=crop",
