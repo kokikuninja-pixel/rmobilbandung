@@ -1,0 +1,1 @@
+Anda dapat menempatkan aset statis seperti gambar, font, dll. di dalam folder ini. Hapus file ini jika sudah tidak diperlukan.
