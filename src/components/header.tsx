@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Logo } from '@/components/icons/logo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Tiktok } from './icons/tiktok';
 
 const navLinks = [
   { href: '/armada', label: 'Armada' },
@@ -61,6 +62,11 @@ export function Header() {
               <Instagram />
             </Link>
           </Button>
+          <Button asChild variant="ghost" size="icon" className="hidden md:inline-flex text-primary hover:bg-primary/20">
+            <Link href="https://www.tiktok.com/@rentalmotorjakart2" target="_blank" rel="noopener noreferrer" aria-label="Tiktok">
+              <Tiktok className="h-5 w-5" />
+            </Link>
+          </Button>
           <Button
             variant="ghost"
             size="icon"
@@ -99,6 +105,15 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Instagram className="h-5 w-5" /> Instagram
+            </Link>
+            <Link
+                href="https://www.tiktok.com/@rentalmotorjakart2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-secondary-foreground transition-colors hover:text-primary flex items-center gap-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Tiktok className="h-5 w-5" /> TikTok
             </Link>
           </nav>
         </div>
