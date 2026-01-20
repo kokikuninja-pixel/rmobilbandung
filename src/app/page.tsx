@@ -10,32 +10,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default async function Home() {
-  const heroSlides = [
-    {
-      image: PlaceHolderImages.find(img => img.id === 'hero-jakarta'),
-      title: "Your Freedom to Explore Starts Here.",
-      subtitle: "Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik."
-    },
-    {
-      image: PlaceHolderImages.find(img => img.id === 'hero-jakarta-day'),
-      title: "Jelajahi Jakarta Tanpa Batas.",
-      subtitle: "Armada kami siap mengantar Anda ke setiap sudut kota dengan nyaman dan aman."
-    },
-    {
-      image: PlaceHolderImages.find(img => img.id === 'hero-jakarta-traffic'),
-      title: "Hindari Macet, Nikmati Perjalanan.",
-      subtitle: "Dengan motor matic lincah dari RMJP, mobilitas di tengah padatnya ibu kota jadi lebih efisien."
-    }
-  ];
+  const heroSlide = {
+    image: PlaceHolderImages.find(img => img.id === 'hero-jakarta'),
+    title: "Your Freedom to Explore Starts Here.",
+    subtitle: "Solusi rental motor matic premium di Jakarta dengan proses cepat dan armada terbaik."
+  };
 
   const favoriteMotorIds = ['honda-genio', 'honda-beat-new', 'yamaha-mio-z'];
   const favoriteMotors = motorInventory.filter(motor => favoriteMotorIds.includes(motor.id));
@@ -43,39 +24,27 @@ export default async function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] w-full overflow-hidden">
-        <Carousel className="w-full h-full" opts={{ loop: true }}>
-          <CarouselContent>
-            {heroSlides.map((slide, index) => (
-              <CarouselItem key={index}>
-                <div className="relative h-screen w-full flex items-center justify-center text-center">
-                  {slide.image && (
-                    <Image
-                      src={slide.image.imageUrl}
-                      alt={slide.image.description}
-                      fill
-                      className="object-cover z-0"
-                      priority={index === 0}
-                      data-ai-hint={slide.image.imageHint}
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-background/80 z-10" />
-                  <div className="z-20 container px-4">
-                    <AnimatedText text={slide.title} className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
-                    <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
-                      {slide.subtitle}
-                    </p>
-                    <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
-                      <Link href="#pesan">Mulai Menyewa</Link>
-                    </Button>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-30 hidden md:flex" />
-          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-30 hidden md:flex" />
-        </Carousel>
+      <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
+        {heroSlide.image && (
+          <Image
+            src={heroSlide.image.imageUrl}
+            alt={heroSlide.image.description}
+            fill
+            className="object-cover z-0"
+            priority
+            data-ai-hint={heroSlide.image.imageHint}
+          />
+        )}
+        <div className="absolute inset-0 bg-background/80 z-10" />
+        <div className="z-20 container px-4">
+          <AnimatedText text={heroSlide.title} className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground drop-shadow-lg mb-6" />
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
+            {heroSlide.subtitle}
+          </p>
+          <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
+            <Link href="#pesan">Mulai Menyewa</Link>
+          </Button>
+        </div>
       </section>
 
       {/* Fleet Section */}
