@@ -8,7 +8,7 @@ import { OrderForm } from '@/components/order-form';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone } from 'lucide-react';
 import Link from 'next/link';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
 export default async function Home() {
   const heroSlide = {
@@ -78,7 +78,7 @@ export default async function Home() {
       {/* Social Proof Section */}
       <section id="tentang-kami" className="py-16 md:py-24 bg-muted">
         <div className="container px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 className="font-headline text-4xl md:text-5xl font-bold">Sewa Motor Jakarta Pusat (RMJP): Cepat, Terpercaya, & Transparan</h2>
                     <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -152,24 +152,9 @@ export default async function Home() {
                     </Card>
 
                 </div>
-                <div className="space-y-8">
-                    {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-background/50 p-6 border">
-                            <CardContent className="p-0 flex flex-col items-start gap-4">
-                                <div className="flex items-center gap-4">
-                                    <Avatar>
-                                        <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
-                                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <p className="font-semibold">{testimonial.name}</p>
-                                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                                    </div>
-                                </div>
-                                <p className="text-muted-foreground italic">"{testimonial.comment}"</p>
-                            </CardContent>
-                        </Card>
-                    ))}
+                <div className="w-full">
+                  <h3 className="font-headline text-3xl font-bold mb-8">Apa Kata Pelanggan Kami</h3>
+                  <TestimonialCarousel testimonials={testimonials} />
                 </div>
             </div>
         </div>

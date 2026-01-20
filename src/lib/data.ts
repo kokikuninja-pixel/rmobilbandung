@@ -257,7 +257,14 @@ export const standardFacilities = [
   { icon: 'Smartphone', text: 'Phone Holder' },
 ];
 
-export const testimonials = [
+export interface Testimonial {
+    name: string;
+    role: string;
+    avatarUrl: string;
+    comment: string;
+}
+
+export const testimonials: Testimonial[] = [
     {
         name: "Andi Susanto",
         role: "Software Engineer",
