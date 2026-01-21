@@ -27,8 +27,6 @@ export const metadata: Metadata = {
 export default async function Home() {
   const heroSlide = {
     image: PlaceHolderImages.find(img => img.id === 'hero-rmjp-logo-bg'),
-    title: "Sewa Motor Jakarta Pusat – Praktis, Murah & Terpercaya.",
-    subtitle: "Keliling Jakarta tanpa macet dengan armada terbaru. Jemput unitmu di Kemayoran atau kirim ke hotel/stasiun terdekat."
   };
 
   const favoriteMotorIds = ['honda-genio', 'honda-beat-new', 'yamaha-mio-z'];
@@ -111,17 +109,9 @@ export default async function Home() {
           />
         )}
         <div className="relative z-10 h-full flex flex-col justify-end items-center container px-4 pb-20 md:pb-24">
-           <div className="max-w-4xl text-center bg-black/25 backdrop-blur-md p-6 rounded-xl">
-             <h1 className="font-headline text-2xl md:text-3xl font-extrabold tracking-tighter mb-4">
-              {heroSlide.title}
-            </h1>
-            <p className="text-xs md:text-sm text-neutral-200 mb-8">
-              {heroSlide.subtitle}
-            </p>
-            <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
-              <Link href="#pesan">Cek Ketersediaan via WhatsApp</Link>
-            </Button>
-          </div>
+          <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
+            <Link href="#pesan">Cek Ketersediaan via WhatsApp</Link>
+          </Button>
         </div>
       </section>
 
