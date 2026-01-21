@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { motorInventory } from '@/lib/data';
+import { motorInventory, testimonials } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
@@ -10,8 +10,8 @@ import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartph
 import Link from 'next/link';
 import { GalleryCarousel } from '@/components/gallery-carousel';
 import { Tiktok } from '@/components/icons/tiktok';
-import { getGoogleReviews } from '@/lib/google-reviews';
-import { GoogleReviewsCarousel } from '@/components/google-reviews-carousel';
+import { TestimonialCarousel } from '@/components/testimonial-carousel';
+
 
 export default async function Home() {
   const heroSlide = {
@@ -84,8 +84,6 @@ export default async function Home() {
       caption: 'Follow kami untuk promo terbaru!'
     },
   ];
-
-  const { reviews: googleReviews } = await getGoogleReviews();
 
   return (
     <>
@@ -203,8 +201,8 @@ export default async function Home() {
                   </Card>
               </div>
               <div className="w-full">
-                <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Ulasan Asli dari Google</h3>
-                <GoogleReviewsCarousel reviews={googleReviews} />
+                <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Apa Kata Pelanggan Kami</h3>
+                <TestimonialCarousel testimonials={testimonials} />
               </div>
           </div>
         </div>

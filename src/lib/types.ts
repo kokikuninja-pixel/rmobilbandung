@@ -24,4 +24,4 @@ export const NewPlacesReviewResponseSchema = z.object({
         text: z.string(),
         languageCode: z.string(),
     }),
-}).passthrough();
+});

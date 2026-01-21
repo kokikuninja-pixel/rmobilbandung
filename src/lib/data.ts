@@ -256,3 +256,31 @@ export const standardFacilities = [
   { icon: 'Wind', text: '2 Jas Hujan' },
   { icon: 'Smartphone', text: 'Phone Holder' },
 ];
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  avatarUrl: string;
+  comment: string;
+}
+
+export const testimonials: Testimonial[] = [
+    {
+      name: 'Budi Santoso',
+      role: 'Turis Lokal',
+      avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+      comment: 'Pelayanannya cepat dan ramah. Motornya juga dalam kondisi prima, jadi keliling Jakarta lebih nyaman. Recommended!',
+    },
+    {
+      name: 'Sarah Wijayanti',
+      role: 'Mahasiswi',
+      avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
+      comment: 'Harga sewanya sangat terjangkau untuk kantong mahasiswa. Prosesnya juga nggak ribet, cocok untuk kebutuhan harian.',
+    },
+    {
+      name: 'Alexandre Dubois',
+      role: 'Turis Asing',
+      avatarUrl: 'https://randomuser.me/api/portraits/men/75.jpg',
+      comment: "Great service! The staff was very helpful and the scooter was perfect for exploring the city. I'll definitely rent from RMJP again.",
+    },
+];
