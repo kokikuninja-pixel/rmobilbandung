@@ -6,6 +6,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingActionButton } from '@/components/floating-action-button';
 import { cn } from '@/lib/utils';
+import Script from 'next/script';
 
 const siteUrl = 'https://rentalmotorjktrmjp.com';
 
@@ -129,17 +130,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" data-scroll-behavior="smooth">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
+      <head />
       <body className={cn(
         "font-body antialiased",
         fontHeadline.variable,
         fontBody.variable
         )}>
+        <Script
+          id="json-ld-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
