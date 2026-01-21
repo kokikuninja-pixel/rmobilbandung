@@ -57,6 +57,12 @@ const nextConfig: NextConfig = {
         hostname: 'randomuser.me',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
