@@ -7,10 +7,8 @@ export const rentalFormSchema = z.object({
   workLocation: z.string().min(3, { message: "Lokasi kerja harus diisi." }),
   workDurationInJakarta: z.string().optional(),
   desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
-  rentalDates: z.object({
-    from: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
-    to: z.date({ required_error: "Tanggal selesai sewa harus diisi." }),
-  }),
+  rentalStartDate: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
+  rentalEndDate: z.date({ required_error: "Tanggal selesai sewa harus diisi." }),
   unitCount: z.coerce.number().min(1, { message: "Jumlah unit minimal 1." }),
   personCount: z.coerce.number().min(1, { message: "Jumlah orang minimal 1." }),
   usagePurpose: z.string().min(3, { message: "Kebutuhan pemakaian harus diisi." }),
@@ -24,9 +22,14 @@ export const rentalFormSchema = z.object({
 }, {
   message: "Mohon isi sudah berapa lama bekerja di Jakarta.",
   path: ["workDurationInJakarta"],
-}).refine(data => data.rentalDates.from <= data.rentalDates.to, {
+}).refine(data => {
+    if (data.rentalStartDate && data.rentalEndDate) {
+        return data.rentalEndDate >= data.rentalStartDate;
+    }
+    return true;
+}, {
   message: "Tanggal selesai tidak boleh sebelum tanggal mulai.",
-  path: ["rentalDates"],
+  path: ["rentalEndDate"],
 });
 
 export type RentalFormValues = z.infer<typeof rentalFormSchema>;

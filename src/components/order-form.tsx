@@ -21,13 +21,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 export function OrderForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const searchParams = useSearchParams();
-  const isMobile = useIsMobile();
 
   const form = useForm<RentalFormValues>({
     resolver: zodResolver(rentalFormSchema),
@@ -38,6 +36,8 @@ export function OrderForm() {
       workLocation: '',
       workDurationInJakarta: '',
       desiredMotor: undefined,
+      rentalStartDate: undefined,
+      rentalEndDate: undefined,
       unitCount: 1,
       personCount: 1,
       usagePurpose: '',
@@ -60,6 +60,7 @@ export function OrderForm() {
 
   const workLocation = form.watch('workLocation');
   const showWorkDuration = workLocation && workLocation.toLowerCase().includes('jakarta');
+  const rentalStartDate = form.watch('rentalStartDate');
 
   async function onSubmit(data: RentalFormValues) {
     if (data.honeypot) {
@@ -74,8 +75,8 @@ export function OrderForm() {
         workLocation: data.workLocation,
         workDurationInJakarta: data.workDurationInJakarta,
         desiredMotor: data.desiredMotor,
-        rentalStartDate: format(data.rentalDates.from, 'dd MMMM yyyy', { locale: id }),
-        rentalEndDate: format(data.rentalDates.to, 'dd MMMM yyyy', { locale: id }),
+        rentalStartDate: format(data.rentalStartDate, 'dd MMMM yyyy', { locale: id }),
+        rentalEndDate: format(data.rentalEndDate, 'dd MMMM yyyy', { locale: id }),
         unitCount: data.unitCount,
         personCount: data.personCount,
         usagePurpose: data.usagePurpose,
@@ -216,10 +217,10 @@ export function OrderForm() {
         />
         <FormField
           control={form.control}
-          name="rentalDates"
+          name="rentalStartDate"
           render={({ field }) => (
             <FormItem className={itemGridStyles}>
-              <FormLabel className={labelStyles}>Tgl. Sewa</FormLabel>
+              <FormLabel className={labelStyles}>Tgl. Mulai Sewa</FormLabel>
               <Popover>
                 <PopoverTrigger asChild className="md:col-span-3">
                   <FormControl>
@@ -227,35 +228,66 @@ export function OrderForm() {
                       variant={'outline'}
                       className={cn(
                         'w-full justify-start text-left font-normal',
-                        !field.value?.from && "text-slate-500",
+                        !field.value && 'text-slate-500',
                         inputStyles
                       )}
                     >
                       <CalendarIcon className="mr-2 h-4 w-4" />
-                      {field.value?.from ? (
-                        field.value.to ? (
-                          <>
-                            {format(field.value.from, 'dd LLL, yyyy')} -{' '}
-                            {format(field.value.to, 'dd LLL, yyyy')}
-                          </>
-                        ) : (
-                          format(field.value.from, 'dd LLL, yyyy')
-                        )
+                      {field.value ? (
+                        format(field.value, 'dd LLL, yyyy', { locale: id })
                       ) : (
-                        <span>Pilih tanggal</span>
+                        <span>Pilih tanggal mulai</span>
                       )}
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
                   <Calendar
-                    initialFocus
-                    mode="range"
-                    defaultMonth={field.value?.from}
-                    selected={{ from: field.value?.from, to: field.value?.to }}
-                    onSelect={(range) => field.onChange({ from: range?.from, to: range?.to })}
-                    numberOfMonths={isMobile ? 1 : 2}
+                    mode="single"
+                    selected={field.value}
+                    onSelect={field.onChange}
                     disabled={{ before: new Date() }}
+                    initialFocus
+                  />
+                </PopoverContent>
+              </Popover>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="rentalEndDate"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Tgl. Selesai Sewa</FormLabel>
+              <Popover>
+                <PopoverTrigger asChild className="md:col-span-3">
+                  <FormControl>
+                    <Button
+                      variant={'outline'}
+                      className={cn(
+                        'w-full justify-start text-left font-normal',
+                        !field.value && 'text-slate-500',
+                        inputStyles
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {field.value ? (
+                        format(field.value, 'dd LLL, yyyy', { locale: id })
+                      ) : (
+                        <span>Pilih tanggal selesai</span>
+                      )}
+                    </Button>
+                  </FormControl>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={field.value}
+                    onSelect={field.onChange}
+                    disabled={{ before: rentalStartDate || new Date() }}
+                    initialFocus
                   />
                 </PopoverContent>
               </Popover>
