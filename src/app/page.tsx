@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { motorInventory, testimonials } from '@/lib/data';
+import { motorInventory } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
@@ -11,9 +11,13 @@ import Link from 'next/link';
 import { GalleryCarousel } from '@/components/gallery-carousel';
 import { Tiktok } from '@/components/icons/tiktok';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import { getGoogleReviews } from '@/lib/google-reviews';
+import { GoogleReviewsCarousel } from '@/components/google-reviews-carousel';
 
 
 export default async function Home() {
+  const { reviews } = await getGoogleReviews();
+
   const heroSlide = {
     image: PlaceHolderImages.find(img => img.id === 'hero-rmjp-logo-bg'),
     title: "Sewa Motor Jakarta Pusat – Praktis, Murah & Terpercaya.",
@@ -59,7 +63,7 @@ export default async function Home() {
     }
   ];
 
-  const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('gallery-')).slice(0, 8);
+  const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('gallery-'));
 
   const socialPreviews = [
     {
@@ -202,7 +206,7 @@ export default async function Home() {
               </div>
               <div className="w-full">
                 <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Apa Kata Pelanggan Kami</h3>
-                <TestimonialCarousel testimonials={testimonials} />
+                <GoogleReviewsCarousel reviews={reviews} />
                 <div className="mt-8 text-center">
                   <Button asChild variant="outline" size="lg">
                     <Link href="https://search.google.com/local/reviews?placeid=ChIJNURzPEv1aS4RXAZoksdZblU" target="_blank" rel="noopener noreferrer">

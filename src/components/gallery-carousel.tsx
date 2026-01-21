@@ -35,19 +35,30 @@ export function GalleryCarousel({ images }: GalleryCarouselProps) {
             }}
         >
             <CarouselContent className="-ml-4">
-                {images.map((image, index) => (
+                {images.map((item, index) => (
                     <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                         <div className="p-1 h-full">
                            <Card className="overflow-hidden group border-2 border-transparent hover:border-primary transition-all duration-300">
                                 <div className="relative aspect-[4/3]">
-                                    <Image
-                                        src={image.imageUrl}
-                                        alt={image.description}
-                                        fill
-                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        data-ai-hint={image.imageHint}
-                                    />
+                                    {item.type === 'video' ? (
+                                      <video
+                                        src={item.imageUrl}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="object-cover w-full h-full"
+                                      />
+                                    ) : (
+                                      <Image
+                                          src={item.imageUrl}
+                                          alt={item.description}
+                                          fill
+                                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                          data-ai-hint={item.imageHint}
+                                      />
+                                    )}
                                 </div>
                             </Card>
                         </div>

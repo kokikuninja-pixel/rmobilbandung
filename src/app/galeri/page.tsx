@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 export default function GalleryPage() {
-  const images = PlaceHolderImages.filter(p => p.id.startsWith('gallery-'));
+  const galleryItems = PlaceHolderImages.filter(p => p.id.startsWith('gallery-'));
 
   return (
     <div className="bg-background text-foreground min-h-[calc(100vh-theme(height.14))]">
@@ -27,18 +27,29 @@ export default function GalleryPage() {
         </div>
 
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {images.map((image, index) => (
-                <div key={index} className="break-inside-avoid">
+            {galleryItems.map((item) => (
+                <div key={item.id} className="break-inside-avoid">
                     <Card className="overflow-hidden group border-2 border-transparent hover:border-primary transition-all duration-300">
                         <div className="relative aspect-[3/4]">
-                            <Image
-                                src={image.imageUrl}
-                                alt={image.description}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                                data-ai-hint={image.imageHint}
-                            />
+                            {(item.type === 'video') ? (
+                              <video
+                                src={item.imageUrl}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="object-cover w-full h-full"
+                              />
+                            ) : (
+                              <Image
+                                  src={item.imageUrl}
+                                  alt={item.description}
+                                  fill
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                  data-ai-hint={item.imageHint}
+                              />
+                            )}
                         </div>
                     </Card>
                 </div>
