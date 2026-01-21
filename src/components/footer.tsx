@@ -6,7 +6,7 @@ import { Tiktok } from './icons/tiktok';
 export function Footer() {
   return (
     <footer className="w-full border-t border-secondary-foreground/10 bg-secondary text-secondary-foreground">
-      <div className="container mx-auto grid max-w-screen-2xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3">
+      <div className="container grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3">
         <div className="flex flex-col items-start gap-4">
           <Logo />
           <p className="text-sm text-secondary-foreground/70">Your Freedom to Explore Starts Here.</p>

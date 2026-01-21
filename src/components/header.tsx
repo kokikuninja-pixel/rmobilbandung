@@ -75,7 +75,7 @@ export function Header() {
             '-translate-y-full': !isVisible,
         }
     )}>
-      <div className="container flex h-20 max-w-screen-2xl items-center md:h-24">
+      <div className="container flex h-20 items-center md:h-24">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
             <Logo />
