@@ -282,6 +282,12 @@ export const testimonials: Testimonial[] = [
         role: "Mahasiswa",
         avatarUrl: "https://randomuser.me/api/portraits/men/46.jpg",
         comment: "Harga sewanya terjangkau untuk kantong mahasiswa. Vario 125-nya irit dan bertenaga, cocok untuk kuliah dan jalan-jalan. Recommended!"
+    },
+    {
+        name: "Hendy Saputra",
+        role: "Local Guide",
+        avatarUrl: "https://randomuser.me/api/portraits/men/50.jpg",
+        comment: "Kalau mau rental disini sebaiknya H-1 ordernya, kalau ngga suka kehabisan. Dan jangan lupa mending coba dulu bawa motornya pastikan motornya enak apa enggak."
     }
 ];
 
