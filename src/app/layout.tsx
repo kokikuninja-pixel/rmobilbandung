@@ -1,11 +1,25 @@
 import type {Metadata} from 'next';
+import { Montserrat, Roboto } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingActionButton } from '@/components/floating-action-button';
+import { cn } from '@/lib/utils';
 
 const siteUrl = 'https://rentalmotorjktrmjp.com';
+
+const fontHeadline = Montserrat({
+  subsets: ['latin'],
+  weight: ['700', '800'],
+  variable: '--font-headline',
+});
+
+const fontBody = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-body',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -116,15 +130,16 @@ export default function RootLayout({
   return (
     <html lang="id" data-scroll-behavior="smooth">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-body antialiased">
+      <body className={cn(
+        "font-body antialiased",
+        fontHeadline.variable,
+        fontBody.variable
+        )}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
