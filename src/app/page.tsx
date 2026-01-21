@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone, MessageSquareDashed, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import { GalleryCarousel } from '@/components/gallery-carousel';
 
 export default async function Home() {
   const heroSlide = {
@@ -55,6 +56,24 @@ export default async function Home() {
       description: "Memudahkan navigasi Anda selama di perjalanan."
     }
   ];
+
+  const galleryImageIds = [
+    'gallery-1',
+    'gallery-2',
+    'gallery-3',
+    'gallery-4',
+    'gallery-5',
+    'gallery-6',
+  ];
+  const galleryImages = galleryImageIds.map(id => {
+      const placeholder = PlaceHolderImages.find(p => p.id === id);
+      return placeholder || {
+          id: id,
+          imageUrl: `https://picsum.photos/seed/${id}/500/700`,
+          description: `Galeri foto ${id}`,
+          imageHint: 'customer photo'
+      };
+  });
 
 
   return (
@@ -179,6 +198,29 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <section id="galeri-home" className="py-16 md:py-24 bg-background">
+        <div className="container px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Momen Seru Bersama RMJP</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Intip keseruan para pelanggan setia kami saat menjelajahi Jakarta dan momen di balik layar tim kami.
+            </p>
+          </div>
+          
+          <GalleryCarousel images={galleryImages} />
+
+          <div className="text-center mt-16">
+            <Button asChild variant="outline" size="lg">
+              <Link href="/galeri">
+                Lihat Galeri Lengkap <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
 
       {/* Map Section */}
       <section id="lokasi" className="relative h-[500px] w-full">
