@@ -288,6 +288,12 @@ export const testimonials: Testimonial[] = [
         role: "Local Guide",
         avatarUrl: "https://randomuser.me/api/portraits/men/50.jpg",
         comment: "Kalau mau rental disini sebaiknya H-1 ordernya, kalau ngga suka kehabisan. Dan jangan lupa mending coba dulu bawa motornya pastikan motornya enak apa enggak."
+    },
+    {
+        name: "Maulana Asyrafil Anam",
+        role: "Local Guide",
+        avatarUrl: "https://randomuser.me/api/portraits/men/52.jpg",
+        comment: "Harga kehitung murah banget dibanding sewa motor di Jakarta yang lain. Syarat sewa & booking gampang ga ribet. Pokoknya OKE dan bakal jadi langganan."
     }
 ];
 
