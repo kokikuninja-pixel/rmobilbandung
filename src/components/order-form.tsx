@@ -34,7 +34,10 @@ export function OrderForm() {
       workLocation: '',
       workDurationInJakarta: '',
       desiredMotor: undefined,
-      purpose: '',
+      unitCount: 1,
+      personCount: 1,
+      usagePurpose: undefined,
+      destination: '',
       honeypot: '',
     },
   });
@@ -57,7 +60,10 @@ export function OrderForm() {
         desiredMotor: data.desiredMotor,
         rentalStartDate: format(data.rentalDates.from, 'dd MMMM yyyy', { locale: id }),
         rentalEndDate: format(data.rentalDates.to, 'dd MMMM yyyy', { locale: id }),
-        purpose: data.purpose,
+        unitCount: data.unitCount,
+        personCount: data.personCount,
+        usagePurpose: data.usagePurpose,
+        destination: data.destination,
       };
 
       const result = await summarizeOrderForWhatsApp(summaryInput);
@@ -243,13 +249,66 @@ export function OrderForm() {
         />
         <FormField
           control={form.control}
-          name="purpose"
+          name="unitCount"
           render={({ field }) => (
             <FormItem className={itemGridStyles}>
-              <FormLabel className={labelStyles}>Tujuan</FormLabel>
+              <FormLabel className={labelStyles}>Jumlah Unit</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Input type="number" min="1" {...field} className={inputStyles} />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="personCount"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Jumlah Orang</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Input type="number" min="1" {...field} className={inputStyles} />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="usagePurpose"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Kebutuhan</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl className="md:col-span-3">
+                  <SelectTrigger className={cn(inputStyles, !field.value && "text-slate-500")}>
+                    <SelectValue placeholder="Pilih kebutuhan pemakaian..." />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="Wisata">Wisata</SelectItem>
+                  <SelectItem value="Proyek">Proyek</SelectItem>
+                  <SelectItem value="Sales">Sales</SelectItem>
+                  <SelectItem value="Kebutuhan Harian">Kebutuhan Harian</SelectItem>
+                  <SelectItem value="Lainnya">Lainnya</SelectItem>
+                </SelectContent>
+              </Select>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        
+        <FormField
+          control={form.control}
+          name="destination"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Tujuan (Tempat)</FormLabel>
               <FormControl className="md:col-span-3">
                 <Textarea
-                  placeholder="cth: Untuk bekerja dan jalan-jalan akhir pekan"
+                  placeholder="cth: Monas, Kota Tua, kantor di Sudirman"
                   {...field}
                   className={inputStyles}
                 />

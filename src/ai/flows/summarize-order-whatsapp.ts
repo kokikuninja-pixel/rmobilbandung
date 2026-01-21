@@ -23,7 +23,10 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
   desiredMotor: z.string().describe('The desired motorcycle.'),
   rentalStartDate: z.string().describe('The rental start date.'),
   rentalEndDate: z.string().describe('The rental end date.'),
-  purpose: z.string().describe('The purpose of the rental.'),
+  unitCount: z.number().describe('The number of motorcycle units being rented.'),
+  personCount: z.number().describe('The number of people the rental is for.'),
+  usagePurpose: z.string().describe('The purpose for using the motorcycle (e.g., tourism, project).'),
+  destination: z.string().describe('The intended travel destination(s).'),
 });
 export type SummarizeOrderForWhatsAppInput = z.infer<typeof SummarizeOrderForWhatsAppInputSchema>;
 
@@ -54,9 +57,12 @@ const summarizeOrderPrompt = ai.definePrompt({
   - Work Duration in Jakarta: {{{workDurationInJakarta}}}
   {{/if}}
   - Motor: {{{desiredMotor}}}
+  - Jumlah Unit: {{{unitCount}}} unit
+  - Jumlah Orang: {{{personCount}}} orang
   - Rental Start Date: {{{rentalStartDate}}}
   - Rental End Date: {{{rentalEndDate}}}
-  - Purpose: {{{purpose}}}
+  - Kebutuhan: {{{usagePurpose}}}
+  - Tujuan Tempat: {{{destination}}}
 
   Please provide a summary of these details suitable for sending in a WhatsApp message to RMJP admin.
   Focus on key details like name, rental dates, and purpose. Be brief and to the point.
