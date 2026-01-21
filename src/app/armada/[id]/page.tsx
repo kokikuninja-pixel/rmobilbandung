@@ -76,7 +76,7 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Kembali ke Semua Armada
             </Link>
-             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-2">{motor.name}</h1>
+             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tighter mb-2">{motor.name}</h1>
              <p className="text-lg text-muted-foreground">{motor.class} Class</p>
         </div>
 

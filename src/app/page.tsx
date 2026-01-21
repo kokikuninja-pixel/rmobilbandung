@@ -292,7 +292,7 @@ export default async function Home() {
 
 
       {/* Map Section */}
-      <section id="lokasi" className="relative h-[500px] w-full">
+      <section id="lokasi" className="relative h-[400px] md:h-[500px] w-full">
          <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.720770537023!2d106.84164857498995!3d-6.168133493819168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f54b3c734435%3A0x556e59c79268065c!2sRental%20Motor%20Jakarta%20Pusat%20RMJP!5e0!3m2!1sen!2sid!4v1768648168613!5m2!1sen!2sid"
             width="100%"

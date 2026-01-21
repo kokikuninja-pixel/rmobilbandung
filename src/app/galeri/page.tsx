@@ -24,7 +24,7 @@ export default function GalleryPage() {
             <ArrowLeft className="mr-2 h-4 w-4" />
             Kembali ke Halaman Utama
           </Link>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-2">Galeri RMJP</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Galeri RMJP</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Lihat momen-momen seru para pelanggan setia kami saat menjelajahi Jakarta dan potret di balik layar tim RMJP.
           </p>

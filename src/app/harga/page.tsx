@@ -41,7 +41,7 @@ export default function HargaPage() {
             <ArrowLeft className="mr-2 h-4 w-4" />
             Kembali ke Halaman Utama
           </Link>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-2">Daftar Harga Sewa</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Daftar Harga Sewa</h1>
           <p className="text-lg text-muted-foreground">Transparan, kompetitif, dan fleksibel untuk Anda.</p>
         </div>
 

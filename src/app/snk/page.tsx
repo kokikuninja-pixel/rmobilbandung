@@ -68,7 +68,7 @@ export default function SnKPage() {
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Kembali ke Halaman Utama
             </Link>
-             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-2">Syarat & Ketentuan</h1>
+             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Syarat & Ketentuan</h1>
              <p className="text-lg text-muted-foreground">Transparansi adalah prioritas kami.</p>
         </div>
 

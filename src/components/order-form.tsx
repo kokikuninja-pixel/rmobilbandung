@@ -21,11 +21,13 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export function OrderForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const searchParams = useSearchParams();
+  const isMobile = useIsMobile();
 
   const form = useForm<RentalFormValues>({
     resolver: zodResolver(rentalFormSchema),
@@ -252,7 +254,7 @@ export function OrderForm() {
                     defaultMonth={field.value?.from}
                     selected={{ from: field.value?.from, to: field.value?.to }}
                     onSelect={(range) => field.onChange({ from: range?.from, to: range?.to })}
-                    numberOfMonths={2}
+                    numberOfMonths={isMobile ? 1 : 2}
                     disabled={{ before: new Date() }}
                   />
                 </PopoverContent>
