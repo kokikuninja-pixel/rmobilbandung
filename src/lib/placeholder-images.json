@@ -283,88 +283,109 @@
       "imageHint": "electric scooter side"
     },
     {
-      "id": "gallery-new-1",
-      "description": "Customer taking a picture of a scooter",
-      "imageUrl": "https://i.imgur.com/8i2D22b.jpeg",
-      "imageHint": "customer scooter",
+      "id": "gallery-1",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/81J8xO9.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-2",
-      "description": "Scooter parked in front of a building",
-      "imageUrl": "https://i.imgur.com/3c8nLza.jpeg",
-      "imageHint": "scooter building",
+      "id": "gallery-2",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/LqJhWSK.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-3",
-      "description": "Customer posing with a scooter",
-      "imageUrl": "https://i.imgur.com/5lT8nF3.jpeg",
-      "imageHint": "customer scooter pose",
+      "id": "gallery-3",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/xZUaCoO.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-4",
-      "description": "Two customers on a scooter",
-      "imageUrl": "https://i.imgur.com/AY5zR92.jpeg",
-      "imageHint": "couple scooter",
+      "id": "gallery-4",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/bQoej0X.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-5",
-      "description": "A scooter ready for rental",
-      "imageUrl": "https://i.imgur.com/xO4h2yP.jpeg",
-      "imageHint": "scooter rental",
+      "id": "gallery-5",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/N1mcTcl.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-6",
-      "description": "Customer review on WhatsApp",
-      "imageUrl": "https://i.imgur.com/pSlA4sW.jpeg",
-      "imageHint": "review chat",
+      "id": "gallery-6",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/kAir6Hc.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-7",
-      "description": "Customer review on WhatsApp",
-      "imageUrl": "https://i.imgur.com/R3i2lCj.jpeg",
-      "imageHint": "review chat",
+      "id": "gallery-7",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/FCLA2R8.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-8",
-      "description": "Customer review on WhatsApp",
-      "imageUrl": "https://i.imgur.com/PClWnYK.jpeg",
-      "imageHint": "review chat",
+      "id": "gallery-8",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/66fwuVk.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-9",
-      "description": "Customer with a child on a scooter",
-      "imageUrl": "https://i.imgur.com/tTz9jAn.jpeg",
-      "imageHint": "family scooter",
+      "id": "gallery-9",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/BEnYa3z.jpg",
+      "imageHint": "customer photo",
       "type": "image"
     },
     {
-      "id": "gallery-new-10",
-      "description": "Video of a customer riding a scooter",
-      "imageUrl": "https://i.imgur.com/jI9kS4E.mp4",
-      "imageHint": "customer riding",
-      "type": "video"
+      "id": "gallery-10",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/z8Gsvzs.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
     },
     {
-      "id": "gallery-new-11",
-      "description": "Video of a scooter in the city",
-      "imageUrl": "https://i.imgur.com/zWbEa7w.mp4",
-      "imageHint": "scooter city",
-      "type": "video"
+      "id": "gallery-11",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/6SV59Ww.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
     },
     {
-      "id": "gallery-new-12",
-      "description": "Video showcasing a scooter",
-      "imageUrl": "https://i.imgur.com/j0mR9S2.mp4",
-      "imageHint": "scooter showcase",
-      "type": "video"
+      "id": "gallery-12",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/fkQw9nw.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-13",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/oaxfg0A.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-14",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/px3CMgK.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-15",
+      "description": "Customer photos",
+      "imageUrl": "https://i.imgur.com/sXWAvgz.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
     }
   ]
 }
