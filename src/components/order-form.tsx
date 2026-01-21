@@ -90,13 +90,12 @@ export function OrderForm() {
         personCount: data.personCount,
         usagePurpose: data.usagePurpose,
         destination: data.destination,
+        domain: window.location.host,
       };
 
       const result = await summarizeOrderForWhatsApp(summaryInput);
       
-      const domain = window.location.host;
-      const intro = `Halo Admin RMJP, saya ingin menyewa motor melalui ${domain}\\n\\n`;
-      const fullMessage = intro + result.summary;
+      const fullMessage = result.summary;
 
       const phoneNumber = '6285189976267';
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;

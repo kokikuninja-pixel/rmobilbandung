@@ -29,6 +29,7 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
   personCount: z.number().describe('The number of people the rental is for.'),
   usagePurpose: z.string().describe('The purpose for using the motorcycle (e.g., tourism, project).'),
   destination: z.string().describe('The intended travel destination(s).'),
+  domain: z.string().optional().describe('The domain the request is sent from.'),
 });
 export type SummarizeOrderForWhatsAppInput = z.infer<typeof SummarizeOrderForWhatsAppInputSchema>;
 
@@ -47,32 +48,27 @@ const summarizeOrderPrompt = ai.definePrompt({
   name: 'summarizeOrderPrompt',
   input: {schema: SummarizeOrderForWhatsAppInputSchema},
   output: {schema: SummarizeOrderForWhatsAppOutputSchema},
-  prompt: `You are an AI assistant helping to summarize order details for sending via WhatsApp.
-  Your goal is to create a concise and informative summary that includes only the most essential information.
+  prompt: `Halo Admin RMJP! 👋
+Saya ingin mengajukan penyewaan motor:
 
-  Here are the order details:
-  - Name: {{{name}}}
-  - KTP Origin: {{{ktpOrigin}}}
-  - Current Domicile: {{{currentDomicile}}}
-  - Work Location: {{{workLocation}}}
-  {{#if workDurationInJakarta}}
-  - Work Duration in Jakarta: {{{workDurationInJakarta}}}
-  {{/if}}
-  - Motor: {{{desiredMotor}}}
-  - Jumlah Unit: {{{unitCount}}} unit
-  - Jumlah Orang: {{{personCount}}} orang
-  - Rental Start: {{{rentalStartDate}}} jam {{{rentalStartTime}}}
-  - Rental End: {{{rentalEndDate}}} jam {{{rentalEndTime}}}
-  - Kebutuhan: {{{usagePurpose}}}
-  - Tujuan Tempat: {{{destination}}}
+Nama: {{{name}}}
+Asal KTP: {{{ktpOrigin}}}
+Domisili: {{{currentDomicile}}}
+Lokasi Kerja: {{{workLocation}}}
+{{#if workDurationInJakarta}}
+Lama di Jakarta: {{{workDurationInJakarta}}}
+{{/if}}
+Unit Motor: {{{desiredMotor}}}
+Tgl. Mulai: {{{rentalStartDate}}} jam {{{rentalStartTime}}}
+Tgl. Selesai: {{{rentalEndDate}}} jam {{{rentalEndTime}}}
+Jumlah Unit: {{{unitCount}}} unit
+Jumlah Orang: {{{personCount}}} orang
+Kebutuhan: {{{usagePurpose}}}
+Tujuan: {{{destination}}}
 
-  Please provide a summary of these details suitable for sending in a WhatsApp message to RMJP admin.
-  Focus on key details like name, rental dates, and purpose. Be brief and to the point.
-  Ensure that the summary includes all information necessary for processing the rental request.
-  Consider security and do not include phone numbers or credit card details.
-  Respond in Bahasa Indonesian.
-  Do not respond with anything other than the summary.
-  Summary: `,
+Mohon info ketersediaan unitnya, min!
+
+Dikirim dari {{{domain}}}`,
 });
 
 const summarizeOrderForWhatsAppFlow = ai.defineFlow(
