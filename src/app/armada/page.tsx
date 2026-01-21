@@ -3,10 +3,14 @@ import { MotorCard } from '@/components/motor-card';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Armada Lengkap | RMJP Rental',
-  description: 'Lihat semua pilihan motor matic yang tersedia untuk disewa di RMJP Rental Jakarta Pusat.',
+export const metadata: Metadata = {
+  title: 'Daftar Armada Motor Matic | RMJP Rental Jakarta Pusat',
+  description: 'Lihat semua pilihan motor matic yang tersedia untuk disewa di RMJP Rental. Pilihan lengkap mulai dari Honda Beat, Vario, Scoopy, hingga Yamaha Aerox.',
+  alternates: {
+    canonical: '/armada',
+  },
 };
 
 export default function ArmadaPage() {

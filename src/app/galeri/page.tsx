@@ -3,10 +3,14 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Galeri | RMJP Rental',
-  description: 'Momen keseruan pelanggan dan tim RMJP Rental.',
+export const metadata: Metadata = {
+  title: 'Galeri & Momen Pelanggan | RMJP Rental Motor Jakarta',
+  description: 'Lihat momen keseruan pelanggan dan potret di balik layar tim RMJP Rental. Jadilah bagian dari cerita perjalanan kami di Jakarta.',
+  alternates: {
+    canonical: '/galeri',
+  },
 };
 
 export default function GalleryPage() {

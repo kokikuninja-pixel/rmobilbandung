@@ -12,6 +12,16 @@ import { Tiktok } from '@/components/icons/tiktok';
 import { Suspense } from 'react';
 import { motorInventory, testimonials } from '@/lib/data';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import type { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: 'Rental Motor Jakarta Pusat Murah & Terpercaya | RMJP Rental',
+  description: 'Sewa motor matic di Jakarta Pusat mulai dari Rp 60rb. Armada terawat, respon cepat, gratis helm & jas hujan. Pesan via WhatsApp sekarang!',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 
 export default async function Home() {

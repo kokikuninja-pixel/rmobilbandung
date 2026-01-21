@@ -10,10 +10,14 @@ import {
 } from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Daftar Harga Sewa | RMJP Rental',
-  description: 'Daftar harga sewa motor harian di RMJP Rental Jakarta Pusat. Tarif kompetitif mulai dari Rp 60.000.',
+export const metadata: Metadata = {
+  title: 'Daftar Harga Sewa Motor Jakarta Pusat | RMJP Rental',
+  description: 'Daftar harga sewa motor harian termurah di RMJP Rental Jakarta Pusat. Tarif transparan dan kompetitif mulai dari Rp 60.000 per hari.',
+  alternates: {
+    canonical: '/harga',
+  },
 };
 
 const priceList = [

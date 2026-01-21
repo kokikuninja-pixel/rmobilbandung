@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Card } from '@/components/ui/card';
+import type { Metadata } from 'next';
 
 interface MotorDetailPageProps {
   params: {
@@ -20,7 +21,7 @@ export function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: MotorDetailPageProps) {
+export async function generateMetadata({ params }: MotorDetailPageProps): Promise<Metadata> {
     const motor = motorInventory.find(m => m.id === params.id);
   
     if (!motor) {
@@ -30,8 +31,21 @@ export async function generateMetadata({ params }: MotorDetailPageProps) {
     }
   
     return {
-      title: `${motor.name} | RMJP Rental`,
-      description: `Detail spesifikasi dan fasilitas untuk ${motor.name}.`,
+      title: `Sewa ${motor.name} di Jakarta | RMJP Rental`,
+      description: `Sewa motor ${motor.name} di Jakarta Pusat. Cek spesifikasi, harga, dan fasilitas lengkap. Pesan sekarang, unit siap pakai.`,
+      alternates: {
+        canonical: `/armada/${motor.id}`,
+      },
+      openGraph: {
+        images: [
+          {
+            url: motor.detailImage.imageUrl,
+            width: 1024,
+            height: 1024,
+            alt: `Sewa motor ${motor.name}`,
+          },
+        ],
+      },
     };
   }
 

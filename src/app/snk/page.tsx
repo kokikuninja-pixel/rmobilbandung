@@ -3,10 +3,14 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Syarat & Ketentuan | RMJP Rental',
-  description: 'Syarat dan ketentuan sewa motor di RMJP Rental Jakarta Pusat.',
+export const metadata: Metadata = {
+  title: 'Syarat & Ketentuan Sewa Motor | RMJP Rental Jakarta',
+  description: 'Pahami syarat dan ketentuan sewa motor di RMJP Rental Jakarta Pusat. Informasi lengkap tentang booking, jaminan, dan penggunaan unit.',
+  alternates: {
+    canonical: '/snk',
+  },
 };
 
 export default function SnKPage() {
