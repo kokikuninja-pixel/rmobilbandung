@@ -203,6 +203,13 @@ export default async function Home() {
               <div className="w-full">
                 <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Apa Kata Pelanggan Kami</h3>
                 <TestimonialCarousel testimonials={testimonials} />
+                <div className="mt-8 text-center">
+                  <Button asChild variant="outline" size="lg">
+                    <Link href="https://search.google.com/local/reviews?placeid=ChIJNURzPEv1aS4RXAZoksdZblU" target="_blank" rel="noopener noreferrer">
+                      Lihat Lebih Banyak Review di Google <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
           </div>
         </div>
