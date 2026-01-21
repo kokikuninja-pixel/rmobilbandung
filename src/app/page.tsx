@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone } from 'lucide-react';
+import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone, MessageSquareDashed, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
@@ -19,6 +19,43 @@ export default async function Home() {
 
   const favoriteMotorIds = ['honda-genio', 'honda-beat-new', 'yamaha-mio-z'];
   const favoriteMotors = motorInventory.filter(motor => favoriteMotorIds.includes(motor.id));
+  
+  const advantages = [
+    {
+      icon: MessageSquareDashed,
+      title: "Respon Cepat",
+      description: "Chat Anda akan kami balas dalam 1-2 menit pada jam kerja."
+    },
+    {
+      icon: Wrench,
+      title: "Perawatan Rutin",
+      description: "Semua unit mendapatkan servis berkala untuk performa terbaik."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Garansi Servis",
+      description: "Ada kendala di jalan? Bawa ke bengkel rekanan kami, gratis."
+    }
+  ];
+
+  const facilities = [
+    {
+      icon: ShieldCheck,
+      title: "2 Helm SNI",
+      description: "Keamanan lengkap untuk Anda dan penumpang."
+    },
+    {
+      icon: Umbrella,
+      title: "Jas Hujan",
+      description: "Perjalanan tetap lancar bahkan saat cuaca tak menentu."
+    },
+    {
+      icon: Smartphone,
+      title: "Phone Holder",
+      description: "Memudahkan navigasi Anda selama di perjalanan."
+    }
+  ];
+
 
   return (
     <>
@@ -78,85 +115,68 @@ export default async function Home() {
       {/* Social Proof Section */}
       <section id="tentang-kami" className="py-16 md:py-24 bg-muted">
         <div className="container px-4">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 className="font-headline text-4xl md:text-5xl font-bold">Sewa Motor Jakarta Pusat (RMJP): Cepat, Terpercaya, & Transparan</h2>
-                    <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                        RMJP adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Jakarta. Apakah Anda seorang wisatawan, pekerja, atau pendatang, kami memastikan perjalanan Anda di ibu kota menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
-                    </p>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Cepat, Terpercaya, & Transparan</h2>
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              RMJP adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Jakarta. Kami memastikan perjalanan Anda di ibu kota menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
+            </p>
+          </div>
 
-                    <div className="mt-12">
-                      <h3 className="text-3xl font-bold mb-6">Fasilitas Standar Kami</h3>
-                      <div className="space-y-4">
-                          <div className="flex items-start gap-4">
-                              <div className="bg-secondary/10 border border-secondary/20 rounded-full p-2">
-                                  <ShieldCheck className="h-6 w-6 text-secondary" />
-                              </div>
-                              <div>
-                                  <h4 className="font-semibold text-lg">2 Helm SNI</h4>
-                                  <p className="text-muted-foreground">Untuk keamanan Anda dan penumpang.</p>
-                              </div>
-                          </div>
-                          <div className="flex items-start gap-4">
-                              <div className="bg-secondary/10 border border-secondary/20 rounded-full p-2">
-                                  <Umbrella className="h-6 w-6 text-secondary" />
-                              </div>
-                              <div>
-                                  <h4 className="font-semibold text-lg">Jas Hujan</h4>
-                                  <p className="text-muted-foreground">Agar perjalanan tetap lancar saat hujan.</p>
-                              </div>
-                          </div>
-                          <div className="flex items-start gap-4">
-                              <div className="bg-secondary/10 border border-secondary/20 rounded-full p-2">
-                                  <Smartphone className="h-6 w-6 text-secondary" />
-                              </div>
-                              <div>
-                                  <h4 className="font-semibold text-lg">Phone Holder</h4>
-                                  <p className="text-muted-foreground">Memudahkan navigasi Anda di jalan.</p>
-                              </div>
-                          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[...advantages, ...facilities].map((item, index) => (
+              <Card key={index} className="bg-card hover:shadow-lg transition-shadow">
+                <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                  <div className="bg-secondary/10 p-3 rounded-full">
+                    <item.icon className="h-6 w-6 text-secondary" />
+                  </div>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+              <div className="flex flex-col gap-8">
+                  <div className="grid grid-cols-2 gap-8">
+                      <div className="bg-background/50 text-center p-6 rounded-lg border">
+                          <Users className="mx-auto h-10 w-10 text-secondary mb-4" />
+                          <p className="text-3xl font-bold">1000+</p>
+                          <p className="text-muted-foreground">Pelanggan Puas</p>
                       </div>
-                    </div>
-
-                    <div className="mt-12 grid grid-cols-2 gap-6">
-                        <div className="bg-background/50 text-center p-6 rounded-lg border">
-                            <Users className="mx-auto h-10 w-10 text-secondary mb-4" />
-                            <p className="text-3xl font-bold">1000+</p>
-                            <p className="text-muted-foreground">Pelanggan Puas</p>
-                        </div>
-                        <div className="bg-background/50 text-center p-6 rounded-lg border">
-                            <Award className="mx-auto h-10 w-10 text-secondary mb-4" />
-                            <p className="text-3xl font-bold">25k+</p>
-                            <p className="text-muted-foreground">Perjalanan Sukses</p>
-                        </div>
-                    </div>
-
-                    <Card className="bg-card mt-12">
-                        <CardHeader>
-                            <CardTitle className="flex items-center gap-3 text-2xl">
-                                <Clock className="h-6 w-6 text-secondary" />
-                                <span>Jam Operasional</span>
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4 !pt-2">
+                      <div className="bg-background/50 text-center p-6 rounded-lg border">
+                          <Award className="mx-auto h-10 w-10 text-secondary mb-4" />
+                          <p className="text-3xl font-bold">25k+</p>
+                          <p className="text-muted-foreground">Perjalanan Sukses</p>
+                      </div>
+                  </div>
+                  <Card className="bg-card">
+                      <CardHeader>
+                          <CardTitle className="flex items-center gap-3 text-2xl">
+                              <Clock className="h-6 w-6 text-secondary" />
+                              <span>Jam Operasional</span>
+                          </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4 !pt-2">
+                         <div>
+                              <h4 className="font-semibold text-muted-foreground">Pemesanan & Pengantaran Unit</h4>
+                              <p className="text-xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
+                          </div>
                            <div>
-                                <h4 className="font-semibold text-muted-foreground">Pemesanan & Pengantaran Unit</h4>
-                                <p className="text-xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
-                            </div>
-                             <div>
-                                <h4 className="font-semibold text-muted-foreground">Garasi (Ambil/Kembalikan Sendiri)</h4>
-                                <p className="text-xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
-                            </div>
-                            <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
-                        </CardContent>
-                    </Card>
-
-                </div>
-                <div className="w-full">
-                  <h3 className="font-headline text-3xl font-bold mb-8">Apa Kata Pelanggan Kami</h3>
-                  <TestimonialCarousel testimonials={testimonials} />
-                </div>
-            </div>
+                              <h4 className="font-semibold text-muted-foreground">Garasi (Ambil/Kembalikan Sendiri)</h4>
+                              <p className="text-xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
+                          </div>
+                          <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
+                      </CardContent>
+                  </Card>
+              </div>
+              <div className="w-full">
+                <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Apa Kata Pelanggan Kami</h3>
+                <TestimonialCarousel testimonials={testimonials} />
+              </div>
+          </div>
         </div>
       </section>
 
