@@ -37,7 +37,9 @@ export function OrderForm() {
       workDurationInJakarta: '',
       desiredMotor: undefined,
       rentalStartDate: undefined,
+      rentalStartTime: undefined,
       rentalEndDate: undefined,
+      rentalEndTime: undefined,
       unitCount: 1,
       personCount: 1,
       usagePurpose: '',
@@ -62,6 +64,11 @@ export function OrderForm() {
   const showWorkDuration = workLocation && workLocation.toLowerCase().includes('jakarta');
   const rentalStartDate = form.watch('rentalStartDate');
 
+  const timeOptions = Array.from({ length: (21 - 5) + 1 }, (_, i) => {
+    const hour = 5 + i;
+    return `${String(hour).padStart(2, '0')}:00`;
+  });
+
   async function onSubmit(data: RentalFormValues) {
     if (data.honeypot) {
       return;
@@ -76,7 +83,9 @@ export function OrderForm() {
         workDurationInJakarta: data.workDurationInJakarta,
         desiredMotor: data.desiredMotor,
         rentalStartDate: format(data.rentalStartDate, 'dd MMMM yyyy', { locale: id }),
+        rentalStartTime: data.rentalStartTime,
         rentalEndDate: format(data.rentalEndDate, 'dd MMMM yyyy', { locale: id }),
+        rentalEndTime: data.rentalEndTime,
         unitCount: data.unitCount,
         personCount: data.personCount,
         usagePurpose: data.usagePurpose,
@@ -255,6 +264,30 @@ export function OrderForm() {
             </FormItem>
           )}
         />
+         <FormField
+          control={form.control}
+          name="rentalStartTime"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Jam Mulai Sewa</FormLabel>
+              <Select onValueChange={field.onChange} value={field.value}>
+                <FormControl className="md:col-span-3">
+                  <SelectTrigger className={cn(inputStyles, !field.value && "text-slate-500")}>
+                    <SelectValue placeholder="Pilih jam mulai" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {timeOptions.map((time) => (
+                    <SelectItem key={time} value={time}>
+                      {time}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="rentalEndDate"
@@ -291,6 +324,30 @@ export function OrderForm() {
                   />
                 </PopoverContent>
               </Popover>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="rentalEndTime"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Jam Selesai Sewa</FormLabel>
+              <Select onValueChange={field.onChange} value={field.value}>
+                <FormControl className="md:col-span-3">
+                  <SelectTrigger className={cn(inputStyles, !field.value && "text-slate-500")}>
+                    <SelectValue placeholder="Pilih jam selesai" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {timeOptions.map((time) => (
+                    <SelectItem key={time} value={time}>
+                      {time}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               <FormMessage className={messageStyles} />
             </FormItem>
           )}

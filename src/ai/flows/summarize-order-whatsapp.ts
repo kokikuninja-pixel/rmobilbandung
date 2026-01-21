@@ -22,7 +22,9 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
     .describe('How long the customer has been working in Jakarta (if applicable).'),
   desiredMotor: z.string().describe('The desired motorcycle.'),
   rentalStartDate: z.string().describe('The rental start date.'),
+  rentalStartTime: z.string().describe('The rental start time.'),
   rentalEndDate: z.string().describe('The rental end date.'),
+  rentalEndTime: z.string().describe('The rental end time.'),
   unitCount: z.number().describe('The number of motorcycle units being rented.'),
   personCount: z.number().describe('The number of people the rental is for.'),
   usagePurpose: z.string().describe('The purpose for using the motorcycle (e.g., tourism, project).'),
@@ -59,8 +61,8 @@ const summarizeOrderPrompt = ai.definePrompt({
   - Motor: {{{desiredMotor}}}
   - Jumlah Unit: {{{unitCount}}} unit
   - Jumlah Orang: {{{personCount}}} orang
-  - Rental Start Date: {{{rentalStartDate}}}
-  - Rental End Date: {{{rentalEndDate}}}
+  - Rental Start: {{{rentalStartDate}}} jam {{{rentalStartTime}}}
+  - Rental End: {{{rentalEndDate}}} jam {{{rentalEndTime}}}
   - Kebutuhan: {{{usagePurpose}}}
   - Tujuan Tempat: {{{destination}}}
 
