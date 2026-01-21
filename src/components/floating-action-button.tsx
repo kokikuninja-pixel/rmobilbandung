@@ -10,6 +10,21 @@ import {
 } from "@/components/ui/popover";
 
 export function FloatingActionButton() {
+  const whatsappMessage = `Halo Admin RMJP! 👋
+
+Saya ingin bertanya mengenai ketersediaan sewa motor. Berikut detail identitas saya:
+
+Nama: [isi nama]
+
+Asal Kota: [isi kota asal]
+
+Domisili Sekarang: [isi lokasi domisili sekarang]
+
+Mohon info ketersediaan unit dan persyaratannya ya min. Terima kasih!`;
+
+  const whatsappUrl = `https://wa.me/6285189976267?text=${encodeURIComponent(whatsappMessage)}`;
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(whatsappUrl)}&size=200x200&bgcolor=ffffff&color=003399&qzone=1`;
+
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -23,9 +38,9 @@ export function FloatingActionButton() {
       <PopoverContent className="w-auto p-4 bg-background border-primary shadow-2xl mr-4 mb-2 rounded-xl">
         <div className="flex flex-col items-center text-center gap-2">
             <p className="font-headline text-lg font-bold">Scan untuk Chat!</p>
-            <a href="https://wa.me/6285189976267" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-lg inline-block transition-transform hover:scale-105">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-lg inline-block transition-transform hover:scale-105">
                 <Image
-                    src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwa.me%2F6285189976267&size=200x200&bgcolor=ffffff&color=003399&qzone=1"
+                    src={qrCodeUrl}
                     alt="QR Code untuk WhatsApp RMJP Rental"
                     width={200}
                     height={200}
