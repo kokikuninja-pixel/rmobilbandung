@@ -316,18 +316,8 @@ export default async function Home() {
               </CardTitle>
               <CardDescription className="text-secondary-foreground/80 pt-2 max-w-lg mx-auto">
                 Isi formulir di bawah untuk mengirim pesanan Anda via WhatsApp.
-                Atau, scan kode QR di bawah untuk chat langsung dengan admin kami.
+                Admin kami akan segera merespon pesanan Anda.
               </CardDescription>
-              <div className="flex justify-center pt-6">
-                <a href="https://wa.me/6285189976267" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-lg inline-block transition-transform hover:scale-105">
-                    <Image
-                        src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwa.me%2F6285189976267&size=180x180&bgcolor=ffffff&color=003399&qzone=1"
-                        alt="QR Code untuk WhatsApp RMJP Rental"
-                        width={180}
-                        height={180}
-                    />
-                </a>
-              </div>
             </CardHeader>
             <CardContent className="p-0 md:p-8">
               <Suspense fallback={<div className="w-full h-[888px] bg-card/10 animate-pulse rounded-lg" />}>
