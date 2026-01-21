@@ -27,6 +27,7 @@ export function Footer() {
             <h3 className="mb-4 font-semibold text-secondary-foreground">Perusahaan</h3>
             <ul className="space-y-2">
               <li><Link href="/#tentang-kami" className="text-secondary-foreground/70 hover:text-primary">Tentang Kami</Link></li>
+              <li><Link href="/galeri" className="text-secondary-foreground/70 hover:text-primary">Galeri</Link></li>
               <li><Link href="/#lokasi" className="text-secondary-foreground/70 hover:text-primary">Lokasi Kami</Link></li>
             </ul>
           </div>

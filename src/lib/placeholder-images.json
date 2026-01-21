@@ -281,6 +281,54 @@
       "imageUrl": "https://e7.pngegg.com/pngimages/77/824/png-clipart-electric-motorcycle-car-electric-vehicle-bajaj-auto-car-scooter-electric-vehicle.png",
       "description": "Polytron Fox R detail",
       "imageHint": "electric scooter side"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Happy customer with a scooter",
+      "imageUrl": "https://images.unsplash.com/photo-1603714228681-b399854b8f80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNtaWxpbmd8ZW58MHx8fHwxNzY4OTY0Mzg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "customer smiling"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Person riding a scooter in the city",
+      "imageUrl": "https://images.unsplash.com/photo-1604258794663-960e741c9cea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBzY29vdGVyfGVufDB8fHx8MTc2ODk2NDM4OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person scooter"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Our team working on motorcycles",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwd29ya2luZ3xlbnwwfHx8fDE3Njg5MTg2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team working"
+    },
+    {
+      "id": "gallery-4",
+      "description": "A couple traveling with our scooter",
+      "imageUrl": "https://images.unsplash.com/photo-1465188035480-cf3a60801ea5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cGxlJTIwdHJhdmVsfGVufDB8fHx8MTc2ODg2NDA2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple travel"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Our mechanic ensuring the bikes are in top shape",
+      "imageUrl": "https://images.unsplash.com/photo-1737984958730-edab41a34a92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWNoYW5pYyUyMHdvcmtpbmd8ZW58MHx8fHwxNzY4OTY0Mzg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mechanic working"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Friends laughing and enjoying their trip",
+      "imageUrl": "https://images.unsplash.com/photo-1583606784123-7c244f00d29c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmcmllbmRzJTIwbGF1Z2hpbmd8ZW58MHx8fHwxNzY4OTY0Mzg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "friends laughing"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Riding through a scenic Jakarta street",
+      "imageUrl": "https://images.unsplash.com/photo-1602517232715-c4a366f0ce1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaXR5JTIwcmlkZXxlbnwwfHx8fDE3Njg5NjQzODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city ride"
+    },
+    {
+      "id": "gallery-8",
+      "description": "A group photo of the RMJP staff",
+      "imageUrl": "https://images.unsplash.com/photo-1752650736244-9d6df3a17305?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFmZiUyMHBob3RvfGVufDB8fHx8MTc2ODkxNjM1OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "staff photo"
     }
   ]
 }
