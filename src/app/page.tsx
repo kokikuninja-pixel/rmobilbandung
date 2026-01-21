@@ -6,10 +6,11 @@ import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone, MessageSquareDashed, Wrench } from 'lucide-react';
+import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartphone, MessageSquareDashed, Wrench, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
 import { GalleryCarousel } from '@/components/gallery-carousel';
+import { Tiktok } from '@/components/icons/tiktok';
 
 export default async function Home() {
   const heroSlide = {
@@ -59,6 +60,29 @@ export default async function Home() {
 
   const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('gallery-')).slice(0, 8);
 
+  const socialPreviews = [
+    {
+      platform: 'Instagram',
+      imageUrl: 'https://images.unsplash.com/photo-1604258794663-960e741c9cea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBzY29vdGVyfGVufDB8fHx8MTc2ODk2NDM4OXww&ixlib=rb-4.1.0&q=80&w=1080',
+      imageHint: 'person scooter',
+      postUrl: 'https://www.instagram.com/rentalmotorjakartapusatrmjp/',
+      caption: 'Lihat keseruan pelanggan kami di Instagram!'
+    },
+    {
+      platform: 'TikTok',
+      imageUrl: 'https://images.unsplash.com/photo-1583606784123-7c244f00d29c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmcmllbmRzJTIwbGF1Z2hpbmd8ZW58MHx8fHwxNzY4OTY0Mzg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageHint: 'friends laughing',
+      postUrl: 'https://www.tiktok.com/@rentalmotorjakart2',
+      caption: 'Video seru & tips jalan-jalan di TikTok kami.'
+    },
+     {
+      platform: 'Instagram',
+      imageUrl: 'https://images.unsplash.com/photo-1603714228681-b399854b8f80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNtaWxpbmd8ZW58MHx8fHwxNzY4OTY0Mzg4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageHint: 'customer smiling',
+      postUrl: 'https://www.instagram.com/rentalmotorjakartapusatrmjp/',
+      caption: 'Follow kami untuk promo terbaru!'
+    },
+  ];
 
   return (
     <>
@@ -201,6 +225,46 @@ export default async function Home() {
                 Lihat Galeri Lengkap <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Preview Section */}
+      <section id="socials" className="py-16 md:py-24 bg-muted">
+        <div className="container px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Ikuti Keseruan Kami</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Lihat preview dari konten Instagram & TikTok kami. Klik untuk melihat postingan lengkap dan jangan lupa follow!
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {socialPreviews.map((preview, index) => (
+              <Link href={preview.postUrl} key={index} target="_blank" rel="noopener noreferrer" className="block group">
+                <Card className="overflow-hidden border-2 border-transparent group-hover:border-primary transition-all duration-300 h-full">
+                  <div className="relative">
+                    <Image
+                      src={preview.imageUrl}
+                      alt={`Preview for ${preview.platform}`}
+                      width={500}
+                      height={500}
+                      className="object-cover aspect-square transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={preview.imageHint}
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {preview.platform === 'Instagram' ? <Instagram className="h-12 w-12 text-white" /> : <Tiktok className="h-12 w-12 text-white" />}
+                    </div>
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full p-1.5 shadow-md">
+                        {preview.platform === 'Instagram' ? <Instagram className="h-5 w-5 text-pink-600" /> : <Tiktok className="h-5 w-5 text-black" />}
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
+                      <p className="font-semibold text-sm line-clamp-2">{preview.caption}</p>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
