@@ -35,7 +35,7 @@ const priceList = [
 export default function HargaPage() {
   return (
     <div className="bg-background text-foreground min-h-screen">
-      <div className="container mx-auto max-w-screen-lg px-4 py-12 md:py-24">
+      <div className="container mx-auto max-w-screen-xl px-4 py-12 md:py-24">
         <div className="mb-12 text-center">
           <Link href="/" className="text-sm text-muted-foreground hover:text-secondary mb-4 inline-flex items-center">
             <ArrowLeft className="mr-2 h-4 w-4" />
