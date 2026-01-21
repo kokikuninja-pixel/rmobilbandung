@@ -57,23 +57,7 @@ export default async function Home() {
     }
   ];
 
-  const galleryImageIds = [
-    'gallery-1',
-    'gallery-2',
-    'gallery-3',
-    'gallery-4',
-    'gallery-5',
-    'gallery-6',
-  ];
-  const galleryImages = galleryImageIds.map(id => {
-      const placeholder = PlaceHolderImages.find(p => p.id === id);
-      return placeholder || {
-          id: id,
-          imageUrl: `https://picsum.photos/seed/${id}/500/700`,
-          description: `Galeri foto ${id}`,
-          imageHint: 'customer photo'
-      };
-  });
+  const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('gallery-')).slice(0, 8);
 
 
   return (
