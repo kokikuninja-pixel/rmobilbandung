@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { motorInventory, testimonials } from '@/lib/data';
+import { motorInventory } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
@@ -10,10 +10,12 @@ import { Users, MapPin, Award, ArrowRight, Clock, ShieldCheck, Umbrella, Smartph
 import Link from 'next/link';
 import { GalleryCarousel } from '@/components/gallery-carousel';
 import { Tiktok } from '@/components/icons/tiktok';
-import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import { Suspense } from 'react';
+import { getGoogleReviews } from '@/lib/google-reviews';
+import { GoogleReviewsCarousel } from '@/components/google-reviews-carousel';
 
 
-export default function Home() {
+export default async function Home() {
   const heroSlide = {
     image: PlaceHolderImages.find(img => img.id === 'hero-rmjp-logo-bg'),
     title: "Sewa Motor Jakarta Pusat – Praktis, Murah & Terpercaya.",
@@ -84,6 +86,8 @@ export default function Home() {
       caption: 'Follow kami untuk promo terbaru!'
     },
   ];
+
+  const { reviews } = await getGoogleReviews();
 
   return (
     <>
@@ -202,7 +206,9 @@ export default function Home() {
               </div>
               <div className="w-full">
                 <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Apa Kata Pelanggan Kami</h3>
-                <TestimonialCarousel testimonials={testimonials} />
+                <Suspense fallback={<div className="h-64 bg-background/90 rounded-lg border flex items-center justify-center"><p className="text-muted-foreground">Memuat ulasan...</p></div>}>
+                  <GoogleReviewsCarousel reviews={reviews} />
+                </Suspense>
                 <div className="mt-8 text-center">
                   <Button asChild variant="outline" size="lg">
                     <Link href="https://search.google.com/local/reviews?placeid=ChIJNURzPEv1aS4RXAZoksdZblU" target="_blank" rel="noopener noreferrer">
@@ -316,7 +322,9 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0 md:p-8">
-              <OrderForm />
+              <Suspense fallback={<div className="w-full h-[888px] bg-card/10 animate-pulse rounded-lg" />}>
+                <OrderForm />
+              </Suspense>
             </CardContent>
           </Card>
         </div>

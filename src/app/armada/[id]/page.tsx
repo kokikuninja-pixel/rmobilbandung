@@ -109,7 +109,7 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
                         </p>
                     </div>
                     <Button asChild size="lg" className="w-full shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
-                        <Link href="/#pesan">Sewa Sekarang</Link>
+                        <Link href={`/?motor=${encodeURIComponent(motor.name)}#pesan`}>Sewa Sekarang</Link>
                     </Button>
                 </div>
             </div>

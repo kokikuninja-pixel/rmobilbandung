@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon, Loader2, Send } from 'lucide-react';
 import { id } from 'date-fns/locale';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
 import { summarizeOrderForWhatsApp } from '@/ai/flows/summarize-order-whatsapp';
@@ -24,6 +25,7 @@ import { useToast } from '@/hooks/use-toast';
 export function OrderForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const searchParams = useSearchParams();
 
   const form = useForm<RentalFormValues>({
     resolver: zodResolver(rentalFormSchema),
@@ -41,6 +43,18 @@ export function OrderForm() {
       honeypot: '',
     },
   });
+
+  useEffect(() => {
+    const motorFromQuery = searchParams.get('motor');
+    if (motorFromQuery) {
+        const decodedMotor = decodeURIComponent(motorFromQuery);
+        const isValidMotor = motorInventory.some(motor => motor.name === decodedMotor);
+        if (isValidMotor) {
+            form.setValue('desiredMotor', decodedMotor, { shouldValidate: true });
+        }
+    }
+  }, [searchParams, form]);
+
 
   const workLocation = form.watch('workLocation');
   const showWorkDuration = workLocation && workLocation.toLowerCase().includes('jakarta');
@@ -180,7 +194,7 @@ export function OrderForm() {
           render={({ field }) => (
             <FormItem className={itemGridStyles}>
               <FormLabel className={labelStyles}>Unit Motor</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl className="md:col-span-3">
                   <SelectTrigger className={cn(inputStyles, !field.value && "text-slate-500")}>
                     <SelectValue placeholder="Pilih motor..." />

@@ -79,11 +79,18 @@ export function MotorCard({ motor }: MotorCardProps) {
                 </div>
             </div>
 
-            <Button asChild variant="outline" className="w-full bg-transparent hover:bg-secondary hover:text-secondary-foreground">
-                <Link href={`/armada/${motor.id}`}>
-                Lihat Detail <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-            </Button>
+            <div className="grid grid-cols-2 gap-2">
+                <Button asChild variant="outline" className="w-full bg-transparent hover:bg-secondary hover:text-secondary-foreground">
+                    <Link href={`/armada/${motor.id}`}>
+                        Lihat Detail
+                    </Link>
+                </Button>
+                <Button asChild>
+                    <Link href={`/?motor=${encodeURIComponent(motor.name)}#pesan`}>
+                        Sewa
+                    </Link>
+                </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
