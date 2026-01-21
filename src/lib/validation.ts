@@ -13,7 +13,7 @@ export const rentalFormSchema = z.object({
   }),
   unitCount: z.coerce.number().min(1, { message: "Jumlah unit minimal 1." }),
   personCount: z.coerce.number().min(1, { message: "Jumlah orang minimal 1." }),
-  usagePurpose: z.string({ required_error: "Kebutuhan pemakaian harus dipilih." }),
+  usagePurpose: z.string().min(3, { message: "Kebutuhan pemakaian harus diisi." }),
   destination: z.string().min(5, { message: "Tujuan (tempat) harus diisi, minimal 5 karakter." }),
   honeypot: z.string().optional(), // Bot protection
 }).refine(data => {

@@ -36,7 +36,7 @@ export function OrderForm() {
       desiredMotor: undefined,
       unitCount: 1,
       personCount: 1,
-      usagePurpose: undefined,
+      usagePurpose: '',
       destination: '',
       honeypot: '',
     },
@@ -69,7 +69,7 @@ export function OrderForm() {
       const result = await summarizeOrderForWhatsApp(summaryInput);
       
       const domain = window.location.host;
-      const intro = `Halo Admin RMJP, saya ingin menyewa motor melalui ${domain}\n\n`;
+      const intro = `Halo Admin RMJP, saya ingin menyewa motor melalui ${domain}\\n\\n`;
       const fullMessage = intro + result.summary;
 
       const phoneNumber = '6285189976267';
@@ -281,20 +281,9 @@ export function OrderForm() {
           render={({ field }) => (
             <FormItem className={itemGridStyles}>
               <FormLabel className={labelStyles}>Kebutuhan</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl className="md:col-span-3">
-                  <SelectTrigger className={cn(inputStyles, !field.value && "text-slate-500")}>
-                    <SelectValue placeholder="Pilih kebutuhan pemakaian..." />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="Wisata">Wisata</SelectItem>
-                  <SelectItem value="Proyek">Proyek</SelectItem>
-                  <SelectItem value="Sales">Sales</SelectItem>
-                  <SelectItem value="Kebutuhan Harian">Kebutuhan Harian</SelectItem>
-                  <SelectItem value="Lainnya">Lainnya</SelectItem>
-                </SelectContent>
-              </Select>
+              <FormControl className="md:col-span-3">
+                <Input placeholder="cth: Wisata, Proyek, Kebutuhan Harian" {...field} className={inputStyles} />
+              </FormControl>
               <FormMessage className={messageStyles} />
             </FormItem>
           )}
