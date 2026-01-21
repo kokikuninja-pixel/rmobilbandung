@@ -9,7 +9,7 @@
 
 import { z } from 'zod';
 
-export const GoogleReviewSchema = z.object({
+const GoogleReviewSchema = z.object({
   author_name: z.string().describe('The name of the reviewer.'),
   profile_photo_url: z.string().url().describe("URL for the reviewer's profile photo."),
   rating: z.number().min(1).max(5).describe('The star rating given by the reviewer.'),
