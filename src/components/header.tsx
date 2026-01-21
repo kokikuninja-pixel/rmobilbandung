@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Menu, X, Instagram } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Logo } from '@/components/icons/logo';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -19,6 +19,41 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      // If mobile menu is open, always show the navbar
+      if (isMenuOpen) {
+        setIsVisible(true);
+        return;
+      }
+      
+      // Always show navbar at the top of the page
+      if (currentScrollY < 100) {
+        setIsVisible(true);
+      } 
+      // Hide on scroll down
+      else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } 
+      // Show on scroll up
+      else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY, isMenuOpen]);
+
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#')) {
@@ -33,7 +68,13 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-secondary-foreground/10 bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm">
+    <header className={cn(
+        'sticky top-0 z-50 w-full border-b border-secondary-foreground/10 bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm transition-transform duration-300 ease-in-out',
+        {
+            'translate-y-0': isVisible,
+            '-translate-y-full': !isVisible,
+        }
+    )}>
       <div className="container flex h-24 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
