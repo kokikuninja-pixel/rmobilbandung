@@ -1,7 +1,6 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { motorInventory, testimonials } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { MotorCard } from '@/components/motor-card';
 import { OrderForm } from '@/components/order-form';
@@ -11,10 +10,11 @@ import Link from 'next/link';
 import { GalleryCarousel } from '@/components/gallery-carousel';
 import { Tiktok } from '@/components/icons/tiktok';
 import { Suspense } from 'react';
+import { motorInventory, testimonials } from '@/lib/data';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
 
-export default function Home() {
+export default async function Home() {
   const heroSlide = {
     image: PlaceHolderImages.find(img => img.id === 'hero-rmjp-logo-bg'),
     title: "Sewa Motor Jakarta Pusat – Praktis, Murah & Terpercaya.",
@@ -203,7 +203,9 @@ export default function Home() {
               </div>
               <div className="w-full">
                 <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Apa Kata Pelanggan Kami</h3>
-                <TestimonialCarousel testimonials={testimonials} />
+                <Suspense fallback={<div className="w-full h-56 bg-background/50 animate-pulse rounded-lg" />}>
+                  <TestimonialCarousel testimonials={testimonials} />
+                </Suspense>
                 <div className="mt-8 text-center">
                   <Button asChild variant="outline" size="lg">
                     <Link href="https://search.google.com/local/reviews?placeid=ChIJNURzPEv1aS4RXAZoksdZblU" target="_blank" rel="noopener noreferrer">
@@ -312,9 +314,20 @@ export default function Home() {
               <CardTitle className="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-wider">
                 FORM RMJP
               </CardTitle>
-              <CardDescription className="text-secondary-foreground/80 pt-2">
-                Isi formulir di bawah ini untuk mengirim pesanan Anda langsung ke admin kami via WhatsApp.
+              <CardDescription className="text-secondary-foreground/80 pt-2 max-w-lg mx-auto">
+                Isi formulir di bawah untuk mengirim pesanan Anda via WhatsApp.
+                Atau, scan kode QR di bawah untuk chat langsung dengan admin kami.
               </CardDescription>
+              <div className="flex justify-center pt-6">
+                <a href="https://wa.me/6285189976267" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-lg inline-block transition-transform hover:scale-105">
+                    <Image
+                        src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwa.me%2F6285189976267&size=180x180&bgcolor=ffffff&color=003399&qzone=1"
+                        alt="QR Code untuk WhatsApp RMJP Rental"
+                        width={180}
+                        height={180}
+                    />
+                </a>
+              </div>
             </CardHeader>
             <CardContent className="p-0 md:p-8">
               <Suspense fallback={<div className="w-full h-[888px] bg-card/10 animate-pulse rounded-lg" />}>
