@@ -11,7 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { GoogleReviewCard } from './google-review-card';
-import type { GoogleReview } from '@/lib/google-reviews';
+import type { GoogleReview } from '@/lib/types';
 
 interface GoogleReviewsCarouselProps {
     reviews: GoogleReview[];
