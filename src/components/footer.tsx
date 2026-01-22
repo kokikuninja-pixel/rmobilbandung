@@ -2,8 +2,21 @@ import { Logo } from '@/components/icons/logo';
 import { Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { Tiktok } from './icons/tiktok';
+import React from 'react';
 
 export function Footer() {
+  const seoAreas = [
+    'Sewa Motor Gambir', 'Rental Motor Tanah Abang', 'Sewa Motor Menteng', 
+    'Rental Motor Senen', 'Sewa Motor Cempaka Putih', 'Rental Motor Johar Baru', 
+    'Sewa Motor Kemayoran', 'Rental Motor Sawah Besar', 'Sewa Motor Stasiun Gambir', 
+    'Sewa Motor Stasiun Senen'
+  ];
+
+  const seoArmada = [
+    'Sewa Motor Aerox Jakarta', 'Rental Honda Vario', 'Sewa Yamaha Gear', 
+    'Rental Scoopy Stylish', 'Sewa Motor Matic Jakarta Pusat'
+  ];
+
   return (
     <footer className="w-full border-t border-secondary-foreground/10 bg-secondary text-secondary-foreground">
       <div className="container grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3">
@@ -40,6 +53,41 @@ export function Footer() {
           </div>
         </div>
       </div>
+      
+      {/* SEO Footer Section */}
+      <div className="container px-4 pt-8 pb-12 text-xs border-t border-secondary-foreground/10 text-secondary-foreground/60">
+        <div className="max-w-screen-xl mx-auto space-y-6">
+          <div>
+            <h4 className="font-semibold text-sm text-secondary-foreground/80 mb-2">Layanan Sewa Motor RMJP</h4>
+            <p>
+              RMJP (Rental Motor Jakarta Pusat) adalah penyedia jasa transportasi roda dua terbaik dengan layanan cepat mulai pukul 05.30 pagi. Kami berkomitmen memberikan pengalaman berkendara yang aman, nyaman, dan bebas hambatan bagi setiap pelanggan.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm text-secondary-foreground/80 mb-2">Area Layanan Kami</h4>
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              {seoAreas.map((area, index) => (
+                <React.Fragment key={area}>
+                  <Link href="/#pesan" className="hover:text-primary transition-colors">{area}</Link>
+                  {index < seoAreas.length - 1 && <span>|</span>}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold text-sm text-secondary-foreground/80 mb-2">Pilihan Armada Terpopuler</h4>
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              {seoArmada.map((armada, index) => (
+                <React.Fragment key={armada}>
+                  <Link href="/#pesan" className="hover:text-primary transition-colors">{armada}</Link>
+                  {index < seoArmada.length - 1 && <span>|</span>}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div className="border-t border-secondary-foreground/10 py-6">
         <p className="text-center text-sm text-secondary-foreground/70">
           © {new Date().getFullYear()} RMJP Rental. All Rights Reserved.
