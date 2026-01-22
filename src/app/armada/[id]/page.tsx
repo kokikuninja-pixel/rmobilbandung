@@ -1,7 +1,7 @@
 import { motorInventory, standardFacilities } from '@/lib/data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { CheckCircle, ArrowLeft, Gauge, Wind, Power, Settings2, ShieldCheck, BaggageClaim, Fuel } from 'lucide-react';
+import { CheckCircle, ArrowLeft, Power, Settings2, ShieldCheck, Umbrella, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
@@ -61,12 +61,6 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
     { icon: Power, value: motor.specs.torque, label: 'Torque' },
   ];
 
-  const facilityIcons: { [key: string]: React.ElementType } = {
-    '2 Helm': ShieldCheck,
-    '2 Jas Hujan': BaggageClaim,
-    'Phone Holder': Fuel,
-  };
-
   return (
     <div className="bg-background text-foreground min-h-[calc(100vh-theme(height.14))]">
       <div className="container mx-auto max-w-screen-xl px-4 py-12 md:py-24">
@@ -103,7 +97,7 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
                     <h3 className="text-2xl font-bold mb-6">Fasilitas Termasuk</h3>
                      <ul className="space-y-4">
                         {standardFacilities.map((facility, index) => {
-                            const Icon = facility.icon === 'Helmet' ? ShieldCheck : facility.icon === 'Wind' ? BaggageClaim : facility.icon === 'Smartphone' ? Fuel : CheckCircle;
+                            const Icon = facility.icon === 'Helmet' ? ShieldCheck : facility.icon === 'Wind' ? Umbrella : facility.icon === 'Smartphone' ? Smartphone : CheckCircle;
                             return (
                                 <li key={index} className="flex items-center gap-4 text-lg">
                                     <Icon className="h-6 w-6 text-secondary" />

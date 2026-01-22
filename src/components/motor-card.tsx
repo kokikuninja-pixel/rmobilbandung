@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import type { Motor } from '@/lib/data';
 import { cn } from '@/lib/utils';
-import { ArrowRight, Gauge, Wind } from 'lucide-react';
+import { ArrowRight, Settings2, Power } from 'lucide-react';
 
 interface MotorCardProps {
   motor: Motor;
@@ -70,11 +70,11 @@ export function MotorCard({ motor }: MotorCardProps) {
           <div className="mt-auto">
             <div className="flex items-center justify-between text-muted-foreground mb-4">
                 <div className="flex items-center gap-2">
-                    <Gauge className="w-4 h-4 text-secondary" />
+                    <Settings2 className="w-4 h-4 text-secondary" />
                     <span className="text-sm">{motor.specs.cc}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Wind className="w-4 h-4 text-secondary" />
+                    <Power className="w-4 h-4 text-secondary" />
                     <span className="text-sm">{motor.specs.torque}</span>
                 </div>
             </div>
