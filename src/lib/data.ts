@@ -8,7 +8,7 @@ const getImage = (id: string): ImagePlaceholder => {
     return {
       id: 'fallback',
       description: 'Fallback image',
-      imageUrl: 'https://i.imgur.com/H5R0EQs.png',
+      imageUrl: '/images/fallback.png',
       imageHint: 'placeholder'
     };
   }

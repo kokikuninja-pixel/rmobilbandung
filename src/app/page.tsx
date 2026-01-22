@@ -73,21 +73,21 @@ export default async function Home() {
   const socialPreviews = [
     {
       platform: 'Instagram',
-      imageUrl: 'https://images.unsplash.com/photo-1604258794663-960e741c9cea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBzY29vdGVyfGVufDB8fHx8MTc2ODk2NDM4OXww&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: '/images/social-1.jpg',
       imageHint: 'person scooter',
       postUrl: 'https://www.instagram.com/rentalmotorjakartapusatrmjp/',
       caption: 'Lihat keseruan pelanggan kami di Instagram!'
     },
     {
       platform: 'TikTok',
-      imageUrl: 'https://images.unsplash.com/photo-1583606784123-7c244f00d29c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmcmllbmRzJTIwbGF1Z2hpbmd8ZW58MHx8fHwxNzY4OTY0Mzg5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: '/images/social-2.jpg',
       imageHint: 'friends laughing',
       postUrl: 'https://www.tiktok.com/@rentalmotorjakart2',
       caption: 'Video seru & tips jalan-jalan di TikTok kami.'
     },
      {
       platform: 'Instagram',
-      imageUrl: 'https://images.unsplash.com/photo-1603714228681-b399854b8f80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNtaWxpbmd8ZW58MHx8fHwxNzY4OTY0Mzg4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      imageUrl: '/images/social-3.jpg',
       imageHint: 'customer smiling',
       postUrl: 'https://www.instagram.com/rentalmotorjakartapusatrmjp/',
       caption: 'Follow kami untuk promo terbaru!'

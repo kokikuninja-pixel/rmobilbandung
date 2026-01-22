@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     siteName: 'RMJP Rental',
     images: [
       {
-        url: 'https://i.imgur.com/PBSV9FN.png', // Must be an absolute URL
-        width: 1024,
-        height: 1024,
+        url: '/images/og-image.png', // Local image in /public/images/
+        width: 1200,
+        height: 630,
         alt: 'RMJP Rental Logo',
       },
     ],
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
     description: 'Keliling Jakarta tanpa macet dengan armada terbaru. Jemput unitmu di Kemayoran atau kirim ke hotel/stasiun terdekat.',
-    images: ['https://i.imgur.com/PBSV9FN.png'], // Must be an absolute URL
+    images: ['/images/og-image.png'], // Local image in /public/images/
   },
   robots: {
     index: true,
@@ -83,7 +83,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'RMJP Rental - Rental Motor Jakarta Pusat',
-  image: 'https://i.imgur.com/PBSV9FN.png',
+  image: `${siteUrl}/images/logo.png`,
   '@id': siteUrl,
   url: siteUrl,
   telephone: '+6285189976267',
@@ -130,17 +130,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" data-scroll-behavior="smooth">
-      <head />
-      <body className={cn(
-        "font-body antialiased",
-        fontHeadline.variable,
-        fontBody.variable
-        )}>
+      <head>
         <Script
           id="json-ld-structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+      </head>
+      <body className={cn(
+        "font-body antialiased",
+        fontHeadline.variable,
+        fontBody.variable
+        )}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
