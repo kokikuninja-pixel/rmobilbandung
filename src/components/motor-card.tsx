@@ -26,7 +26,7 @@ export function MotorCard({ motor }: MotorCardProps) {
       <Card className="overflow-hidden h-full flex flex-col bg-card border hover:border-secondary transition-all duration-300 shadow-lg hover:shadow-secondary/20">
         <CardHeader className="p-0">
           <motion.div 
-            className="aspect-video relative"
+            className="aspect-[4/3] relative p-4"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
