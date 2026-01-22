@@ -152,8 +152,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.0 Nm' },
     feature: 'Bodi paling ramping dan lincah untuk menembus kemacetan parah.',
     specialLabel: 'Paling Irit',
-    cardImage: { id: 'honda-beat-pop-card', imageUrl: '/images/Honda-Beat-Pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop' },
-    detailImage: { id: 'honda-beat-pop-detail', imageUrl: '/images/Honda-Beat-Pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop side' }
+    cardImage: { id: 'honda-beat-pop-card', imageUrl: '/images/Honda-Beat-Pop.webp', description: 'Honda Beat Pop', imageHint: 'honda beat pop' },
+    detailImage: { id: 'honda-beat-pop-detail', imageUrl: '/images/Honda-Beat-Pop.webp', description: 'Honda Beat Pop', imageHint: 'honda beat pop side' }
   },
   {
     id: 'honda-genio',

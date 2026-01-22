@@ -110,6 +110,33 @@
       "imageUrl": "/images/gallery-15.jpg",
       "imageHint": "customer photo",
       "type": "image"
+    },
+    {
+      "id": "social-1",
+      "platform": "Instagram",
+      "imageUrl": "/images/social-1.jpg",
+      "imageHint": "person scooter",
+      "postUrl": "https://www.instagram.com/rentalmotorjakartapusatrmjp/",
+      "caption": "Lihat keseruan pelanggan kami di Instagram!",
+      "description": "Preview for Instagram post"
+    },
+    {
+      "id": "social-2",
+      "platform": "TikTok",
+      "imageUrl": "/images/social-2.jpg",
+      "imageHint": "friends laughing",
+      "postUrl": "https://www.tiktok.com/@rentalmotorjakart2",
+      "caption": "Video seru & tips jalan-jalan di TikTok kami.",
+      "description": "Preview for TikTok post"
+    },
+    {
+      "id": "social-3",
+      "platform": "Instagram",
+      "imageUrl": "/images/social-3.jpg",
+      "imageHint": "customer smiling",
+      "postUrl": "https://www.instagram.com/rentalmotorjakartapusatrmjp/",
+      "caption": "Follow kami untuk promo terbaru!",
+      "description": "Preview for Instagram post"
     }
   ]
 }

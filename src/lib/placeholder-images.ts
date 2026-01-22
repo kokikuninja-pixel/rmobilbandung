@@ -6,6 +6,9 @@ export type ImagePlaceholder = {
   imageUrl: string;
   imageHint: string;
   type?: 'image' | 'video';
+  platform?: 'Instagram' | 'TikTok';
+  postUrl?: string;
+  caption?: string;
 };
 
 export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages;

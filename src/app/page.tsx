@@ -70,29 +70,7 @@ export default async function Home() {
 
   const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('gallery-'));
 
-  const socialPreviews = [
-    {
-      platform: 'Instagram',
-      imageUrl: '/images/social-1.jpg',
-      imageHint: 'person scooter',
-      postUrl: 'https://www.instagram.com/rentalmotorjakartapusatrmjp/',
-      caption: 'Lihat keseruan pelanggan kami di Instagram!'
-    },
-    {
-      platform: 'TikTok',
-      imageUrl: '/images/social-2.jpg',
-      imageHint: 'friends laughing',
-      postUrl: 'https://www.tiktok.com/@rentalmotorjakart2',
-      caption: 'Video seru & tips jalan-jalan di TikTok kami.'
-    },
-     {
-      platform: 'Instagram',
-      imageUrl: '/images/social-3.jpg',
-      imageHint: 'customer smiling',
-      postUrl: 'https://www.instagram.com/rentalmotorjakartapusatrmjp/',
-      caption: 'Follow kami untuk promo terbaru!'
-    },
-  ];
+  const socialPreviews = PlaceHolderImages.filter(p => p.id.startsWith('social-'));
 
   return (
     <>
@@ -103,7 +81,7 @@ export default async function Home() {
             src={heroSlide.image.imageUrl}
             alt={heroSlide.image.description}
             fill
-            className="object-cover"
+            className="object-cover md:object-contain"
             priority
             data-ai-hint={heroSlide.image.imageHint}
           />
@@ -252,12 +230,12 @@ export default async function Home() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {socialPreviews.map((preview, index) => (
-              <Link href={preview.postUrl} key={index} target="_blank" rel="noopener noreferrer" className="block group">
+              <Link href={preview.postUrl!} key={index} target="_blank" rel="noopener noreferrer" className="block group">
                 <Card className="overflow-hidden border-2 border-transparent group-hover:border-primary transition-all duration-300 h-full">
                   <div className="relative">
                     <Image
                       src={preview.imageUrl}
-                      alt={`Preview for ${preview.platform}`}
+                      alt={preview.description}
                       width={500}
                       height={500}
                       className="object-cover aspect-square transition-transform duration-300 group-hover:scale-105"
