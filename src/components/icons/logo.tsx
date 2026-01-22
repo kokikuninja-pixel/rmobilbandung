@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 
 export function Logo() {
@@ -8,7 +9,7 @@ export function Logo() {
       width={256}
       height={256}
       priority
-      className="h-16 w-16 object-contain drop-shadow-lg transition-all duration-300 md:h-28 md:w-28 md:translate-y-4"
+      className="h-16 w-16 object-contain drop-shadow-lg transition-all duration-300 md:h-20 md:w-20"
     />
   );
 }

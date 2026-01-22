@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -19,17 +20,6 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -53,12 +43,7 @@ export function Header() {
   };
 
   return (
-    <header className={cn(
-        'absolute top-0 z-50 w-full transition-all duration-300 ease-in-out',
-        isScrolled || isMenuOpen
-          ? 'bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm border-b border-secondary-foreground/10'
-          : 'bg-transparent text-white border-b border-transparent'
-    )}>
+    <header className='sticky top-0 z-50 w-full bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm border-b border-secondary-foreground/10'>
       <div className="container flex h-20 items-center md:h-24">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
@@ -71,10 +56,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={cn(
-                  "font-medium transition-colors hover:text-primary",
-                  isScrolled || isMenuOpen ? "text-secondary-foreground/80" : "text-white/80"
-              )}
+              className="font-medium text-secondary-foreground/80 transition-colors hover:text-primary"
               onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.label}
@@ -99,10 +81,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className={cn(
-                "md:hidden hover:bg-primary/20",
-                 isScrolled || isMenuOpen ? "text-primary" : "text-white hover:bg-white/20",
-            )}
+            className="md:hidden text-primary hover:bg-primary/20"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
