@@ -139,7 +139,7 @@ export default function RootLayout({
   return (
     <html lang="id" data-scroll-behavior="smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" />
         <Script
           id="json-ld-structured-data"
           type="application/ld+json"
