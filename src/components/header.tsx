@@ -19,40 +19,25 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const controlNavbar = () => {
-      const currentScrollY = window.scrollY;
-
-      // If mobile menu is open, always show the navbar
-      if (isMenuOpen) {
-        setIsVisible(true);
-        return;
-      }
-      
-      // Always show navbar at the top of the page
-      if (currentScrollY < 100) {
-        setIsVisible(true);
-      } 
-      // Hide on scroll down
-      else if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
-      } 
-      // Show on scroll up
-      else {
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
-
-    window.addEventListener('scroll', controlNavbar);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', controlNavbar);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY, isMenuOpen]);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isMenuOpen]);
 
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -69,11 +54,10 @@ export function Header() {
 
   return (
     <header className={cn(
-        'sticky top-0 z-50 w-full border-b border-secondary-foreground/10 bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm transition-transform duration-300 ease-in-out',
-        {
-            'translate-y-0': isVisible,
-            '-translate-y-full': !isVisible,
-        }
+        'absolute top-0 z-50 w-full transition-all duration-300 ease-in-out',
+        isScrolled || isMenuOpen
+          ? 'bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm border-b border-secondary-foreground/10'
+          : 'bg-transparent text-white border-b border-transparent'
     )}>
       <div className="container flex h-20 items-center md:h-24">
         <div className="mr-4 flex">
@@ -87,7 +71,10 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-secondary-foreground/80 transition-colors hover:text-primary"
+              className={cn(
+                  "font-medium transition-colors hover:text-primary",
+                  isScrolled || isMenuOpen ? "text-secondary-foreground/80" : "text-white/80"
+              )}
               onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.label}
@@ -112,7 +99,10 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-primary hover:bg-primary/20"
+            className={cn(
+                "md:hidden hover:bg-primary/20",
+                 isScrolled || isMenuOpen ? "text-primary" : "text-white hover:bg-white/20",
+            )}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
@@ -124,7 +114,7 @@ export function Header() {
       {isMenuOpen && (
         <div
           className={cn(
-            'md:hidden absolute top-full left-0 w-full bg-secondary/90 backdrop-blur-sm pb-4',
+            'md:hidden absolute top-full left-0 w-full bg-secondary/90 backdrop-blur-sm pb-4 h-screen',
             'animate-in fade-in-20 slide-in-from-top-2'
           )}
         >

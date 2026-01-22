@@ -75,18 +75,19 @@ export default async function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-screen text-white">
+      <section className="relative w-full text-white">
         {heroSlide.image && (
            <Image
             src={heroSlide.image.imageUrl}
             alt={heroSlide.image.description}
-            fill
-            className="object-cover object-top"
+            width={1980}
+            height={3520}
+            className="w-full h-auto object-contain mx-auto max-w-[1980px]"
             priority
             data-ai-hint={heroSlide.image.imageHint}
           />
         )}
-        <div className="relative z-10 h-full flex flex-col justify-end items-center container px-4 pb-20 md:pb-24">
+        <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center container px-4 pb-20 md:pb-24">
           <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
             <Link href="#pesan">Cek Ketersediaan via WhatsApp</Link>
           </Button>
