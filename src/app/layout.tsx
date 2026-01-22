@@ -83,7 +83,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'RMJP Rental - Rental Motor Jakarta Pusat',
-  image: `${siteUrl}/images/logo.png`,
+  image: `${siteUrl}/images/LOGO-RMJP-R.png`,
   '@id': siteUrl,
   url: siteUrl,
   telephone: '+6285189976267',

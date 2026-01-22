@@ -4,13 +4,6 @@ import type { ImagePlaceholder } from './placeholder-images';
 // Pastikan path di `imageUrl` (misal: '/images/yamaha-aerox.png') SAMA PERSIS
 // dengan nama file di folder `public/images/` Anda, termasuk ekstensinya (.png atau .jpg).
 
-const fallbackImage: ImagePlaceholder = {
-  id: 'fallback',
-  description: 'Fallback image',
-  imageUrl: '/images/fallback.png',
-  imageHint: 'placeholder'
-};
-
 export interface Motor {
   id: string;
   name: string;
@@ -44,8 +37,8 @@ export const motorInventory: Motor[] = [
     price: 120000,
     specs: { cc: '150cc', torque: '13.4 Nm' },
     feature: 'Akselerasi instan dengan fitur Smart Key (Keyless) untuk keamanan ekstra.',
-    cardImage: { id: 'honda-vario-150-card', imageUrl: '/images/Honda-vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150' },
-    detailImage: { id: 'honda-vario-150-detail', imageUrl: '/images/Honda-vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150 side' }
+    cardImage: { id: 'honda-vario-150-card', imageUrl: '/images/Honda-Vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150' },
+    detailImage: { id: 'honda-vario-150-detail', imageUrl: '/images/Honda-Vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150 side' }
   },
   {
     id: 'honda-vario-125',
@@ -85,8 +78,8 @@ export const motorInventory: Motor[] = [
     price: 70000,
     specs: { cc: '125cc', torque: '9.6 Nm' },
     feature: 'Desain retro yang elegan untuk keliling kota dengan gaya santai.',
-    cardImage: { id: 'yamaha-fino-card', imageUrl: '/images/yamaha-fino.png', description: 'Yamaha Fino', imageHint: 'yamaha fino' },
-    detailImage: { id: 'yamaha-fino-detail', imageUrl: '/images/yamaha-fino.png', description: 'Yamaha Fino', imageHint: 'yamaha fino side' }
+    cardImage: { id: 'yamaha-fino-card', imageUrl: '/images/yamaha-Fino.png', description: 'Yamaha Fino', imageHint: 'yamaha fino' },
+    detailImage: { id: 'yamaha-fino-detail', imageUrl: '/images/yamaha-Fino.png', description: 'Yamaha Fino', imageHint: 'yamaha fino side' }
   },
   {
     id: 'yamaha-mio-z',
@@ -115,8 +108,8 @@ export const motorInventory: Motor[] = [
     price: 60000,
     specs: { cc: '125cc', torque: '9.8 Nm' },
     feature: 'Mesin berpendingin cairan (Radiator) untuk performa jarak jauh.',
-    cardImage: { id: 'yamaha-xeon-gt-card', imageUrl: '/images/yamaha-xeon-gt.png', description: 'Yamaha Xeon GT', imageHint: 'yamaha xeon gt' },
-    detailImage: { id: 'yamaha-xeon-gt-detail', imageUrl: '/images/yamaha-xeon-gt.png', description: 'Yamaha Xeon GT', imageHint: 'yamaha xeon gt side' }
+    cardImage: { id: 'yamaha-xeon-gt-card', imageUrl: '/images/yamaha-xeon-GT.png', description: 'Yamaha Xeon GT', imageHint: 'yamaha xeon gt' },
+    detailImage: { id: 'yamaha-xeon-gt-detail', imageUrl: '/images/yamaha-xeon-GT.png', description: 'Yamaha Xeon GT', imageHint: 'yamaha xeon gt side' }
   },
   {
     id: 'honda-beat-new',
@@ -159,8 +152,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.0 Nm' },
     feature: 'Bodi paling ramping dan lincah untuk menembus kemacetan parah.',
     specialLabel: 'Paling Irit',
-    cardImage: { id: 'honda-beat-pop-card', imageUrl: '/images/Honda-beat-pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop' },
-    detailImage: { id: 'honda-beat-pop-detail', imageUrl: '/images/Honda-beat-pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop side' }
+    cardImage: { id: 'honda-beat-pop-card', imageUrl: '/images/Honda-Beat-Pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop' },
+    detailImage: { id: 'honda-beat-pop-detail', imageUrl: '/images/Honda-Beat-Pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop side' }
   },
   {
     id: 'honda-genio',
@@ -221,8 +214,8 @@ export const motorInventory: Motor[] = [
     price: 60000,
     specs: { cc: '113cc', torque: '8.5 Nm' },
     feature: 'Desain sporty legendaris yang tangguh dan perawatan mudah.',
-    cardImage: { id: 'yamaha-mio-gt-card', imageUrl: '/images/yamaha-mio-gt.png', description: 'Yamaha Mio GT', imageHint: 'yamaha mio gt' },
-    detailImage: { id: 'yamaha-mio-gt-detail', imageUrl: '/images/yamaha-mio-gt.png', description: 'Yamaha Mio GT', imageHint: 'yamaha mio gt side' }
+    cardImage: { id: 'yamaha-mio-gt-card', imageUrl: '/images/yamaha-mio-GT.png', description: 'Yamaha Mio GT', imageHint: 'yamaha mio gt' },
+    detailImage: { id: 'yamaha-mio-gt-detail', imageUrl: '/images/yamaha-mio-GT.png', description: 'Yamaha Mio GT', imageHint: 'yamaha mio gt side' }
   },
   {
     id: 'yamaha-mio-j',
