@@ -1,18 +1,36 @@
 import type { ImagePlaceholder } from './placeholder-images';
 import { PlaceHolderImages } from './placeholder-images';
 
-const getImage = (id: string): ImagePlaceholder => {
-  const image = PlaceHolderImages.find(img => img.id === id);
-  if (!image) {
-    // Fallback image
-    return {
-      id: 'fallback',
-      description: 'Fallback image',
-      imageUrl: '/images/fallback.png',
-      imageHint: 'placeholder'
-    };
-  }
-  return image;
+// PENTING: Jika gambar tidak muncul, periksa dan sesuaikan nama file dan ekstensi (.png, .jpg, dll.) di sini.
+const motorImageMap: { [id: string]: ImagePlaceholder } = {
+  'yamaha-aerox': { id: 'yamaha-aerox', imageUrl: '/images/yamaha-aerox.png', description: 'Yamaha Aerox', imageHint: 'yamaha aerox' },
+  'honda-vario-150': { id: 'honda-vario-150', imageUrl: '/images/honda-vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150' },
+  'honda-vario-125': { id: 'honda-vario-125', imageUrl: '/images/honda-vario-125.png', description: 'Honda Vario 125 LED', imageHint: 'honda vario 125' },
+  'yamaha-gear': { id: 'yamaha-gear', imageUrl: '/images/yamaha-gear.png', description: 'Yamaha Gear', imageHint: 'yamaha gear' },
+  'yamaha-x-ride': { id: 'yamaha-x-ride', imageUrl: '/images/yamaha-x-ride.png', description: 'Yamaha X-Ride', imageHint: 'yamaha x-ride' },
+  'yamaha-fino': { id: 'yamaha-fino', imageUrl: '/images/yamaha-fino.png', description: 'Yamaha Fino', imageHint: 'yamaha fino' },
+  'yamaha-mio-z': { id: 'yamaha-mio-z', imageUrl: '/images/yamaha-mio-z.png', description: 'Yamaha Mio Z', imageHint: 'yamaha mio z' },
+  'yamaha-soul-gt': { id: 'yamaha-soul-gt', imageUrl: '/images/yamaha-soul-gt.png', description: 'Yamaha Soul GT', imageHint: 'yamaha soul gt' },
+  'yamaha-xeon-gt': { id: 'yamaha-xeon-gt', imageUrl: '/images/yamaha-xeon-gt.png', description: 'Yamaha Xeon GT', imageHint: 'yamaha xeon gt' },
+  'honda-beat-new': { id: 'honda-beat-new', imageUrl: '/images/honda-beat-new.png', description: 'Honda Beat New', imageHint: 'honda beat' },
+  'honda-beat-street': { id: 'honda-beat-street', imageUrl: '/images/honda-beat-street.png', description: 'Honda Beat Street', imageHint: 'honda beat street' },
+  'honda-beat-esp': { id: 'honda-beat-esp', imageUrl: '/images/honda-beat-esp.png', description: 'Honda Beat ESP', imageHint: 'honda beat esp' },
+  'honda-beat-pop': { id: 'honda-beat-pop', imageUrl: '/images/honda-beat-pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop' },
+  'honda-genio': { id: 'honda-genio', imageUrl: '/images/honda-genio.png', description: 'Honda Genio', imageHint: 'honda genio' },
+  'honda-spacy': { id: 'honda-spacy', imageUrl: '/images/honda-spacy.png', description: 'Honda Spacy', imageHint: 'honda spacy' },
+  'honda-scoopy-new': { id: 'honda-scoopy-new', imageUrl: '/images/honda-scoopy-new.png', description: 'Honda Scoopy (New)', imageHint: 'honda scoopy' },
+  'honda-scoopy-old': { id: 'honda-scoopy-old', imageUrl: '/images/honda-scoopy-old.png', description: 'Honda Scoopy Old', imageHint: 'classic scooter' },
+  'honda-vario-110': { id: 'honda-vario-110', imageUrl: '/images/honda-vario-110.png', description: 'Honda Vario 110cc', imageHint: 'honda vario 110' },
+  'yamaha-mio-gt': { id: 'yamaha-mio-gt', imageUrl: '/images/yamaha-mio-gt.png', description: 'Yamaha Mio GT', imageHint: 'yamaha mio gt' },
+  'yamaha-mio-j': { id: 'yamaha-mio-j', imageUrl: '/images/yamaha-mio-j.png', description: 'Yamaha Mio J', imageHint: 'yamaha mio j' },
+  'polytron-fox-r': { id: 'polytron-fox-r', imageUrl: '/images/polytron-fox-r.png', description: 'Polytron Fox R', imageHint: 'electric scooter' },
+};
+
+const fallbackImage: ImagePlaceholder = {
+  id: 'fallback',
+  description: 'Fallback image',
+  imageUrl: '/images/fallback.png',
+  imageHint: 'placeholder'
 };
 
 export interface Motor {
@@ -38,8 +56,8 @@ export const motorInventory: Motor[] = [
     price: 160000,
     specs: { cc: '155cc', torque: '13.9 Nm' },
     feature: 'Mesin VVA paling kencang dan ban lebar untuk stabilitas maksimal.',
-    cardImage: getImage('yamaha-aerox-card'),
-    detailImage: getImage('yamaha-aerox-detail')
+    cardImage: motorImageMap['yamaha-aerox'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-aerox'] || fallbackImage
   },
   {
     id: 'honda-vario-150',
@@ -48,8 +66,8 @@ export const motorInventory: Motor[] = [
     price: 120000,
     specs: { cc: '150cc', torque: '13.4 Nm' },
     feature: 'Akselerasi instan dengan fitur Smart Key (Keyless) untuk keamanan ekstra.',
-    cardImage: getImage('honda-vario-150-card'),
-    detailImage: getImage('honda-vario-150-detail')
+    cardImage: motorImageMap['honda-vario-150'] || fallbackImage,
+    detailImage: motorImageMap['honda-vario-150'] || fallbackImage
   },
   {
     id: 'honda-vario-125',
@@ -59,8 +77,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '125cc', torque: '10.8 Nm' },
     feature: 'Sangat stabil untuk boncengan dan bagasi muat banyak barang.',
     specialLabel: 'Bagasi Luas',
-    cardImage: getImage('honda-vario-125-card'),
-    detailImage: getImage('honda-vario-125-detail')
+    cardImage: motorImageMap['honda-vario-125'] || fallbackImage,
+    detailImage: motorImageMap['honda-vario-125'] || fallbackImage
   },
   {
     id: 'yamaha-gear',
@@ -69,8 +87,8 @@ export const motorInventory: Motor[] = [
     price: 80000,
     specs: { cc: '125cc', torque: '9.5 Nm' },
     feature: 'Dilengkapi Double Hook (dua gantungan) untuk membawa banyak belanjaan.',
-    cardImage: getImage('yamaha-gear-card'),
-    detailImage: getImage('yamaha-gear-detail')
+    cardImage: motorImageMap['yamaha-gear'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-gear'] || fallbackImage
   },
   {
     id: 'yamaha-x-ride',
@@ -79,8 +97,8 @@ export const motorInventory: Motor[] = [
     price: 70000,
     specs: { cc: '125cc', torque: '9.6 Nm' },
     feature: 'Suspensi tabung yang sangat empuk dan nyaman di jalan bergelombang.',
-    cardImage: getImage('yamaha-x-ride-card'),
-    detailImage: getImage('yamaha-x-ride-detail')
+    cardImage: motorImageMap['yamaha-x-ride'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-x-ride'] || fallbackImage
   },
   {
     id: 'yamaha-fino',
@@ -89,8 +107,8 @@ export const motorInventory: Motor[] = [
     price: 70000,
     specs: { cc: '125cc', torque: '9.6 Nm' },
     feature: 'Desain retro yang elegan untuk keliling kota dengan gaya santai.',
-    cardImage: getImage('yamaha-fino-card'),
-    detailImage: getImage('yamaha-fino-detail')
+    cardImage: motorImageMap['yamaha-fino'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-fino'] || fallbackImage
   },
   {
     id: 'yamaha-mio-z',
@@ -99,8 +117,8 @@ export const motorInventory: Motor[] = [
     price: 70000,
     specs: { cc: '125cc', torque: '9.6 Nm' },
     feature: 'Mesin Blue Core bertenaga dengan ban lebar agar lebih stabil.',
-    cardImage: getImage('yamaha-mio-z-card'),
-    detailImage: getImage('yamaha-mio-z-detail')
+    cardImage: motorImageMap['yamaha-mio-z'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-mio-z'] || fallbackImage
   },
   {
     id: 'yamaha-soul-gt',
@@ -109,8 +127,8 @@ export const motorInventory: Motor[] = [
     price: 60000,
     specs: { cc: '125cc', torque: '9.6 Nm' },
     feature: 'Tampilan maskulin dengan lampu depan tajam dan bodi kokoh.',
-    cardImage: getImage('yamaha-soul-gt-card'),
-    detailImage: getImage('yamaha-soul-gt-detail')
+    cardImage: motorImageMap['yamaha-soul-gt'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-soul-gt'] || fallbackImage
   },
   {
     id: 'yamaha-xeon-gt',
@@ -119,8 +137,8 @@ export const motorInventory: Motor[] = [
     price: 60000,
     specs: { cc: '125cc', torque: '9.8 Nm' },
     feature: 'Mesin berpendingin cairan (Radiator) untuk performa jarak jauh.',
-    cardImage: getImage('yamaha-xeon-gt-card'),
-    detailImage: getImage('yamaha-xeon-gt-detail')
+    cardImage: motorImageMap['yamaha-xeon-gt'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-xeon-gt'] || fallbackImage
   },
   {
     id: 'honda-beat-new',
@@ -130,8 +148,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Rangka eSAF terbaru yang sangat ringan dan super hemat bbm.',
     specialLabel: 'Paling Irit',
-    cardImage: getImage('honda-beat-new-card'),
-    detailImage: getImage('honda-beat-new-detail')
+    cardImage: motorImageMap['honda-beat-new'] || fallbackImage,
+    detailImage: motorImageMap['honda-beat-new'] || fallbackImage
   },
   {
     id: 'honda-beat-street',
@@ -141,8 +159,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Setang gaya petualang untuk posisi berkendara santai dan tidak pegal.',
     specialLabel: 'Paling Irit',
-    cardImage: getImage('honda-beat-street-card'),
-    detailImage: getImage('honda-beat-street-detail')
+    cardImage: motorImageMap['honda-beat-street'] || fallbackImage,
+    detailImage: motorImageMap['honda-beat-street'] || fallbackImage
   },
   {
     id: 'honda-beat-esp',
@@ -152,8 +170,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.0 Nm' },
     feature: 'Starter halus (ACG) dan mesin bandel untuk pemakaian harian.',
     specialLabel: 'Paling Irit',
-    cardImage: getImage('honda-beat-esp-card'),
-    detailImage: getImage('honda-beat-esp-detail')
+    cardImage: motorImageMap['honda-beat-esp'] || fallbackImage,
+    detailImage: motorImageMap['honda-beat-esp'] || fallbackImage
   },
   {
     id: 'honda-beat-pop',
@@ -163,8 +181,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.0 Nm' },
     feature: 'Bodi paling ramping dan lincah untuk menembus kemacetan parah.',
     specialLabel: 'Paling Irit',
-    cardImage: getImage('honda-beat-pop-card'),
-    detailImage: getImage('honda-beat-pop-detail')
+    cardImage: motorImageMap['honda-beat-pop'] || fallbackImage,
+    detailImage: motorImageMap['honda-beat-pop'] || fallbackImage
   },
   {
     id: 'honda-genio',
@@ -174,8 +192,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Desain modern-retro yang ringan dan sangat mudah dikendalikan.',
     specialLabel: 'Paling Irit',
-    cardImage: getImage('honda-genio-card'),
-    detailImage: getImage('honda-genio-detail')
+    cardImage: motorImageMap['honda-genio'] || fallbackImage,
+    detailImage: motorImageMap['honda-genio'] || fallbackImage
   },
   {
     id: 'honda-spacy',
@@ -185,8 +203,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '8.9 Nm' },
     feature: 'Bagasi ekstra besar (Helm-In) untuk menyimpan tas di dalam jok.',
     specialLabel: 'Bagasi Luas',
-    cardImage: getImage('honda-spacy-card'),
-    detailImage: getImage('honda-spacy-detail')
+    cardImage: motorImageMap['honda-spacy'] || fallbackImage,
+    detailImage: motorImageMap['honda-spacy'] || fallbackImage
   },
   {
     id: 'honda-scoopy-new',
@@ -195,8 +213,8 @@ export const motorInventory: Motor[] = [
     price: 120000,
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Ban ring 12 yang stabil dan fitur slot charger HP di laci.',
-    cardImage: getImage('honda-scoopy-new-card'),
-    detailImage: getImage('honda-scoopy-new-detail')
+    cardImage: motorImageMap['honda-scoopy-new'] || fallbackImage,
+    detailImage: motorImageMap['honda-scoopy-new'] || fallbackImage
   },
   {
     id: 'honda-scoopy-old',
@@ -205,8 +223,8 @@ export const motorInventory: Motor[] = [
     price: 110000,
     specs: { cc: '110cc', torque: '9.1 Nm' },
     feature: 'Velg jari-jari klasik untuk kesan retro yang otentik.',
-    cardImage: getImage('honda-scoopy-old-card'),
-    detailImage: getImage('honda-scoopy-old-detail')
+    cardImage: motorImageMap['honda-scoopy-old'] || fallbackImage,
+    detailImage: motorImageMap['honda-scoopy-old'] || fallbackImage
   },
   {
     id: 'honda-vario-110',
@@ -215,8 +233,8 @@ export const motorInventory: Motor[] = [
     price: 80000,
     specs: { cc: '110cc', torque: '9.1 Nm' },
     feature: 'Dek kaki luas dan dilengkapi fitur remote Answer Back System.',
-    cardImage: getImage('honda-vario-110-card'),
-    detailImage: getImage('honda-vario-110-detail')
+    cardImage: motorImageMap['honda-vario-110'] || fallbackImage,
+    detailImage: motorImageMap['honda-vario-110'] || fallbackImage
   },
   {
     id: 'yamaha-mio-gt',
@@ -225,8 +243,8 @@ export const motorInventory: Motor[] = [
     price: 60000,
     specs: { cc: '113cc', torque: '8.5 Nm' },
     feature: 'Desain sporty legendaris yang tangguh dan perawatan mudah.',
-    cardImage: getImage('yamaha-mio-gt-card'),
-    detailImage: getImage('yamaha-mio-gt-detail')
+    cardImage: motorImageMap['yamaha-mio-gt'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-mio-gt'] || fallbackImage
   },
   {
     id: 'yamaha-mio-j',
@@ -235,8 +253,8 @@ export const motorInventory: Motor[] = [
     price: 60000,
     specs: { cc: '113cc', torque: '8.5 Nm' },
     feature: 'Motor paling ringan memudahkan saat parkir atau manuver.',
-    cardImage: getImage('yamaha-mio-j-card'),
-    detailImage: getImage('yamaha-mio-j-detail')
+    cardImage: motorImageMap['yamaha-mio-j'] || fallbackImage,
+    detailImage: motorImageMap['yamaha-mio-j'] || fallbackImage
   },
   {
     id: 'polytron-fox-r',
@@ -246,8 +264,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '3000 Watt', torque: 'N/A' },
     feature: 'Motor listrik tanpa suara dengan fitur mundur (Reverse Mode).',
     specialLabel: 'Eco Friendly',
-    cardImage: getImage('polytron-fox-r-card'),
-    detailImage: getImage('polytron-fox-r-detail')
+    cardImage: motorImageMap['polytron-fox-r'] || fallbackImage,
+    detailImage: motorImageMap['polytron-fox-r'] || fallbackImage
   },
 ];
 
