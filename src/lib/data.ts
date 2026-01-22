@@ -255,21 +255,33 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
     {
-      name: 'Budi Santoso',
+      name: 'Ahmad Yudi',
       role: 'Turis Lokal',
       avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
-      comment: 'Pelayanannya cepat dan ramah. Motornya juga dalam kondisi prima, jadi keliling Jakarta lebih nyaman. Recommended!',
+      comment: 'Awalnya sempat ada kendala sedikit sama motor yang saya pesan, tapi salut banget sama respon adminnya. Langsung diganti unit yang lebih gres dan dikasih helm yang lebih bagus tanpa biaya tambahan. Antar jemputnya juga on-time banget meski lagi long weekend.',
     },
     {
-      name: 'Sarah Wijayanti',
+      name: 'Suhendra Achmad',
       role: 'Mahasiswi',
       avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
-      comment: 'Harga sewanya sangat terjangkau untuk kantong mahasiswa. Prosesnya juga nggak ribet, cocok untuk kebutuhan harian.',
+      comment: 'Mau kasih ulasan dari Manado nih! Jujur harga di sini so-so (standar), tapi yang juara itu kemudahan pembayarannya. Saya sempat upgrade unit selama barang ready langsung dikasih. Paling puas karena bisa balikkin motor jam 9 malam setelah seharian muter-muter. Admin Mas Firman bener-bener membantu!',
     },
     {
-      name: 'Alexandre Dubois',
+      name: 'Ofir Nokas',
       role: 'Turis Asing',
       avatarUrl: 'https://randomuser.me/api/portraits/men/75.jpg',
-      comment: "Great service! The staff was very helpful and the scooter was perfect for exploring the city. I'll definitely rent from RMJP again.",
+      comment: "Pelayanan mantap, adminnya beneran fast response. Motor dan aksesorisnya sangat layak pakai dan terawat. Paling penting buat saya, harganya sangat bersahabat dibanding tempat lain di sekitaran stasiun.",
+    },
+    {
+      name: 'Riska Junia Sari',
+      role: 'Turis Lokal',
+      avatarUrl: 'https://randomuser.me/api/portraits/men/85.jpg',
+      comment: "Akhirnya ketemu rental yang harganya masuk akal buat nemenin liburan 3 hari. Lokasinya strategis banget, dekat sama stasiun dan pusat kota, jadi gak capek di jalan pas mau ambil unit..",
+    },
+    {
+      name: 'Codara Global Teknologi',
+      role: 'Turis Lokal',
+      avatarUrl: 'https://randomuser.me/api/portraits/men/85.jpg',
+      comment: "Pilihan motornya banyak banget jadi bisa pilih yang paling cocok. Adminnya komunikatif dan cepat tanggap kalau ditanya-tanya. Pokoknya recommended buat yang butuh motor mendadak.",
     },
 ];
