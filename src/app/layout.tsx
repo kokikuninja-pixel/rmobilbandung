@@ -29,25 +29,27 @@ export const metadata: Metadata = {
     default: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
     template: `%s | RMJP Rental`,
   },
-  description: 'Rental motor matic terpercaya di Jakarta Pusat. Armada terbaru, harga murah mulai Rp 60rb, gratis helm & jas hujan. Pesan via WhatsApp, antar jemput ke hotel/stasiun.',
+  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
   keywords: [
-    'sewa motor jakarta',
-    'rental motor jakarta',
     'sewa motor jakarta pusat',
     'rental motor jakarta pusat',
-    'rmjp rental',
-    'sewa motor matic jakarta',
+    'sewa motor jakarta',
+    'rental motor jakarta',
+    'rental motor terdekat',
+    'sewa motor harian jakarta',
     'rental motor murah jakarta',
+    'sewa motor matic jakarta',
     'sewa motor dekat stasiun gambir',
     'rental motor kemayoran',
-    'sewa motor harian jakarta',
+    'sewa motor syarat mudah',
+    'rmjp rental',
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
-    description: 'Keliling Jakarta tanpa macet dengan armada terbaru. Jemput unitmu di Kemayoran atau kirim ke hotel/stasiun terdekat.',
+    description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
     url: siteUrl,
     siteName: 'RMJP Rental',
     images: [
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.png', // Local image in /public/images/
         width: 1200,
         height: 630,
-        alt: 'RMJP Rental Logo',
+        alt: 'Sewa Motor Murah di Jakarta Pusat | RMJP Rental',
       },
     ],
     locale: 'id_ID',
@@ -64,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
-    description: 'Keliling Jakarta tanpa macet dengan armada terbaru. Jemput unitmu di Kemayoran atau kirim ke hotel/stasiun terdekat.',
+    description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
     images: ['/images/og-image.png'], // Local image in /public/images/
   },
   robots: {

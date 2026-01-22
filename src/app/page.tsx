@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Rental Motor Jakarta Pusat Murah & Terpercaya | RMJP Rental',
-  description: 'Sewa motor matic di Jakarta Pusat mulai dari Rp 60rb. Armada terawat, respon cepat, gratis helm & jas hujan. Pesan via WhatsApp sekarang!',
+  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
   alternates: {
     canonical: '/',
   },
