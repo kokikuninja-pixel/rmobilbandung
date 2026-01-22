@@ -44,8 +44,8 @@ export const motorInventory: Motor[] = [
     price: 120000,
     specs: { cc: '150cc', torque: '13.4 Nm' },
     feature: 'Akselerasi instan dengan fitur Smart Key (Keyless) untuk keamanan ekstra.',
-    cardImage: { id: 'honda-vario-150-card', imageUrl: '/images/honda-vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150' },
-    detailImage: { id: 'honda-vario-150-detail', imageUrl: '/images/honda-vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150 side' }
+    cardImage: { id: 'honda-vario-150-card', imageUrl: '/images/Honda-vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150' },
+    detailImage: { id: 'honda-vario-150-detail', imageUrl: '/images/Honda-vario-150.png', description: 'Honda Vario 150cc', imageHint: 'honda vario 150 side' }
   },
   {
     id: 'honda-vario-125',
@@ -55,8 +55,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '125cc', torque: '10.8 Nm' },
     feature: 'Sangat stabil untuk boncengan dan bagasi muat banyak barang.',
     specialLabel: 'Bagasi Luas',
-    cardImage: { id: 'honda-vario-125-card', imageUrl: '/images/honda-vario-125.png', description: 'Honda Vario 125 LED', imageHint: 'honda vario 125' },
-    detailImage: { id: 'honda-vario-125-detail', imageUrl: '/images/honda-vario-125.png', description: 'Honda Vario 125 LED', imageHint: 'honda vario 125 side' }
+    cardImage: { id: 'honda-vario-125-card', imageUrl: '/images/Honda-vario-125.png', description: 'Honda Vario 125 LED', imageHint: 'honda vario 125' },
+    detailImage: { id: 'honda-vario-125-detail', imageUrl: '/images/Honda-vario-125.png', description: 'Honda Vario 125 LED', imageHint: 'honda vario 125 side' }
   },
   {
     id: 'yamaha-gear',
@@ -126,8 +126,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Rangka eSAF terbaru yang sangat ringan dan super hemat bbm.',
     specialLabel: 'Paling Irit',
-    cardImage: { id: 'honda-beat-new-card', imageUrl: '/images/honda-beat-new.png', description: 'Honda Beat New', imageHint: 'honda beat' },
-    detailImage: { id: 'honda-beat-new-detail', imageUrl: '/images/honda-beat-new.png', description: 'Honda Beat New', imageHint: 'honda beat side' }
+    cardImage: { id: 'honda-beat-new-card', imageUrl: '/images/Honda-beat-new.png', description: 'Honda Beat New', imageHint: 'honda beat' },
+    detailImage: { id: 'honda-beat-new-detail', imageUrl: '/images/Honda-beat-new.png', description: 'Honda Beat New', imageHint: 'honda beat side' }
   },
   {
     id: 'honda-beat-street',
@@ -137,8 +137,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Setang gaya petualang untuk posisi berkendara santai dan tidak pegal.',
     specialLabel: 'Paling Irit',
-    cardImage: { id: 'honda-beat-street-card', imageUrl: '/images/honda-beat-street.png', description: 'Honda Beat Street', imageHint: 'honda beat street' },
-    detailImage: { id: 'honda-beat-street-detail', imageUrl: '/images/honda-beat-street.png', description: 'Honda Beat Street', imageHint: 'honda beat street side' }
+    cardImage: { id: 'honda-beat-street-card', imageUrl: '/images/Honda-beat-street.png', description: 'Honda Beat Street', imageHint: 'honda beat street' },
+    detailImage: { id: 'honda-beat-street-detail', imageUrl: '/images/Honda-beat-street.png', description: 'Honda Beat Street', imageHint: 'honda beat street side' }
   },
   {
     id: 'honda-beat-esp',
@@ -148,8 +148,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.0 Nm' },
     feature: 'Starter halus (ACG) dan mesin bandel untuk pemakaian harian.',
     specialLabel: 'Paling Irit',
-    cardImage: { id: 'honda-beat-esp-card', imageUrl: '/images/honda-beat-esp.png', description: 'Honda Beat ESP', imageHint: 'honda beat esp' },
-    detailImage: { id: 'honda-beat-esp-detail', imageUrl: '/images/honda-beat-esp.png', description: 'Honda Beat ESP', imageHint: 'honda beat esp side' }
+    cardImage: { id: 'honda-beat-esp-card', imageUrl: '/images/Honda-beat-esp.png', description: 'Honda Beat ESP', imageHint: 'honda beat esp' },
+    detailImage: { id: 'honda-beat-esp-detail', imageUrl: '/images/Honda-beat-esp.png', description: 'Honda Beat ESP', imageHint: 'honda beat esp side' }
   },
   {
     id: 'honda-beat-pop',
@@ -159,8 +159,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.0 Nm' },
     feature: 'Bodi paling ramping dan lincah untuk menembus kemacetan parah.',
     specialLabel: 'Paling Irit',
-    cardImage: { id: 'honda-beat-pop-card', imageUrl: '/images/honda-beat-pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop' },
-    detailImage: { id: 'honda-beat-pop-detail', imageUrl: '/images/honda-beat-pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop side' }
+    cardImage: { id: 'honda-beat-pop-card', imageUrl: '/images/Honda-beat-pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop' },
+    detailImage: { id: 'honda-beat-pop-detail', imageUrl: '/images/Honda-beat-pop.png', description: 'Honda Beat Pop', imageHint: 'honda beat pop side' }
   },
   {
     id: 'honda-genio',
@@ -170,8 +170,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Desain modern-retro yang ringan dan sangat mudah dikendalikan.',
     specialLabel: 'Paling Irit',
-    cardImage: { id: 'honda-genio-card', imageUrl: '/images/honda-genio.png', description: 'Honda Genio', imageHint: 'honda genio' },
-    detailImage: { id: 'honda-genio-detail', imageUrl: '/images/honda-genio.png', description: 'Honda Genio', imageHint: 'honda genio side' }
+    cardImage: { id: 'honda-genio-card', imageUrl: '/images/Honda-genio.png', description: 'Honda Genio', imageHint: 'honda genio' },
+    detailImage: { id: 'honda-genio-detail', imageUrl: '/images/Honda-genio.png', description: 'Honda Genio', imageHint: 'honda genio side' }
   },
   {
     id: 'honda-spacy',
@@ -181,8 +181,8 @@ export const motorInventory: Motor[] = [
     specs: { cc: '110cc', torque: '8.9 Nm' },
     feature: 'Bagasi ekstra besar (Helm-In) untuk menyimpan tas di dalam jok.',
     specialLabel: 'Bagasi Luas',
-    cardImage: { id: 'honda-spacy-card', imageUrl: '/images/honda-spacy.png', description: 'Honda Spacy', imageHint: 'honda spacy' },
-    detailImage: { id: 'honda-spacy-detail', imageUrl: '/images/honda-spacy.png', description: 'Honda Spacy', imageHint: 'honda spacy side' }
+    cardImage: { id: 'honda-spacy-card', imageUrl: '/images/Honda-spacy.png', description: 'Honda Spacy', imageHint: 'honda spacy' },
+    detailImage: { id: 'honda-spacy-detail', imageUrl: '/images/Honda-spacy.png', description: 'Honda Spacy', imageHint: 'honda spacy side' }
   },
   {
     id: 'honda-scoopy-new',
@@ -191,8 +191,8 @@ export const motorInventory: Motor[] = [
     price: 120000,
     specs: { cc: '110cc', torque: '9.3 Nm' },
     feature: 'Ban ring 12 yang stabil dan fitur slot charger HP di laci.',
-    cardImage: { id: 'honda-scoopy-new-card', imageUrl: '/images/honda-scoopy-new.png', description: 'Honda Scoopy (New)', imageHint: 'honda scoopy' },
-    detailImage: { id: 'honda-scoopy-new-detail', imageUrl: '/images/honda-scoopy-new.png', description: 'Honda Scoopy (New)', imageHint: 'honda scoopy side' }
+    cardImage: { id: 'honda-scoopy-new-card', imageUrl: '/images/Honda-scoopy-new.png', description: 'Honda Scoopy (New)', imageHint: 'honda scoopy' },
+    detailImage: { id: 'honda-scoopy-new-detail', imageUrl: '/images/Honda-scoopy-new.png', description: 'Honda Scoopy (New)', imageHint: 'honda scoopy side' }
   },
   {
     id: 'honda-scoopy-old',
@@ -201,8 +201,8 @@ export const motorInventory: Motor[] = [
     price: 110000,
     specs: { cc: '110cc', torque: '9.1 Nm' },
     feature: 'Velg jari-jari klasik untuk kesan retro yang otentik.',
-    cardImage: { id: 'honda-scoopy-old-card', imageUrl: '/images/honda-scoopy-old.png', description: 'Honda Scoopy Old', imageHint: 'classic scooter' },
-    detailImage: { id: 'honda-scoopy-old-detail', imageUrl: '/images/honda-scoopy-old.png', description: 'Honda Scoopy Old', imageHint: 'classic scooter side' }
+    cardImage: { id: 'honda-scoopy-old-card', imageUrl: '/images/Honda-scoopy-old.png', description: 'Honda Scoopy Old', imageHint: 'classic scooter' },
+    detailImage: { id: 'honda-scoopy-old-detail', imageUrl: '/images/Honda-scoopy-old.png', description: 'Honda Scoopy Old', imageHint: 'classic scooter side' }
   },
   {
     id: 'honda-vario-110',
@@ -211,8 +211,8 @@ export const motorInventory: Motor[] = [
     price: 80000,
     specs: { cc: '110cc', torque: '9.1 Nm' },
     feature: 'Dek kaki luas dan dilengkapi fitur remote Answer Back System.',
-    cardImage: { id: 'honda-vario-110-card', imageUrl: '/images/honda-vario-110.png', description: 'Honda Vario 110cc', imageHint: 'honda vario 110' },
-    detailImage: { id: 'honda-vario-110-detail', imageUrl: '/images/honda-vario-110.png', description: 'Honda Vario 110cc', imageHint: 'honda vario 110 side' }
+    cardImage: { id: 'honda-vario-110-card', imageUrl: '/images/Honda-vario-110.png', description: 'Honda Vario 110cc', imageHint: 'honda vario 110' },
+    detailImage: { id: 'honda-vario-110-detail', imageUrl: '/images/Honda-vario-110.png', description: 'Honda Vario 110cc', imageHint: 'honda vario 110 side' }
   },
   {
     id: 'yamaha-mio-gt',
