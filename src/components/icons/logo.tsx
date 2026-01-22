@@ -3,7 +3,7 @@ import Image from 'next/image';
 export function Logo() {
   return (
     <Image
-      src="/images/logo.png"
+      src="/images/LOGO-RMJP-R.png"
       alt="RMJP Rental Logo"
       width={256}
       height={256}
