@@ -9,8 +9,8 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
     return (
-        <Card className="h-full bg-background/90 p-6 border flex flex-col shadow-sm hover:shadow-primary/10 transition-shadow rounded-lg">
-            <CardContent className="p-0 flex flex-col items-start gap-2 flex-grow">
+        <Card className="bg-background/90 p-6 border flex flex-col shadow-sm hover:shadow-primary/10 transition-shadow rounded-lg">
+            <CardContent className="p-0 flex flex-col items-start gap-2">
                 <div className="flex items-center gap-3">
                     <Avatar className="h-11 w-11 border-2 border-primary/20">
                         <AvatarImage src={testimonial.avatarUrl} alt={testimonial.name} />
@@ -28,7 +28,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
                     ))}
                 </div>
 
-                <p className="text-muted-foreground text-sm mt-3 flex-grow">"{testimonial.comment}"</p>
+                <p className="text-muted-foreground text-sm mt-3">"{testimonial.comment}"</p>
             </CardContent>
         </Card>
     );

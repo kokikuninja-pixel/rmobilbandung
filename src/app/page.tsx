@@ -12,12 +12,30 @@ import { Tiktok } from '@/components/icons/tiktok';
 import { Suspense } from 'react';
 import { motorInventory, testimonials } from '@/lib/data';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import { TestimonialCard } from '@/components/testimonial-card';
 import type { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
   title: 'Rental Motor Jakarta Pusat Murah & Terpercaya | RMJP Rental',
-  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
+  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada Vario, Aerox, Scoopy. Harga murah, syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Gambir & Kemayoran.',
+  keywords: [
+    'sewa motor jakarta pusat',
+    'rental motor jakarta pusat',
+    'sewa motor jakarta',
+    'rental motor jakarta',
+    'rental motor terdekat',
+    'sewa motor harian jakarta',
+    'rental motor murah jakarta',
+    'sewa motor matic jakarta',
+    'sewa motor dekat stasiun gambir',
+    'rental motor kemayoran',
+    'sewa motor syarat mudah',
+    'sewa motor vario jakarta',
+    'sewa motor scoopy jakarta',
+    'sewa motor aerox jakarta',
+    'rmjp rental',
+  ],
   alternates: {
     canonical: '/',
   },
@@ -75,7 +93,7 @@ export default async function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full">
+      <section className="relative w-full h-auto">
         {heroSlide.image && (
            <Image
             src={heroSlide.image.imageUrl}
@@ -177,9 +195,19 @@ export default async function Home() {
               </div>
               <div className="w-full">
                 <h3 className="font-headline text-3xl font-bold mb-8 text-center md:text-left">Apa Kata Pelanggan Kami</h3>
-                <Suspense fallback={<div className="w-full h-56 bg-background/50 animate-pulse rounded-lg" />}>
-                  <TestimonialCarousel testimonials={testimonials} />
-                </Suspense>
+
+                <div className="hidden md:block">
+                  <Suspense fallback={<div className="w-full h-56 bg-background/50 animate-pulse rounded-lg" />}>
+                    <TestimonialCarousel testimonials={testimonials} />
+                  </Suspense>
+                </div>
+                
+                <div className="block space-y-4 md:hidden">
+                  {testimonials.slice(0, 3).map((testimonial) => (
+                    <TestimonialCard key={testimonial.name} testimonial={testimonial} />
+                  ))}
+                </div>
+
                 <div className="mt-8 text-center">
                   <Button asChild variant="outline" size="lg">
                     <Link href="https://search.google.com/local/reviews?placeid=ChIJNURzPEv1aS4RXAZoksdZblU" target="_blank" rel="noopener noreferrer">
