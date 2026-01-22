@@ -68,14 +68,14 @@ export default async function Home() {
     }
   ];
 
-  const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('gallery-'));
+  const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith('galeri-'));
 
   const socialPreviews = PlaceHolderImages.filter(p => p.id.startsWith('social-'));
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full text-white">
+      <section className="relative w-full">
         {heroSlide.image && (
            <Image
             src={heroSlide.image.imageUrl}
@@ -87,10 +87,16 @@ export default async function Home() {
             data-ai-hint={heroSlide.image.imageHint}
           />
         )}
-        <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center container px-4 pb-20 md:pb-24">
-          <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
-            <Link href="#pesan">Cek Ketersediaan via WhatsApp</Link>
-          </Button>
+        <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex w-full flex-col items-center text-center container px-4">
+            <h1 className="font-headline font-extrabold text-white [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)] text-[clamp(2.5rem,8vw,5.5rem)] leading-tight tracking-tighter">
+                Rental Motor Terpercaya
+            </h1>
+            <p className="mt-4 text-white/90 [text-shadow:_0_1px_2px_rgb(0_0_0_/_30%)] text-[clamp(1rem,3vw,1.5rem)] max-w-2xl mx-auto">
+                Solusi mobilitas Anda di Jakarta. Armada terbaru, harga terjangkau, layanan antar-jemput.
+            </p>
+            <Button asChild size="lg" className="mt-8 shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow text-[clamp(1rem,2.5vw,1.25rem)] py-7 px-10 h-auto">
+                <Link href="#pesan">Cek Ketersediaan via WhatsApp</Link>
+            </Button>
         </div>
       </section>
 
