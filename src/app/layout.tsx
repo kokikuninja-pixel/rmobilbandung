@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     default: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
     template: `%s | RMJP Rental`,
   },
-  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
+  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Gambir & Kemayoran.',
   keywords: [
     'sewa motor jakarta pusat',
     'rental motor jakarta pusat',
@@ -42,6 +42,11 @@ export const metadata: Metadata = {
     'sewa motor dekat stasiun gambir',
     'rental motor kemayoran',
     'sewa motor syarat mudah',
+    'sewa motor vario jakarta',
+    'sewa motor scoopy jakarta',
+    'sewa motor aerox jakarta',
+    'sewa motor tidak ribet',
+    'rental motor unit gres',
     'rmjp rental',
   ],
   alternates: {
@@ -147,7 +152,7 @@ export default function RootLayout({
         fontBody.variable
         )}>
         <Header />
-        <main className="flex-1 pt-20 md:pt-24">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <Toaster />
         <FloatingActionButton />

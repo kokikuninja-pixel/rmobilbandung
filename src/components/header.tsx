@@ -20,6 +20,19 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -43,7 +56,13 @@ export function Header() {
   };
 
   return (
-    <header className='sticky top-0 z-50 w-full bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm border-b border-secondary-foreground/10'>
+    <header className={cn(
+        'fixed top-0 z-50 w-full transition-colors duration-300 ease-in-out',
+        isScrolled 
+            ? 'bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm border-b border-secondary-foreground/10'
+            : 'bg-transparent border-b border-transparent',
+        isMenuOpen && 'bg-secondary/90 shadow-md'
+    )}>
       <div className="container flex h-20 items-center md:h-24">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
@@ -56,7 +75,10 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-secondary-foreground/80 transition-colors hover:text-primary"
+              className={cn(
+                "font-medium transition-colors hover:text-primary",
+                isScrolled ? 'text-secondary-foreground/80' : 'text-white'
+              )}
               onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.label}
@@ -68,12 +90,12 @@ export function Header() {
           <Button asChild>
             <Link href="/#pesan" onClick={(e) => handleLinkClick(e, '/#pesan')}>Sewa Sekarang</Link>
           </Button>
-          <Button asChild variant="ghost" size="icon" className="hidden md:inline-flex text-primary hover:bg-primary/20">
+          <Button asChild variant="ghost" size="icon" className={cn("hidden md:inline-flex hover:bg-primary/20", isScrolled ? "text-primary" : "text-white")}>
             <Link href="https://www.instagram.com/rentalmotorjakartapusatrmjp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram />
             </Link>
           </Button>
-          <Button asChild variant="ghost" size="icon" className="hidden md:inline-flex text-primary hover:bg-primary/20">
+          <Button asChild variant="ghost" size="icon" className={cn("hidden md:inline-flex hover:bg-primary/20", isScrolled ? "text-primary" : "text-white")}>
             <Link href="https://www.tiktok.com/@rentalmotorjakart2" target="_blank" rel="noopener noreferrer" aria-label="Tiktok">
               <Tiktok className="h-5 w-5" />
             </Link>
@@ -81,7 +103,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-primary hover:bg-primary/20"
+            className={cn("md:hidden hover:bg-primary/20", isScrolled ? "text-primary" : "text-white")}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
