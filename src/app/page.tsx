@@ -81,7 +81,7 @@ export default async function Home() {
             src={heroSlide.image.imageUrl}
             alt={heroSlide.image.description}
             fill
-            className="object-contain"
+            className="object-cover object-center"
             priority
             data-ai-hint={heroSlide.image.imageHint}
           />
