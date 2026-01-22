@@ -1,5 +1,3 @@
-import data from './placeholder-images.json';
-
 export type ImagePlaceholder = {
   id: string;
   description: string;
@@ -8,4 +6,368 @@ export type ImagePlaceholder = {
   type?: 'image' | 'video';
 };
 
-export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages;
+export const PlaceHolderImages: ImagePlaceholder[] = [
+    {
+      "id": "hero-rmjp-logo-bg",
+      "description": "RMJP hero background with logo collage",
+      "imageUrl": "/images/hero-rmjp-logo-bg.png",
+      "imageHint": "jakarta collage"
+    },
+    {
+      "id": "yamaha-aerox-card",
+      "imageUrl": "/images/yamaha-aerox-card.png",
+      "description": "Yamaha Aerox",
+      "imageHint": "yamaha aerox"
+    },
+    {
+      "id": "yamaha-aerox-detail",
+      "imageUrl": "/images/yamaha-aerox-detail.png",
+      "description": "Yamaha Aerox detail",
+      "imageHint": "yamaha aerox side"
+    },
+    {
+      "id": "honda-vario-150-card",
+      "imageUrl": "/images/honda-vario-150-card.png",
+      "description": "Honda Vario 150cc",
+      "imageHint": "honda vario 150"
+    },
+    {
+      "id": "honda-vario-150-detail",
+      "imageUrl": "/images/honda-vario-150-detail.png",
+      "description": "Honda Vario 150cc detail",
+      "imageHint": "honda vario 150 side"
+    },
+    {
+      "id": "honda-vario-125-card",
+      "imageUrl": "/images/honda-vario-125-card.png",
+      "description": "Honda Vario 125 LED",
+      "imageHint": "honda vario 125"
+    },
+    {
+      "id": "honda-vario-125-detail",
+      "imageUrl": "/images/honda-vario-125-detail.png",
+      "description": "Honda Vario 125 LED detail",
+      "imageHint": "honda vario 125 side"
+    },
+    {
+      "id": "yamaha-gear-card",
+      "imageUrl": "/images/yamaha-gear-card.png",
+      "description": "Yamaha Gear",
+      "imageHint": "yamaha gear"
+    },
+    {
+      "id": "yamaha-gear-detail",
+      "imageUrl": "/images/yamaha-gear-detail.png",
+      "description": "Yamaha Gear detail",
+      "imageHint": "yamaha gear side"
+    },
+    {
+      "id": "yamaha-x-ride-card",
+      "imageUrl": "/images/yamaha-x-ride-card.png",
+      "description": "Yamaha X-Ride",
+      "imageHint": "yamaha x-ride"
+    },
+    {
+      "id": "yamaha-x-ride-detail",
+      "imageUrl": "/images/yamaha-x-ride-detail.png",
+      "description": "Yamaha X-Ride detail",
+      "imageHint": "yamaha x-ride side"
+    },
+    {
+      "id": "yamaha-fino-card",
+      "imageUrl": "/images/yamaha-fino-card.png",
+      "description": "Yamaha Fino",
+      "imageHint": "yamaha fino"
+    },
+    {
+      "id": "yamaha-fino-detail",
+      "imageUrl": "/images/yamaha-fino-detail.png",
+      "description": "Yamaha Fino detail",
+      "imageHint": "yamaha fino side"
+    },
+    {
+      "id": "yamaha-mio-z-card",
+      "imageUrl": "/images/yamaha-mio-z-card.png",
+      "description": "Yamaha Mio Z",
+      "imageHint": "yamaha mio z"
+    },
+    {
+      "id": "yamaha-mio-z-detail",
+      "imageUrl": "/images/yamaha-mio-z-detail.png",
+      "description": "Yamaha Mio Z detail",
+      "imageHint": "yamaha mio z side"
+    },
+    {
+      "id": "yamaha-soul-gt-card",
+      "imageUrl": "/images/yamaha-soul-gt-card.png",
+      "description": "Yamaha Soul GT",
+      "imageHint": "yamaha soul gt"
+    },
+    {
+      "id": "yamaha-soul-gt-detail",
+      "imageUrl": "/images/yamaha-soul-gt-detail.png",
+      "description": "Yamaha Soul GT detail",
+      "imageHint": "yamaha soul gt side"
+    },
+    {
+      "id": "yamaha-xeon-gt-card",
+      "imageUrl": "/images/yamaha-xeon-gt-card.png",
+      "description": "Yamaha Xeon GT",
+      "imageHint": "yamaha xeon gt"
+    },
+    {
+      "id": "yamaha-xeon-gt-detail",
+      "imageUrl": "/images/yamaha-xeon-gt-detail.png",
+      "description": "Yamaha Xeon GT detail",
+      "imageHint": "yamaha xeon gt side"
+    },
+    {
+      "id": "honda-beat-new-card",
+      "imageUrl": "/images/honda-beat-new-card.png",
+      "description": "Honda Beat New",
+      "imageHint": "honda beat"
+    },
+    {
+      "id": "honda-beat-new-detail",
+      "imageUrl": "/images/honda-beat-new-detail.png",
+      "description": "Honda Beat New detail",
+      "imageHint": "honda beat side"
+    },
+    {
+      "id": "honda-beat-street-card",
+      "imageUrl": "/images/honda-beat-street-card.png",
+      "description": "Honda Beat Street",
+      "imageHint": "honda beat street"
+    },
+    {
+      "id": "honda-beat-street-detail",
+      "imageUrl": "/images/honda-beat-street-detail.png",
+      "description": "Honda Beat Street detail",
+      "imageHint": "honda beat street side"
+    },
+    {
+      "id": "honda-beat-esp-card",
+      "imageUrl": "/images/honda-beat-esp-card.png",
+      "description": "Honda Beat ESP",
+      "imageHint": "honda beat esp"
+    },
+    {
+      "id": "honda-beat-esp-detail",
+      "imageUrl": "/images/honda-beat-esp-detail.png",
+      "description": "Honda Beat ESP detail",
+      "imageHint": "honda beat esp side"
+    },
+    {
+      "id": "honda-beat-pop-card",
+      "imageUrl": "/images/honda-beat-pop-card.png",
+      "description": "Honda Beat Pop",
+      "imageHint": "honda beat pop"
+    },
+    {
+      "id": "honda-beat-pop-detail",
+      "imageUrl": "/images/honda-beat-pop-detail.png",
+      "description": "Honda Beat Pop detail",
+      "imageHint": "honda beat pop side"
+    },
+    {
+      "id": "honda-genio-card",
+      "imageUrl": "/images/honda-genio-card.png",
+      "description": "Honda Genio",
+      "imageHint": "honda genio"
+    },
+    {
+      "id": "honda-genio-detail",
+      "imageUrl": "/images/honda-genio-detail.png",
+      "description": "Honda Genio detail",
+      "imageHint": "honda genio side"
+    },
+    {
+      "id": "honda-spacy-card",
+      "imageUrl": "/images/honda-spacy-card.png",
+      "description": "Honda Spacy",
+      "imageHint": "honda spacy"
+    },
+    {
+      "id": "honda-spacy-detail",
+      "imageUrl": "/images/honda-spacy-detail.png",
+      "description": "Honda Spacy detail",
+      "imageHint": "honda spacy side"
+    },
+    {
+      "id": "honda-scoopy-new-card",
+      "imageUrl": "/images/honda-scoopy-new-card.png",
+      "description": "Honda Scoopy (New)",
+      "imageHint": "honda scoopy"
+    },
+    {
+      "id": "honda-scoopy-new-detail",
+      "imageUrl": "/images/honda-scoopy-new-detail.png",
+      "description": "Honda Scoopy (New) detail",
+      "imageHint": "honda scoopy side"
+    },
+    {
+      "id": "honda-scoopy-old-card",
+      "imageUrl": "/images/honda-scoopy-old-card.png",
+      "description": "Honda Scoopy Old",
+      "imageHint": "classic scooter"
+    },
+    {
+      "id": "honda-scoopy-old-detail",
+      "imageUrl": "/images/honda-scoopy-old-detail.png",
+      "description": "Honda Scoopy Old detail",
+      "imageHint": "classic scooter side"
+    },
+    {
+      "id": "honda-vario-110-card",
+      "imageUrl": "/images/honda-vario-110-card.png",
+      "description": "Honda Vario 110cc",
+      "imageHint": "honda vario 110"
+    },
+    {
+      "id": "honda-vario-110-detail",
+      "imageUrl": "/images/honda-vario-110-detail.png",
+      "description": "Honda Vario 110cc detail",
+      "imageHint": "honda vario 110 side"
+    },
+    {
+      "id": "yamaha-mio-gt-card",
+      "imageUrl": "/images/yamaha-mio-gt-card.png",
+      "description": "Yamaha Mio GT",
+      "imageHint": "yamaha mio gt"
+    },
+    {
+      "id": "yamaha-mio-gt-detail",
+      "imageUrl": "/images/yamaha-mio-gt-detail.png",
+      "description": "Yamaha Mio GT detail",
+      "imageHint": "yamaha mio gt side"
+    },
+    {
+      "id": "yamaha-mio-j-card",
+      "imageUrl": "/images/yamaha-mio-j-card.png",
+      "description": "Yamaha Mio J",
+      "imageHint": "yamaha mio j"
+    },
+    {
+      "id": "yamaha-mio-j-detail",
+      "imageUrl": "/images/yamaha-mio-j-detail.png",
+      "description": "Yamaha Mio J detail",
+      "imageHint": "yamaha mio j side"
+    },
+    {
+      "id": "polytron-fox-r-card",
+      "imageUrl": "/images/polytron-fox-r-card.png",
+      "description": "Polytron Fox R",
+      "imageHint": "electric scooter"
+    },
+    {
+      "id": "polytron-fox-r-detail",
+      "imageUrl": "/images/polytron-fox-r-detail.png",
+      "description": "Polytron Fox R detail",
+      "imageHint": "electric scooter side"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-1.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-2.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-3.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-4.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-5.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-6.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-7.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-8",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-8.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-9",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-9.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-10",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-10.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-11",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-11.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-12",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-12.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-13",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-13.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-14",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-14.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    },
+    {
+      "id": "gallery-15",
+      "description": "Customer photos",
+      "imageUrl": "/images/gallery-15.jpg",
+      "imageHint": "customer photo",
+      "type": "image"
+    }
+  ]
