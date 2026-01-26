@@ -1,4 +1,5 @@
 
+import { GoogleTagManager } from '@next/third-parties/google';
 import type {Metadata} from 'next';
 import { Montserrat, Roboto } from 'next/font/google';
 import './globals.css';
@@ -151,6 +152,7 @@ export default function RootLayout({
         fontHeadline.variable,
         fontBody.variable
         )}>
+        <GoogleTagManager gtmId="GTM-KTD5D54J" />
         <Header />
         <main className="flex-1 pt-20 md:pt-24">{children}</main>
         <Footer />
