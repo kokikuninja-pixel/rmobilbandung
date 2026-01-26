@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const rentalFormSchema = z.object({
   name: z.string().min(2, { message: "Nama harus diisi, minimal 2 karakter." }),
+  email: z.string({ required_error: "Email harus diisi." }).email({ message: "Format email tidak valid." }),
   ktpOrigin: z.string().min(3, { message: "Asal KTP harus diisi." }),
   currentDomicile: z.string().min(3, { message: "Domisili sekarang harus diisi." }),
   workLocation: z.string().min(3, { message: "Lokasi kerja harus diisi." }),

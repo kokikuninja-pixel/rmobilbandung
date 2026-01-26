@@ -31,6 +31,7 @@ export function OrderForm() {
     resolver: zodResolver(rentalFormSchema),
     defaultValues: {
       name: '',
+      email: '',
       ktpOrigin: '',
       currentDomicile: '',
       workLocation: '',
@@ -77,6 +78,7 @@ export function OrderForm() {
     try {
       const summaryInput = {
         name: data.name,
+        email: data.email,
         ktpOrigin: data.ktpOrigin,
         currentDomicile: data.currentDomicile,
         workLocation: data.workLocation,
@@ -130,6 +132,19 @@ export function OrderForm() {
               <FormLabel className={labelStyles}>Nama</FormLabel>
               <FormControl className="md:col-span-3">
                 <Input placeholder="Nama Lengkap Anda" {...field} className={inputStyles} />
+              </FormControl>
+              <FormMessage className={messageStyles} />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem className={itemGridStyles}>
+              <FormLabel className={labelStyles}>Email</FormLabel>
+              <FormControl className="md:col-span-3">
+                <Input type="email" placeholder="email@anda.com" {...field} className={inputStyles} />
               </FormControl>
               <FormMessage className={messageStyles} />
             </FormItem>

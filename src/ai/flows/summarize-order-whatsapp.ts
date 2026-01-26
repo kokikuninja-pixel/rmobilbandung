@@ -13,6 +13,7 @@ import {z} from 'genkit';
 
 const SummarizeOrderForWhatsAppInputSchema = z.object({
   name: z.string().describe('The name of the customer.'),
+  email: z.string().describe('The email of the customer.'),
   ktpOrigin: z.string().describe('The KTP origin of the customer.'),
   currentDomicile: z.string().describe('The current domicile of the customer.'),
   workLocation: z.string().describe('The work location of the customer.'),
@@ -52,6 +53,7 @@ const summarizeOrderPrompt = ai.definePrompt({
 Saya ingin mengajukan penyewaan motor:
 
 Nama: {{{name}}}
+Email: {{{email}}}
 Asal KTP: {{{ktpOrigin}}}
 Domisili: {{{currentDomicile}}}
 Lokasi Kerja: {{{workLocation}}}
