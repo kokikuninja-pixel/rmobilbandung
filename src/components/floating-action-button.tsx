@@ -1,8 +1,8 @@
 'use client';
 
-import { MessageSquare } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { WhatsappIcon } from './icons/whatsapp';
 
 export function FloatingActionButton() {
   const whatsappMessage = `Halo Admin RMJP! 👋
@@ -22,13 +22,14 @@ Mohon info ketersediaan unit dan persyaratannya ya min. Terima kasih!`;
   return (
     <Button
       asChild
-      size="lg"
-      className="fixed bottom-6 right-6 z-50 h-16 rounded-full bg-green-500 px-6 text-base font-semibold text-white shadow-lg transition-all hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 animate-bounce hover:animate-none"
+      className="fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-green-500 p-0 text-white shadow-lg transition-all hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 animate-bounce hover:animate-none md:w-auto md:px-6"
       aria-label="Chat via WhatsApp"
     >
       <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-        <MessageSquare className="mr-3 h-6 w-6" />
-        Pencet Untuk Hubungi kami
+        <WhatsappIcon className="h-8 w-8 shrink-0" />
+        <span className="hidden font-semibold text-base md:inline">
+          Pencet Untuk Hubungi kami
+        </span>
       </Link>
     </Button>
   );
