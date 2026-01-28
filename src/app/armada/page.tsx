@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Daftar Armada Motor Matic | RMJP Rental Jakarta Pusat',
-  description: 'Lihat semua pilihan motor matic yang tersedia untuk disewa di RMJP Rental. Pilihan lengkap mulai dari Honda Beat, Vario, Scoopy, hingga Yamaha Aerox.',
+  title: 'Daftar Armada Motor Matic | Nethen Rental Semarang',
+  description: 'Lihat semua pilihan motor matic yang tersedia untuk disewa di Nethen Rental. Pilihan lengkap mulai dari Honda Beat, Vario, Scoopy, hingga Yamaha Aerox.',
   alternates: {
     canonical: '/armada',
   },

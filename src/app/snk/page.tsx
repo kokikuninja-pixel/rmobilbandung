@@ -6,8 +6,8 @@ import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Syarat & Ketentuan Sewa Motor | RMJP Rental Jakarta',
-  description: 'Pahami syarat dan ketentuan sewa motor di RMJP Rental Jakarta Pusat. Informasi lengkap tentang booking, jaminan, dan penggunaan unit.',
+  title: 'Syarat & Ketentuan Sewa Motor | Nethen Rental Semarang',
+  description: 'Pahami syarat dan ketentuan sewa motor di Nethen Rental Semarang. Informasi lengkap tentang booking, jaminan, dan penggunaan unit.',
   alternates: {
     canonical: '/snk',
   },
@@ -31,8 +31,8 @@ export default function SnKPage() {
       title: 'Batas Wilayah Operasional',
       icon: <MapPin className="h-6 w-6 text-secondary" />,
       points: [
-        'Motor hanya boleh digunakan di wilayah Jakarta (Pusat, Utara, Selatan, Barat, dan Timur).',
-        'Penggunaan di luar wilayah tersebut memerlukan kesepakatan baru dengan pihak RMJP.',
+        'Motor hanya boleh digunakan di wilayah Kota Semarang dan sekitarnya (area yang wajar).',
+        'Penggunaan di luar wilayah tersebut memerlukan kesepakatan baru dengan pihak Nethen.',
         'Pelanggaran batas wilayah tanpa konfirmasi akan dikenakan denda tambahan sebesar IDR 100.000/hari.',
       ],
     },
@@ -82,7 +82,7 @@ export default function SnKPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-muted-foreground">Setiap penyewaan unit di RMJP sudah termasuk fasilitas pendukung untuk kenyamanan berkendara Anda:</p>
+                <p className="mb-4 text-muted-foreground">Setiap penyewaan unit di Nethen sudah termasuk fasilitas pendukung untuk kenyamanan berkendara Anda:</p>
                 <ul className="space-y-2">
                     {facilities.map((item, index) => (
                         <li key={index} className="flex items-center gap-3">

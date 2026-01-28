@@ -62,7 +62,7 @@ export function OrderForm() {
 
 
   const workLocation = form.watch('workLocation');
-  const showWorkDuration = workLocation && workLocation.toLowerCase().includes('jakarta');
+  const showWorkDuration = workLocation && workLocation.toLowerCase().includes('semarang');
   const rentalStartDate = form.watch('rentalStartDate');
 
   const timeOptions = Array.from({ length: (21 - 5) + 1 }, (_, i) => {
@@ -157,7 +157,7 @@ export function OrderForm() {
             <FormItem className={itemGridStyles}>
               <FormLabel className={labelStyles}>Asal KTP</FormLabel>
               <FormControl className="md:col-span-3">
-                <Input placeholder="cth: Jakarta" {...field} className={inputStyles} />
+                <Input placeholder="cth: Semarang" {...field} className={inputStyles} />
               </FormControl>
               <FormMessage className={messageStyles} />
             </FormItem>
@@ -170,7 +170,7 @@ export function OrderForm() {
             <FormItem className={itemGridStyles}>
               <FormLabel className={labelStyles}>Domisili</FormLabel>
               <FormControl className="md:col-span-3">
-                <Input placeholder="cth: Jakarta Selatan" {...field} className={inputStyles} />
+                <Input placeholder="cth: Semarang Tengah" {...field} className={inputStyles} />
               </FormControl>
               <FormMessage className={messageStyles} />
             </FormItem>
@@ -183,7 +183,7 @@ export function OrderForm() {
             <FormItem className={itemGridStyles}>
               <FormLabel className={labelStyles}>Lokasi Kerja</FormLabel>
               <FormControl className="md:col-span-3">
-                <Input placeholder="cth: Jakarta Pusat" {...field} className={inputStyles} />
+                <Input placeholder="cth: Semarang Barat" {...field} className={inputStyles} />
               </FormControl>
               <FormMessage className={messageStyles} />
             </FormItem>
@@ -203,7 +203,7 @@ export function OrderForm() {
                 name="workDurationInJakarta"
                 render={({ field }) => (
                   <FormItem className={itemGridStyles}>
-                    <FormLabel className={labelStyles}>Lama di Jakarta</FormLabel>
+                    <FormLabel className={labelStyles}>Lama di Semarang</FormLabel>
                     <FormControl className="md:col-span-3">
                       <Input placeholder="cth: 2 tahun" {...field} className={inputStyles} />
                     </FormControl>
@@ -416,7 +416,7 @@ export function OrderForm() {
               <FormLabel className={labelStyles}>Tujuan (Tempat)</FormLabel>
               <FormControl className="md:col-span-3">
                 <Textarea
-                  placeholder="cth: Monas, Kota Tua, kantor di Sudirman"
+                  placeholder="cth: Simpang Lima, Lawang Sewu, kantor di Pandanaran"
                   {...field}
                   className={inputStyles}
                 />

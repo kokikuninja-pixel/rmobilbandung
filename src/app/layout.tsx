@@ -10,7 +10,7 @@ import { FloatingActionButton } from '@/components/floating-action-button';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
 
-const siteUrl = 'https://rentalmotorjktrmjp.com';
+const siteUrl = 'https://rentalmotorsemarangnethen.com';
 
 const fontHeadline = Montserrat({
   subsets: ['latin'],
@@ -27,43 +27,40 @@ const fontBody = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
-    template: `%s | RMJP Rental`,
+    default: 'Nethen Rental | Sewa Motor Murah & Terpercaya di Semarang',
+    template: `%s | Nethen Rental`,
   },
-  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Gambir & Kemayoran.',
+  description: 'Sewa motor di Semarang? Nethen Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah. Syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Tawang & Poncol.',
   keywords: [
-    'sewa motor jakarta pusat',
-    'rental motor jakarta pusat',
-    'sewa motor jakarta',
-    'rental motor jakarta',
-    'rental motor terdekat',
-    'sewa motor harian jakarta',
-    'rental motor murah jakarta',
-    'sewa motor matic jakarta',
-    'sewa motor dekat stasiun gambir',
-    'rental motor kemayoran',
+    'sewa motor semarang',
+    'rental motor semarang',
+    'sewa motor terdekat semarang',
+    'rental motor terdekat semarang',
+    'sewa motor harian semarang',
+    'rental motor murah semarang',
+    'sewa motor matic semarang',
+    'sewa motor dekat stasiun tawang',
+    'rental motor simpang lima',
     'sewa motor syarat mudah',
-    'sewa motor vario jakarta',
-    'sewa motor scoopy jakarta',
-    'sewa motor aerox jakarta',
-    'sewa motor tidak ribet',
-    'rental motor unit gres',
-    'rmjp rental',
+    'sewa motor vario semarang',
+    'sewa motor scoopy semarang',
+    'sewa motor aerox semarang',
+    'nethen rental',
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
-    description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
+    title: 'Nethen Rental | Sewa Motor Murah & Terpercaya di Semarang',
+    description: 'Sewa motor di Semarang? Nethen Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
     url: siteUrl,
-    siteName: 'RMJP Rental',
+    siteName: 'Nethen Rental',
     images: [
       {
         url: '/images/og-image.png', // Local image in /public/images/
         width: 1200,
         height: 630,
-        alt: 'Sewa Motor Murah di Jakarta Pusat | RMJP Rental',
+        alt: 'Sewa Motor Murah di Semarang | Nethen Rental',
       },
     ],
     locale: 'id_ID',
@@ -71,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RMJP Rental | Sewa Motor Matic Murah & Terpercaya di Jakarta Pusat',
-    description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah mulai Rp 60rb. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
+    title: 'Nethen Rental | Sewa Motor Murah & Terpercaya di Semarang',
+    description: 'Sewa motor di Semarang? Nethen Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
     images: ['/images/og-image.png'], // Local image in /public/images/
   },
   robots: {
@@ -91,24 +88,24 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'RMJP Rental - Rental Motor Jakarta Pusat',
-  image: `${siteUrl}/images/LOGO-RMJP-R.png`,
+  name: 'Nethen Rental - Rental Motor Semarang',
+  image: `${siteUrl}/images/nethen-logo.png`,
   '@id': siteUrl,
   url: siteUrl,
   telephone: '+6285189976267',
   priceRange: 'Rp 60.000 - Rp 180.000',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Jl. F Utan Panjang III No.23, RT.14/RW.5',
-    addressLocality: 'Kecamatan Kemayoran',
-    addressRegion: 'Kota Jakarta Pusat',
-    postalCode: '10650',
+    streetAddress: 'Jl. Imam Bonjol No.108',
+    addressLocality: 'Semarang Tengah',
+    addressRegion: 'Kota Semarang',
+    postalCode: '50132',
     addressCountry: 'ID',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -6.1681334,
-    longitude: 106.8416485,
+    latitude: -6.9829,
+    longitude: 110.414,
   },
   openingHoursSpecification: [
     {

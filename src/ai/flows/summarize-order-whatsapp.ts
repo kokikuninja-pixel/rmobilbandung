@@ -49,7 +49,7 @@ const summarizeOrderPrompt = ai.definePrompt({
   name: 'summarizeOrderPrompt',
   input: {schema: SummarizeOrderForWhatsAppInputSchema},
   output: {schema: SummarizeOrderForWhatsAppOutputSchema},
-  prompt: `Halo Admin RMJP! 👋
+  prompt: `Halo Admin Nethen! 👋
 Saya ingin mengajukan penyewaan motor:
 
 Nama: {{{name}}}
@@ -58,7 +58,7 @@ Asal KTP: {{{ktpOrigin}}}
 Domisili: {{{currentDomicile}}}
 Lokasi Kerja: {{{workLocation}}}
 {{#if workDurationInJakarta}}
-Lama di Jakarta: {{{workDurationInJakarta}}}
+Lama di Semarang: {{{workDurationInJakarta}}}
 {{/if}}
 Unit Motor: {{{desiredMotor}}}
 Tgl. Mulai: {{{rentalStartDate}}} jam {{{rentalStartTime}}}

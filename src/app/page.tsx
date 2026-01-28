@@ -17,24 +17,23 @@ import type { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-  title: 'Rental Motor Jakarta Pusat Murah & Terpercaya | RMJP Rental',
-  description: 'Sewa motor di Jakarta Pusat? RMJP Rental solusinya. Armada Vario, Aerox, Scoopy. Harga murah, syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Gambir & Kemayoran.',
+  title: 'Rental Motor Semarang Murah & Terpercaya | Nethen Rental',
+  description: 'Sewa motor di Semarang? Nethen Rental solusinya. Armada Vario, Aerox, Scoopy. Harga murah, syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Tawang & Poncol.',
   keywords: [
-    'sewa motor jakarta pusat',
-    'rental motor jakarta pusat',
-    'sewa motor jakarta',
-    'rental motor jakarta',
-    'rental motor terdekat',
-    'sewa motor harian jakarta',
-    'rental motor murah jakarta',
-    'sewa motor matic jakarta',
-    'sewa motor dekat stasiun gambir',
-    'rental motor kemayoran',
+    'sewa motor semarang',
+    'rental motor semarang',
+    'sewa motor terdekat semarang',
+    'rental motor terdekat semarang',
+    'sewa motor harian semarang',
+    'rental motor murah semarang',
+    'sewa motor matic semarang',
+    'sewa motor dekat stasiun tawang',
+    'rental motor simpang lima',
     'sewa motor syarat mudah',
-    'sewa motor vario jakarta',
-    'sewa motor scoopy jakarta',
-    'sewa motor aerox jakarta',
-    'rmjp rental',
+    'sewa motor vario semarang',
+    'sewa motor scoopy semarang',
+    'sewa motor aerox semarang',
+    'nethen rental',
   ],
   alternates: {
     canonical: '/',
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const heroSlide = {
-    image: PlaceHolderImages.find(img => img.id === 'hero-rmjp-logo-bg'),
+    image: PlaceHolderImages.find(img => img.id === 'hero-nethen-logo-bg'),
   };
 
   const favoriteMotorIds = ['honda-genio', 'honda-beat-new', 'yamaha-mio-z'];
@@ -111,7 +110,7 @@ export default async function Home() {
       <section id="armada" className="py-16 md:py-24 bg-background">
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">Armada Favorit Pelanggan</h2>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Armada Favorit di Semarang</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Pilihan paling populer yang ringan, irit, dan lincah untuk mobilitas harian di perkotaan.
             </p>
@@ -139,7 +138,7 @@ export default async function Home() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-headline text-4xl md:text-5xl font-bold">Cepat, Terpercaya, & Transparan</h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              RMJP adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Jakarta. Kami memastikan perjalanan Anda di ibu kota menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
+              Nethen adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Semarang. Kami memastikan perjalanan Anda menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
             </p>
           </div>
 
@@ -224,9 +223,9 @@ export default async function Home() {
       <section id="galeri-home" className="py-16 md:py-24 bg-background">
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">Momen Seru Bersama RMJP</h2>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Momen Seru Bersama Nethen</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Intip keseruan para pelanggan setia kami saat menjelajahi Jakarta dan momen di balik layar tim kami.
+              Intip keseruan para pelanggan setia kami saat menjelajahi Semarang dan momen di balik layar tim kami.
             </p>
           </div>
           
@@ -286,14 +285,14 @@ export default async function Home() {
       {/* Map Section */}
       <section id="lokasi" className="relative h-[400px] md:h-[500px] w-full">
          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.720770537023!2d106.84164857498995!3d-6.168133493819168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f54b3c734435%3A0x556e59c79268065c!2sRental%20Motor%20Jakarta%20Pusat%20RMJP!5e0!3m2!1sen!2sid!4v1768648168613!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840.85219451919!2d110.41507025!3d-6.983428949999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4ec52229d7%3A0xc791d6abc9236c7!2sSimpang%20Lima%20Semarang!5e0!3m2!1sen!2sid!4v1718893478912!5m2!1sen!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Lokasi RMJP Rental"
+            title="Lokasi Nethen Rental Semarang"
           ></iframe>
           <div className="absolute inset-0 bg-transparent pointer-events-none" />
           <a 
@@ -314,7 +313,7 @@ export default async function Home() {
           <Card className="bg-transparent border-0 shadow-none">
             <CardHeader className="text-center">
               <CardTitle className="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-wider">
-                FORM RMJP
+                FORM NETHEN
               </CardTitle>
               <CardDescription className="text-secondary-foreground/80 pt-2 max-w-lg mx-auto">
                 Isi formulir di bawah untuk mengirim pesanan Anda via WhatsApp.

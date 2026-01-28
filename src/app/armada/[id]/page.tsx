@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: MotorDetailPageProps): Promis
     }
   
     return {
-      title: `Sewa ${motor.name} di Jakarta | RMJP Rental`,
-      description: `Sewa motor ${motor.name} di Jakarta Pusat. Cek spesifikasi, harga, dan fasilitas lengkap. Pesan sekarang, unit siap pakai.`,
+      title: `Sewa ${motor.name} di Semarang | Nethen Rental`,
+      description: `Sewa motor ${motor.name} di Semarang. Cek spesifikasi, harga, dan fasilitas lengkap. Pesan sekarang, unit siap pakai.`,
       alternates: {
         canonical: `/armada/${motor.id}`,
       },

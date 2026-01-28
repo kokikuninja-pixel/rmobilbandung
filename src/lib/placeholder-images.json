@@ -1,10 +1,10 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-rmjp-logo-bg",
-      "description": "RMJP hero background with logo collage",
+      "id": "hero-nethen-logo-bg",
+      "description": "Nethen hero background with logo collage",
       "imageUrl": "/images/hero-img.png",
-      "imageHint": "jakarta collage"
+      "imageHint": "semarang collage"
     },
     {
       "id": "gallery-1",
@@ -310,27 +310,27 @@
     {
       "id": "social-1",
       "platform": "Instagram",
-      "imageUrl": "/images/LOGO-RMJP-R.png",
+      "imageUrl": "/images/nethen-logo.png",
       "imageHint": "person scooter",
-      "postUrl": "https://www.instagram.com/rentalmotorjakartapusatrmjp/",
+      "postUrl": "https://www.instagram.com/nethen.rental/",
       "caption": "Lihat keseruan pelanggan kami di Instagram!",
       "description": "Preview for Instagram post"
     },
     {
       "id": "social-2",
       "platform": "TikTok",
-      "imageUrl": "/images/LOGO-RMJP-R.png",
+      "imageUrl": "/images/nethen-logo.png",
       "imageHint": "friends laughing",
-      "postUrl": "https://www.tiktok.com/@rentalmotorjakart2",
+      "postUrl": "https://www.tiktok.com/@nethen.rental",
       "caption": "Video seru & tips jalan-jalan di TikTok kami.",
       "description": "Preview for TikTok post"
     },
     {
       "id": "social-3",
       "platform": "Instagram",
-      "imageUrl": "/images/LOGO-RMJP-R.png",
+      "imageUrl": "/images/nethen-logo.png",
       "imageHint": "customer smiling",
-      "postUrl": "https://www.instagram.com/rentalmotorjakartapusatrmjp/",
+      "postUrl": "https://www.instagram.com/nethen.rental/",
       "caption": "Follow kami untuk promo terbaru!",
       "description": "Preview for Instagram post"
     }

@@ -13,8 +13,8 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Daftar Harga Sewa Motor Jakarta Pusat | RMJP Rental',
-  description: 'Daftar harga sewa motor harian termurah di RMJP Rental Jakarta Pusat. Tarif transparan dan kompetitif mulai dari Rp 60.000 per hari.',
+  title: 'Daftar Harga Sewa Motor Semarang | Nethen Rental',
+  description: 'Daftar harga sewa motor harian termurah di Nethen Rental Semarang. Tarif transparan dan kompetitif mulai dari Rp 60.000 per hari.',
   alternates: {
     canonical: '/harga',
   },

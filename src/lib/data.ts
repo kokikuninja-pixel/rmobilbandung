@@ -255,33 +255,33 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
     {
-      name: 'Ahmad Yudi',
-      role: 'Turis Lokal',
+      name: 'Budi Santoso',
+      role: 'Wisatawan',
       avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
-      comment: 'Awalnya sempat ada kendala sedikit sama motor yang saya pesan, tapi salut banget sama respon adminnya. Langsung diganti unit yang lebih gres dan dikasih helm yang lebih bagus tanpa biaya tambahan. Antar jemputnya juga on-time banget meski lagi long weekend.',
+      comment: 'Awalnya ada kendala sedikit sama motor yang dipesan, tapi salut sama respon adminnya. Langsung diganti unit yang lebih baru dan dikasih helm bagus tanpa biaya tambahan. Antar jemputnya juga on-time banget!',
     },
     {
-      name: 'Suhendra Achmad',
+      name: 'Citra Lestari',
       role: 'Mahasiswi',
       avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
-      comment: 'Mau kasih ulasan dari Manado nih! Jujur harga di sini so-so (standar), tapi yang juara itu kemudahan pembayarannya. Saya sempat upgrade unit selama barang ready langsung dikasih. Paling puas karena bisa balikkin motor jam 9 malam setelah seharian muter-muter. Admin Mas Firman bener-bener membantu!',
+      comment: 'Mau kasih ulasan dari Jepara nih! Jujur harga di sini standar, tapi yang juara itu kemudahan sewanya. Saya sempat upgrade unit dan langsung dikasih. Paling puas karena bisa balikkin motor sampai malam setelah seharian muter-muter Semarang.',
     },
     {
-      name: 'Ofir Nokas',
+      name: 'David Wilson',
       role: 'Turis Asing',
       avatarUrl: 'https://randomuser.me/api/portraits/men/75.jpg',
       comment: "Pelayanan mantap, adminnya beneran fast response. Motor dan aksesorisnya sangat layak pakai dan terawat. Paling penting buat saya, harganya sangat bersahabat dibanding tempat lain di sekitaran stasiun.",
     },
     {
-      name: 'Riska Junia Sari',
-      role: 'Turis Lokal',
-      avatarUrl: 'https://randomuser.me/api/portraits/men/85.jpg',
-      comment: "Akhirnya ketemu rental yang harganya masuk akal buat nemenin liburan 3 hari. Lokasinya strategis banget, dekat sama stasiun dan pusat kota, jadi gak capek di jalan pas mau ambil unit..",
+      name: 'Rina Wulandari',
+      role: 'Karyawan Swasta',
+      avatarUrl: 'https://randomuser.me/api/portraits/women/85.jpg',
+      comment: "Akhirnya ketemu rental yang harganya masuk akal buat perjalanan dinas 3 hari. Lokasinya strategis banget, dekat sama pusat kota, jadi gak capek di jalan pas mau ambil unit.",
     },
     {
-      name: 'Codara Global Teknologi',
-      role: 'Turis Lokal',
-      avatarUrl: 'https://randomuser.me/api/portraits/men/85.jpg',
-      comment: "Pilihan motornya banyak banget jadi bisa pilih yang paling cocok. Adminnya komunikatif dan cepat tanggap kalau ditanya-tanya. Pokoknya recommended buat yang butuh motor mendadak.",
+      name: 'Eko Prasetyo',
+      role: 'Pengusaha',
+      avatarUrl: 'https://randomuser.me/api/portraits/men/86.jpg',
+      comment: "Pilihan motornya banyak banget jadi bisa pilih yang paling cocok. Adminnya komunikatif dan cepat tanggap kalau ditanya-tanya. Pokoknya recommended buat yang butuh motor mendadak di Semarang.",
     },
 ];

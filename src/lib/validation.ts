@@ -18,12 +18,12 @@ export const rentalFormSchema = z.object({
   destination: z.string().min(5, { message: "Tujuan (tempat) harus diisi, minimal 5 karakter." }),
   honeypot: z.string().optional(), // Bot protection
 }).refine(data => {
-  if (data.workLocation.toLowerCase().includes('jakarta')) {
+  if (data.workLocation.toLowerCase().includes('semarang')) {
     return !!data.workDurationInJakarta && data.workDurationInJakarta.length > 0;
   }
   return true;
 }, {
-  message: "Mohon isi sudah berapa lama bekerja di Jakarta.",
+  message: "Mohon isi sudah berapa lama bekerja di Semarang.",
   path: ["workDurationInJakarta"],
 }).refine(data => {
     if (data.rentalStartDate && data.rentalEndDate) {

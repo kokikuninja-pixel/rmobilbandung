@@ -6,8 +6,8 @@ import { Card } from '@/components/ui/card';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Galeri & Momen Pelanggan | RMJP Rental Motor Jakarta',
-  description: 'Lihat momen keseruan pelanggan dan potret di balik layar tim RMJP Rental. Jadilah bagian dari cerita perjalanan kami di Jakarta.',
+  title: 'Galeri & Momen Pelanggan | Nethen Rental Motor Semarang',
+  description: 'Lihat momen keseruan pelanggan dan potret di balik layar tim Nethen Rental. Jadilah bagian dari cerita perjalanan kami di Semarang.',
   alternates: {
     canonical: '/galeri',
   },
@@ -24,9 +24,9 @@ export default function GalleryPage() {
             <ArrowLeft className="mr-2 h-4 w-4" />
             Kembali ke Halaman Utama
           </Link>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Galeri RMJP</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Galeri Nethen</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Lihat momen-momen seru para pelanggan setia kami saat menjelajahi Jakarta dan potret di balik layar tim RMJP.
+            Lihat momen-momen seru para pelanggan setia kami saat menjelajahi Semarang dan potret di balik layar tim Nethen.
           </p>
         </div>
 
