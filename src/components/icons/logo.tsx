@@ -4,7 +4,7 @@ import Image from 'next/image';
 export function Logo() {
   return (
     <Image
-      src="/images/logo-nethen-new.png"
+      src="/images/logo-nethen-new1.png"
       alt="Nethen Rental Motor Logo"
       width={256}
       height={256}
