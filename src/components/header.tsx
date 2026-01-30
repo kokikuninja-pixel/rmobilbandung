@@ -20,6 +20,7 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -29,6 +30,18 @@ export function Header() {
     }
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on initial load
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#')) {
@@ -44,7 +57,8 @@ export function Header() {
 
   return (
     <header className={cn(
-        'sticky top-0 z-50 w-full bg-secondary/90 text-secondary-foreground shadow-md backdrop-blur-sm border-b border-secondary-foreground/10'
+        'sticky top-0 z-50 w-full bg-background/90 backdrop-blur-sm transition-all duration-300',
+        hasScrolled ? 'shadow-md border-b border-border/10' : 'shadow-none border-b border-transparent'
     )}>
       <div className="container flex h-20 items-center md:h-24">
         <div className="mr-4 flex">
@@ -53,12 +67,12 @@ export function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex md:items-center md:gap-6 text-sm">
+        <nav className="hidden text-foreground md:flex md:items-center md:gap-6 text-sm">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-secondary-foreground/80 transition-colors hover:text-primary"
+              className="font-medium text-foreground/80 transition-colors hover:text-primary"
               onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.label}
@@ -71,12 +85,12 @@ export function Header() {
             <Link href="/#pesan" onClick={(e) => handleLinkClick(e, '/#pesan')}>Sewa Sekarang</Link>
           </Button>
           <Button asChild variant="ghost" size="icon" className="hidden text-primary md:inline-flex hover:bg-primary/20">
-            <Link href="https://www.instagram.com/rentalmotorjakartapusatrmjp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <Link href="https://www.instagram.com/nethen.rental/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram />
             </Link>
           </Button>
           <Button asChild variant="ghost" size="icon" className="hidden text-primary md:inline-flex hover:bg-primary/20">
-            <Link href="https://www.tiktok.com/@rentalmotorjakart2" target="_blank" rel="noopener noreferrer" aria-label="Tiktok">
+            <Link href="https://www.tiktok.com/@nethen.rental" target="_blank" rel="noopener noreferrer" aria-label="Tiktok">
               <Tiktok className="h-5 w-5" />
             </Link>
           </Button>
@@ -95,7 +109,7 @@ export function Header() {
       {isMenuOpen && (
         <div
           className={cn(
-            'md:hidden absolute top-full left-0 w-full bg-secondary/90 backdrop-blur-sm pb-4 h-screen',
+            'md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm pb-4 h-screen',
             'animate-in fade-in-20 slide-in-from-top-2'
           )}
         >
@@ -104,26 +118,26 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg font-medium text-secondary-foreground transition-colors hover:text-primary"
+                className="text-lg font-medium text-foreground transition-colors hover:text-primary"
                 onClick={(e) => handleLinkClick(e, link.href)}
               >
                 {link.label}
               </Link>
             ))}
              <Link
-                href="https://www.instagram.com/rentalmotorjakartapusatrmjp/"
+                href="https://www.instagram.com/nethen.rental/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-medium text-secondary-foreground transition-colors hover:text-primary flex items-center gap-2"
+                className="text-lg font-medium text-foreground transition-colors hover:text-primary flex items-center gap-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Instagram className="h-5 w-5" /> Instagram
             </Link>
             <Link
-                href="https://www.tiktok.com/@rentalmotorjakart2"
+                href="https://www.tiktok.com/@nethen.rental"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-medium text-secondary-foreground transition-colors hover:text-primary flex items-center gap-2"
+                className="text-lg font-medium text-foreground transition-colors hover:text-primary flex items-center gap-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Tiktok className="h-5 w-5" /> TikTok

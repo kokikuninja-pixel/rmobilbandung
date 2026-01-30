@@ -1,3 +1,4 @@
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -25,7 +26,7 @@ export function HeroSection() {
             Nikmati perjalananmu di Semarang dengan motor berkualitas dan layanan terpercaya.
           </p>
           <div className="flex justify-center md:justify-start">
-            <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
+            <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
               <Link href="#pesan">
                 Pesan Sekarang
                 <ArrowRight className="ml-2 h-5 w-5" />
