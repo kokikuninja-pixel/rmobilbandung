@@ -14,6 +14,7 @@ import { motorInventory, testimonials } from '@/lib/data';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
 import { TestimonialCard } from '@/components/testimonial-card';
 import type { Metadata } from 'next';
+import { HeroSection } from '@/components/hero-section';
 
 
 export const metadata: Metadata = {
@@ -42,10 +43,6 @@ export const metadata: Metadata = {
 
 
 export default async function Home() {
-  const heroSlide = {
-    image: PlaceHolderImages.find(img => img.id === 'hero-nethen-logo-bg'),
-  };
-
   const favoriteMotorIds = ['honda-genio', 'honda-beat-new', 'yamaha-mio-z'];
   const favoriteMotors = motorInventory.filter(motor => favoriteMotorIds.includes(motor.id));
   
@@ -91,20 +88,7 @@ export default async function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative w-full h-auto">
-        {heroSlide.image && (
-           <Image
-            src={heroSlide.image.imageUrl}
-            alt={heroSlide.image.description}
-            width={1980}
-            height={3520}
-            className="w-full h-auto object-contain mx-auto max-w-[1980px]"
-            priority
-            data-ai-hint={heroSlide.image.imageHint}
-          />
-        )}
-      </section>
+      <HeroSection />
 
       {/* Fleet Section */}
       <section id="armada" className="py-16 md:py-24 bg-background">
