@@ -92,7 +92,7 @@ const jsonLd = {
   image: `${siteUrl}/images/logo-nethen-new.png`,
   '@id': siteUrl,
   url: siteUrl,
-  telephone: '+6285189976267',
+  telephone: '+6287738908578',
   priceRange: 'Rp 60.000 - Rp 180.000',
   address: {
     '@type': 'PostalAddress',
