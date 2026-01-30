@@ -89,7 +89,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Nethen Rental - Rental Motor Semarang',
-  image: `${siteUrl}/images/nethen-logo.png`,
+  image: `${siteUrl}/images/logo-nethen-new.png`,
   '@id': siteUrl,
   url: siteUrl,
   telephone: '+6285189976267',

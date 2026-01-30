@@ -310,7 +310,7 @@
     {
       "id": "social-1",
       "platform": "Instagram",
-      "imageUrl": "/images/nethen-logo.png",
+      "imageUrl": "/images/logo-nethen-new.png",
       "imageHint": "person scooter",
       "postUrl": "https://www.instagram.com/nethen.rental/",
       "caption": "Lihat keseruan pelanggan kami di Instagram!",
@@ -319,7 +319,7 @@
     {
       "id": "social-2",
       "platform": "TikTok",
-      "imageUrl": "/images/nethen-logo.png",
+      "imageUrl": "/images/logo-nethen-new.png",
       "imageHint": "friends laughing",
       "postUrl": "https://www.tiktok.com/@nethen.rental",
       "caption": "Video seru & tips jalan-jalan di TikTok kami.",
@@ -328,7 +328,7 @@
     {
       "id": "social-3",
       "platform": "Instagram",
-      "imageUrl": "/images/nethen-logo.png",
+      "imageUrl": "/images/logo-nethen-new.png",
       "imageHint": "customer smiling",
       "postUrl": "https://www.instagram.com/nethen.rental/",
       "caption": "Follow kami untuk promo terbaru!",
