@@ -18,7 +18,7 @@ import { HeroSection } from '@/components/hero-section';
 
 
 export const metadata: Metadata = {
-  title: 'Rental Motor Semarang Murah & Terpercaya | Nethen Rental',
+  title: 'Nethen Rental | Sewa Motor Murah & Terpercaya di Semarang',
   description: 'Sewa motor di Semarang? Nethen Rental solusinya. Armada Vario, Aerox, Scoopy. Harga murah, syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Tawang & Poncol.',
   keywords: [
     'sewa motor semarang',
@@ -269,18 +269,18 @@ export default async function Home() {
       {/* Map Section */}
       <section id="lokasi" className="relative h-[400px] md:h-[500px] w-full">
          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840.85219451919!2d110.41507025!3d-6.983428949999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4ec52229d7%3A0xc791d6abc9236c7!2sSimpang%20Lima%20Semarang!5e0!3m2!1sen!2sid!4v1718893478912!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0886470390177!2d110.4140079759339!3d-6.98290296838383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4900a7d97d%3A0x85435471a535e6a!2sNethen%20Rental%20-%20Rental%20Motor%20Semarang!5e0!3m2!1sen!2sid!4v1721300055272!5m2!1sen!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Lokasi Nethen Rental Semarang"
+            title="Lokasi Nethen Rental - Rental Motor Semarang"
           ></iframe>
           <div className="absolute inset-0 bg-transparent pointer-events-none" />
           <a 
-            href="https://maps.app.goo.gl/uR4G9S9sAUNS81XQ9"
+            href="https://share.google/AuazYl9CxzarEpFc0"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border hover:bg-background/95 transition-all cursor-pointer"

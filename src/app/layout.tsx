@@ -97,15 +97,15 @@ const jsonLd = {
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Jl. Imam Bonjol No.108',
-    addressLocality: 'Semarang Tengah',
+    addressLocality: 'Semarang Utara',
     addressRegion: 'Kota Semarang',
     postalCode: '50132',
     addressCountry: 'ID',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -6.9829,
-    longitude: 110.414,
+    latitude: -6.982903,
+    longitude: 110.4165829,
   },
   openingHoursSpecification: [
     {
