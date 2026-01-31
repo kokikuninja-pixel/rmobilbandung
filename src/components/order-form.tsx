@@ -99,7 +99,7 @@ export function OrderForm() {
       
       const fullMessage = result.summary;
 
-      const phoneNumber = '6287738908578';
+      const phoneNumber = '6282329616166';
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
       
       window.open(whatsappUrl, '_blank');

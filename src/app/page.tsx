@@ -269,7 +269,7 @@ export default async function Home() {
       {/* Map Section */}
       <section id="lokasi" className="relative h-[400px] md:h-[500px] w-full">
          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.5634785216!2d107.5731165412978!3d-6.903444341655215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1721361833934!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9765324021287!2d107.59103007474926!3d-6.91003399310574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e617d91f4b59%3A0x41a7749e75522e83!2sRMB%20Nethen%20Rental%20Motor%20Bandung!5e0!3m2!1sen!2sid!4v1721980004514!5m2!1sen!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -280,7 +280,7 @@ export default async function Home() {
           ></iframe>
           <div className="absolute inset-0 bg-transparent pointer-events-none" />
           <a 
-            href="https://www.google.com/maps/place/Bandung,+Bandung+City,+West+Java"
+            href="https://www.google.com/maps/place/RMB+Nethen+Rental+Motor+Bandung/@-6.910034,107.5936049,17z/data=!3m1!4b1!4m6!3m5!1s0x2e68e617d91f4b59:0x41a7749e75522e83!8m2!3d-6.910034!4d107.5936049!16s%2Fg%2F11sbpm2g8l"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border hover:bg-background/95 transition-all cursor-pointer"

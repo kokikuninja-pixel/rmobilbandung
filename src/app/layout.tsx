@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: 'RMB Rental',
     images: [
       {
-        url: '/logo-nethen-new1.png',
+        url: '/images/logo-nethen-new1.png',
         width: 512,
         height: 512,
         alt: 'Logo RMB Rental Motor Bandung',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'RMB Rental | Sewa Motor Murah & Terpercaya di Bandung',
     description: 'Sewa motor di Bandung? RMB Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
-    images: ['/logo-nethen-new1.png'],
+    images: ['/images/logo-nethen-new1.png'],
   },
   robots: {
     index: true,
@@ -82,23 +82,23 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'RMB Rental - Rental Motor Bandung',
-  image: `${siteUrl}/logo-nethen-new1.png`,
+  image: `${siteUrl}/images/logo-nethen-new1.png`,
   '@id': siteUrl,
   url: siteUrl,
-  telephone: '+6287738908578',
+  telephone: '+6282329616166',
   priceRange: 'Rp 60.000 - Rp 180.000',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Jl. Asia Afrika',
+    streetAddress: 'Jl. Samiaji No.11A, Arjuna, Kec. Cicendo',
     addressLocality: 'Bandung',
     addressRegion: 'Jawa Barat',
-    postalCode: '40111',
+    postalCode: '40172',
     addressCountry: 'ID',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -6.9218,
-    longitude: 107.6071,
+    latitude: -6.910034,
+    longitude: 107.5936049,
   },
   openingHoursSpecification: [
     {
@@ -130,7 +130,7 @@ export default function RootLayout({
   return (
     <html lang="id" data-scroll-behavior="smooth">
       <head>
-        <link rel="icon" href="/logo-nethen-new1.png" type="image/png" />
+        <link rel="icon" href="/images/logo-nethen-new1.png" type="image/png" />
         <Script
           id="json-ld-structured-data"
           type="application/ld+json"
