@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion } from 'framer-motion';
@@ -44,7 +43,7 @@ export function HeroSection() {
           className="relative aspect-square max-w-md mx-auto md:max-w-full min-h-[300px] md:min-h-[400px]"
         >
           <Image
-            src="/images/hero-nethen-img.png"
+            src="/images/hero-rmb-img.png"
             alt="Pasangan boncengan motor menikmati Bandung"
             fill
             priority
