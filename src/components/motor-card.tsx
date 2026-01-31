@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import type { Motor } from '@/lib/data';
 import { cn } from '@/lib/utils';
-import { ArrowRight, Settings2, Power } from 'lucide-react';
+import { Settings2, Power } from 'lucide-react';
 
 interface MotorCardProps {
   motor: Motor;
@@ -23,7 +23,7 @@ export function MotorCard({ motor }: MotorCardProps) {
       transition={{ duration: 0.5 }}
       className="h-full"
     >
-      <Card className="overflow-hidden h-full flex flex-col bg-card border hover:border-secondary transition-all duration-300 shadow-lg hover:shadow-secondary/20">
+      <Card className="overflow-hidden h-full flex flex-col bg-card border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20 hover:-translate-y-1.5">
         <CardHeader className="p-0">
           <motion.div 
             className="aspect-[4/3] relative p-4"
@@ -45,27 +45,29 @@ export function MotorCard({ motor }: MotorCardProps) {
           </div>
         </CardHeader>
         <CardContent className="flex-grow pt-2 flex flex-col p-6">
-          <div className="mb-4">
-              <p className="text-sm text-muted-foreground">Mulai dari</p>
-              <p className="text-xl font-bold text-primary">
-                  Rp {motor.price.toLocaleString('id-ID')}{' '}
-                  <span className="text-sm font-normal text-muted-foreground">/hari</span>
-              </p>
+          <div className="flex flex-wrap items-start gap-4 mb-4">
+            <div>
+                <p className="text-sm text-muted-foreground">Mulai dari</p>
+                <p className="text-xl font-bold text-primary">
+                    Rp {motor.price.toLocaleString('id-ID')}{' '}
+                    <span className="text-sm font-normal text-muted-foreground">/hari</span>
+                </p>
+            </div>
+            {motor.specialLabel && (
+              <Badge
+                variant="outline"
+                className={cn("w-fit font-semibold text-xs mt-1", {
+                  "bg-blue-500/20 text-blue-500 border-blue-500/30": motor.specialLabel === "Bagasi Luas",
+                  "bg-green-500/20 text-green-500 border-green-500/30": motor.specialLabel === "Paling Irit",
+                  "bg-purple-500/20 text-purple-500 border-purple-500/30": motor.specialLabel === "Eco Friendly",
+                })}
+              >
+                {motor.specialLabel === "Bagasi Luas" && "👜 Bagasi Luas"}
+                {motor.specialLabel === "Paling Irit" && "⛽ Paling Irit"}
+                {motor.specialLabel === "Eco Friendly" && "⚡ Eco Friendly"}
+              </Badge>
+            )}
           </div>
-           {motor.specialLabel && (
-            <Badge
-              variant="outline"
-              className={cn("w-fit mb-4 font-semibold text-xs", {
-                "bg-blue-500/20 text-blue-500 border-blue-500/30": motor.specialLabel === "Bagasi Luas",
-                "bg-green-500/20 text-green-500 border-green-500/30": motor.specialLabel === "Paling Irit",
-                "bg-purple-500/20 text-purple-500 border-purple-500/30": motor.specialLabel === "Eco Friendly",
-              })}
-            >
-              {motor.specialLabel === "Bagasi Luas" && "👜 Bagasi Luas"}
-              {motor.specialLabel === "Paling Irit" && "⛽ Paling Irit"}
-              {motor.specialLabel === "Eco Friendly" && "⚡ Eco Friendly"}
-            </Badge>
-          )}
 
           <div className="mt-auto">
             <div className="flex items-center justify-between text-muted-foreground mb-4">
@@ -80,7 +82,7 @@ export function MotorCard({ motor }: MotorCardProps) {
             </div>
 
             <div className="grid grid-cols-2 gap-2">
-                <Button asChild variant="outline" className="w-full bg-transparent hover:bg-secondary hover:text-secondary-foreground">
+                <Button asChild variant="secondary" className="w-full">
                     <Link href={`/armada/${motor.id}`}>
                         Lihat Detail
                     </Link>
