@@ -57,10 +57,10 @@ export const metadata: Metadata = {
     siteName: 'Nethen Rental',
     images: [
       {
-        url: '/images/og-image.png', // Local image in /public/images/
-        width: 1200,
-        height: 630,
-        alt: 'Sewa Motor Murah di Semarang | Nethen Rental',
+        url: '/images/logo-nethen-new1.png',
+        width: 512,
+        height: 512,
+        alt: 'Logo Nethen Rental Motor Semarang',
       },
     ],
     locale: 'id_ID',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Nethen Rental | Sewa Motor Murah & Terpercaya di Semarang',
     description: 'Sewa motor di Semarang? Nethen Rental solusinya. Armada terbaru (Vario, Scoopy, Aerox), harga murah. Syarat mudah, gratis helm & jas hujan. Pesan sekarang!',
-    images: ['/images/og-image.png'], // Local image in /public/images/
+    images: ['/images/logo-nethen-new1.png'],
   },
   robots: {
     index: true,
@@ -137,7 +137,7 @@ export default function RootLayout({
   return (
     <html lang="id" data-scroll-behavior="smooth">
       <head>
-        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="icon" href="/images/logo-nethen-new1.png" type="image/png" />
         <Script
           id="json-ld-structured-data"
           type="application/ld+json"
