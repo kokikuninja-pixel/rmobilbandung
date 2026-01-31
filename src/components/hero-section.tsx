@@ -20,10 +20,10 @@ export function HeroSection() {
           className="flex flex-col gap-6 text-center md:text-left"
         >
           <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-foreground">
-            Sewa Motor Cepat & Aman di Semarang
+            Sewa Motor Cepat &amp; Aman di Bandung
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-            Nikmati perjalananmu di Semarang dengan motor berkualitas dan layanan terpercaya.
+            Nikmati perjalananmu di Bandung dengan motor berkualitas dan layanan terpercaya.
           </p>
           <div className="flex justify-center md:justify-start">
             <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
@@ -45,7 +45,7 @@ export function HeroSection() {
         >
           <Image
             src="/images/hero-nethen-img.png"
-            alt="Pasangan boncengan motor menikmati Semarang"
+            alt="Pasangan boncengan motor menikmati Bandung"
             fill
             priority
             className="object-contain"

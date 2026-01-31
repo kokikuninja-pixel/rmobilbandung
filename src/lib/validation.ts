@@ -6,7 +6,7 @@ export const rentalFormSchema = z.object({
   ktpOrigin: z.string().min(3, { message: "Asal KTP harus diisi." }),
   currentDomicile: z.string().min(3, { message: "Domisili sekarang harus diisi." }),
   workLocation: z.string().min(3, { message: "Lokasi kerja harus diisi." }),
-  workDurationInJakarta: z.string().optional(),
+  workDurationInBandung: z.string().optional(),
   desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
   rentalStartDate: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
   rentalStartTime: z.string({ required_error: "Jam mulai sewa harus diisi." }),
@@ -18,13 +18,13 @@ export const rentalFormSchema = z.object({
   destination: z.string().min(5, { message: "Tujuan (tempat) harus diisi, minimal 5 karakter." }),
   honeypot: z.string().optional(), // Bot protection
 }).refine(data => {
-  if (data.workLocation.toLowerCase().includes('semarang')) {
-    return !!data.workDurationInJakarta && data.workDurationInJakarta.length > 0;
+  if (data.workLocation.toLowerCase().includes('bandung')) {
+    return !!data.workDurationInBandung && data.workDurationInBandung.length > 0;
   }
   return true;
 }, {
-  message: "Mohon isi sudah berapa lama bekerja di Semarang.",
-  path: ["workDurationInJakarta"],
+  message: "Mohon isi sudah berapa lama bekerja di Bandung.",
+  path: ["workDurationInBandung"],
 }).refine(data => {
     if (data.rentalStartDate && data.rentalEndDate) {
         return data.rentalEndDate >= data.rentalStartDate;

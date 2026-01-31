@@ -6,8 +6,8 @@ import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Syarat & Ketentuan Sewa Motor | Nethen Rental Semarang',
-  description: 'Pahami syarat dan ketentuan sewa motor di Nethen Rental Semarang. Informasi lengkap tentang booking, jaminan, dan penggunaan unit.',
+  title: 'Syarat &amp; Ketentuan Sewa Motor | RMB Rental Bandung',
+  description: 'Pahami syarat dan ketentuan sewa motor di RMB Rental Bandung. Informasi lengkap tentang booking, jaminan, dan penggunaan unit.',
   alternates: {
     canonical: '/snk',
   },
@@ -31,13 +31,13 @@ export default function SnKPage() {
       title: 'Batas Wilayah Operasional',
       icon: <MapPin className="h-6 w-6 text-secondary" />,
       points: [
-        'Motor hanya boleh digunakan di wilayah Kota Semarang dan sekitarnya (area yang wajar).',
-        'Penggunaan di luar wilayah tersebut memerlukan kesepakatan baru dengan pihak Nethen.',
+        'Motor hanya boleh digunakan di wilayah Kota Bandung dan sekitarnya (area yang wajar).',
+        'Penggunaan di luar wilayah tersebut memerlukan kesepakatan baru dengan pihak RMB.',
         'Pelanggaran batas wilayah tanpa konfirmasi akan dikenakan denda tambahan sebesar IDR 100.000/hari.',
       ],
     },
     {
-      title: 'Tanggung Jawab & Larangan',
+      title: 'Tanggung Jawab &amp; Larangan',
       icon: <Ban className="h-6 w-6 text-destructive" />,
       points: [
         'Status Sewa: Masa sewa tidak dapat diperpanjang secara otomatis kecuali ada kesepakatan baru.',
@@ -47,7 +47,7 @@ export default function SnKPage() {
       ],
     },
     {
-        title: 'Ketentuan Denda & Kehilangan',
+        title: 'Ketentuan Denda &amp; Kehilangan',
         icon: <Wallet className="h-6 w-6 text-secondary" />,
         points: [
           'STNK Hilang: Denda Rp 1.000.000,-.',
@@ -68,7 +68,7 @@ export default function SnKPage() {
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Kembali ke Halaman Utama
             </Link>
-             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Syarat & Ketentuan</h1>
+             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Syarat &amp; Ketentuan</h1>
              <p className="text-lg text-muted-foreground">Transparansi adalah prioritas kami.</p>
         </div>
 
@@ -82,7 +82,7 @@ export default function SnKPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-muted-foreground">Setiap penyewaan unit di Nethen sudah termasuk fasilitas pendukung untuk kenyamanan berkendara Anda:</p>
+                <p className="mb-4 text-muted-foreground">Setiap penyewaan unit di RMB sudah termasuk fasilitas pendukung untuk kenyamanan berkendara Anda:</p>
                 <ul className="space-y-2">
                     {facilities.map((item, index) => (
                         <li key={index} className="flex items-center gap-3">
@@ -98,7 +98,7 @@ export default function SnKPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl">
                     <FileText className="h-6 w-6 text-secondary" />
-                    <span>Syarat & Cara Booking</span>
+                    <span>Syarat &amp; Cara Booking</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>

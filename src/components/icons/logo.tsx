@@ -5,7 +5,7 @@ export function Logo() {
   return (
     <Image
       src="/images/logo-nethen-new1.png"
-      alt="Nethen Rental Motor Logo"
+      alt="RMB Rental Motor Logo"
       width={256}
       height={256}
       priority

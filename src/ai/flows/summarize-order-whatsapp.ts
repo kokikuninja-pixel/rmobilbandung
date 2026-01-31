@@ -17,10 +17,10 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
   ktpOrigin: z.string().describe('The KTP origin of the customer.'),
   currentDomicile: z.string().describe('The current domicile of the customer.'),
   workLocation: z.string().describe('The work location of the customer.'),
-  workDurationInJakarta: z
+  workDurationInBandung: z
     .string()
     .optional()
-    .describe('How long the customer has been working in Jakarta (if applicable).'),
+    .describe('How long the customer has been working in Bandung (if applicable).'),
   desiredMotor: z.string().describe('The desired motorcycle.'),
   rentalStartDate: z.string().describe('The rental start date.'),
   rentalStartTime: z.string().describe('The rental start time.'),
@@ -49,7 +49,7 @@ const summarizeOrderPrompt = ai.definePrompt({
   name: 'summarizeOrderPrompt',
   input: {schema: SummarizeOrderForWhatsAppInputSchema},
   output: {schema: SummarizeOrderForWhatsAppOutputSchema},
-  prompt: `Halo Admin Nethen! 👋
+  prompt: `Halo Admin RMB! 👋
 Saya ingin mengajukan penyewaan motor:
 
 Nama: {{{name}}}
@@ -57,8 +57,8 @@ Email: {{{email}}}
 Asal KTP: {{{ktpOrigin}}}
 Domisili: {{{currentDomicile}}}
 Lokasi Kerja: {{{workLocation}}}
-{{#if workDurationInJakarta}}
-Lama di Semarang: {{{workDurationInJakarta}}}
+{{#if workDurationInBandung}}
+Lama di Bandung: {{{workDurationInBandung}}}
 {{/if}}
 Unit Motor: {{{desiredMotor}}}
 Tgl. Mulai: {{{rentalStartDate}}} jam {{{rentalStartTime}}}

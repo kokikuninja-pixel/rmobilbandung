@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { motorInventory } from '@/lib/data';
 
-const siteUrl = 'https://rentalmotorsemarangnethen.com';
+const siteUrl = 'https://rmb-rental-bandung.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const motorUrls = motorInventory.map(motor => ({

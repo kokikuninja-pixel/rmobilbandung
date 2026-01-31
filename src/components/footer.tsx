@@ -7,15 +7,14 @@ import React from 'react';
 
 export function Footer() {
   const seoAreas = [
-    'Sewa Motor Simpang Lima', 'Rental Motor Tugu Muda', 'Sewa Motor Kota Lama', 
-    'Rental Motor Lawang Sewu', 'Sewa Motor Banyumanik', 'Rental Motor Gajahmungkur', 
-    'Sewa Motor Tembalang', 'Rental Motor Stasiun Tawang', 'Sewa Motor Stasiun Poncol', 
-    'Sewa Motor Bandara Ahmad Yani'
+    'Sewa Motor Dago', 'Rental Motor Lembang', 'Sewa Motor Braga', 
+    'Rental Motor Setiabudi', 'Sewa Motor Cihampelas', 'Rental Motor Gedung Sate', 
+    'Sewa Motor Buahbatu', 'Rental Motor Stasiun Bandung', 'Sewa Motor Bandara Husein Sastranegara'
   ];
 
   const seoArmada = [
-    'Sewa Motor Aerox Semarang', 'Rental Honda Vario', 'Sewa Yamaha Gear', 
-    'Rental Scoopy Stylish', 'Sewa Motor Matic Semarang'
+    'Sewa Motor Aerox Bandung', 'Rental Honda Vario', 'Sewa Yamaha Gear', 
+    'Rental Scoopy Stylish', 'Sewa Motor Matic Bandung'
   ];
 
   return (
@@ -48,7 +47,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4 font-semibold text-secondary-foreground">Legal</h3>
             <ul className="space-y-2">
-              <li><Link href="/snk" className="text-secondary-foreground/70 hover:text-primary">Syarat & Ketentuan</Link></li>
+              <li><Link href="/snk" className="text-secondary-foreground/70 hover:text-primary">Syarat &amp; Ketentuan</Link></li>
               <li><Link href="#" className="text-secondary-foreground/70 hover:text-primary">Kebijakan Privasi</Link></li>
             </ul>
           </div>
@@ -59,9 +58,9 @@ export function Footer() {
       <div className="container px-4 pt-8 pb-12 text-xs border-t border-secondary-foreground/10 text-secondary-foreground/60">
         <div className="max-w-screen-xl mx-auto space-y-6">
           <div>
-            <h4 className="font-semibold text-sm text-secondary-foreground/80 mb-2">Layanan Sewa Motor Nethen</h4>
+            <h4 className="font-semibold text-sm text-secondary-foreground/80 mb-2">Layanan Sewa Motor RMB</h4>
             <p>
-              Nethen (Rental Motor Semarang) adalah penyedia jasa transportasi roda dua terbaik dengan layanan cepat mulai pukul 05.30 pagi. Kami berkomitmen memberikan pengalaman berkendara yang aman, nyaman, dan bebas hambatan bagi setiap pelanggan.
+              RMB (Rental Motor Bandung) adalah penyedia jasa transportasi roda dua terbaik dengan layanan cepat mulai pukul 05.30 pagi. Kami berkomitmen memberikan pengalaman berkendara yang aman, nyaman, dan bebas hambatan bagi setiap pelanggan.
             </p>
           </div>
           <div>
@@ -91,7 +90,7 @@ export function Footer() {
       
       <div className="border-t border-secondary-foreground/10 py-6">
         <p className="text-center text-sm text-secondary-foreground/70">
-          © {new Date().getFullYear()} Nethen Rental. All Rights Reserved.
+          © {new Date().getFullYear()} RMB Rental. All Rights Reserved.
         </p>
       </div>
     </footer>

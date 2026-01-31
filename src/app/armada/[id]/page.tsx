@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: MotorDetailPageProps): Promis
     }
   
     return {
-      title: `Sewa ${motor.name} di Semarang | Nethen Rental`,
-      description: `Sewa motor ${motor.name} di Semarang. Cek spesifikasi, harga, dan fasilitas lengkap. Pesan sekarang, unit siap pakai.`,
+      title: `Sewa ${motor.name} di Bandung | RMB Rental`,
+      description: `Sewa motor ${motor.name} di Bandung. Cek spesifikasi, harga, dan fasilitas lengkap. Pesan sekarang, unit siap pakai.`,
       alternates: {
         canonical: `/armada/${motor.id}`,
       },
@@ -136,7 +136,7 @@ export default function MotorDetailPage({ params }: MotorDetailPageProps) {
         </div>
         
         <div className="mt-24 border-t pt-16">
-            <h3 className="text-3xl font-bold text-center mb-6">Keunggulan & Fitur</h3>
+            <h3 className="text-3xl font-bold text-center mb-6">Keunggulan &amp; Fitur</h3>
             <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">{motor.feature}</p>
              {motor.specialLabel && (
               <div className="flex justify-center mt-6">

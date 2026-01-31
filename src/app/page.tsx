@@ -18,23 +18,23 @@ import { HeroSection } from '@/components/hero-section';
 
 
 export const metadata: Metadata = {
-  title: 'Nethen Rental | Sewa Motor Murah & Terpercaya di Semarang',
-  description: 'Sewa motor di Semarang? Nethen Rental solusinya. Armada Vario, Aerox, Scoopy. Harga murah, syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Tawang & Poncol.',
+  title: 'RMB Rental | Sewa Motor Murah & Terpercaya di Bandung',
+  description: 'Sewa motor di Bandung? RMB Rental solusinya. Armada Vario, Aerox, Scoopy. Harga murah, syarat mudah, gratis helm & jas hujan. Rental motor terdekat dari Stasiun Bandung & Bandara Husein Sastranegara.',
   keywords: [
-    'sewa motor semarang',
-    'rental motor semarang',
-    'sewa motor terdekat semarang',
-    'rental motor terdekat semarang',
-    'sewa motor harian semarang',
-    'rental motor murah semarang',
-    'sewa motor matic semarang',
-    'sewa motor dekat stasiun tawang',
-    'rental motor simpang lima',
+    'sewa motor bandung',
+    'rental motor bandung',
+    'sewa motor terdekat bandung',
+    'rental motor terdekat bandung',
+    'sewa motor harian bandung',
+    'rental motor murah bandung',
+    'sewa motor matic bandung',
+    'sewa motor dekat stasiun bandung',
+    'rental motor dago',
     'sewa motor syarat mudah',
-    'sewa motor vario semarang',
-    'sewa motor scoopy semarang',
-    'sewa motor aerox semarang',
-    'nethen rental',
+    'sewa motor vario bandung',
+    'sewa motor scoopy bandung',
+    'sewa motor aerox bandung',
+    'rmb rental',
   ],
   alternates: {
     canonical: '/',
@@ -94,7 +94,7 @@ export default async function Home() {
       <section id="armada" className="py-16 md:py-24 bg-background">
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">Armada Favorit di Semarang</h2>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Armada Favorit di Bandung</h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Pilihan paling populer yang ringan, irit, dan lincah untuk mobilitas harian di perkotaan.
             </p>
@@ -120,9 +120,9 @@ export default async function Home() {
       <section id="tentang-kami" className="py-16 md:py-24 bg-muted">
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">Cepat, Terpercaya, & Transparan</h2>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Cepat, Terpercaya, &amp; Transparan</h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              Nethen adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Semarang. Kami memastikan perjalanan Anda menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
+              RMB adalah penyedia layanan rental motor yang berdedikasi untuk mendukung mobilitas Anda di Bandung. Kami memastikan perjalanan Anda menjadi lebih mudah dengan armada yang selalu dalam kondisi prima.
             </p>
           </div>
 
@@ -165,7 +165,7 @@ export default async function Home() {
                       </CardHeader>
                       <CardContent className="space-y-4 !pt-2">
                          <div>
-                              <h4 className="font-semibold text-muted-foreground">Pemesanan & Pengantaran Unit</h4>
+                              <h4 className="font-semibold text-muted-foreground">Pemesanan &amp; Pengantaran Unit</h4>
                               <p className="text-xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
                           </div>
                            <div>
@@ -193,7 +193,7 @@ export default async function Home() {
 
                 <div className="mt-8 text-center">
                   <Button asChild variant="outline" size="lg">
-                    <Link href="https://search.google.com/local/reviews?placeid=ChIJNURzPEv1aS4RXAZoksdZblU" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.google.com/maps/search/rental+motor+bandung/" target="_blank" rel="noopener noreferrer">
                       Lihat Lebih Banyak Review di Google <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
@@ -207,9 +207,9 @@ export default async function Home() {
       <section id="galeri-home" className="py-16 md:py-24 bg-background">
         <div className="container px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-headline text-4xl md:text-5xl font-bold">Momen Seru Bersama Nethen</h2>
+            <h2 className="font-headline text-4xl md:text-5xl font-bold">Momen Seru Bersama RMB</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Intip keseruan para pelanggan setia kami saat menjelajahi Semarang dan momen di balik layar tim kami.
+              Intip keseruan para pelanggan setia kami saat menjelajahi Bandung dan momen di balik layar tim kami.
             </p>
           </div>
           
@@ -231,7 +231,7 @@ export default async function Home() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-headline text-4xl md:text-5xl font-bold">Ikuti Keseruan Kami</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Lihat preview dari konten Instagram & TikTok kami. Klik untuk melihat postingan lengkap dan jangan lupa follow!
+              Lihat preview dari konten Instagram &amp; TikTok kami. Klik untuk melihat postingan lengkap dan jangan lupa follow!
             </p>
           </div>
           
@@ -269,18 +269,18 @@ export default async function Home() {
       {/* Map Section */}
       <section id="lokasi" className="relative h-[400px] md:h-[500px] w-full">
          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0886470390177!2d110.4140079759339!3d-6.98290296838383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4900a7d97d%3A0x85435471a535e6a!2sNethen%20Rental%20-%20Rental%20Motor%20Semarang!5e0!3m2!1sen!2sid!4v1721300055272!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.5634785216!2d107.5731165412978!3d-6.903444341655215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1721361833934!5m2!1sen!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Lokasi Nethen Rental - Rental Motor Semarang"
+            title="Lokasi RMB Rental - Rental Motor Bandung"
           ></iframe>
           <div className="absolute inset-0 bg-transparent pointer-events-none" />
           <a 
-            href="https://share.google/AuazYl9CxzarEpFc0"
+            href="https://www.google.com/maps/place/Bandung,+Bandung+City,+West+Java"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background/80 p-8 rounded-lg text-center pointer-events-auto shadow-2xl backdrop-blur-sm border hover:bg-background/95 transition-all cursor-pointer"
@@ -297,7 +297,7 @@ export default async function Home() {
           <Card className="bg-transparent border-0 shadow-none">
             <CardHeader className="text-center">
               <CardTitle className="font-headline text-5xl md:text-6xl font-extrabold text-primary tracking-wider">
-                FORM NETHEN
+                FORM RMB
               </CardTitle>
               <CardDescription className="text-secondary-foreground/80 pt-2 max-w-lg mx-auto">
                 Isi formulir di bawah untuk mengirim pesanan Anda via WhatsApp.

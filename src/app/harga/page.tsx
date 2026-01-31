@@ -13,8 +13,8 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Daftar Harga Sewa Motor Semarang | Nethen Rental',
-  description: 'Daftar harga sewa motor harian termurah di Nethen Rental Semarang. Tarif transparan dan kompetitif mulai dari Rp 60.000 per hari.',
+  title: 'Daftar Harga Sewa Motor Bandung | RMB Rental',
+  description: 'Daftar harga sewa motor harian termurah di RMB Rental Bandung. Tarif transparan dan kompetitif mulai dari Rp 60.000 per hari.',
   alternates: {
     canonical: '/harga',
   },
@@ -88,7 +88,7 @@ export default function HargaPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                    <div>
-                     <h4 className="font-semibold">Weekend & Tanggal Merah</h4>
+                     <h4 className="font-semibold">Weekend &amp; Tanggal Merah</h4>
                      <p className="text-muted-foreground">Dikenakan biaya tambahan sebesar <span className="text-foreground font-bold">Rp 20.000</span> dari harga dasar.</p>
                    </div>
                    <div>
@@ -106,7 +106,7 @@ export default function HargaPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                    <div>
-                        <h4 className="font-semibold text-muted-foreground">Pemesanan & Pengantaran Unit</h4>
+                        <h4 className="font-semibold text-muted-foreground">Pemesanan &amp; Pengantaran Unit</h4>
                         <p className="text-2xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
                     </div>
                      <div>

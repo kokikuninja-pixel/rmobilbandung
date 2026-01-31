@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { WhatsappIcon } from './icons/whatsapp';
 
 export function FloatingActionButton() {
-  const whatsappMessage = `Halo Admin Nethen! 👋
+  const whatsappMessage = `Halo Admin RMB! 👋
 
 Saya ingin bertanya mengenai ketersediaan sewa motor. Berikut detail identitas saya:
 
