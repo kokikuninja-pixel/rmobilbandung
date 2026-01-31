@@ -24,7 +24,7 @@ export function Footer() {
           <Logo />
           <p className="text-sm text-secondary-foreground/70">Your Freedom to Explore Starts Here.</p>
           <div className="flex gap-4">
-            <Link href="https://www.instagram.com/nethen.rental/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
+            <Link href="https://www.instagram.com/inforentalmotorbandung/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
             <Link href="https://www.tiktok.com/@nethen.rental" target="_blank" rel="noopener noreferrer" aria-label="Tiktok"><Tiktok className="h-5 w-5 text-secondary-foreground/70 hover:text-primary" /></Link>
           </div>
         </div>

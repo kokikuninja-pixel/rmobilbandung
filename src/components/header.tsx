@@ -85,7 +85,7 @@ export function Header() {
             <Link href="/#pesan" onClick={(e) => handleLinkClick(e, '/#pesan')}>Sewa Sekarang</Link>
           </Button>
           <Button asChild variant="ghost" size="icon" className="hidden text-primary md:inline-flex hover:bg-primary/20">
-            <Link href="https://www.instagram.com/nethen.rental/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <Link href="https://www.instagram.com/inforentalmotorbandung/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram />
             </Link>
           </Button>
@@ -125,7 +125,7 @@ export function Header() {
               </Link>
             ))}
              <Link
-                href="https://www.instagram.com/nethen.rental/"
+                href="https://www.instagram.com/inforentalmotorbandung/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-foreground transition-colors hover:text-primary flex items-center gap-2"
