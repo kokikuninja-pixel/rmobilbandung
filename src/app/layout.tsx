@@ -85,7 +85,7 @@ const jsonLd = {
   image: `${siteUrl}/images/logo-rmb.png`,
   '@id': siteUrl,
   url: siteUrl,
-  telephone: '+6282329616166',
+  telephone: '+6282190105740',
   priceRange: 'Rp 60.000 - Rp 180.000',
   address: {
     '@type': 'PostalAddress',

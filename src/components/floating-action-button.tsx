@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from './ui/button';
@@ -5,19 +6,7 @@ import Link from 'next/link';
 import { WhatsappIcon } from './icons/whatsapp';
 
 export function FloatingActionButton() {
-  const whatsappMessage = `Halo Admin RMB! 👋
-
-Saya ingin bertanya mengenai ketersediaan sewa motor. Berikut detail identitas saya:
-
-Nama: [isi nama]
-
-Asal Kota: [isi kota asal]
-
-Domisili Sekarang: [isi lokasi domisili sekarang]
-
-Mohon info ketersediaan unit dan persyaratannya ya min. Terima kasih!`;
-
-  const whatsappUrl = `https://wa.me/6282329616166?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/6282190105740`;
 
   return (
     <Button
@@ -28,7 +17,7 @@ Mohon info ketersediaan unit dan persyaratannya ya min. Terima kasih!`;
       <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
         <WhatsappIcon className="h-8 w-8 shrink-0" />
         <span className="hidden font-semibold text-base md:inline">
-          Pencet Untuk Hubungi kami
+          Chat via WhatsApp
         </span>
       </Link>
     </Button>

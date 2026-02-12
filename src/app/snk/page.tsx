@@ -1,3 +1,4 @@
+
 import { ArrowLeft, Ban, CheckCircle, FileText, MapPin, Milestone, Phone, Wallet } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -22,7 +23,7 @@ export default function SnKPage() {
 
   const bookingSteps = [
     { text: 'Siapkan Dokumen: Foto KTP, SIM C aktif, ID Pegawai/KTM, serta tiket kereta/pesawat (jika ada).' },
-    { text: 'Kirim Data: Hubungi kami via WhatsApp di 0823-2961-6166.' },
+    { text: 'Kirim Data: Hubungi kami via WhatsApp di 082190105740.' },
     { text: 'Jaminan Identitas: Salah satu identitas asli akan kami simpan sebagai jaminan selama masa sewa berlangsung.' },
   ];
 
@@ -147,7 +148,7 @@ export default function SnKPage() {
                 Jangan ragu untuk menghubungi kami jika ada ketentuan yang kurang jelas. Tim kami siap membantu Anda.
                 </p>
                 <Button asChild>
-                    <a href="https://wa.me/6282329616166" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/6282190105740" target="_blank" rel="noopener noreferrer">
                         <Phone className="mr-2 h-4 w-4" /> Hubungi via WhatsApp
                     </a>
                 </Button>
