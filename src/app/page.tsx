@@ -19,7 +19,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
+        <div className="bg-muted">
+          <About />
+        </div>
         <Fleet />
         <Process />
         <Pricing />
