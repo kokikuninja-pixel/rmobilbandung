@@ -1,4 +1,4 @@
-'use client';
+
 import SeoPageLayout, { generateSeoMetadata } from '@/components/seo-page-layout';
 import type { Metadata } from 'next';
 
