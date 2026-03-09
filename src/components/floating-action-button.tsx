@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { WhatsappIcon } from './icons/whatsapp';
 
 export function FloatingActionButton() {
-  const whatsappUrl = `https://wa.me/6282190105740`;
+  const whatsappUrl = `https://wa.me/6282329616166`;
 
   return (
     <Button

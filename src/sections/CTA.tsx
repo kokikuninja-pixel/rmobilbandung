@@ -1,3 +1,4 @@
+
 'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -104,7 +105,7 @@ export default function CTA() {
                   variant="outline"
                   className="border-2 border-background/30 text-background hover:bg-background hover:text-foreground transition-all duration-300 font-semibold px-8 py-6 text-base"
                 >
-                  <a href="https://wa.me/6282190105740" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/6282329616166" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Hubungi Kami
                   </a>
