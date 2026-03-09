@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/galeri', label: 'Galeri' },
   { href: '/tentang-kami', label: 'Tentang Kami' },
   { href: '/lokasi', label: 'Lokasi' },
+  { href: '/faq', label: 'FAQ' },
   { href: '/snk', label: 'S&K' },
 ];
 

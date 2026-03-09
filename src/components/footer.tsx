@@ -54,6 +54,7 @@ export function Footer() {
             <h3 className="mb-4 font-semibold text-background">Legal</h3>
             <ul className="space-y-2">
               <li><Link href="/snk" className="text-background/70 hover:text-primary">Syarat &amp; Ketentuan</Link></li>
+              <li><Link href="/faq" className="text-background/70 hover:text-primary">Tanya Jawab (FAQ)</Link></li>
               <li><Link href="#" className="text-background/70 hover:text-primary">Kebijakan Privasi</Link></li>
             </ul>
           </div>

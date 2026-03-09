@@ -25,6 +25,11 @@ const faqs = [
       'Untuk pembatalan pesanan, uang muka (DP) yang sudah dibayarkan tidak dapat dikembalikan (hangus). Kami sarankan untuk memastikan jadwal Anda sebelum melakukan pemesanan.',
   },
   {
+    question: 'Bagaimana jika ingin reschedule (mengubah jadwal)?',
+    answer:
+      'Tentu bisa. Reschedule atau perubahan jadwal bisa dilakukan maksimal 1 kali. Mohon informasikan kepada admin kami sesegera mungkin agar kami bisa menyesuaikan ketersediaan unit.',
+  },
+  {
     question: 'Apakah bisa diantar ke lokasi saya?',
     answer:
       'Tentu! Kami menyediakan layanan antar-jemput ke hotel, stasiun, bandara, atau alamat lain di dalam kota Bandung. Biaya pengantaran akan disesuaikan tergantung jarak lokasi Anda.',
