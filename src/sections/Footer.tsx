@@ -230,7 +230,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-background/70">Buka 24/7</span>
+                <span className="text-background/70">Buka 05:00 - 21:30</span>
               </li>
             </ul>
           </div>
