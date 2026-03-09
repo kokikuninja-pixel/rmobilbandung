@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Check, Star, Zap, Crown } from 'lucide-react'
@@ -5,54 +6,50 @@ import { Check, Star, Zap, Crown } from 'lucide-react'
 const plans = [
   {
     name: 'Paket Harian',
-    price: 15,
+    price: 60000,
     period: 'hari',
-    description: 'Sempurna untuk perjalanan singkat dan urusan cepat',
+    description: 'Sempurna untuk perjalanan singkat dan urusan cepat di dalam kota.',
     icon: Zap,
     features: [
-      'Batas 150 km per hari',
-      'Termasuk asuransi dasar',
-      'Bantuan darurat 24/7',
-      'Disediakan helm',
-      'Panduan parkir gratis',
+      '2 Helm SNI',
+      'Jas Hujan',
+      'Phone Holder',
+      'Garansi tukar/servis jika ada kendala',
     ],
-    cta: 'Mulai Sekarang',
+    cta: 'Sewa Harian',
     featured: false,
   },
   {
     name: 'Paket Mingguan',
-    price: 12,
-    period: 'hari',
-    description: 'Bagus untuk menginap lebih lama dan liburan',
+    price: 300000,
+    period: 'minggu',
+    description: 'Harga lebih hemat untuk liburan atau kebutuhan selama seminggu penuh.',
     icon: Star,
     features: [
-      'Kilometer tak terbatas',
-      'Asuransi penuh',
-      'Gratis antar & jemput',
-      'Diskon 10% untuk aksesori',
-      'Dukungan prioritas',
-      'Upgrade helm gratis',
+      '2 Helm SNI',
+      'Jas Hujan',
+      'Phone Holder',
+      'Garansi tukar/servis jika ada kendala',
+      'Harga jauh lebih hemat',
     ],
-    cta: 'Paling Populer',
+    cta: 'Sewa Mingguan',
     featured: true,
-    badge: 'Penawaran Terbaik',
+    badge: 'Paling Populer',
   },
   {
     name: 'Paket Bulanan',
-    price: 8,
-    period: 'hari',
-    description: 'Untuk sewa jangka panjang dan para digital nomad',
+    price: 950000,
+    period: 'bulan',
+    description: 'Solusi terbaik untuk sewa jangka panjang, seperti untuk bekerja atau kuliah.',
     icon: Crown,
     features: [
-      'Kilometer tak terbatas',
-      'Asuransi premium',
-      'Dukungan prioritas 24/7',
-      'Perawatan gratis',
-      'Tukar skuter kapan saja',
-      'Perlakuan VIP',
-      'Diskon eksklusif',
+      '2 Helm SNI',
+      'Jas Hujan',
+      'Phone Holder',
+      'Garansi tukar/servis jika ada kendala',
+      'Tarif paling ekonomis',
     ],
-    cta: 'Jadi Pro',
+    cta: 'Sewa Bulanan',
     featured: false,
   },
 ]
@@ -119,7 +116,7 @@ export default function Pricing() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            Tanpa biaya tersembunyi. Tanpa kejutan. Hanya nilai terbaik untuk petualangan Anda.
+            Tanpa biaya tersembunyi, tanpa kejutan. Hanya nilai terbaik untuk petualangan Anda di Bandung.
           </p>
         </div>
 
@@ -143,7 +140,7 @@ export default function Pricing() {
               )}
 
               <div
-                className={`relative h-full bg-white rounded-3xl p-8 transition-all duration-500 ${
+                className={`relative h-full bg-white rounded-3xl p-8 transition-all duration-500 flex flex-col ${
                   plan.featured
                     ? 'shadow-card-hover ring-2 ring-brand-yellow'
                     : 'shadow-card hover:shadow-card-hover'
@@ -174,50 +171,58 @@ export default function Pricing() {
 
                 {/* Price */}
                 <div className="mb-8">
-                  <span className="font-display font-bold text-5xl text-brand-black">
-                    ${plan.price}
-                  </span>
-                  <span className="text-gray-500">/{plan.period}</span>
+                  <span className="text-gray-500 text-sm">Mulai dari</span>
+                  <div className="flex items-baseline">
+                    <span className="font-display font-bold text-5xl text-brand-black">
+                      Rp{plan.price.toLocaleString('id-ID')}
+                    </span>
+                    <span className="text-gray-500">
+                      /{plan.period}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Features */}
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-3"
-                    >
-                      <div
-                        className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                          plan.featured
-                            ? 'bg-brand-yellow'
-                            : 'bg-brand-yellow/20'
-                        }`}
+                <div className="flex-grow">
+                  {/* Features */}
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3"
                       >
-                        <Check
-                          className={`w-3 h-3 ${
+                        <div
+                          className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                             plan.featured
-                              ? 'text-brand-black'
-                              : 'text-brand-yellow'
+                              ? 'bg-brand-yellow'
+                              : 'bg-brand-yellow/20'
                           }`}
-                        />
-                      </div>
-                      <span className="text-gray-600 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                        >
+                          <Check
+                            className={`w-3 h-3 ${
+                              plan.featured
+                                ? 'text-brand-black'
+                                : 'text-brand-yellow'
+                            }`}
+                          />
+                        </div>
+                        <span className="text-gray-600 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 {/* CTA */}
                 <Button
-                  className={`w-full py-6 font-semibold transition-all duration-300 ${
+                  className={`w-full py-6 font-semibold transition-all duration-300 mt-auto ${
                     plan.featured
                       ? 'bg-brand-yellow text-brand-black hover:bg-brand-black hover:text-white'
                       : 'bg-brand-black text-white hover:bg-brand-yellow hover:text-brand-black'
                   }`}
                   onClick={() => {
-                    alert(
-                      `Terima kasih telah memilih ${plan.name}! Tim kami akan segera menghubungi Anda.`
-                    )
+                    const target = document.querySelector('#contact');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                   }}
                 >
                   {plan.cta}
@@ -242,7 +247,7 @@ export default function Pricing() {
           </div>
           <div className="flex items-center gap-2 text-gray-600">
             <Check className="w-5 h-5 text-brand-yellow" />
-            <span className="text-sm">Pembatalan gratis</span>
+            <span className="text-sm">Garansi Tukar/Servis</span>
           </div>
           <div className="flex items-center gap-2 text-gray-600">
             <Check className="w-5 h-5 text-brand-yellow" />
