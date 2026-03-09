@@ -58,7 +58,7 @@ export default function CTA() {
             {/* Content */}
             <div className="space-y-8">
               <h2
-                className={`font-display font-bold text-4xl lg:text-5xl text-white leading-tight transition-all duration-700 ${
+                className={`font-display font-bold text-4xl lg:text-5xl text-brand-cream leading-tight transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
@@ -70,7 +70,7 @@ export default function CTA() {
               </h2>
 
               <p
-                className={`text-lg text-white/70 leading-relaxed max-w-lg transition-all duration-700 ${
+                className={`text-lg text-brand-cream/70 leading-relaxed max-w-lg transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4'
@@ -91,7 +91,7 @@ export default function CTA() {
               >
                 <Button
                   size="lg"
-                  className="bg-brand-yellow text-brand-black hover:bg-white transition-all duration-300 font-semibold px-8 py-6 text-base group animate-pulse-glow"
+                  className="bg-brand-yellow text-brand-black hover:bg-brand-cream hover:text-brand-black transition-all duration-300 font-semibold px-8 py-6 text-base group animate-pulse-glow"
                   onClick={() => {
                     const target = document.querySelector('#fleet')
                     if (target) target.scrollIntoView({ behavior: 'smooth' })
@@ -103,7 +103,7 @@ export default function CTA() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white/30 text-white hover:bg-white hover:text-brand-black transition-all duration-300 font-semibold px-8 py-6 text-base"
+                  className="border-2 border-brand-cream/30 text-brand-cream hover:bg-brand-cream hover:text-brand-black transition-all duration-300 font-semibold px-8 py-6 text-base"
                   onClick={() => {
                     window.open('https://wa.me/6282190105740', '_blank');
                   }}
@@ -133,13 +133,13 @@ export default function CTA() {
                       </div>
                     ))}
                   </div>
-                  <span className="text-white/70 text-sm">
+                  <span className="text-brand-cream/70 text-sm">
                     Dipercaya oleh 10.000+ pengendara
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5 text-brand-yellow fill-brand-yellow" />
-                  <span className="text-white/70 text-sm">
+                  <span className="text-brand-cream/70 text-sm">
                     Peringkat 4.9/5 (2000+ Ulasan)
                   </span>
                 </div>

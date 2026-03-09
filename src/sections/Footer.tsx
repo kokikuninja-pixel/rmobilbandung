@@ -101,18 +101,18 @@ export default function Footer() {
             {/* Logo */}
             <a href="#home" className="flex items-center gap-2 mb-6">
               <Logo />
-              <span className="font-display font-bold text-xl text-white">
+              <span className="font-display font-bold text-xl text-brand-cream">
                 RMB
               </span>
             </a>
 
-            <p className="text-white/60 mb-6 leading-relaxed">
+            <p className="text-brand-cream/70 mb-6 leading-relaxed">
               Partner terpercaya Anda untuk sewa skuter. Jelajahi dengan bebas, berkendara dengan aman. Membuat eksplorasi kota dapat diakses oleh semua orang.
             </p>
 
             {/* Newsletter */}
             <form onSubmit={handleSubscribe} className="space-y-3">
-              <p className="text-white font-medium text-sm">
+              <p className="text-brand-cream font-medium text-sm">
                 Berlangganan buletin kami
               </p>
               <div className="flex gap-2">
@@ -121,11 +121,11 @@ export default function Footer() {
                   placeholder="Email Anda"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-brand-yellow"
+                  className="bg-brand-cream/10 border-brand-cream/20 text-brand-cream placeholder:text-brand-cream/40 focus:border-brand-yellow"
                 />
                 <Button
                   type="submit"
-                  className="bg-brand-yellow text-brand-black hover:bg-white transition-all duration-300 px-4"
+                  className="bg-brand-yellow text-brand-black hover:bg-brand-cream transition-all duration-300 px-4"
                 >
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -142,7 +142,7 @@ export default function Footer() {
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <h3 className="font-display font-bold text-white mb-6">
+            <h3 className="font-display font-bold text-brand-cream mb-6">
               Tautan Cepat
             </h3>
             <ul className="space-y-3">
@@ -151,7 +151,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-white/60 hover:text-brand-yellow transition-all duration-300 hover:pl-2 inline-block"
+                    className="text-brand-cream/70 hover:text-brand-yellow transition-all duration-300 hover:pl-2 inline-block"
                   >
                     {link.name}
                   </a>
@@ -169,7 +169,7 @@ export default function Footer() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            <h3 className="font-display font-bold text-white mb-6">
+            <h3 className="font-display font-bold text-brand-cream mb-6">
               Dukungan
             </h3>
             <ul className="space-y-3">
@@ -178,7 +178,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-white/60 hover:text-brand-yellow transition-all duration-300 hover:pl-2 inline-block"
+                    className="text-brand-cream/70 hover:text-brand-yellow transition-all duration-300 hover:pl-2 inline-block"
                   >
                     {link.name}
                   </a>
@@ -196,13 +196,13 @@ export default function Footer() {
             }`}
             style={{ transitionDelay: '300ms' }}
           >
-            <h3 className="font-display font-bold text-white mb-6">
+            <h3 className="font-display font-bold text-brand-cream mb-6">
               Hubungi Kami
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" />
-                <span className="text-white/60">
+                <span className="text-brand-cream/70">
                   Jl. Samiaji No.11A, Arjuna,
                   <br />
                   Kec. Cicendo, Kota Bandung, Jawa Barat 40172
@@ -212,7 +212,7 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-brand-yellow flex-shrink-0" />
                 <a
                   href="tel:+6282190105740"
-                  className="text-white/60 hover:text-brand-yellow transition-colors"
+                  className="text-brand-cream/70 hover:text-brand-yellow transition-colors"
                 >
                   +62 821-9010-5740
                 </a>
@@ -223,14 +223,14 @@ export default function Footer() {
                       href="https://wa.me/6282190105740"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/60 hover:text-brand-yellow transition-colors"
+                      className="text-brand-cream/70 hover:text-brand-yellow transition-colors"
                     >
                       Hubungi via WhatsApp
                   </a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-brand-yellow flex-shrink-0" />
-                <span className="text-white/60">Buka 24/7</span>
+                <span className="text-brand-cream/70">Buka 24/7</span>
               </li>
             </ul>
           </div>
@@ -238,7 +238,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div
-          className={`pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-700 ${
+          className={`pt-8 border-t border-brand-cream/10 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-700 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-4'
@@ -246,7 +246,7 @@ export default function Footer() {
           style={{ transitionDelay: '400ms' }}
         >
           {/* Copyright */}
-          <p className="text-white/40 text-sm text-center md:text-left">
+          <p className="text-brand-cream/60 text-sm text-center md:text-left">
             © {new Date().getFullYear()} RMB Rental Motor Bandung. Hak cipta dilindungi undang-undang.
           </p>
 
@@ -257,7 +257,7 @@ export default function Footer() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-brand-yellow hover:text-brand-black transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-brand-cream/10 flex items-center justify-center text-brand-cream/70 hover:bg-brand-yellow hover:text-brand-black transition-all duration-300 hover:scale-110"
               >
                 <social.icon className="w-5 h-5" />
               </a>

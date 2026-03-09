@@ -38,7 +38,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-soft'
+          ? 'bg-brand-cream/95 backdrop-blur-xl shadow-soft'
           : 'bg-transparent'
       }`}
     >
@@ -88,7 +88,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
             style={{ transitionDelay: '500ms' }}
           >
             <Button
-              className="bg-transparent border-2 border-brand-black text-brand-black hover:bg-brand-yellow hover:border-brand-yellow hover:text-white transition-all duration-300 font-semibold px-6"
+              className="bg-transparent border-2 border-brand-black text-brand-black hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-black transition-all duration-300 font-semibold px-6"
               onClick={() => {
                 const target = document.querySelector('#fleet')
                 if (target) target.scrollIntoView({ behavior: 'smooth' })
@@ -114,7 +114,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl shadow-lg transition-all duration-500 overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-brand-cream/98 backdrop-blur-xl shadow-lg transition-all duration-500 overflow-hidden ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
@@ -130,7 +130,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
             </a>
           ))}
           <Button
-            className="w-full bg-brand-yellow text-brand-black hover:bg-brand-black hover:text-white transition-all duration-300 font-semibold mt-4"
+            className="w-full bg-brand-yellow text-brand-black hover:bg-brand-black hover:text-brand-cream transition-all duration-300 font-semibold mt-4"
             onClick={() => {
               const target = document.querySelector('#fleet')
               if (target) target.scrollIntoView({ behavior: 'smooth' })

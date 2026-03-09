@@ -10,7 +10,7 @@ const scooters = [
     price: 160000,
     image: '/images/yamaha-aerox.png',
     tag: 'Sporty & Kencang',
-    tagColor: 'bg-red-500 text-white',
+    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '155', torque: '13.9 Nm' },
     features: ['Mesin VVA paling bertenaga', 'Ban tapak lebar & stabil', 'Desain Maxi sporty'],
   },
@@ -20,7 +20,7 @@ const scooters = [
     price: 110000,
     image: '/images/Honda-vario-125.png',
     tag: 'Paling Populer',
-    tagColor: 'bg-brand-yellow',
+    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '125', torque: '10.8 Nm' },
     features: ['Sangat stabil untuk boncengan', 'Bagasi luas muat banyak', 'Lampu LED terang'],
   },
@@ -30,7 +30,7 @@ const scooters = [
     price: 80000,
     image: '/images/Honda-beat-new.png',
     tag: 'Paling Irit',
-    tagColor: 'bg-green-500 text-white',
+    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '110', torque: '9.3 Nm' },
     features: ['Konsumsi BBM sangat irit', 'Rangka eSAF super ringan', 'Lincah untuk selap-selip'],
   },
@@ -40,7 +40,7 @@ const scooters = [
     price: 120000,
     image: '/images/Honda-scoopy-new.png',
     tag: 'Gaya Retro',
-    tagColor: 'bg-blue-500 text-white',
+    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '110', torque: '9.3 Nm' },
     features: ['Desain stylish & modern', 'Fitur Smart Key', 'Tersedia slot charger HP'],
   },
@@ -50,7 +50,7 @@ const scooters = [
     price: 60000,
     image: '/images/Honda-spacy.png',
     tag: 'Bagasi Terluas',
-    tagColor: 'bg-purple-500 text-white',
+    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '110', torque: '8.9 Nm' },
     features: ['Bagasi Helm-In 18 liter', 'Jok lebar & sangat nyaman', 'Harga paling ekonomis'],
   },
@@ -60,7 +60,7 @@ const scooters = [
     price: 80000,
     image: '/images/yamaha-gear.png',
     tag: 'Multifungsi',
-    tagColor: 'bg-orange-500 text-white',
+    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '125', torque: '9.5 Nm' },
     features: ['Dilengkapi Double Hook', 'Pijakan kaki untuk anak', 'Desain tangguh & modern'],
   },
@@ -215,7 +215,7 @@ export default function Fleet() {
                     </p>
                   </div>
                   <Button
-                    className="bg-brand-black text-white hover:bg-brand-yellow hover:text-brand-black transition-all duration-300"
+                    className="bg-brand-black text-brand-cream hover:bg-brand-yellow hover:text-brand-black transition-all duration-300"
                     onClick={() => {
                       const target = document.querySelector('#pricing')
                       if (target) target.scrollIntoView({ behavior: 'smooth' })
@@ -241,7 +241,7 @@ export default function Fleet() {
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-white transition-all duration-300 font-semibold px-8 group"
+            className="border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-cream transition-all duration-300 font-semibold px-8 group"
             onClick={() => {
               const target = document.querySelector('#pricing')
               if (target) target.scrollIntoView({ behavior: 'smooth' })
