@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react'
-import { Search, Calendar, MapPin, Key } from 'lucide-react'
+import { Search, FileText, ShieldCheck, Bike } from 'lucide-react'
 
 const steps = [
   {
@@ -12,24 +12,24 @@ const steps = [
   },
   {
     number: '02',
-    title: 'Pesan Online',
+    title: 'Siapkan Dokumen via WA',
     description:
-      'Pilih tanggal Anda, tambahkan ekstra, dan selesaikan reservasi Anda dalam hitungan menit dengan checkout aman kami.',
-    icon: Calendar,
+      'Fotokan & kirim: E-KTP, SIM C, ID Pegawai/KTM, Tiket Perjalanan, Bukti Inap, dan Link Sosmed Anda. (NIK & No. SIM boleh ditutup)',
+    icon: FileText,
   },
   {
     number: '03',
-    title: 'Ambil atau Diantar',
+    title: 'Serah Terima & Jaminan',
     description:
-      'Kunjungi lokasi kami atau minta skuter diantar ke depan pintu Anda pada waktu yang Anda inginkan.',
-    icon: MapPin,
+      'Motor bisa diantar atau diambil. Saat terima unit, serahkan 1 identitas asli (KTP/SIM A/STNK) sebagai jaminan sewa.',
+    icon: ShieldCheck,
   },
   {
     number: '04',
     title: 'Nikmati Perjalanan',
     description:
-      'Jelajahi jalanan dengan kebebasan dan fleksibilitas. Dukungan 24/7 selalu tersedia.',
-    icon: Key,
+      'Ambil kunci dan jelajahi Bandung dengan bebas! Dukungan darurat 24/7 kami siap membantu jika ada kendala.',
+    icon: Bike,
   },
 ]
 
@@ -61,7 +61,7 @@ export default function Process() {
 
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length)
-    }, 3000)
+    }, 4000) // Increased interval time
 
     return () => clearInterval(interval)
   }, [isVisible])
@@ -107,7 +107,7 @@ export default function Process() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            Memulainya sangat mudah. Ikuti langkah-langkah ini dan segera berangkat.
+            Memulai pemesanan sangatlah mudah. Ikuti langkah-langkah ini dan Anda akan segera berada di jalan.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function Process() {
 
               {/* Card */}
               <div
-                className={`relative bg-card rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 ${
+                className={`relative h-full bg-card rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 flex flex-col ${
                   activeStep === index
                     ? 'ring-2 ring-primary scale-[1.02]'
                     : ''
@@ -170,7 +170,7 @@ export default function Process() {
                 <h3 className="font-display font-bold text-xl text-card-foreground mb-3">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {step.description}
                 </p>
               </div>
