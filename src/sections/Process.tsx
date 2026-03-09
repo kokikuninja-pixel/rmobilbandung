@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Search, Calendar, MapPin, Key } from 'lucide-react'
 
@@ -69,18 +70,18 @@ export default function Process() {
     <section
       id="process"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-background overflow-hidden"
     >
       {/* Background Decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-yellow/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span
-            className={`inline-block bg-brand-yellow/20 text-brand-black px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
+            className={`inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -89,17 +90,17 @@ export default function Process() {
             Cara Kerja
           </span>
           <h2
-            className={`font-display font-bold text-4xl lg:text-5xl text-brand-black mb-4 transition-all duration-700 ${
+            className={`font-display font-bold text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            Sewa dalam <span className="text-brand-yellow">4 Langkah Mudah</span>
+            Sewa dalam <span className="text-primary">4 Langkah Mudah</span>
           </h2>
           <p
-            className={`text-lg text-gray-600 transition-all duration-700 ${
+            className={`text-lg text-muted-foreground transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -125,9 +126,9 @@ export default function Process() {
             >
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gray-200 -z-10">
+                <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-border -z-10">
                   <div
-                    className="h-full bg-brand-yellow transition-all duration-500"
+                    className="h-full bg-primary transition-all duration-500"
                     style={{
                       width: activeStep > index ? '100%' : '0%',
                     }}
@@ -137,14 +138,14 @@ export default function Process() {
 
               {/* Card */}
               <div
-                className={`relative bg-white rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 ${
+                className={`relative bg-card rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 ${
                   activeStep === index
-                    ? 'ring-2 ring-brand-yellow scale-[1.02]'
+                    ? 'ring-2 ring-primary scale-[1.02]'
                     : ''
                 }`}
               >
                 {/* Step Number */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-brand-yellow rounded-full flex items-center justify-center font-display font-bold text-brand-black text-lg shadow-glow">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center font-display font-bold text-primary-foreground text-lg shadow-glow">
                   {step.number}
                 </div>
 
@@ -152,24 +153,24 @@ export default function Process() {
                 <div
                   className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 ${
                     activeStep === index
-                      ? 'bg-brand-yellow scale-110'
-                      : 'bg-brand-yellow/20'
+                      ? 'bg-primary scale-110'
+                      : 'bg-primary/20'
                   }`}
                 >
                   <step.icon
                     className={`w-8 h-8 transition-colors duration-500 ${
                       activeStep === index
-                        ? 'text-brand-black'
-                        : 'text-brand-yellow'
+                        ? 'text-primary-foreground'
+                        : 'text-primary'
                     }`}
                   />
                 </div>
 
                 {/* Content */}
-                <h3 className="font-display font-bold text-xl text-brand-black mb-3">
+                <h3 className="font-display font-bold text-xl text-card-foreground mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -185,8 +186,8 @@ export default function Process() {
               onClick={() => setActiveStep(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 activeStep === index
-                  ? 'bg-brand-yellow w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  ? 'bg-primary w-8'
+                  : 'bg-muted hover:bg-muted-foreground/50'
               }`}
             />
           ))}

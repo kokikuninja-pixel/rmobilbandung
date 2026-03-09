@@ -75,7 +75,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-background overflow-hidden"
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -88,8 +88,8 @@ export default function About() {
             }`}
           >
             {/* Decorative Elements */}
-            <div className="absolute -top-8 -left-8 w-32 h-32 bg-brand-yellow/20 rounded-full blur-2xl" />
-            <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-brand-yellow/15 rounded-full blur-2xl" />
+            <div className="absolute -top-8 -left-8 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
+            <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary/15 rounded-full blur-2xl" />
 
             {/* Main Image */}
             <div className="relative z-10 group">
@@ -100,11 +100,11 @@ export default function About() {
               />
 
               {/* Experience Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-brand-yellow rounded-2xl p-6 shadow-glow">
-                <p className="font-display font-bold text-4xl text-brand-black">
+              <div className="absolute -bottom-6 -right-6 bg-primary rounded-2xl p-6 shadow-glow">
+                <p className="font-display font-bold text-4xl text-primary-foreground">
                   5+
                 </p>
-                <p className="text-sm text-brand-black/70 font-medium">
+                <p className="text-sm text-primary-foreground/70 font-medium">
                   Tahun
                   <br />
                   Keunggulan
@@ -123,14 +123,14 @@ export default function About() {
                   : 'opacity-0 -translate-x-8'
               }`}
             >
-              <span className="inline-block bg-brand-yellow/20 text-brand-black px-4 py-2 rounded-full text-sm font-semibold">
+              <span className="inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold">
                 Tentang Kami
               </span>
             </div>
 
             {/* Headline */}
             <h2
-              className={`font-display font-bold text-4xl lg:text-5xl text-brand-black leading-tight transition-all duration-700 ${
+              className={`font-display font-bold text-4xl lg:text-5xl text-foreground leading-tight transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
@@ -138,12 +138,12 @@ export default function About() {
               style={{ transitionDelay: '100ms' }}
             >
               Kenapa Pilih{' '}
-              <span className="text-brand-yellow">RMB?</span>
+              <span className="text-primary">RMB?</span>
             </h2>
 
             {/* Description */}
             <p
-              className={`text-lg text-gray-600 leading-relaxed transition-all duration-700 ${
+              className={`text-lg text-muted-foreground leading-relaxed transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -165,18 +165,18 @@ export default function About() {
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="text-center p-4 rounded-2xl bg-white/50 hover:bg-brand-yellow/10 transition-colors duration-300 group"
+                  className="text-center p-4 rounded-2xl bg-white/50 hover:bg-primary/10 transition-colors duration-300 group"
                   style={{ transitionDelay: `${400 + index * 100}ms` }}
                 >
-                  <stat.icon className="w-6 h-6 text-brand-yellow mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                  <p className="font-display font-bold text-2xl text-brand-black">
+                  <stat.icon className="w-6 h-6 text-primary mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <p className="font-display font-bold text-2xl text-foreground">
                     <AnimatedCounter
                       value={stat.value}
                       suffix={stat.suffix}
                       isVisible={isVisible}
                     />
                   </p>
-                  <p className="text-xs text-gray-600 mt-1">{stat.label}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -192,7 +192,7 @@ export default function About() {
             >
               <Button
                 size="lg"
-                className="bg-brand-black text-white hover:bg-brand-yellow hover:text-brand-black transition-all duration-300 font-semibold px-8 group"
+                className="bg-foreground text-background hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold px-8 group"
                 onClick={() => {
                   const target = document.querySelector('#fleet')
                   if (target) target.scrollIntoView({ behavior: 'smooth' })

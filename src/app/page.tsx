@@ -25,7 +25,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div ref={mainRef} className="min-h-screen bg-brand-cream overflow-x-hidden">
+    <div ref={mainRef} className="min-h-screen bg-background overflow-x-hidden">
       <Navbar scrollY={scrollY} />
       <main>
         <Hero />

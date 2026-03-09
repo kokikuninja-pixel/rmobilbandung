@@ -10,7 +10,6 @@ const scooters = [
     price: 160000,
     image: '/images/yamaha-aerox.png',
     tag: 'Sporty & Kencang',
-    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '155', torque: '13.9 Nm' },
     features: ['Mesin VVA paling bertenaga', 'Ban tapak lebar & stabil', 'Desain Maxi sporty'],
   },
@@ -20,7 +19,6 @@ const scooters = [
     price: 110000,
     image: '/images/Honda-vario-125.png',
     tag: 'Paling Populer',
-    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '125', torque: '10.8 Nm' },
     features: ['Sangat stabil untuk boncengan', 'Bagasi luas muat banyak', 'Lampu LED terang'],
   },
@@ -30,7 +28,6 @@ const scooters = [
     price: 80000,
     image: '/images/Honda-beat-new.png',
     tag: 'Paling Irit',
-    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '110', torque: '9.3 Nm' },
     features: ['Konsumsi BBM sangat irit', 'Rangka eSAF super ringan', 'Lincah untuk selap-selip'],
   },
@@ -40,7 +37,6 @@ const scooters = [
     price: 120000,
     image: '/images/Honda-scoopy-new.png',
     tag: 'Gaya Retro',
-    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '110', torque: '9.3 Nm' },
     features: ['Desain stylish & modern', 'Fitur Smart Key', 'Tersedia slot charger HP'],
   },
@@ -50,7 +46,6 @@ const scooters = [
     price: 60000,
     image: '/images/Honda-spacy.png',
     tag: 'Bagasi Terluas',
-    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '110', torque: '8.9 Nm' },
     features: ['Bagasi Helm-In 18 liter', 'Jok lebar & sangat nyaman', 'Harga paling ekonomis'],
   },
@@ -60,7 +55,6 @@ const scooters = [
     price: 80000,
     image: '/images/yamaha-gear.png',
     tag: 'Multifungsi',
-    tagColor: 'bg-primary text-primary-foreground',
     specs: { cc: '125', torque: '9.5 Nm' },
     features: ['Dilengkapi Double Hook', 'Pijakan kaki untuk anak', 'Desain tangguh & modern'],
   },
@@ -93,17 +87,17 @@ export default function Fleet() {
     <section
       id="fleet"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-background overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-brand-yellow/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-80 h-80 bg-brand-yellow/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span
-            className={`inline-block bg-brand-yellow/20 text-brand-black px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
+            className={`inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -112,17 +106,17 @@ export default function Fleet() {
             Armada Kami
           </span>
           <h2
-            className={`font-display font-bold text-4xl lg:text-5xl text-brand-black mb-4 transition-all duration-700 ${
+            className={`font-display font-bold text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            Pilih <span className="text-brand-yellow">Kendaraan</span> Anda
+            Pilih <span className="text-primary">Kendaraan</span> Anda
           </h2>
           <p
-            className={`text-lg text-gray-600 transition-all duration-700 ${
+            className={`text-lg text-muted-foreground transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -138,7 +132,7 @@ export default function Fleet() {
           {scooters.map((scooter, index) => (
             <div
               key={scooter.id}
-              className={`group relative bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 ${
+              className={`group relative bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-12'
@@ -157,13 +151,13 @@ export default function Fleet() {
             >
               {/* Tag */}
               <div
-                className={`absolute top-4 left-4 ${scooter.tagColor} px-3 py-1 rounded-full text-xs font-semibold z-10`}
+                className={`absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold z-10`}
               >
                 {scooter.tag}
               </div>
 
               {/* Image */}
-              <div className="relative h-56 overflow-hidden bg-gray-100">
+              <div className="relative h-56 overflow-hidden bg-muted/30">
                 <img
                   src={scooter.image}
                   alt={scooter.name}
@@ -174,18 +168,18 @@ export default function Fleet() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="font-display font-bold text-xl text-brand-black mb-2">
+                <h3 className="font-display font-bold text-xl text-card-foreground mb-2">
                   {scooter.name}
                 </h3>
 
                 {/* Specs */}
-                <div className="flex items-center justify-around gap-4 mb-4 text-sm text-gray-600">
+                <div className="flex items-center justify-around gap-4 mb-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-2">
-                    <Gauge className="w-4 h-4 text-gray-400" />
+                    <Gauge className="w-4 h-4 text-muted-foreground/80" />
                     {scooter.specs.cc}cc
                   </span>
                   <span className="flex items-center gap-2">
-                    <Power className="w-4 h-4 text-gray-400" />
+                    <Power className="w-4 h-4 text-muted-foreground/80" />
                     {scooter.specs.torque}
                   </span>
                 </div>
@@ -195,27 +189,27 @@ export default function Fleet() {
                   {scooter.features.map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-center gap-2 text-sm text-gray-600"
+                      className="flex items-center gap-2 text-sm text-muted-foreground"
                     >
-                      <Check className="w-4 h-4 text-brand-yellow" />
+                      <Check className="w-4 h-4 text-primary" />
                       {feature}
                     </div>
                   ))}
                 </div>
 
                 {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div className="flex items-center justify-between pt-4 border-t border-border">
                   <div>
-                    <p className="text-sm text-gray-500">Mulai</p>
-                    <p className="font-display font-bold text-2xl text-brand-black">
+                    <p className="text-sm text-muted-foreground">Mulai</p>
+                    <p className="font-display font-bold text-2xl text-card-foreground">
                       Rp {scooter.price.toLocaleString('id-ID')}
-                      <span className="text-sm font-normal text-gray-500">
+                      <span className="text-sm font-normal text-muted-foreground">
                         /hari
                       </span>
                     </p>
                   </div>
                   <Button
-                    className="bg-brand-black text-brand-cream hover:bg-brand-yellow hover:text-brand-black transition-all duration-300"
+                    className="bg-foreground text-background hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                     onClick={() => {
                       const target = document.querySelector('#pricing')
                       if (target) target.scrollIntoView({ behavior: 'smooth' })
@@ -241,7 +235,7 @@ export default function Fleet() {
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-brand-black text-brand-black hover:bg-brand-black hover:text-brand-cream transition-all duration-300 font-semibold px-8 group"
+            className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-semibold px-8 group"
             onClick={() => {
               const target = document.querySelector('#pricing')
               if (target) target.scrollIntoView({ behavior: 'smooth' })

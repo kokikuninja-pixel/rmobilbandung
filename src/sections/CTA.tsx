@@ -29,36 +29,36 @@ export default function CTA() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-background overflow-hidden"
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         <div
-          className={`relative bg-brand-black rounded-[3rem] overflow-hidden transition-all duration-1000 ${
+          className={`relative bg-foreground rounded-[3rem] overflow-hidden transition-all duration-1000 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-12'
           }`}
         >
           {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-10 text-primary">
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: `radial-gradient(circle, #ffba12 1px, transparent 1px)`,
+                backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
                 backgroundSize: '30px 30px',
               }}
             />
           </div>
 
           {/* Decorative Elements */}
-          <div className="absolute top-10 right-10 w-20 h-20 bg-brand-yellow/20 rounded-full blur-2xl" />
-          <div className="absolute bottom-10 left-10 w-32 h-32 bg-brand-yellow/10 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-20 h-20 bg-primary/20 rounded-full blur-2xl" />
+          <div className="absolute bottom-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
 
           <div className="relative grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16">
             {/* Content */}
             <div className="space-y-8">
               <h2
-                className={`font-display font-bold text-4xl lg:text-5xl text-brand-cream leading-tight transition-all duration-700 ${
+                className={`font-display font-bold text-4xl lg:text-5xl text-background leading-tight transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
@@ -66,11 +66,11 @@ export default function CTA() {
                 style={{ transitionDelay: '200ms' }}
               >
                 Siap untuk{' '}
-                <span className="text-brand-yellow">Meluncur?</span>
+                <span className="text-primary">Meluncur?</span>
               </h2>
 
               <p
-                className={`text-lg text-brand-cream/70 leading-relaxed max-w-lg transition-all duration-700 ${
+                className={`text-lg text-background/70 leading-relaxed max-w-lg transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4'
@@ -91,7 +91,7 @@ export default function CTA() {
               >
                 <Button
                   size="lg"
-                  className="bg-brand-yellow text-brand-black hover:bg-brand-cream hover:text-brand-black transition-all duration-300 font-semibold px-8 py-6 text-base group animate-pulse-glow"
+                  className="bg-primary text-primary-foreground hover:bg-background hover:text-foreground transition-all duration-300 font-semibold px-8 py-6 text-base group animate-pulse-glow"
                   onClick={() => {
                     const target = document.querySelector('#fleet')
                     if (target) target.scrollIntoView({ behavior: 'smooth' })
@@ -103,7 +103,7 @@ export default function CTA() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-brand-cream/30 text-brand-cream hover:bg-brand-cream hover:text-brand-black transition-all duration-300 font-semibold px-8 py-6 text-base"
+                  className="border-2 border-background/30 text-background hover:bg-background hover:text-foreground transition-all duration-300 font-semibold px-8 py-6 text-base"
                   onClick={() => {
                     window.open('https://wa.me/6282190105740', '_blank');
                   }}
@@ -127,19 +127,19 @@ export default function CTA() {
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className="w-8 h-8 rounded-full bg-brand-yellow/30 border-2 border-brand-black flex items-center justify-center"
+                        className="w-8 h-8 rounded-full bg-primary/30 border-2 border-foreground flex items-center justify-center"
                       >
-                        <Users className="w-4 h-4 text-brand-yellow" />
+                        <Users className="w-4 h-4 text-primary" />
                       </div>
                     ))}
                   </div>
-                  <span className="text-brand-cream/70 text-sm">
+                  <span className="text-background/70 text-sm">
                     Dipercaya oleh 10.000+ pengendara
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Star className="w-5 h-5 text-brand-yellow fill-brand-yellow" />
-                  <span className="text-brand-cream/70 text-sm">
+                  <Star className="w-5 h-5 text-primary fill-primary" />
+                  <span className="text-background/70 text-sm">
                     Peringkat 4.9/5 (2000+ Ulasan)
                   </span>
                 </div>
@@ -157,7 +157,7 @@ export default function CTA() {
             >
               <div className="relative">
                 {/* Glow Effect */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-brand-yellow/20 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-primary/20 rounded-full blur-3xl" />
 
                 {/* Image */}
                 <img
@@ -167,11 +167,11 @@ export default function CTA() {
                 />
 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-4 -left-4 bg-brand-yellow rounded-2xl p-4 shadow-glow z-20 animate-float">
-                  <p className="font-display font-bold text-2xl text-brand-black">
+                <div className="absolute -bottom-4 -left-4 bg-primary rounded-2xl p-4 shadow-glow z-20 animate-float">
+                  <p className="font-display font-bold text-2xl text-primary-foreground">
                     24/7
                   </p>
-                  <p className="text-sm text-brand-black/70">Dukungan</p>
+                  <p className="text-sm text-primary-foreground/70">Dukungan</p>
                 </div>
               </div>
             </div>

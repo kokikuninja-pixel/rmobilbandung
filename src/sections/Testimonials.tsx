@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -45,7 +46,7 @@ const testimonials = [
     role: 'Adventure Seeker',
     avatar: 'https://picsum.photos/seed/avatar5/48/48',
     content:
-      'Menyewa NMAX untuk perjalanan akhir pekan. Perjalanan mulus, hemat bahan bakar, dan tidak ada masalah sama sekali. Pasti akan menyewa lagi untuk petualangan saya berikutnya!',
+      'Menyewa Aerox untuk perjalanan akhir pekan. Perjalanan mulus, hemat bahan bakar, dan tidak ada masalah sama sekali. Pasti akan menyewa lagi untuk petualangan saya berikutnya!',
     rating: 5,
   },
 ]
@@ -100,16 +101,16 @@ export default function Testimonials() {
     <section
       id="testimonials"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-background overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-yellow/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
 
       <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span
-            className={`inline-block bg-brand-yellow/20 text-brand-black px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
+            className={`inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -118,14 +119,14 @@ export default function Testimonials() {
             Testimoni
           </span>
           <h2
-            className={`font-display font-bold text-4xl lg:text-5xl text-brand-black mb-4 transition-all duration-700 ${
+            className={`font-display font-bold text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            Apa Kata <span className="text-brand-yellow">Pengendara Kami</span>
+            Apa Kata <span className="text-primary">Pengendara Kami</span>
           </h2>
         </div>
 
@@ -139,10 +140,10 @@ export default function Testimonials() {
           style={{ transitionDelay: '200ms' }}
         >
           {/* Main Card */}
-          <div className="relative bg-white rounded-3xl p-8 lg:p-12 shadow-card-hover">
+          <div className="relative bg-card rounded-3xl p-8 lg:p-12 shadow-card-hover">
             {/* Quote Icon */}
-            <div className="absolute -top-6 left-8 w-12 h-12 bg-brand-yellow rounded-2xl flex items-center justify-center shadow-glow animate-float">
-              <Quote className="w-6 h-6 text-brand-black" />
+            <div className="absolute -top-6 left-8 w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-glow animate-float">
+              <Quote className="w-6 h-6 text-primary-foreground" />
             </div>
 
             {/* Content */}
@@ -152,13 +153,13 @@ export default function Testimonials() {
                 {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 fill-brand-yellow text-brand-yellow"
+                    className="w-5 h-5 fill-primary text-primary"
                   />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-xl lg:text-2xl text-brand-black leading-relaxed mb-8 font-medium">
+              <p className="text-xl lg:text-2xl text-foreground leading-relaxed mb-8 font-medium">
                 "{testimonials[activeIndex].content}"
               </p>
 
@@ -167,13 +168,13 @@ export default function Testimonials() {
                 <img
                   src={testimonials[activeIndex].avatar}
                   alt={testimonials[activeIndex].name}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-brand-yellow"
+                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary"
                 />
                 <div>
-                  <p className="font-display font-bold text-lg text-brand-black">
+                  <p className="font-display font-bold text-lg text-foreground">
                     {testimonials[activeIndex].name}
                   </p>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     {testimonials[activeIndex].role}
                   </p>
                 </div>
@@ -194,8 +195,8 @@ export default function Testimonials() {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     activeIndex === index
-                      ? 'bg-brand-yellow w-8'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-primary w-8'
+                      : 'bg-muted hover:bg-muted-foreground/50'
                   }`}
                 />
               ))}
@@ -207,7 +208,7 @@ export default function Testimonials() {
                 variant="outline"
                 size="icon"
                 onClick={goToPrev}
-                className="w-12 h-12 rounded-full border-2 border-brand-black hover:bg-brand-black hover:text-white transition-all duration-300"
+                className="w-12 h-12 rounded-full border-2 border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 <ChevronLeft className="w-5 h-5" />
               </Button>
@@ -215,7 +216,7 @@ export default function Testimonials() {
                 variant="outline"
                 size="icon"
                 onClick={goToNext}
-                className="w-12 h-12 rounded-full border-2 border-brand-black hover:bg-brand-black hover:text-white transition-all duration-300"
+                className="w-12 h-12 rounded-full border-2 border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 <ChevronRight className="w-5 h-5" />
               </Button>
@@ -233,22 +234,22 @@ export default function Testimonials() {
           style={{ transitionDelay: '400ms' }}
         >
           <div className="text-center">
-            <p className="font-display font-bold text-4xl text-brand-black">
+            <p className="font-display font-bold text-4xl text-foreground">
               4.9
             </p>
-            <p className="text-gray-600 text-sm">Peringkat Rata-rata</p>
+            <p className="text-muted-foreground text-sm">Peringkat Rata-rata</p>
           </div>
           <div className="text-center">
-            <p className="font-display font-bold text-4xl text-brand-black">
+            <p className="font-display font-bold text-4xl text-foreground">
               2,000+
             </p>
-            <p className="text-gray-600 text-sm">Ulasan</p>
+            <p className="text-muted-foreground text-sm">Ulasan</p>
           </div>
           <div className="text-center">
-            <p className="font-display font-bold text-4xl text-brand-black">
+            <p className="font-display font-bold text-4xl text-foreground">
               98%
             </p>
-            <p className="text-gray-600 text-sm">Akan Merekomendasikan</p>
+            <p className="text-muted-foreground text-sm">Akan Merekomendasikan</p>
           </div>
         </div>
       </div>

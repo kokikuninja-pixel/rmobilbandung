@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, HelpCircle } from 'lucide-react'
 
@@ -75,17 +76,17 @@ export default function FAQ() {
     <section
       id="faq"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-background overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute top-20 right-0 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
 
       <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Column - Header */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <span
-              className={`inline-block bg-brand-yellow/20 text-brand-black px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
+              className={`inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -94,7 +95,7 @@ export default function FAQ() {
               Tanya Jawab
             </span>
             <h2
-              className={`font-display font-bold text-4xl lg:text-5xl text-brand-black mb-4 transition-all duration-700 ${
+              className={`font-display font-bold text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
@@ -102,10 +103,10 @@ export default function FAQ() {
               style={{ transitionDelay: '100ms' }}
             >
               Pertanyaan yang Sering{' '}
-              <span className="text-brand-yellow">Diajukan</span>
+              <span className="text-primary">Diajukan</span>
             </h2>
             <p
-              className={`text-lg text-gray-600 mb-8 transition-all duration-700 ${
+              className={`text-lg text-muted-foreground mb-8 transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -117,7 +118,7 @@ export default function FAQ() {
 
             {/* Contact Card */}
             <div
-              className={`bg-white rounded-2xl p-6 shadow-card transition-all duration-700 ${
+              className={`bg-card rounded-2xl p-6 shadow-card transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -125,20 +126,20 @@ export default function FAQ() {
               style={{ transitionDelay: '300ms' }}
             >
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-brand-yellow/20 rounded-xl flex items-center justify-center">
-                  <HelpCircle className="w-6 h-6 text-brand-yellow" />
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                  <HelpCircle className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-display font-bold text-brand-black">
+                  <p className="font-display font-bold text-foreground">
                     Masih ada pertanyaan?
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Hubungi kami melalui{' '}
                     <a
                       href="https://wa.me/6282190105740"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-brand-yellow hover:underline"
+                      className="text-primary hover:underline"
                     >
                       WhatsApp
                     </a>
@@ -153,7 +154,7 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl overflow-hidden shadow-card transition-all duration-700 ${
+                className={`bg-card rounded-2xl overflow-hidden shadow-card transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 translate-x-8'
@@ -162,13 +163,13 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-muted/50 transition-colors"
                 >
-                  <span className="font-display font-semibold text-brand-black pr-4">
+                  <span className="font-display font-semibold text-foreground pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-brand-yellow flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -178,7 +179,7 @@ export default function FAQ() {
                     openIndex === index ? 'max-h-48' : 'max-h-0'
                   }`}
                 >
-                  <p className="px-6 pb-6 text-gray-600 leading-relaxed">
+                  <p className="px-6 pb-6 text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

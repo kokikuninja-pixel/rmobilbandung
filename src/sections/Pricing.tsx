@@ -80,17 +80,17 @@ export default function Pricing() {
     <section
       id="pricing"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-background overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-yellow/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-yellow/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span
-            className={`inline-block bg-brand-yellow/20 text-brand-black px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
+            className={`inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -99,17 +99,17 @@ export default function Pricing() {
             Harga
           </span>
           <h2
-            className={`font-display font-bold text-4xl lg:text-5xl text-brand-black mb-4 transition-all duration-700 ${
+            className={`font-display font-bold text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            Harga Sederhana, <span className="text-brand-yellow">Transparan</span>{' '}
+            Harga Sederhana, <span className="text-primary">Transparan</span>{' '}
           </h2>
           <p
-            className={`text-lg text-gray-600 transition-all duration-700 ${
+            className={`text-lg text-muted-foreground transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -134,15 +134,15 @@ export default function Pricing() {
             >
               {/* Featured Badge */}
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-yellow text-brand-black px-4 py-1 rounded-full text-sm font-semibold shadow-glow z-10">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold shadow-glow z-10">
                   {plan.badge}
                 </div>
               )}
 
               <div
-                className={`relative h-full bg-white rounded-3xl p-8 transition-all duration-500 flex flex-col ${
+                className={`relative h-full bg-card rounded-3xl p-8 transition-all duration-500 flex flex-col ${
                   plan.featured
-                    ? 'shadow-card-hover ring-2 ring-brand-yellow'
+                    ? 'shadow-card-hover ring-2 ring-primary'
                     : 'shadow-card hover:shadow-card-hover'
                 }`}
               >
@@ -150,33 +150,33 @@ export default function Pricing() {
                 <div
                   className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${
                     plan.featured
-                      ? 'bg-brand-yellow'
-                      : 'bg-brand-yellow/20'
+                      ? 'bg-primary'
+                      : 'bg-primary/20'
                   }`}
                 >
                   <plan.icon
                     className={`w-7 h-7 ${
-                      plan.featured ? 'text-brand-black' : 'text-brand-yellow'
+                      plan.featured ? 'text-primary-foreground' : 'text-primary'
                     }`}
                   />
                 </div>
 
                 {/* Plan Name */}
-                <h3 className="font-display font-bold text-2xl text-brand-black mb-2">
+                <h3 className="font-display font-bold text-2xl text-card-foreground mb-2">
                   {plan.name}
                 </h3>
-                <p className="text-gray-600 text-sm mb-6">
+                <p className="text-muted-foreground text-sm mb-6">
                   {plan.description}
                 </p>
 
                 {/* Price */}
                 <div className="mb-8">
-                  <span className="text-gray-500 text-sm">Mulai dari</span>
+                  <span className="text-muted-foreground text-sm">Mulai dari</span>
                   <div className="flex items-baseline">
-                    <span className="font-display font-bold text-5xl text-brand-black">
+                    <span className="font-display font-bold text-5xl text-card-foreground">
                       Rp{plan.price.toLocaleString('id-ID')}
                     </span>
-                    <span className="text-gray-500">
+                    <span className="text-muted-foreground">
                       /{plan.period}
                     </span>
                   </div>
@@ -193,19 +193,19 @@ export default function Pricing() {
                         <div
                           className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                             plan.featured
-                              ? 'bg-brand-yellow'
-                              : 'bg-brand-yellow/20'
+                              ? 'bg-primary'
+                              : 'bg-primary/20'
                           }`}
                         >
                           <Check
                             className={`w-3 h-3 ${
                               plan.featured
-                                ? 'text-brand-black'
-                                : 'text-brand-yellow'
+                                ? 'text-primary-foreground'
+                                : 'text-primary'
                             }`}
                           />
                         </div>
-                        <span className="text-gray-600 text-sm">{feature}</span>
+                        <span className="text-muted-foreground text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -215,8 +215,8 @@ export default function Pricing() {
                 <Button
                   className={`w-full py-6 font-semibold transition-all duration-300 mt-auto ${
                     plan.featured
-                      ? 'bg-brand-yellow text-brand-black hover:bg-brand-black hover:text-white'
-                      : 'bg-brand-black text-white hover:bg-brand-yellow hover:text-brand-black'
+                      ? 'bg-primary text-primary-foreground hover:bg-foreground hover:text-background'
+                      : 'bg-foreground text-background hover:bg-primary hover:text-primary-foreground'
                   }`}
                   onClick={() => {
                     const target = document.querySelector('#contact');
@@ -241,20 +241,20 @@ export default function Pricing() {
           }`}
           style={{ transitionDelay: '800ms' }}
         >
-          <div className="flex items-center gap-2 text-gray-600">
-            <Check className="w-5 h-5 text-brand-yellow" />
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Check className="w-5 h-5 text-primary" />
             <span className="text-sm">Tanpa biaya tersembunyi</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-600">
-            <Check className="w-5 h-5 text-brand-yellow" />
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Check className="w-5 h-5 text-primary" />
             <span className="text-sm">Garansi Tukar/Servis</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-600">
-            <Check className="w-5 h-5 text-brand-yellow" />
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Check className="w-5 h-5 text-primary" />
             <span className="text-sm">Pembayaran aman</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-600">
-            <Check className="w-5 h-5 text-brand-yellow" />
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Check className="w-5 h-5 text-primary" />
             <span className="text-sm">Dukungan 24/7</span>
           </div>
         </div>

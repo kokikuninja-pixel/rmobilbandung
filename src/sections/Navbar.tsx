@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react'
 import { Menu, X, Bike } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -38,7 +39,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-brand-cream/95 backdrop-blur-xl shadow-soft'
+          ? 'bg-background/95 backdrop-blur-xl shadow-soft'
           : 'bg-transparent'
       }`}
     >
@@ -53,7 +54,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
             }`}
           >
             <Logo />
-            <span className="font-display font-bold text-xl text-brand-black">
+            <span className="font-display font-bold text-xl text-foreground">
               RMB
             </span>
           </a>
@@ -65,7 +66,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative font-medium text-sm text-brand-black hover:text-brand-yellow transition-all duration-300 group ${
+                className={`relative font-medium text-sm text-foreground hover:text-primary transition-all duration-300 group ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 -translate-y-4'
@@ -73,7 +74,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
                 style={{ transitionDelay: `${100 + index * 80}ms` }}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-brand-yellow transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0" />
               </a>
             ))}
           </div>
@@ -88,7 +89,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
             style={{ transitionDelay: '500ms' }}
           >
             <Button
-              className="bg-transparent border-2 border-brand-black text-brand-black hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-black transition-all duration-300 font-semibold px-6"
+              className="bg-transparent border-2 border-foreground text-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 font-semibold px-6"
               onClick={() => {
                 const target = document.querySelector('#fleet')
                 if (target) target.scrollIntoView({ behavior: 'smooth' })
@@ -100,13 +101,13 @@ export default function Navbar({ scrollY }: NavbarProps) {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-brand-cream transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-brand-black" />
+              <X className="w-6 h-6 text-foreground" />
             ) : (
-              <Menu className="w-6 h-6 text-brand-black" />
+              <Menu className="w-6 h-6 text-foreground" />
             )}
           </button>
         </div>
@@ -114,7 +115,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-brand-cream/98 backdrop-blur-xl shadow-lg transition-all duration-500 overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl shadow-lg transition-all duration-500 overflow-hidden ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
@@ -124,13 +125,13 @@ export default function Navbar({ scrollY }: NavbarProps) {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="block py-2 text-brand-black hover:text-brand-yellow font-medium transition-colors"
+              className="block py-2 text-foreground hover:text-primary font-medium transition-colors"
             >
               {link.name}
             </a>
           ))}
           <Button
-            className="w-full bg-brand-yellow text-brand-black hover:bg-brand-black hover:text-brand-cream transition-all duration-300 font-semibold mt-4"
+            className="w-full bg-primary text-primary-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-semibold mt-4"
             onClick={() => {
               const target = document.querySelector('#fleet')
               if (target) target.scrollIntoView({ behavior: 'smooth' })

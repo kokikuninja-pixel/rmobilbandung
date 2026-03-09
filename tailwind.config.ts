@@ -28,12 +28,6 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        brand: {
-          yellow: '#ffba12',
-          black: '#151c0d',
-          cream: '#fbf6ed',
-          border: '#e8e4da',
-        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -77,7 +71,7 @@ const config = {
         'soft': '0 4px 30px rgba(0, 0, 0, 0.08)',
         'card': '0 10px 40px rgba(0, 0, 0, 0.1)',
         'card-hover': '0 20px 60px rgba(0, 0, 0, 0.15)',
-        'glow': '0 8px 25px rgba(255, 186, 18, 0.3)',
+        'glow': '0 8px 25px hsl(var(--primary) / 0.3)',
       },
       keyframes: {
         "accordion-down": {

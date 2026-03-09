@@ -1,8 +1,8 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
-  Bike,
   MapPin,
   Phone,
   Mail,
@@ -82,10 +82,10 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full bg-brand-black pt-20 pb-8 overflow-hidden"
+      className="relative w-full bg-foreground text-background pt-20 pb-8 overflow-hidden"
     >
       {/* Top Border Gradient */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-yellow to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
 
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Main Footer Content */}
@@ -101,18 +101,18 @@ export default function Footer() {
             {/* Logo */}
             <a href="#home" className="flex items-center gap-2 mb-6">
               <Logo />
-              <span className="font-display font-bold text-xl text-brand-cream">
+              <span className="font-display font-bold text-xl text-background">
                 RMB
               </span>
             </a>
 
-            <p className="text-brand-cream/70 mb-6 leading-relaxed">
+            <p className="text-background/70 mb-6 leading-relaxed">
               Partner terpercaya Anda untuk sewa skuter. Jelajahi dengan bebas, berkendara dengan aman. Membuat eksplorasi kota dapat diakses oleh semua orang.
             </p>
 
             {/* Newsletter */}
             <form onSubmit={handleSubscribe} className="space-y-3">
-              <p className="text-brand-cream font-medium text-sm">
+              <p className="text-background font-medium text-sm">
                 Berlangganan buletin kami
               </p>
               <div className="flex gap-2">
@@ -121,11 +121,11 @@ export default function Footer() {
                   placeholder="Email Anda"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-brand-cream/10 border-brand-cream/20 text-brand-cream placeholder:text-brand-cream/40 focus:border-brand-yellow"
+                  className="bg-background/10 border-background/20 text-background placeholder:text-background/40 focus:border-primary"
                 />
                 <Button
                   type="submit"
-                  className="bg-brand-yellow text-brand-black hover:bg-brand-cream transition-all duration-300 px-4"
+                  className="bg-primary text-primary-foreground hover:bg-background hover:text-foreground transition-all duration-300 px-4"
                 >
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -142,7 +142,7 @@ export default function Footer() {
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <h3 className="font-display font-bold text-brand-cream mb-6">
+            <h3 className="font-display font-bold text-background mb-6">
               Tautan Cepat
             </h3>
             <ul className="space-y-3">
@@ -151,7 +151,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-brand-cream/70 hover:text-brand-yellow transition-all duration-300 hover:pl-2 inline-block"
+                    className="text-background/70 hover:text-primary transition-all duration-300 hover:pl-2 inline-block"
                   >
                     {link.name}
                   </a>
@@ -169,7 +169,7 @@ export default function Footer() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            <h3 className="font-display font-bold text-brand-cream mb-6">
+            <h3 className="font-display font-bold text-background mb-6">
               Dukungan
             </h3>
             <ul className="space-y-3">
@@ -178,7 +178,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-brand-cream/70 hover:text-brand-yellow transition-all duration-300 hover:pl-2 inline-block"
+                    className="text-background/70 hover:text-primary transition-all duration-300 hover:pl-2 inline-block"
                   >
                     {link.name}
                   </a>
@@ -196,41 +196,41 @@ export default function Footer() {
             }`}
             style={{ transitionDelay: '300ms' }}
           >
-            <h3 className="font-display font-bold text-brand-cream mb-6">
+            <h3 className="font-display font-bold text-background mb-6">
               Hubungi Kami
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" />
-                <span className="text-brand-cream/70">
+                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-background/70">
                   Jl. Samiaji No.11A, Arjuna,
                   <br />
                   Kec. Cicendo, Kota Bandung, Jawa Barat 40172
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
                   href="tel:+6282190105740"
-                  className="text-brand-cream/70 hover:text-brand-yellow transition-colors"
+                  className="text-background/70 hover:text-primary transition-colors"
                 >
                   +62 821-9010-5740
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                  <a
                       href="https://wa.me/6282190105740"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-brand-cream/70 hover:text-brand-yellow transition-colors"
+                      className="text-background/70 hover:text-primary transition-colors"
                     >
                       Hubungi via WhatsApp
                   </a>
               </li>
               <li className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-brand-yellow flex-shrink-0" />
-                <span className="text-brand-cream/70">Buka 24/7</span>
+                <Clock className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="text-background/70">Buka 24/7</span>
               </li>
             </ul>
           </div>
@@ -238,7 +238,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div
-          className={`pt-8 border-t border-brand-cream/10 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-700 ${
+          className={`pt-8 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-700 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-4'
@@ -246,8 +246,8 @@ export default function Footer() {
           style={{ transitionDelay: '400ms' }}
         >
           {/* Copyright */}
-          <p className="text-brand-cream/60 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} RMB Rental Motor Bandung. Hak cipta dilindungi undang-undang.
+          <p className="text-background/60 text-sm text-center md:text-left">
+            © {new Date().getFullYear()} Rental Motor Bandung RMB. Hak cipta dilindungi undang-undang.
           </p>
 
           {/* Social Links */}
@@ -257,7 +257,7 @@ export default function Footer() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-10 h-10 rounded-full bg-brand-cream/10 flex items-center justify-center text-brand-cream/70 hover:bg-brand-yellow hover:text-brand-black transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
               >
                 <social.icon className="w-5 h-5" />
               </a>
