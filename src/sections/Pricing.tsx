@@ -180,6 +180,7 @@ export default function Pricing() {
                       /{plan.period}
                     </span>
                   </div>
+                  <p className="text-xs text-muted-foreground mt-1">Harga dapat berubah saat high season.</p>
                 </div>
 
                 <div className="flex-grow">
@@ -219,7 +220,7 @@ export default function Pricing() {
                       : 'bg-foreground text-background hover:bg-primary hover:text-primary-foreground'
                   }`}
                   onClick={() => {
-                    const target = document.querySelector('#contact');
+                    const target = document.querySelector('#pesan');
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth' });
                     }
