@@ -4,7 +4,6 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/sonner";
-import Script from 'next/script';
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -31,21 +30,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-       <head>
-        {/* Google tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-11380968042"
-        ></Script>
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-11380968042');
-          `}
-        </Script>
-      </head>
       <body className={cn("font-sans", inter.variable, jakarta.variable)}>
         {children}
         <Toaster />
