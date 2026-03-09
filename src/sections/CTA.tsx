@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, MessageCircle, Star, Users } from 'lucide-react'
@@ -104,7 +105,7 @@ export default function CTA() {
                   variant="outline"
                   className="border-2 border-white/30 text-white hover:bg-white hover:text-brand-black transition-all duration-300 font-semibold px-8 py-6 text-base"
                   onClick={() => {
-                    alert('Obrolan WhatsApp akan terbuka di sini: +6282190105740')
+                    window.open('https://wa.me/6282190105740', '_blank');
                   }}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
@@ -160,9 +161,9 @@ export default function CTA() {
 
                 {/* Image */}
                 <img
-                  src="https://picsum.photos/seed/hero1/800/800"
-                  alt="Pengendara skuter"
-                  className="relative z-10 w-full h-auto rounded-3xl transform hover:scale-[1.02] transition-transform duration-500"
+                  src="/images/yamaha-aerox.png"
+                  alt="Pengendara skuter Yamaha Aerox"
+                  className="relative z-10 w-full h-auto object-contain transform hover:scale-[1.02] transition-transform duration-500"
                 />
 
                 {/* Floating Badge */}

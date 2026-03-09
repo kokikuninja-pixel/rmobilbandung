@@ -1,63 +1,74 @@
+'use client'
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Fuel, Gauge, Droplets, Check } from 'lucide-react'
+import { ArrowRight, Gauge, Check, Power } from 'lucide-react'
 
 const scooters = [
   {
-    id: 1,
-    name: 'Honda Vario 160',
-    price: 15,
-    image: 'https://picsum.photos/seed/fleet1/400/300',
+    id: 'yamaha-aerox',
+    name: 'Yamaha Aerox 155',
+    price: 160000,
+    image: '/images/yamaha-aerox.png',
+    tag: 'Sporty & Kencang',
+    tagColor: 'bg-red-500 text-white',
+    specs: { cc: '155', torque: '13.9 Nm' },
+    features: ['Mesin VVA paling bertenaga', 'Ban tapak lebar & stabil', 'Desain Maxi sporty'],
+  },
+  {
+    id: 'honda-vario-125',
+    name: 'Honda Vario 125 LED',
+    price: 110000,
+    image: '/images/Honda-vario-125.png',
     tag: 'Paling Populer',
     tagColor: 'bg-brand-yellow',
-    specs: { cc: 160, efficiency: '45 km/l', tank: '11L' },
-    features: ['Kunci Pintar', 'Lampu LED', 'Bagasi Luas'],
+    specs: { cc: '125', torque: '10.8 Nm' },
+    features: ['Sangat stabil untuk boncengan', 'Bagasi luas muat banyak', 'Lampu LED terang'],
   },
   {
-    id: 2,
-    name: 'Yamaha NMAX 155',
-    price: 18,
-    image: 'https://picsum.photos/seed/fleet2/400/300',
-    tag: 'Premium',
-    tagColor: 'bg-brand-black text-white',
-    specs: { cc: 155, efficiency: '40 km/l', tank: '7.1L' },
-    features: ['Rem ABS', 'Kontrol Traksi', 'Layar Digital Penuh'],
-  },
-  {
-    id: 3,
-    name: 'Honda PCX 160',
-    price: 20,
-    image: 'https://picsum.photos/seed/fleet3/400/300',
-    tag: 'Penawaran Terbaik',
+    id: 'honda-beat-new',
+    name: 'Honda Beat (New)',
+    price: 80000,
+    image: '/images/Honda-beat-new.png',
+    tag: 'Paling Irit',
     tagColor: 'bg-green-500 text-white',
-    specs: { cc: 160, efficiency: '43 km/l', tank: '8.1L' },
-    features: ['Idling Stop', 'Rem CBS', 'Charger USB'],
+    specs: { cc: '110', torque: '9.3 Nm' },
+    features: ['Konsumsi BBM sangat irit', 'Rangka eSAF super ringan', 'Lincah untuk selap-selip'],
   },
   {
-    id: 4,
-    name: 'Yamaha Aerox 155',
-    price: 16,
-    image: 'https://picsum.photos/seed/fleet4/400/300',
-    tag: 'Sporty',
+    id: 'honda-scoopy-new',
+    name: 'Honda Scoopy (New)',
+    price: 120000,
+    image: '/images/Honda-scoopy-new.png',
+    tag: 'Gaya Retro',
     tagColor: 'bg-blue-500 text-white',
-    specs: { cc: 155, efficiency: '42 km/l', tank: '5.5L' },
-    features: ['Desain Sporty', 'Suspensi Mono', 'Ban Lebar'],
+    specs: { cc: '110', torque: '9.3 Nm' },
+    features: ['Desain stylish & modern', 'Fitur Smart Key', 'Tersedia slot charger HP'],
   },
   {
-    id: 5,
-    name: 'Honda Beat 110',
-    price: 12,
-    image: 'https://picsum.photos/seed/fleet5/400/300',
-    tag: 'Ekonomis',
+    id: 'honda-spacy',
+    name: 'Honda Spacy',
+    price: 60000,
+    image: '/images/Honda-spacy.png',
+    tag: 'Bagasi Terluas',
+    tagColor: 'bg-purple-500 text-white',
+    specs: { cc: '110', torque: '8.9 Nm' },
+    features: ['Bagasi Helm-In 18 liter', 'Jok lebar & sangat nyaman', 'Harga paling ekonomis'],
+  },
+  {
+    id: 'yamaha-gear',
+    name: 'Yamaha Gear',
+    price: 80000,
+    image: '/images/yamaha-gear.png',
+    tag: 'Multifungsi',
     tagColor: 'bg-orange-500 text-white',
-    specs: { cc: 110, efficiency: '50 km/l', tank: '4.2L' },
-    features: ['Ringan', 'Mudah Dikendalikan', 'Irit Bahan Bakar'],
+    specs: { cc: '125', torque: '9.5 Nm' },
+    features: ['Dilengkapi Double Hook', 'Pijakan kaki untuk anak', 'Desain tangguh & modern'],
   },
 ]
 
 export default function Fleet() {
   const [isVisible, setIsVisible] = useState(false)
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -156,7 +167,7 @@ export default function Fleet() {
                 <img
                   src={scooter.image}
                   alt={scooter.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
@@ -168,18 +179,14 @@ export default function Fleet() {
                 </h3>
 
                 {/* Specs */}
-                <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                  <span className="flex items-center gap-1">
-                    <Gauge className="w-4 h-4" />
+                <div className="flex items-center justify-around gap-4 mb-4 text-sm text-gray-600">
+                  <span className="flex items-center gap-2">
+                    <Gauge className="w-4 h-4 text-gray-400" />
                     {scooter.specs.cc}cc
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Fuel className="w-4 h-4" />
-                    {scooter.specs.efficiency}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Droplets className="w-4 h-4" />
-                    {scooter.specs.tank}
+                  <span className="flex items-center gap-2">
+                    <Power className="w-4 h-4 text-gray-400" />
+                    {scooter.specs.torque}
                   </span>
                 </div>
 
@@ -201,7 +208,7 @@ export default function Fleet() {
                   <div>
                     <p className="text-sm text-gray-500">Mulai</p>
                     <p className="font-display font-bold text-2xl text-brand-black">
-                      ${scooter.price}
+                      Rp {scooter.price.toLocaleString('id-ID')}
                       <span className="text-sm font-normal text-gray-500">
                         /hari
                       </span>

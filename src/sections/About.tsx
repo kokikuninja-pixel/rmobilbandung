@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Award, Users, Clock, Headphones } from 'lucide-react'
@@ -93,8 +94,8 @@ export default function About() {
             {/* Main Image */}
             <div className="relative z-10 group">
               <img
-                src="https://picsum.photos/seed/about1/800/600"
-                alt="Skuter premium"
+                src="/images/Honda-Vario-150.png"
+                alt="Skuter premium Honda Vario 150"
                 className="w-full h-auto rounded-3xl shadow-card group-hover:shadow-card-hover transition-shadow duration-500"
               />
 

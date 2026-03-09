@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Star, Play } from 'lucide-react'
@@ -193,8 +194,8 @@ export default function Hero() {
             {/* Main Image */}
             <div className="relative z-10 transform hover:scale-[1.02] transition-transform duration-500">
               <img
-                src="https://picsum.photos/seed/hero1/800/800"
-                alt="Seseorang mengendarai skuter"
+                src="/images/hero-nethen-img.png"
+                alt="Seseorang mengendarai skuter di jalanan kota Bandung"
                 className="w-full h-auto rounded-3xl shadow-card-hover"
               />
 
@@ -216,7 +217,7 @@ export default function Hero() {
               {/* Price Tag */}
               <div className="absolute -top-4 -right-4 bg-brand-yellow rounded-2xl p-4 shadow-glow animate-float-delayed hidden sm:block">
                 <p className="font-display font-bold text-brand-black text-xl">
-                  Mulai $12
+                  Mulai 60rb
                 </p>
                 <p className="text-sm text-brand-black/70">per hari</p>
               </div>
