@@ -6,23 +6,12 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motorInventory } from '@/lib/data';
 import { MotorCard } from '@/components/motor-card';
-import type { Metadata } from 'next';
 
 interface SeoPageLayoutProps {
   title: string;
   locationName: string;
   description: string;
   children: React.ReactNode;
-}
-
-export function generateSeoMetadata(locationName: string, title: string, description: string, canonicalPath: string): Metadata {
-  return {
-    title: title,
-    description: description,
-    alternates: {
-      canonical: canonicalPath,
-    },
-  };
 }
 
 export default function SeoPageLayout({ title, locationName, description, children }: SeoPageLayoutProps) {

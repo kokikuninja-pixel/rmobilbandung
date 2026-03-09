@@ -1,5 +1,6 @@
 
-import SeoPageLayout, { generateSeoMetadata } from '@/components/seo-page-layout';
+import SeoPageLayout from '@/components/seo-page-layout';
+import { generateSeoMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 
 const locationName = "Braga";
