@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 import { motorInventory } from '@/lib/data';
 
@@ -15,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: siteUrl,
       lastModified: new Date(),
-      changeFrequency: 'yearly' as const,
+      changeFrequency: 'daily' as const,
       priority: 1,
     },
     {
@@ -31,10 +32,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${siteUrl}/galeri`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
+        url: `${siteUrl}/galeri`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    },
+    {
+        url: `${siteUrl}/tentang-kami`,
+        lastModified: new Date(),
+        changeFrequency: 'yearly' as const,
+        priority: 0.7,
+    },
+    {
+        url: `${siteUrl}/lokasi`,
+        lastModified: new Date(),
+        changeFrequency: 'yearly' as const,
+        priority: 0.7,
     },
     {
       url: `${siteUrl}/snk`,
