@@ -11,6 +11,8 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import type { Metadata } from 'next';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
   title: 'Daftar Harga Sewa Motor Bandung | RMB Rental',
@@ -34,90 +36,90 @@ const priceList = [
 
 export default function HargaPage() {
   return (
-    <div className="bg-background text-foreground min-h-screen">
-      <div className="container mx-auto max-w-screen-xl px-4 py-12 md:py-24">
-        <div className="mb-12 text-center">
-          <Link href="/" className="text-sm text-muted-foreground hover:text-secondary mb-4 inline-flex items-center">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Kembali ke Halaman Utama
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Daftar Harga Sewa</h1>
-          <p className="text-lg text-muted-foreground">Transparan, kompetitif, dan fleksibel untuk Anda.</p>
-        </div>
+    <>
+      <Header />
+      <main className="bg-background text-foreground min-h-screen">
+        <div className="container mx-auto max-w-screen-xl px-4 py-12 md:py-24">
+          <div className="mb-12 text-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Daftar Harga Sewa</h1>
+            <p className="text-lg text-muted-foreground">Transparan, kompetitif, dan fleksibel untuk Anda.</p>
+          </div>
 
-        <Card className="shadow-lg">
-          <CardHeader>
-            <CardTitle>Harga Sewa Per Hari</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[180px]">Harga Mulai Dari</TableHead>
-                  <TableHead>Model Motor</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {priceList.map((item, index) => (
-                  <TableRow key={index}>
-                    <TableCell className="font-semibold text-primary text-lg">
-                      Rp {item.price.toLocaleString('id-ID')}
-                    </TableCell>
-                    <TableCell>{item.models}</TableCell>
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle>Harga Sewa Per Hari</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="w-[180px]">Harga Mulai Dari</TableHead>
+                    <TableHead>Model Motor</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <Alert className="mt-6 border-primary/30 bg-primary/10">
-              <Info className="h-4 w-4 text-primary" />
-              <AlertTitle className="text-primary">Harga Dinamis</AlertTitle>
-              <AlertDescription>
-                Harga dasar dapat berubah sewaktu-waktu tergantung pada ketersediaan unit, musim (high season), dan durasi sewa (mingguan/bulanan).
-              </AlertDescription>
-            </Alert>
-          </CardContent>
-        </Card>
+                </TableHeader>
+                <TableBody>
+                  {priceList.map((item, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-semibold text-primary text-lg">
+                        Rp {item.price.toLocaleString('id-ID')}
+                      </TableCell>
+                      <TableCell>{item.models}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+              <Alert className="mt-6 border-primary/30 bg-primary/10">
+                <Info className="h-4 w-4 text-primary" />
+                <AlertTitle className="text-primary">Harga Dinamis</AlertTitle>
+                <AlertDescription>
+                  Harga dasar dapat berubah sewaktu-waktu tergantung pada ketersediaan unit, musim (high season), dan durasi sewa (mingguan/bulanan).
+                </AlertDescription>
+              </Alert>
+            </CardContent>
+          </Card>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-2xl">
-                        <PlusCircle className="h-6 w-6 text-secondary" />
-                        <span>Ketentuan Biaya Tambahan</span>
-                    </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                   <div>
-                     <h4 className="font-semibold">Weekend &amp; Tanggal Merah</h4>
-                     <p className="text-muted-foreground">Dikenakan biaya tambahan sebesar <span className="text-foreground font-bold">Rp 20.000</span> dari harga dasar.</p>
-                   </div>
-                   <div>
-                     <h4 className="font-semibold">Promo Durasi</h4>
-                     <p className="text-muted-foreground">Biaya tambahan weekend <span className="text-green-500 font-bold">GRATIS</span> untuk pemakaian sewa lebih dari 3 hari.</p>
-                   </div>
-                </CardContent>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-2xl">
-                        <Clock className="h-6 w-6 text-secondary" />
-                        <span>Jam Operasional</span>
-                    </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                   <div>
-                        <h4 className="font-semibold text-muted-foreground">Pemesanan &amp; Pengantaran Unit</h4>
-                        <p className="text-2xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
-                    </div>
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
+              <Card>
+                  <CardHeader>
+                      <CardTitle className="flex items-center gap-3 text-2xl">
+                          <PlusCircle className="h-6 w-6 text-primary" />
+                          <span>Ketentuan Biaya Tambahan</span>
+                      </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
                      <div>
-                        <h4 className="font-semibold text-muted-foreground">Garasi (Ambil/Kembalikan Sendiri)</h4>
-                        <p className="text-2xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
-                    </div>
-                    <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
-                </CardContent>
-            </Card>
+                       <h4 className="font-semibold">Weekend &amp; Tanggal Merah</h4>
+                       <p className="text-muted-foreground">Dikenakan biaya tambahan sebesar <span className="text-foreground font-bold">Rp 20.000</span> dari harga dasar.</p>
+                     </div>
+                     <div>
+                       <h4 className="font-semibold">Promo Durasi</h4>
+                       <p className="text-muted-foreground">Biaya tambahan weekend <span className="text-green-500 font-bold">GRATIS</span> untuk pemakaian sewa lebih dari 3 hari.</p>
+                     </div>
+                  </CardContent>
+              </Card>
+              <Card>
+                  <CardHeader>
+                      <CardTitle className="flex items-center gap-3 text-2xl">
+                          <Clock className="h-6 w-6 text-primary" />
+                          <span>Jam Operasional</span>
+                      </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                     <div>
+                          <h4 className="font-semibold text-muted-foreground">Pemesanan &amp; Pengantaran Unit</h4>
+                          <p className="text-2xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
+                      </div>
+                       <div>
+                          <h4 className="font-semibold text-muted-foreground">Garasi (Ambil/Kembalikan Sendiri)</h4>
+                          <p className="text-2xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
+                      </div>
+                      <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
+                  </CardContent>
+              </Card>
+          </div>
         </div>
-      </div>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -1,27 +1,13 @@
 
 import type {Metadata} from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css';
-import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleTagManager } from '@next/third-parties/google';
-
-const inter = Inter({ 
-  subsets: ['latin'], 
-  variable: '--font-sans',
-  display: 'swap',
-})
-
-const jakarta = Plus_Jakarta_Sans({ 
-  subsets: ['latin'], 
-  variable: '--font-display',
-  display: 'swap',
-})
-
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'RMB - Rental Motor Bandung',
-  description: 'Sewa motor matic di Bandung dengan mudah dan cepat. Harga terjangkau, layanan terpercaya, unit siap pakai.',
+  title: 'RMB - Rental Motor Bandung | Sewa Matic Cepat & Aman',
+  description: 'Sewa motor matic di Bandung dengan mudah dan cepat. Harga terjangkau mulai 60rb, layanan terpercaya, unit siap pakai. Pesan sekarang!',
 };
 
 export default function RootLayout({
@@ -30,19 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" className="!scroll-smooth">
       <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11380968042"></script>
-      <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-11380968042');
-        `}
-      </script>
+        <GoogleTagManager gtmId="AW-11380968042" />
       </head>
-      <body className={cn("font-sans", inter.variable, jakarta.variable)}>
+      <body className={cn("font-sans")}>
         {children}
         <Toaster />
       </body>
