@@ -1,19 +1,17 @@
-'use client';
 import { useState, useEffect } from 'react'
 import { Menu, X, Bike } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Logo } from '@/components/icons/logo'
 
 interface NavbarProps {
   scrollY: number
 }
 
 const navLinks = [
-  { name: 'Beranda', href: '#home' },
-  { name: 'Tentang', href: '#about' },
-  { name: 'Armada', href: '#fleet' },
-  { name: 'Harga', href: '#pricing' },
-  { name: 'Kontak', href: '#contact' },
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Fleet', href: '#fleet' },
+  { name: 'Pricing', href: '#pricing' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar({ scrollY }: NavbarProps) {
@@ -39,7 +37,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-xl shadow-soft'
+          ? 'bg-white/95 backdrop-blur-xl shadow-soft'
           : 'bg-transparent'
       }`}
     >
@@ -53,9 +51,11 @@ export default function Navbar({ scrollY }: NavbarProps) {
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
             }`}
           >
-            <Logo />
-            <span className="font-display font-bold text-xl text-foreground">
-              RMB
+            <div className="w-10 h-10 bg-brand-yellow rounded-xl flex items-center justify-center">
+              <Bike className="w-6 h-6 text-brand-black" />
+            </div>
+            <span className="font-display font-bold text-xl text-brand-black">
+              MaticRent
             </span>
           </a>
 
@@ -66,7 +66,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative font-medium text-sm text-foreground hover:text-primary transition-all duration-300 group ${
+                className={`relative font-medium text-sm text-brand-black hover:text-brand-yellow transition-all duration-300 group ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 -translate-y-4'
@@ -74,7 +74,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
                 style={{ transitionDelay: `${100 + index * 80}ms` }}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-brand-yellow transition-all duration-300 group-hover:w-full group-hover:left-0" />
               </a>
             ))}
           </div>
@@ -89,25 +89,25 @@ export default function Navbar({ scrollY }: NavbarProps) {
             style={{ transitionDelay: '500ms' }}
           >
             <Button
-              className="bg-transparent border-2 border-foreground text-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 font-semibold px-6"
+              className="bg-transparent border-2 border-brand-black text-brand-black hover:bg-brand-yellow hover:border-brand-yellow hover:text-white transition-all duration-300 font-semibold px-6"
               onClick={() => {
                 const target = document.querySelector('#fleet')
                 if (target) target.scrollIntoView({ behavior: 'smooth' })
               }}
             >
-              Pesan Sekarang
+              Book Now
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-brand-cream transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-brand-black" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6 text-brand-black" />
             )}
           </button>
         </div>
@@ -115,7 +115,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl shadow-lg transition-all duration-500 overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl shadow-lg transition-all duration-500 overflow-hidden ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
@@ -125,20 +125,20 @@ export default function Navbar({ scrollY }: NavbarProps) {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="block py-2 text-foreground hover:text-primary font-medium transition-colors"
+              className="block py-2 text-brand-black hover:text-brand-yellow font-medium transition-colors"
             >
               {link.name}
             </a>
           ))}
           <Button
-            className="w-full bg-primary text-primary-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-semibold mt-4"
+            className="w-full bg-brand-yellow text-brand-black hover:bg-brand-black hover:text-white transition-all duration-300 font-semibold mt-4"
             onClick={() => {
               const target = document.querySelector('#fleet')
               if (target) target.scrollIntoView({ behavior: 'smooth' })
               setIsMenuOpen(false)
             }}
           >
-            Pesan Sekarang
+            Book Now
           </Button>
         </div>
       </div>

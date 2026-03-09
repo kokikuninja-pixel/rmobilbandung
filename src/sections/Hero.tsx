@@ -13,9 +13,14 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleScrollTo = (id: string) => {
+    const target = document.querySelector(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
-      id="beranda"
+      id="home"
       ref={heroRef}
       className="relative min-h-screen w-full overflow-hidden bg-background pt-20"
     >
@@ -41,7 +46,7 @@ export default function Hero() {
           <div className="space-y-8 z-10">
             {/* Badge */}
             <div
-              className={`inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border transition-all duration-700 ${
+              className={`inline-flex items-center gap-2 bg-card/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-soft transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -54,7 +59,7 @@ export default function Hero() {
                 </span>
               </span>
               <span className="text-sm text-muted-foreground">
-                dari 2.000+ pengendara
+                dari 2,000+ pengendara
               </span>
             </div>
 
@@ -68,7 +73,7 @@ export default function Hero() {
                 }`}
                 style={{ transitionDelay: '200ms' }}
               >
-                Sewa Motor
+                Sewa Skuter
               </h1>
               <h1
                 className={`font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-foreground leading-tight transition-all duration-700 ${
@@ -85,6 +90,7 @@ export default function Hero() {
                     className="absolute -bottom-2 left-0 w-full text-primary"
                     viewBox="0 0 200 12"
                     fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       d="M2 10C50 2 150 2 198 10"
@@ -114,7 +120,7 @@ export default function Hero() {
               }`}
               style={{ transitionDelay: '500ms' }}
             >
-              Jelajahi kota dengan bebas. Motor matic premium, harga terjangkau, diantar ke pintu Anda. Rasakan nikmatnya perjalanan roda dua.
+              Jelajahi kota dengan bebas. Skuter premium, harga terjangkau, diantar ke pintu Anda. Rasakan nikmatnya perjalanan roda dua.
             </p>
 
             {/* CTA Buttons */}
@@ -127,14 +133,12 @@ export default function Hero() {
               style={{ transitionDelay: '600ms' }}
             >
               <Button
-                asChild
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-semibold px-8 py-6 text-base group animate-pulse-glow"
+                onClick={() => handleScrollTo('#pesan')}
               >
-                <Link href="/#pesan">
-                  Sewa Sekarang
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                Sewa Sekarang
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 asChild
@@ -162,7 +166,7 @@ export default function Hero() {
                 <p className="font-display font-bold text-3xl text-foreground">
                   50+
                 </p>
-                <p className="text-sm text-muted-foreground">Motor Premium</p>
+                <p className="text-sm text-muted-foreground">Skuter Premium</p>
               </div>
               <div>
                 <p className="font-display font-bold text-3xl text-foreground">
@@ -194,9 +198,9 @@ export default function Hero() {
             {/* Main Image */}
             <div className="relative z-10 transform hover:scale-[1.02] transition-transform duration-500">
               <img
-                src="/images/hero-rmb-img.png"
+                src="/images/hero-nethen-img.png"
                 alt="Seseorang mengendarai skuter di jalanan kota Bandung"
-                className="w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+                className="w-full h-auto rounded-3xl shadow-card-hover"
               />
 
               {/* Floating Card */}
@@ -231,7 +235,8 @@ export default function Hero() {
         <svg
           viewBox="0 0 1440 120"
           fill="none"
-          className="w-full h-auto text-muted"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto text-background"
           preserveAspectRatio="none"
         >
           <path
