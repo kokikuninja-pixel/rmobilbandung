@@ -1,46 +1,48 @@
+'use client';
 import { useEffect, useRef, useState } from 'react'
-import { ChevronDown, HelpCircle } from 'lucide-react'
+import { ChevronDown, HelpCircle, Phone } from 'lucide-react'
+import { Button } from '@/components/ui/button';
 
 const faqs = [
   {
-    question: 'What do I need to rent a scooter?',
+    question: 'Apa saja syarat untuk menyewa motor?',
     answer:
-      "You'll need a valid driver's license (international for foreigners), passport or ID, and a security deposit. Minimum age is 18 years old. We make the process quick and hassle-free.",
+      "Anda perlu mengirimkan foto E-KTP, SIM C yang masih aktif, dan salah satu dari dokumen berikut: ID Pegawai, Kartu Mahasiswa, tiket perjalanan, atau bukti menginap. Kirim semua ke WhatsApp admin. Saat serah terima motor, Anda juga perlu menitipkan satu identitas asli (E-KTP/SIM A) sebagai jaminan.",
   },
   {
-    question: 'Is insurance included?',
+    question: 'Bagaimana jika ada syarat yang kurang?',
     answer:
-      'Basic insurance is included with all rentals. Full coverage options are available for an additional fee. We recommend the full coverage for peace of mind during your travels.',
+      "Tenang, Anda mungkin masih bisa menyewa. Jika ada persyaratan yang kurang, coba diskusikan dengan admin kami melalui WhatsApp. Kami akan coba mencari solusi atau syarat pengganti jika alasan Anda cukup kuat.",
   },
   {
-    question: 'What if the scooter breaks down?',
+    question: 'Apakah ada asuransi atau bantuan darurat?',
     answer:
-      "We provide 24/7 roadside assistance. If we can't fix it on the spot, we'll replace the scooter at no extra cost. Your safety and convenience are our top priorities.",
+      "Kami menyediakan bantuan darurat selama jam operasional kami (05:00 - 21:30). Jika motor mengalami kendala, tim kami akan segera membantu. Keamanan dan kenyamanan Anda adalah prioritas kami.",
   },
   {
-    question: 'Can I cancel my reservation?',
+    question: 'Bagaimana jika saya ingin membatalkan pesanan?',
     answer:
-      'Yes, cancellations made 24 hours before pickup receive a full refund. Same-day cancellations incur a small fee. We understand plans can change!',
+      'Untuk pembatalan pesanan, uang muka (DP) yang sudah dibayarkan tidak dapat dikembalikan (hangus). Kami sarankan untuk memastikan jadwal Anda sebelum melakukan pemesanan.',
   },
   {
-    question: 'Do you offer delivery?',
+    question: 'Apakah bisa diantar ke lokasi saya?',
     answer:
-      'Absolutely! We deliver to hotels, airports, and addresses within the city. Delivery fees vary by distance. Contact us for specific delivery options and pricing.',
+      'Tentu! Kami menyediakan layanan antar-jemput ke hotel, stasiun, bandara, atau alamat lain di dalam kota Bandung. Biaya pengantaran akan disesuaikan tergantung jarak lokasi Anda.',
   },
   {
-    question: "What's the fuel policy?",
+    question: 'Bagaimana kebijakan bahan bakarnya?',
     answer:
-      'Scooters are provided with a full tank. Return with a full tank, or we\'ll refuel at market rates plus a small service fee. It\'s that simple!',
+      'Setiap motor kami sediakan dengan bahan bakar sekitar 1 liter, cukup untuk Anda menuju SPBU terdekat. Jika Anda ingin motor diserahkan dengan tangki penuh, akan ada biaya tambahan.',
   },
   {
-    question: 'Can I rent for multiple weeks?',
+    question: 'Fasilitas apa saja yang saya dapatkan?',
     answer:
-      'Yes! Our monthly plan offers the best rates for long-term rentals. Contact us for custom quotes if you need the scooter for an extended period.',
+      'Setiap penyewaan sudah termasuk 2 helm SNI yang bersih dan 2 jas hujan. Beberapa unit motor kami juga sudah dilengkapi dengan phone holder untuk kemudahan navigasi Anda.',
   },
   {
-    question: 'Are helmets provided?',
+    question: 'Apakah bisa sewa untuk jangka waktu panjang?',
     answer:
-      'Yes, we provide one helmet per rider. Additional helmets and accessories like phone mounts and rain covers are available for rent.',
+      'Tentu bisa! Kami memiliki paket sewa mingguan dan bulanan dengan harga yang jauh lebih hemat. Silakan lihat halaman harga kami atau hubungi admin untuk mendapatkan penawaran terbaik.',
   },
 ]
 
@@ -75,50 +77,49 @@ export default function FAQ() {
     <section
       id="faq"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-brand-cream overflow-hidden"
+      className="relative w-full py-20 lg:py-32 bg-muted/50 overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute top-20 right-0 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
 
       <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Column - Header */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <span
-              className={`inline-block bg-brand-yellow/20 text-brand-black px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
+              className={`inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
               }`}
             >
-              FAQ
+              Tanya Jawab
             </span>
             <h2
-              className={`font-display font-bold text-4xl lg:text-5xl text-brand-black mb-4 transition-all duration-700 ${
+              className={`font-display font-bold text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: '100ms' }}
             >
-              Frequently Asked{' '}
-              <span className="text-brand-yellow">Questions</span>
+              Pertanyaan yang Sering{' '}
+              <span className="text-primary">Diajukan</span>
             </h2>
             <p
-              className={`text-lg text-gray-600 mb-8 transition-all duration-700 ${
+              className={`text-lg text-muted-foreground mb-8 transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              Got questions? We've got answers. If you can't find what you're
-              looking for, feel free to contact us.
+              Punya pertanyaan? Kami punya jawabannya. Jika Anda tidak menemukan yang Anda cari, jangan ragu untuk menghubungi kami.
             </p>
 
             {/* Contact Card */}
             <div
-              className={`bg-white rounded-2xl p-6 shadow-card transition-all duration-700 ${
+              className={`bg-card rounded-2xl p-6 shadow-card transition-all duration-700 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -126,22 +127,22 @@ export default function FAQ() {
               style={{ transitionDelay: '300ms' }}
             >
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-brand-yellow/20 rounded-xl flex items-center justify-center">
-                  <HelpCircle className="w-6 h-6 text-brand-yellow" />
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                  <HelpCircle className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-display font-bold text-brand-black">
-                    Still have questions?
+                  <p className="font-display font-bold text-foreground">
+                    Masih punya pertanyaan?
                   </p>
-                  <p className="text-sm text-gray-600">
-                    Contact us at{' '}
-                    <a
-                      href="mailto:hello@maticrent.com"
-                      className="text-brand-yellow hover:underline"
-                    >
-                      hello@maticrent.com
-                    </a>
-                  </p>
+                    <Button asChild variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
+                         <a
+                            href="https://wa.me/6282190105740"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            >
+                            Hubungi kami via WhatsApp
+                        </a>
+                    </Button>
                 </div>
               </div>
             </div>
@@ -152,7 +153,7 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl overflow-hidden shadow-card transition-all duration-700 ${
+                className={`bg-card rounded-2xl overflow-hidden shadow-card transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 translate-x-8'
@@ -161,23 +162,24 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-muted/50 transition-colors"
                 >
-                  <span className="font-display font-semibold text-brand-black pr-4">
+                  <span className="font-display font-semibold text-foreground pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-brand-yellow flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? 'max-h-48' : 'max-h-0'
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ease-in-out`}
+                  style={{
+                    maxHeight: openIndex === index ? '200px' : '0px',
+                  }}
                 >
-                  <p className="px-6 pb-6 text-gray-600 leading-relaxed">
+                  <p className="px-6 pb-6 text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
