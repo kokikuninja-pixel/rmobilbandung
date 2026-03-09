@@ -1,5 +1,5 @@
-'use client';
 import { useEffect, useRef, useState } from 'react'
+import './App.css'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
@@ -11,7 +11,7 @@ import FAQ from './sections/FAQ'
 import CTA from './sections/CTA'
 import Footer from './sections/Footer'
 
-export default function Home() {
+function App() {
   const [scrollY, setScrollY] = useState(0)
   const mainRef = useRef<HTMLDivElement>(null)
 
@@ -41,3 +41,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default App
