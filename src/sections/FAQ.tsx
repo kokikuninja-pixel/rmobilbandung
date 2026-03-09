@@ -4,44 +4,44 @@ import { ChevronDown, HelpCircle } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'Apa yang saya perlukan untuk menyewa skuter?',
+    question: 'Apa saja syarat untuk menyewa motor?',
     answer:
-      "Anda memerlukan SIM yang valid (internasional untuk orang asing), paspor atau KTP, dan uang jaminan. Usia minimum adalah 18 tahun. Kami membuat prosesnya cepat dan tanpa repot.",
+      "Syarat utamanya adalah E-KTP, SIM C aktif, dan beberapa dokumen pendukung seperti ID kerja atau tiket perjalanan. Detail lengkap bisa dilihat pada bagian 'Cara Kerja' di atas.",
   },
   {
-    question: 'Apakah asuransi sudah termasuk?',
+    question: 'Bagaimana jika ada salah satu persyaratan yang kurang?',
     answer:
-      'Asuransi dasar sudah termasuk dalam semua penyewaan. Opsi cakupan penuh tersedia dengan biaya tambahan. Kami merekomendasikan cakupan penuh untuk ketenangan pikiran selama perjalanan Anda.',
+      'Anda masih bisa menyewa jika alasannya cukup kuat atau bisa diganti dengan syarat lain. Jangan ragu untuk bertanya, Anda bisa berkonsultasi lewat WhatsApp kepada admin kami.',
   },
   {
-    question: 'Bagaimana jika skuter rusak?',
+    question: 'Bagaimana jika motor rusak di jalan?',
     answer:
-      "Kami menyediakan bantuan darurat 24/7. Jika kami tidak dapat memperbaikinya di tempat, kami akan mengganti skuter tanpa biaya tambahan. Keselamatan dan kenyamanan Anda adalah prioritas utama kami.",
+      'Kami menyediakan bantuan darurat pada jam operasional kami, yaitu dari pukul 05:00 pagi hingga 21:30 malam. Keselamatan dan kenyamanan Anda adalah prioritas utama kami.',
   },
   {
-    question: 'Bisakah saya membatalkan reservasi saya?',
+    question: 'Bagaimana jika saya ingin membatalkan pesanan?',
     answer:
-      'Ya, pembatalan yang dilakukan 24 jam sebelum pengambilan akan mendapatkan pengembalian dana penuh. Pembatalan pada hari yang sama akan dikenakan biaya kecil. Kami mengerti bahwa rencana bisa berubah!',
+      'Jika Anda melakukan pembatalan setelah melakukan pembayaran Down Payment (DP), maka DP tersebut akan dianggap hangus.',
   },
   {
-    question: 'Apakah Anda menawarkan pengiriman?',
+    question: 'Apakah motor bisa diantar ke lokasi saya?',
     answer:
-      'Tentu saja! Kami mengantar ke hotel, bandara, dan alamat di dalam kota. Biaya pengiriman bervariasi berdasarkan jarak. Hubungi kami untuk opsi pengiriman dan harga spesifik.',
+      'Tentu saja! Kami bisa melakukan pengiriman ke lokasi Anda. Akan ada biaya tambahan yang besarnya tergantung pada jarak pengantaran.',
   },
   {
-    question: "Bagaimana kebijakan bahan bakarnya?",
+    question: 'Bagaimana kebijakan bahan bakarnya?',
     answer:
-      'Skuter disediakan dengan tangki penuh. Kembalikan dengan tangki penuh, atau kami akan mengisi ulang dengan harga pasar ditambah biaya layanan kecil. Sesederhana itu!',
+      'Setiap motor kami sediakan dengan bahan bakar sekitar 1 liter untuk pemakaian awal. Jika Anda ingin tangki terisi penuh saat serah terima, akan ada biaya tambahan.',
   },
   {
-    question: 'Bisakah saya menyewa selama beberapa minggu?',
+    question: 'Bisakah saya menyewa untuk jangka waktu panjang?',
     answer:
-      'Ya! Paket bulanan kami menawarkan harga terbaik untuk penyewaan jangka panjang. Hubungi kami untuk penawaran khusus jika Anda membutuhkan skuter untuk periode yang lebih lama.',
+      'Ya! Paket mingguan dan bulanan kami menawarkan harga terbaik untuk penyewaan jangka panjang. Hubungi kami untuk mendapatkan penawaran khusus.',
   },
   {
-    question: 'Apakah helm disediakan?',
+    question: 'Fasilitas apa saja yang saya dapatkan?',
     answer:
-      'Ya, kami menyediakan satu helm per pengendara. Helm tambahan dan aksesori seperti dudukan telepon dan jas hujan tersedia untuk disewa.',
+      'Ya, setiap penyewaan sudah termasuk 2 helm SNI dan 2 jas hujan. Phone holder juga tersedia pada sebagian besar unit motor kami.',
   },
 ]
 
