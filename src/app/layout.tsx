@@ -31,6 +31,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
+       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11380968042"
+        ></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11380968042');
+          `}
+        </Script>
+      </head>
       <body className={cn("font-sans", inter.variable, jakarta.variable)}>
         {children}
         <Toaster />
