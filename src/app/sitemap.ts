@@ -2,7 +2,7 @@
 import { MetadataRoute } from 'next';
 import { motorInventory } from '@/lib/data';
 
-const siteUrl = 'https://rmb-rental-bandung.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rmb-rental-bandung.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const motorUrls = motorInventory.map(motor => ({
