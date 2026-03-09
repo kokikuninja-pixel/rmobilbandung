@@ -22,10 +22,8 @@ export default function RootLayout({
 
   return (
     <html lang="id" className="!scroll-smooth">
-      <head>
-        {gtmId && <GoogleTagManager gtmId={gtmId} />}
-      </head>
       <body className={cn("font-sans")}>
+        {gtmId && <GoogleTagManager gtmId={gtmId} />}
         {children}
         <Toaster />
       </body>
