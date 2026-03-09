@@ -138,7 +138,7 @@ export default function About() {
               style={{ transitionDelay: '100ms' }}
             >
               Kenapa Pilih{' '}
-              <span className="text-brand-yellow">MaticRent?</span>
+              <span className="text-brand-yellow">RMB?</span>
             </h2>
 
             {/* Description */}

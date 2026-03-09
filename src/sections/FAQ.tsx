@@ -133,12 +133,14 @@ export default function FAQ() {
                     Masih ada pertanyaan?
                   </p>
                   <p className="text-sm text-gray-600">
-                    Hubungi kami di{' '}
+                    Hubungi kami melalui{' '}
                     <a
-                      href="mailto:hello@maticrent.com"
+                      href="https://wa.me/6282190105740"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-brand-yellow hover:underline"
                     >
-                      hello@maticrent.com
+                      WhatsApp
                     </a>
                   </p>
                 </div>

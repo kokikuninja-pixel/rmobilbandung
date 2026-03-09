@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Bike } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/icons/logo'
 
 interface NavbarProps {
   scrollY: number
@@ -51,11 +52,9 @@ export default function Navbar({ scrollY }: NavbarProps) {
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
             }`}
           >
-            <div className="w-10 h-10 bg-brand-yellow rounded-xl flex items-center justify-center">
-              <Bike className="w-6 h-6 text-brand-black" />
-            </div>
+            <Logo />
             <span className="font-display font-bold text-xl text-brand-black">
-              MaticRent
+              RMB
             </span>
           </a>
 

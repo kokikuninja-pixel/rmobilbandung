@@ -4,6 +4,7 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/sonner";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -19,8 +20,8 @@ const jakarta = Plus_Jakarta_Sans({
 
 
 export const metadata: Metadata = {
-  title: 'MaticRent - Sewa Skuter Matic',
-  description: 'Sewa skuter matic premium di kota Anda dengan mudah dan cepat. Harga terjangkau, layanan 24/7.',
+  title: 'RMB - Rental Motor Bandung',
+  description: 'Sewa motor matic di Bandung dengan mudah dan cepat. Harga terjangkau, layanan terpercaya, unit siap pakai.',
 };
 
 export default function RootLayout({
@@ -30,6 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
+      <head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11380968042"></script>
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-11380968042');
+        `}
+      </script>
+      </head>
       <body className={cn("font-sans", inter.variable, jakarta.variable)}>
         {children}
         <Toaster />

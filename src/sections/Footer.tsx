@@ -13,6 +13,7 @@ import {
   Youtube,
   ArrowRight,
 } from 'lucide-react'
+import { Logo } from '@/components/icons/logo'
 
 const quickLinks = [
   { name: 'Beranda', href: '#home' },
@@ -99,11 +100,9 @@ export default function Footer() {
           >
             {/* Logo */}
             <a href="#home" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-brand-yellow rounded-xl flex items-center justify-center">
-                <Bike className="w-6 h-6 text-brand-black" />
-              </div>
+              <Logo />
               <span className="font-display font-bold text-xl text-white">
-                MaticRent
+                RMB
               </span>
             </a>
 
@@ -220,12 +219,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-brand-yellow flex-shrink-0" />
-                <a
-                  href="mailto:hello@maticrent.com"
-                  className="text-white/60 hover:text-brand-yellow transition-colors"
-                >
-                  hello@maticrent.com
-                </a>
+                 <a
+                      href="https://wa.me/6282190105740"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 hover:text-brand-yellow transition-colors"
+                    >
+                      Hubungi via WhatsApp
+                  </a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-brand-yellow flex-shrink-0" />
@@ -246,7 +247,7 @@ export default function Footer() {
         >
           {/* Copyright */}
           <p className="text-white/40 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} MaticRent. Hak cipta dilindungi undang-undang.
+            © {new Date().getFullYear()} RMB Rental Motor Bandung. Hak cipta dilindungi undang-undang.
           </p>
 
           {/* Social Links */}
