@@ -12,6 +12,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const seoPages = [
+    '/sewa-motor-dago',
+    '/rental-motor-lembang',
+    '/sewa-motor-braga',
+    '/rental-motor-setiabudi',
+    '/sewa-motor-cihampelas',
+    '/rental-motor-gedung-sate',
+    '/sewa-motor-buahbatu',
+    '/rental-motor-stasiun-bandung',
+    '/sewa-motor-bandara-husein',
+  ].map(page => ({
+    url: `${siteUrl}${page}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   const staticUrls = [
     {
       url: siteUrl,
@@ -57,5 +74,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticUrls, ...motorUrls];
+  return [...staticUrls, ...motorUrls, ...seoPages];
 }

@@ -7,9 +7,15 @@ import React from 'react';
 
 export function Footer() {
   const seoAreas = [
-    'Sewa Motor Dago', 'Rental Motor Lembang', 'Sewa Motor Braga', 
-    'Rental Motor Setiabudi', 'Sewa Motor Cihampelas', 'Rental Motor Gedung Sate', 
-    'Sewa Motor Buahbatu', 'Rental Motor Stasiun Bandung', 'Sewa Motor Bandara Husein Sastranegara'
+    { name: 'Sewa Motor Dago', href: '/sewa-motor-dago' },
+    { name: 'Rental Motor Lembang', href: '/rental-motor-lembang' },
+    { name: 'Sewa Motor Braga', href: '/sewa-motor-braga' },
+    { name: 'Rental Motor Setiabudi', href: '/rental-motor-setiabudi' },
+    { name: 'Sewa Motor Cihampelas', href: '/sewa-motor-cihampelas' },
+    { name: 'Rental Motor Gedung Sate', href: '/rental-motor-gedung-sate' },
+    { name: 'Sewa Motor Buahbatu', href: '/sewa-motor-buahbatu' },
+    { name: 'Rental Motor Stasiun Bandung', href: '/rental-motor-stasiun-bandung' },
+    { name: 'Sewa Motor Bandara Husein Sastranegara', href: '/sewa-motor-bandara-husein' },
   ];
 
   const seoArmada = [
@@ -67,8 +73,8 @@ export function Footer() {
             <h4 className="font-semibold text-sm text-background/80 mb-2">Area Layanan Kami</h4>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {seoAreas.map((area, index) => (
-                <React.Fragment key={area}>
-                  <Link href="/#pesan" className="hover:text-primary transition-colors">{area}</Link>
+                <React.Fragment key={area.name}>
+                  <Link href={area.href} className="hover:text-primary transition-colors">{area.name}</Link>
                   {index < seoAreas.length - 1 && <span>|</span>}
                 </React.Fragment>
               ))}
@@ -79,7 +85,7 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {seoArmada.map((armada, index) => (
                 <React.Fragment key={armada}>
-                  <Link href="/#pesan" className="hover:text-primary transition-colors">{armada}</Link>
+                  <Link href="/armada" className="hover:text-primary transition-colors">{armada}</Link>
                   {index < seoArmada.length - 1 && <span>|</span>}
                 </React.Fragment>
               ))}
