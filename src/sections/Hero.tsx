@@ -1,19 +1,22 @@
 'use client';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Star } from 'lucide-react';
-import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { ArrowRight, Star, Play } from 'lucide-react'
 import Link from 'next/link';
 
 export default function Hero() {
-  
-  const handleScrollTo = (id: string) => {
-    const target = document.querySelector(id);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  };
+  const [isVisible, setIsVisible] = useState(false)
+  const heroRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <section
       id="beranda"
+      ref={heroRef}
       className="relative min-h-[90vh] w-full overflow-hidden bg-background flex items-center pt-24 pb-12"
     >
       <div className="absolute top-0 left-0 w-full h-full bg-grid-slate-900/[0.04] [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]"></div>
@@ -53,7 +56,7 @@ export default function Hero() {
           </div>
 
           <div className="relative min-h-[300px] md:min-h-[500px]">
-            <Image
+            <img
                 src="/images/hero-rmb-img.png"
                 alt="Seseorang mengendarai skuter Yamaha Aerox dengan latar kota Bandung"
                 fill
