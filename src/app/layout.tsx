@@ -1,5 +1,6 @@
 
 import type {Metadata} from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleTagManager } from '@next/third-parties/google';
@@ -24,6 +25,16 @@ export default function RootLayout({
     <html lang="id" className="!scroll-smooth">
       <body className={cn("font-sans")}>
         {gtmId && <GoogleTagManager gtmId={gtmId} />}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11380968042"></Script>
+        <Script id="google-ads-config">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-11380968042');
+          `}
+        </Script>
         {children}
         <Toaster />
       </body>
