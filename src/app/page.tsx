@@ -12,6 +12,8 @@ import Testimonials from '@/sections/Testimonials';
 import { FloatingActionButton } from '@/components/floating-action-button';
 import { OrderForm } from '@/components/order-form';
 import { Card } from '@/components/ui/card';
+import { Suspense } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export default function Home() {
   return (
@@ -38,7 +40,9 @@ export default function Home() {
               </p>
             </div>
             <Card className="max-w-4xl mx-auto p-6 md:p-10 shadow-lg bg-card">
-              <OrderForm />
+              <Suspense fallback={<Skeleton className="h-[800px] w-full" />}>
+                <OrderForm />
+              </Suspense>
             </Card>
           </div>
         </section>
