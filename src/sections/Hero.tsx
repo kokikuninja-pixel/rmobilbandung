@@ -198,7 +198,7 @@ export default function Hero() {
             {/* Main Image */}
             <div className="relative z-10 transform hover:scale-[1.02] transition-transform duration-500">
               <img
-                src="/images/hero-nethen-img.png"
+                src="/images/hero1.png"
                 alt="Seseorang mengendarai skuter di jalanan kota Bandung"
                 className="w-full h-auto rounded-3xl shadow-card-hover"
               />

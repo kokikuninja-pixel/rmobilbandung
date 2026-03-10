@@ -95,7 +95,7 @@ export default function About() {
             {/* Main Image */}
             <div className="relative z-10 group">
               <img
-                src="/images/hero-nethen-img.png"
+                src="/images/hero2.png"
                 alt="Skuter premium RMB"
                 className="w-full h-auto rounded-3xl shadow-card group-hover:shadow-card-hover transition-shadow duration-500 object-cover aspect-[4/3]"
               />

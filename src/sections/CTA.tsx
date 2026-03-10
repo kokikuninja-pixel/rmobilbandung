@@ -1,4 +1,3 @@
-
 'use client';
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -160,7 +159,7 @@ export default function CTA() {
 
                 {/* Image */}
                 <img
-                  src="/images/hero-nethen-img.png"
+                  src="/images/hero3.png"
                   alt="Pengendara skuter"
                   className="relative z-10 w-full h-auto rounded-3xl transform hover:scale-[1.02] transition-transform duration-500"
                 />
