@@ -16,6 +16,8 @@ export const metadata: Metadata = {
 
 export default function LokasiPage() {
     const googleMapsUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.985994273295!2d107.58788467590216!3d-6.89201946743118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e67041a75049%3A0xe54c1f938722b512!2sJl.%20Samiaji%20No.11a%2C%20Arjuna%2C%20Kec.%20Cicendo%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040172!5e0!3m2!1sen!2sid!4v1719234567890!5m2!1sen!2sid`;
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (
     <>
@@ -76,7 +78,7 @@ export default function LokasiPage() {
                     </CardContent>
                 </Card>
                 <Button asChild size="lg" className="w-full">
-                    <a href="https://wa.me/6282329616166" target="_blank" rel="noopener noreferrer">
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                         <Phone className="mr-2 h-5 w-5" /> Hubungi Kami
                     </a>
                 </Button>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from './ui/button';
@@ -6,7 +5,8 @@ import Link from 'next/link';
 import { WhatsappIcon } from './icons/whatsapp';
 
 export function FloatingActionButton() {
-  const whatsappUrl = `https://wa.me/6282329616166`;
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (
     <Button

@@ -60,6 +60,9 @@ export default function SnKPage() {
         ],
       },
   ];
+  
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (
     <>
@@ -147,7 +150,7 @@ export default function SnKPage() {
                   Jangan ragu untuk menghubungi kami jika ada ketentuan yang kurang jelas. Tim kami siap membantu Anda.
                   </p>
                   <Button asChild>
-                      <a href="https://wa.me/6282329616166" target="_blank" rel="noopener noreferrer">
+                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                           <Phone className="mr-2 h-4 w-4" /> Hubungi via WhatsApp
                       </a>
                   </Button>

@@ -7,6 +7,8 @@ import Link from 'next/link';
 export default function CTA() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,7 +106,7 @@ export default function CTA() {
                   variant="outline"
                   className="border-2 border-background/30 text-background hover:bg-background hover:text-foreground transition-all duration-300 font-semibold px-8 py-6 text-base"
                 >
-                  <a href="https://wa.me/6282329616166" target="_blank" rel="noopener noreferrer">
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Hubungi Kami
                   </a>

@@ -55,6 +55,8 @@ export default function FAQ() {
   const [isVisible, setIsVisible] = useState(false)
   const [openIndex, setOpenIndex] = useState<number | null>(0)
   const sectionRef = useRef<HTMLElement>(null)
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -141,7 +143,7 @@ export default function FAQ() {
                   </p>
                     <Button asChild variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
                          <a
-                            href="https://wa.me/6282190105740"
+                            href={whatsappUrl}
                             target="_blank" 
                             rel="noopener noreferrer"
                             >
