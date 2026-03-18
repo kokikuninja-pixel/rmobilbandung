@@ -69,8 +69,11 @@ Kebutuhan: {{{usagePurpose}}}
 Tujuan: {{{destination}}}
 
 Mohon info ketersediaan unitnya, min!
+{{#if domain}}
 
-Dikirim dari {{{domain}}}`,
+---
+_Pesan ini dikirim melalui domain: {{{domain}}}_
+{{/if}}`,
 });
 
 const summarizeOrderForWhatsAppFlow = ai.defineFlow(

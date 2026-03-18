@@ -3,10 +3,22 @@
 import { Button } from './ui/button';
 import Link from 'next/link';
 import { WhatsappIcon } from './icons/whatsapp';
+import { useState, useEffect } from 'react';
 
 export function FloatingActionButton() {
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+  const [whatsappUrl, setWhatsappUrl] = useState('');
+
+  useEffect(() => {
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
+    const domainName = window.location.hostname;
+    const message = `Halo, saya menghubungi dari situs ${domainName}. Saya ingin bertanya tentang sewa motor.`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    setWhatsappUrl(url);
+  }, []);
+
+  if (!whatsappUrl) {
+    return null;
+  }
 
   return (
     <Button
