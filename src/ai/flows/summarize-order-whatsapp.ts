@@ -71,10 +71,10 @@ Ada permintaan sewa baru:
 {{/if}}
 
 👤 **STATUS PELANGGAN**
-{{#if (eq previousCustomer "yes")}}
-*Pelanggan Setia* (Pernah menyewa sebelumnya)
-{{else}}
+{{#if ktp}}
 *Pelanggan Baru*
+{{else}}
+*Pelanggan Setia* (Pernah menyewa sebelumnya)
 {{/if}}
 {{#if previousInvoice}}
 No. Invoice Lama: {{{previousInvoice}}}
@@ -113,7 +113,7 @@ No. Invoice Lama: {{{previousInvoice}}}
 ---
 📍 **C. PENGAMBILAN & PENGGUNAAN**
 ---
-- Metode: *{{#if (eq pickupMethod "delivery")}}Antar ke Alamat{{else}}Ambil di Garasi{{/if}}*
+- Metode: *{{#if deliveryAddress}}Antar ke Alamat{{else}}Ambil di Garasi{{/if}}*
 {{#if deliveryAddress}}
 - Alamat Antar: *{{{deliveryAddress}}}*
 {{/if}}
