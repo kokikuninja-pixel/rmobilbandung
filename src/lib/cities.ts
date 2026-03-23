@@ -100,7 +100,6 @@ export const cities = [
   "Biak",
   "Bondowoso",
   "Bima",
-  "Bukittinggi",
   "Baubau",
   "Gresik",
   "Jember",
