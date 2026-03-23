@@ -1,12 +1,13 @@
 import { z } from "zod";
 
-export const rentalFormSchema = z.object({
-  name: z.string().min(2, { message: "Nama harus diisi, minimal 2 karakter." }),
-  email: z.string({ required_error: "Email harus diisi." }).email({ message: "Format email tidak valid." }),
-  ktpOrigin: z.string().min(3, { message: "Asal KTP harus diisi." }),
-  currentDomicile: z.string().min(3, { message: "Domisili sekarang harus diisi." }),
-  workLocation: z.string().min(3, { message: "Lokasi kerja harus diisi." }),
-  workDurationInBandung: z.string().optional(),
+const phoneRegex = new RegExp(
+  /^(?:\+62|0)(?:\d{9,13})$/
+);
+
+// Base schema for shared fields
+const baseSchema = z.object({
+  name: z.string().min(2, { message: "Nama lengkap sesuai KTP harus diisi." }),
+  phone: z.string().regex(phoneRegex, 'Format nomor WhatsApp tidak valid (contoh: 0812... atau +62812...).'),
   desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
   rentalStartDate: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
   rentalStartTime: z.string({ required_error: "Jam mulai sewa harus diisi." }),
@@ -14,18 +15,50 @@ export const rentalFormSchema = z.object({
   rentalEndTime: z.string({ required_error: "Jam selesai sewa harus diisi." }),
   unitCount: z.coerce.number().min(1, { message: "Jumlah unit minimal 1." }),
   personCount: z.coerce.number().min(1, { message: "Jumlah orang minimal 1." }),
+  pickupMethod: z.enum(['garage', 'delivery'], { required_error: "Metode pengambilan harus dipilih." }),
   usagePurpose: z.string().min(3, { message: "Kebutuhan pemakaian harus diisi." }),
-  destination: z.string().min(5, { message: "Tujuan (tempat) harus diisi, minimal 5 karakter." }),
-  honeypot: z.string().optional(), // Bot protection
-}).refine(data => {
-  if (data.workLocation.toLowerCase().includes('bandung')) {
-    return !!data.workDurationInBandung && data.workDurationInBandung.length > 0;
-  }
-  return true;
-}, {
-  message: "Mohon isi sudah berapa lama bekerja di Bandung.",
-  path: ["workDurationInBandung"],
-}).refine(data => {
+  destination: z.string().min(3, { message: "Tujuan (tempat) harus diisi." }),
+  sourceOfInformation: z.string({ required_error: "Sumber informasi harus dipilih." }),
+  disclaimerAgreed: z.literal<boolean>(true, {
+    errorMap: () => ({ message: "Anda harus menyetujui pernyataan ini." }),
+  }),
+  honeypot: z.string().optional(),
+});
+
+// Schema for new customers
+const newCustomerSchema = baseSchema.extend({
+  previousCustomer: z.literal('no'),
+  email: z.string({ required_error: "Email harus diisi." }).email({ message: "Format email tidak valid." }),
+  ktp: z.string().length(16, { message: "Nomor KTP harus 16 digit." }).regex(/^\d+$/, { message: "Nomor KTP hanya boleh berisi angka." }),
+  currentDomicile: z.string().min(3, { message: "Domisili sekarang harus diisi." }),
+  workLocation: z.string().min(3, { message: "Pekerjaan atau lokasi kerja harus diisi." }),
+  socialMediaPlatform: z.string().optional(),
+  socialMediaUsername: z.string().optional(),
+  previousInvoice: z.string().optional(), // Not for new customers
+});
+
+// Schema for returning customers
+const returningCustomerSchema = baseSchema.extend({
+  previousCustomer: z.literal('yes'),
+  previousInvoice: z.string().optional(),
+  // Optional fields for returning customers, not strictly required
+  email: z.string().email().optional(),
+  ktp: z.string().optional(),
+  currentDomicile: z.string().optional(),
+  workLocation: z.string().optional(),
+  socialMediaPlatform: z.string().optional(),
+  socialMediaUsername: z.string().optional(),
+});
+
+
+// Discriminated union of the two schemas
+const customerSchema = z.discriminatedUnion("previousCustomer", [
+  newCustomerSchema,
+  returningCustomerSchema,
+]);
+
+// Final schema with refinements for conditional logic
+export const rentalFormSchema = customerSchema.refine(data => {
     if (data.rentalStartDate && data.rentalEndDate) {
         return data.rentalEndDate >= data.rentalStartDate;
     }
@@ -33,6 +66,27 @@ export const rentalFormSchema = z.object({
 }, {
   message: "Tanggal selesai tidak boleh sebelum tanggal mulai.",
   path: ["rentalEndDate"],
+}).refine(data => {
+  if (data.pickupMethod === 'delivery') {
+    return !!data.deliveryAddress && data.deliveryAddress.length >= 10;
+  }
+  return true;
+}, {
+  message: "Alamat pengantaran wajib diisi (minimal 10 karakter) jika memilih metode antar.",
+  path: ["deliveryAddress"],
+}).refine(data => {
+  if (data.previousCustomer === 'new' && data.socialMediaPlatform && data.socialMediaPlatform !== 'none') {
+    return !!data.socialMediaUsername && data.socialMediaUsername.length > 2;
+  }
+  return true;
+}, {
+    message: "Username media sosial harus diisi.",
+    path: ["socialMediaUsername"],
 });
 
-export type RentalFormValues = z.infer<typeof rentalFormSchema>;
+
+// We need to add the deliveryAddress to the base type.
+// We make all fields from both schemas optional and then merge to create a complete type.
+export type RentalFormValues = z.infer<typeof newCustomerSchema> & z.infer<typeof returningCustomerSchema> & {
+    deliveryAddress?: string;
+};
