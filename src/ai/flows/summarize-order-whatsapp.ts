@@ -48,7 +48,7 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
 export type SummarizeOrderForWhatsAppInput = z.infer<typeof SummarizeOrderForWhatsAppInputSchema>;
 
 const SummarizeOrderForWhatsAppOutputSchema = z.object({
-  summary: z.string().describe('A summarized version of the order details for WhatsApp.'),
+  summary: z.string().describe('A pre-formatted, detailed order message for WhatsApp. Return the message exactly as provided in the prompt, with all fields filled in. Do not summarize, shorten, or rephrase the text.'),
 });
 export type SummarizeOrderForWhatsAppOutput = z.infer<typeof SummarizeOrderForWhatsAppOutputSchema>;
 
