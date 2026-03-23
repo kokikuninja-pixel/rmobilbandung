@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -7,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon, Loader2, Send } from 'lucide-react';
 import { id } from 'date-fns/locale';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
@@ -25,21 +23,6 @@ import { useToast } from '@/hooks/use-toast';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Checkbox } from './ui/checkbox';
 import { Separator } from './ui/separator';
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.4, ease: "easeInOut" }
-  },
-  exit: { 
-    opacity: 0, 
-    y: -20,
-    transition: { duration: 0.3, ease: "easeInOut" }
-  }
-};
-
 
 export function OrderForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -189,19 +172,14 @@ export function OrderForm() {
                     <FormItem><FormLabel>Nomor WhatsApp</FormLabel><FormControl><Input type="tel" placeholder="081234567890" {...field} /></FormControl><FormMessage /></FormItem>
                   )} />
 
-                  <AnimatePresence>
                   {previousCustomer === 'yes' && (
-                    <motion.div variants={sectionVariants} initial="hidden" animate="visible" exit="exit">
-                      <FormField name="previousInvoice" control={form.control} render={({ field }) => (
-                        <FormItem><FormLabel>Nomor Invoice Lama (Opsional)</FormLabel><FormControl><Input placeholder="Contoh: INV-12345" {...field} /></FormControl><FormDescription>Untuk mempercepat verifikasi data Anda.</FormDescription><FormMessage /></FormItem>
-                      )} />
-                    </motion.div>
+                    <FormField name="previousInvoice" control={form.control} render={({ field }) => (
+                      <FormItem><FormLabel>Nomor Invoice Lama (Opsional)</FormLabel><FormControl><Input placeholder="Contoh: INV-12345" {...field} /></FormControl><FormDescription>Untuk mempercepat verifikasi data Anda.</FormDescription><FormMessage /></FormItem>
+                    )} />
                   )}
-                  </AnimatePresence>
 
-                  <AnimatePresence>
                   {previousCustomer === 'no' && (
-                     <motion.div className="space-y-4" variants={sectionVariants} initial="hidden" animate="visible" exit="exit">
+                     <div className="space-y-4">
                        <Separator />
                        <p className="text-sm font-medium text-foreground">Mohon lengkapi data tambahan untuk pelanggan baru:</p>
                        <FormField name="email" control={form.control} render={({ field }) => (
@@ -220,19 +198,16 @@ export function OrderForm() {
                            <FormField name="socialMediaPlatform" control={form.control} render={({ field }) => (
                               <FormItem><FormLabel>Media Sosial (Opsional)</FormLabel><Select onValueChange={field.onChange} value={field.value}><FormControl><SelectTrigger><SelectValue placeholder="Pilih Platform" /></SelectTrigger></FormControl><SelectContent>{socialMediaOptions.map(opt => <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>)}</SelectContent></Select><FormMessage /></FormItem>
                            )} />
-                           <AnimatePresence>
                            {socialMediaPlatform && socialMediaPlatform !== 'none' && (
-                              <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+                              <div>
                                 <FormField name="socialMediaUsername" control={form.control} render={({ field }) => (
                                   <FormItem><FormLabel>Username</FormLabel><FormControl><Input placeholder="@username" {...field} /></FormControl><FormMessage /></FormItem>
                                 )} />
-                              </motion.div>
+                              </div>
                            )}
-                           </AnimatePresence>
                         </div>
-                     </motion.div>
+                     </div>
                   )}
-                  </AnimatePresence>
 
                   <Separator />
                   <p className="text-sm font-medium text-foreground">Detail sewa yang Anda inginkan:</p>
@@ -284,15 +259,11 @@ export function OrderForm() {
                       </FormItem>
                     )}
                   />
-                  <AnimatePresence>
                   {pickupMethod === 'delivery' && (
-                    <motion.div variants={sectionVariants} initial="hidden" animate="visible" exit="exit">
-                      <FormField name="deliveryAddress" control={form.control} render={({ field }) => (
-                        <FormItem><FormLabel>Alamat Pengantaran</FormLabel><FormControl><Textarea placeholder="Tuliskan alamat lengkap pengantaran motor..." {...field} /></FormControl><FormMessage /></FormItem>
-                      )} />
-                    </motion.div>
+                    <FormField name="deliveryAddress" control={form.control} render={({ field }) => (
+                      <FormItem><FormLabel>Alamat Pengantaran</FormLabel><FormControl><Textarea placeholder="Tuliskan alamat lengkap pengantaran motor..." {...field} /></FormControl><FormMessage /></FormItem>
+                    )} />
                   )}
-                  </AnimatePresence>
 
                   <FormField name="usagePurpose" control={form.control} render={({ field }) => (
                       <FormItem><FormLabel>Kebutuhan Sewa</FormLabel><FormControl><Input placeholder="cth: Wisata, Proyek, Kebutuhan Harian" {...field} /></FormControl><FormMessage /></FormItem>
