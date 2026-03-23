@@ -7,7 +7,7 @@ const phoneRegex = new RegExp(
 // Base schema for shared fields
 const baseSchema = z.object({
   name: z.string().min(2, { message: "Nama lengkap sesuai KTP harus diisi." }),
-  phone: z.string().regex(phoneRegex, 'Format nomor WhatsApp tidak valid. Harus diawali dengan kode negara (cth: +62).'),
+  phone: z.string().regex(phoneRegex, 'Format nomor WhatsApp tidak valid. Harus diawali dengan kode negara.'),
   desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
   rentalStartDate: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
   rentalStartTime: z.string({ required_error: "Jam mulai sewa harus diisi." }),
@@ -33,6 +33,7 @@ const newCustomerSchema = baseSchema.extend({
   currentDomicile: z.string({ required_error: "Kota domisili sekarang harus diisi." }),
   occupation: z.string().min(3, { message: "Pekerjaan harus diisi (min. 3 karakter)." }),
   workLocation: z.string({ required_error: "Lokasi kerja (kota) harus diisi." }),
+  bandungStayDuration: z.string().optional(),
   socialMediaPlatform: z.string().optional(),
   socialMediaUsername: z.string().optional(),
   previousInvoice: z.string().optional(), // Not for new customers
@@ -48,6 +49,7 @@ const returningCustomerSchema = baseSchema.extend({
   currentDomicile: z.string().optional(),
   occupation: z.string().optional(),
   workLocation: z.string().optional(),
+  bandungStayDuration: z.string().optional(),
   socialMediaPlatform: z.string().optional(),
   socialMediaUsername: z.string().optional(),
 });
@@ -84,6 +86,14 @@ export const rentalFormSchema = customerSchema.refine(data => {
 }, {
     message: "Username media sosial harus diisi.",
     path: ["socialMediaUsername"],
+}).refine(data => {
+  if (data.previousCustomer === 'no' && (data.currentDomicile === 'Bandung' || data.workLocation === 'Bandung')) {
+    return !!data.bandungStayDuration && data.bandungStayDuration.length > 0;
+  }
+  return true;
+}, {
+  message: "Lama tinggal di Bandung harus diisi.",
+  path: ["bandungStayDuration"],
 });
 
 

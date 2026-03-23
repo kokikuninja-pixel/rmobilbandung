@@ -23,6 +23,7 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
   currentDomicile: z.string().optional().describe("The customer's current city of domicile."),
   occupation: z.string().optional().describe("The customer's occupation."),
   workLocation: z.string().optional().describe("The customer's work location (city)."),
+  bandungStayDuration: z.string().optional().describe('How long the customer has stayed in Bandung, if applicable.'),
   socialMediaPlatform: z.string().optional().describe('The social media platform (e.g., Instagram, TikTok).'),
   socialMediaUsername: z.string().optional().describe('The customer\'s social media username.'),
 
@@ -100,6 +101,9 @@ No. Invoice Lama: {{{previousInvoice}}}
 {{/if}}
 {{#if workLocation}}
 - Lokasi Kerja (Kota): *{{{workLocation}}}*
+{{/if}}
+{{#if bandungStayDuration}}
+- Lama di Bandung: *{{{bandungStayDuration}}}*
 {{/if}}
 {{#if socialMediaUsername}}
 - Medsos ({{{socialMediaPlatform}}}): *{{{socialMediaUsername}}}*

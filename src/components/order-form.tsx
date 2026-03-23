@@ -42,6 +42,7 @@ export function OrderForm() {
       currentDomicile: undefined,
       occupation: '',
       workLocation: undefined,
+      bandungStayDuration: '',
       socialMediaPlatform: 'none',
       socialMediaUsername: '',
       previousInvoice: '',
@@ -77,6 +78,8 @@ export function OrderForm() {
   const pickupMethod = form.watch('pickupMethod');
   const socialMediaPlatform = form.watch('socialMediaPlatform');
   const rentalStartDate = form.watch('rentalStartDate');
+  const currentDomicile = form.watch('currentDomicile');
+  const workLocation = form.watch('workLocation');
 
   const timeOptions = Array.from({ length: (21 - 5) + 1 }, (_, i) => {
     const hour = 5 + i;
@@ -316,6 +319,22 @@ export function OrderForm() {
                           )}
                         />
                         
+                        {(currentDomicile === 'Bandung' || workLocation === 'Bandung') && (
+                          <FormField
+                            control={form.control}
+                            name="bandungStayDuration"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Sudah Berapa Lama Tinggal di Bandung?</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="cth: 3 bulan / 2 tahun" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        )}
+
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                            <FormField name="socialMediaPlatform" control={form.control} render={({ field }) => (
                               <FormItem><FormLabel>Media Sosial (Opsional)</FormLabel><Select onValueChange={field.onChange} value={field.value}><FormControl><SelectTrigger><SelectValue placeholder="Pilih Platform" /></SelectTrigger></FormControl><SelectContent>{socialMediaOptions.map(opt => <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>)}</SelectContent></Select><FormMessage /></FormItem>
