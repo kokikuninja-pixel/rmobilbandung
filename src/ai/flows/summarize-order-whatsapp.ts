@@ -19,9 +19,10 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
   
   // New customer fields
   email: z.string().optional().describe('The customer\'s email address.'),
-  ktp: z.string().optional().describe('The customer\'s KTP number.'),
-  currentDomicile: z.string().optional().describe('The customer\'s current domicile.'),
-  workLocation: z.string().optional().describe('The customer\'s work location or occupation.'),
+  ktpCity: z.string().optional().describe("The customer's city of origin from KTP."),
+  currentDomicile: z.string().optional().describe("The customer's current city of domicile."),
+  occupation: z.string().optional().describe("The customer's occupation."),
+  workLocation: z.string().optional().describe("The customer's work location (city)."),
   socialMediaPlatform: z.string().optional().describe('The social media platform (e.g., Instagram, TikTok).'),
   socialMediaUsername: z.string().optional().describe('The customer\'s social media username.'),
 
@@ -71,7 +72,7 @@ Ada permintaan sewa baru:
 {{/if}}
 
 👤 **STATUS PELANGGAN**
-{{#if ktp}}
+{{#if ktpCity}}
 *Pelanggan Baru*
 {{else}}
 *Pelanggan Setia* (Pernah menyewa sebelumnya)
@@ -88,14 +89,17 @@ No. Invoice Lama: {{{previousInvoice}}}
 {{#if email}}
 - Email: *{{{email}}}*
 {{/if}}
-{{#if ktp}}
-- No. KTP: *{{{ktp}}}*
+{{#if ktpCity}}
+- Kota Asal (KTP): *{{{ktpCity}}}*
 {{/if}}
 {{#if currentDomicile}}
-- Domisili: *{{{currentDomicile}}}*
+- Domisili Sekarang (Kota): *{{{currentDomicile}}}*
+{{/if}}
+{{#if occupation}}
+- Pekerjaan: *{{{occupation}}}*
 {{/if}}
 {{#if workLocation}}
-- Pekerjaan: *{{{workLocation}}}*
+- Lokasi Kerja (Kota): *{{{workLocation}}}*
 {{/if}}
 {{#if socialMediaUsername}}
 - Medsos ({{{socialMediaPlatform}}}): *{{{socialMediaUsername}}}*

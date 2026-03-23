@@ -29,9 +29,10 @@ const baseSchema = z.object({
 const newCustomerSchema = baseSchema.extend({
   previousCustomer: z.literal('no'),
   email: z.string({ required_error: "Email harus diisi." }).email({ message: "Format email tidak valid." }),
-  ktp: z.string().length(16, { message: "Nomor KTP harus 16 digit." }).regex(/^\d+$/, { message: "Nomor KTP hanya boleh berisi angka." }),
-  currentDomicile: z.string().min(3, { message: "Domisili sekarang harus diisi." }),
-  workLocation: z.string().min(3, { message: "Pekerjaan atau lokasi kerja harus diisi." }),
+  ktpCity: z.string({ required_error: "Kota asal sesuai KTP harus diisi." }),
+  currentDomicile: z.string({ required_error: "Kota domisili sekarang harus diisi." }),
+  occupation: z.string().min(3, { message: "Pekerjaan harus diisi (min. 3 karakter)." }),
+  workLocation: z.string({ required_error: "Lokasi kerja (kota) harus diisi." }),
   socialMediaPlatform: z.string().optional(),
   socialMediaUsername: z.string().optional(),
   previousInvoice: z.string().optional(), // Not for new customers
@@ -41,10 +42,11 @@ const newCustomerSchema = baseSchema.extend({
 const returningCustomerSchema = baseSchema.extend({
   previousCustomer: z.literal('yes'),
   previousInvoice: z.string().optional(),
-  // Optional fields for returning customers, not strictly required
+  // For returning customers, these are not needed
   email: z.string().email().optional(),
-  ktp: z.string().optional(),
+  ktpCity: z.string().optional(),
   currentDomicile: z.string().optional(),
+  occupation: z.string().optional(),
   workLocation: z.string().optional(),
   socialMediaPlatform: z.string().optional(),
   socialMediaUsername: z.string().optional(),
@@ -75,7 +77,7 @@ export const rentalFormSchema = customerSchema.refine(data => {
   message: "Alamat pengantaran wajib diisi (minimal 10 karakter) jika memilih metode antar.",
   path: ["deliveryAddress"],
 }).refine(data => {
-  if (data.previousCustomer === 'new' && data.socialMediaPlatform && data.socialMediaPlatform !== 'none') {
+  if (data.previousCustomer === 'no' && data.socialMediaPlatform && data.socialMediaPlatform !== 'none') {
     return !!data.socialMediaUsername && data.socialMediaUsername.length > 2;
   }
   return true;

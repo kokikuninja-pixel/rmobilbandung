@@ -4,13 +4,14 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { format } from 'date-fns';
-import { Calendar as CalendarIcon, Loader2, Send } from 'lucide-react';
+import { Calendar as CalendarIcon, Loader2, Send, Check, ChevronsUpDown } from 'lucide-react';
 import { id } from 'date-fns/locale';
 import { useSearchParams } from 'next/navigation';
 
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
 import { summarizeOrderForWhatsApp } from '@/ai/flows/summarize-order-whatsapp';
 import { motorInventory } from '@/lib/data';
+import { cities } from '@/lib/cities';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
@@ -18,6 +19,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
@@ -36,9 +38,10 @@ export function OrderForm() {
       name: '',
       phone: '',
       email: '',
-      ktp: '',
-      currentDomicile: '',
-      workLocation: '',
+      ktpCity: undefined,
+      currentDomicile: undefined,
+      occupation: '',
+      workLocation: undefined,
       socialMediaPlatform: 'none',
       socialMediaUsername: '',
       previousInvoice: '',
@@ -185,15 +188,134 @@ export function OrderForm() {
                        <FormField name="email" control={form.control} render={({ field }) => (
                           <FormItem><FormLabel>Email</FormLabel><FormControl><Input type="email" placeholder="email@anda.com" {...field} /></FormControl><FormMessage /></FormItem>
                         )} />
-                        <FormField name="ktp" control={form.control} render={({ field }) => (
-                          <FormItem><FormLabel>Nomor KTP (NIK)</FormLabel><FormControl><Input placeholder="16 digit nomor KTP" {...field} /></FormControl><FormMessage /></FormItem>
+
+                        <FormField
+                          control={form.control}
+                          name="ktpCity"
+                          render={({ field }) => (
+                            <FormItem className="flex flex-col">
+                              <FormLabel>Kota Asal Sesuai KTP</FormLabel>
+                              <Popover>
+                                <PopoverTrigger asChild>
+                                  <FormControl>
+                                    <Button variant="outline" role="combobox" className={cn("w-full justify-between", !field.value && "text-muted-foreground")}>
+                                      {field.value || "Pilih kota..."}
+                                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                  </FormControl>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-full p-0">
+                                  <Command>
+                                    <CommandInput placeholder="Cari kota..." />
+                                    <CommandList>
+                                      <CommandEmpty>Kota tidak ditemukan.</CommandEmpty>
+                                      <CommandGroup>
+                                        {cities.map((city) => (
+                                          <CommandItem
+                                            value={city}
+                                            key={city}
+                                            onSelect={() => { form.setValue("ktpCity", city); }}
+                                          >
+                                            <Check className={cn("mr-2 h-4 w-4", city === field.value ? "opacity-100" : "opacity-0")} />
+                                            {city}
+                                          </CommandItem>
+                                        ))}
+                                      </CommandGroup>
+                                    </CommandList>
+                                  </Command>
+                                </PopoverContent>
+                              </Popover>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="currentDomicile"
+                          render={({ field }) => (
+                            <FormItem className="flex flex-col">
+                              <FormLabel>Kota Domisili Sekarang</FormLabel>
+                              <Popover>
+                                <PopoverTrigger asChild>
+                                  <FormControl>
+                                    <Button variant="outline" role="combobox" className={cn("w-full justify-between", !field.value && "text-muted-foreground")}>
+                                      {field.value || "Pilih kota..."}
+                                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                  </FormControl>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-full p-0">
+                                  <Command>
+                                    <CommandInput placeholder="Cari kota..." />
+                                    <CommandList>
+                                      <CommandEmpty>Kota tidak ditemukan.</CommandEmpty>
+                                      <CommandGroup>
+                                        {cities.map((city) => (
+                                          <CommandItem
+                                            value={city}
+                                            key={city}
+                                            onSelect={() => { form.setValue("currentDomicile", city); }}
+                                          >
+                                            <Check className={cn("mr-2 h-4 w-4", city === field.value ? "opacity-100" : "opacity-0")} />
+                                            {city}
+                                          </CommandItem>
+                                        ))}
+                                      </CommandGroup>
+                                    </CommandList>
+                                  </Command>
+                                </PopoverContent>
+                              </Popover>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        
+                        <FormField name="occupation" control={form.control} render={({ field }) => (
+                          <FormItem><FormLabel>Pekerjaan</FormLabel><FormControl><Input placeholder="cth: Mahasiswa / Karyawan Swasta" {...field} /></FormControl><FormMessage /></FormItem>
                         )} />
-                        <FormField name="currentDomicile" control={form.control} render={({ field }) => (
-                          <FormItem><FormLabel>Domisili Sekarang</FormLabel><FormControl><Input placeholder="cth: Dago, Bandung" {...field} /></FormControl><FormMessage /></FormItem>
-                        )} />
-                        <FormField name="workLocation" control={form.control} render={({ field }) => (
-                          <FormItem><FormLabel>Pekerjaan / Lokasi Kerja</FormLabel><FormControl><Input placeholder="cth: Mahasiswa ITB / Karyawan di Sudirman" {...field} /></FormControl><FormMessage /></FormItem>
-                        )} />
+
+                        <FormField
+                          control={form.control}
+                          name="workLocation"
+                          render={({ field }) => (
+                            <FormItem className="flex flex-col">
+                              <FormLabel>Lokasi Kerja (Kota)</FormLabel>
+                              <Popover>
+                                <PopoverTrigger asChild>
+                                  <FormControl>
+                                    <Button variant="outline" role="combobox" className={cn("w-full justify-between", !field.value && "text-muted-foreground")}>
+                                      {field.value || "Pilih kota..."}
+                                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                  </FormControl>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-full p-0">
+                                  <Command>
+                                    <CommandInput placeholder="Cari kota..." />
+                                    <CommandList>
+                                      <CommandEmpty>Kota tidak ditemukan.</CommandEmpty>
+                                      <CommandGroup>
+                                        {cities.map((city) => (
+                                          <CommandItem
+                                            value={city}
+                                            key={city}
+                                            onSelect={() => { form.setValue("workLocation", city); }}
+                                          >
+                                            <Check className={cn("mr-2 h-4 w-4", city === field.value ? "opacity-100" : "opacity-0")} />
+                                            {city}
+                                          </CommandItem>
+                                        ))}
+                                      </CommandGroup>
+                                    </CommandList>
+                                  </Command>
+                                </PopoverContent>
+                              </Popover>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                            <FormField name="socialMediaPlatform" control={form.control} render={({ field }) => (
                               <FormItem><FormLabel>Media Sosial (Opsional)</FormLabel><Select onValueChange={field.onChange} value={field.value}><FormControl><SelectTrigger><SelectValue placeholder="Pilih Platform" /></SelectTrigger></FormControl><SelectContent>{socialMediaOptions.map(opt => <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>)}</SelectContent></Select><FormMessage /></FormItem>
