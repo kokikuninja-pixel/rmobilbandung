@@ -181,9 +181,8 @@ export function OrderForm() {
           />
         </FormSection>
 
-        <AnimatePresence initial={false}>
         {previousCustomer && (
-          <motion.div className="space-y-8" variants={sectionVariants} initial="hidden" animate="visible" exit="exit">
+          <div className="space-y-8">
               <FormSection title="Tahap 2: Data Diri & Permintaan Sewa">
                   <FormField name="name" control={form.control} render={({ field }) => (
                     <FormItem><FormLabel>Nama Lengkap (sesuai KTP)</FormLabel><FormControl><Input placeholder="Nama Anda" {...field} /></FormControl><FormMessage /></FormItem>
@@ -326,9 +325,8 @@ export function OrderForm() {
                     </FormItem>
                   )}
                 />
-          </motion.div>
+          </div>
         )}
-        </AnimatePresence>
         
         <FormField control={form.control} name="honeypot" render={({ field }) => (<FormItem className="hidden"><FormControl><Input {...field} tabIndex={-1} autoComplete="off" /></FormControl></FormItem>)} />
         
