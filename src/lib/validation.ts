@@ -1,13 +1,13 @@
 import { z } from "zod";
 
 const phoneRegex = new RegExp(
-  /^(\+62)\d{9,13}$/
+  /^(\+)\d{10,15}$/
 );
 
 // Base schema for shared fields
 const baseSchema = z.object({
   name: z.string().min(2, { message: "Nama lengkap sesuai KTP harus diisi." }),
-  phone: z.string().regex(phoneRegex, 'Format nomor WhatsApp tidak valid. Harus diawali dengan +62.'),
+  phone: z.string().regex(phoneRegex, 'Format nomor WhatsApp tidak valid. Harus diawali dengan kode negara (cth: +62).'),
   desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
   rentalStartDate: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
   rentalStartTime: z.string({ required_error: "Jam mulai sewa harus diisi." }),

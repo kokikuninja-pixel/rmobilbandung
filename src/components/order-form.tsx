@@ -172,7 +172,7 @@ export function OrderForm() {
                     <FormItem><FormLabel>Nama Lengkap (sesuai KTP)</FormLabel><FormControl><Input placeholder="Nama Anda" {...field} /></FormControl><FormMessage /></FormItem>
                   )} />
                   <FormField name="phone" control={form.control} render={({ field }) => (
-                    <FormItem><FormLabel>Nomor WhatsApp</FormLabel><FormControl><Input type="tel" placeholder="+6281234567890" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Nomor WhatsApp</FormLabel><FormControl><Input type="tel" placeholder="+6281234567890" {...field} /></FormControl><FormDescription>Gunakan format internasional dengan kode negara.</FormDescription><FormMessage /></FormItem>
                   )} />
 
                   {previousCustomer === 'yes' && (
