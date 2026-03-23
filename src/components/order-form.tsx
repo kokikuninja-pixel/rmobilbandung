@@ -27,16 +27,14 @@ import { Checkbox } from './ui/checkbox';
 import { Separator } from './ui/separator';
 
 const sectionVariants = {
-  hidden: { opacity: 0, height: 0, y: -20 },
+  hidden: { opacity: 0, y: -20 },
   visible: { 
     opacity: 1, 
-    height: 'auto', 
     y: 0,
     transition: { duration: 0.4, ease: "easeInOut" }
   },
   exit: { 
     opacity: 0, 
-    height: 0, 
     y: -20,
     transition: { duration: 0.3, ease: "easeInOut" }
   }
