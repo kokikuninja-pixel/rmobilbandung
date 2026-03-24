@@ -14,11 +14,11 @@ import {z} from 'genkit';
 const SummarizeOrderForWhatsAppInputSchema = z.object({
   previousCustomer: z.enum(['yes', 'no']).describe('Is this a returning customer?'),
   name: z.string().describe('The full name of the customer.'),
-  phone: z.string().describe('The customer\'s WhatsApp number.'),
+  phone: z.string().describe("The customer's WhatsApp number."),
   previousInvoice: z.string().optional().describe('The previous invoice number, if they are a returning customer.'),
   
   // New customer fields
-  email: z.string().optional().describe('The customer\'s email address.'),
+  email: z.string().optional().describe("The customer's email address."),
   ktpCity: z.string().optional().describe("The customer's city of origin from KTP."),
   currentDomicile: z.string().optional().describe("The customer's current city of domicile."),
   occupation: z.string().optional().describe("The customer's occupation."),
@@ -65,26 +65,13 @@ const summarizeOrderPrompt = ai.definePrompt({
   input: {schema: SummarizeOrderForWhatsAppInputSchema},
   output: {schema: SummarizeOrderForWhatsAppOutputSchema},
   prompt: `Halo Admin RMB! 👋
-Ada permintaan sewa baru:
-{{#if domain}}
----
-🌐 *Domain Asal: {{{domain}}}*
----
-{{/if}}
+Ada permintaan sewa baru.
 
-👤 **STATUS PELANGGAN**
-{{#if ktpCity}}
-*Pelanggan Baru*
-{{else}}
-*Pelanggan Setia* (Pernah menyewa sebelumnya)
-{{/if}}
+*Status Pelanggan*: {{#if ktpCity}}Pelanggan Baru{{else}}Pelanggan Setia{{/if}}
 {{#if previousInvoice}}
-No. Invoice Lama: {{{previousInvoice}}}
+*No. Invoice Lama*: {{{previousInvoice}}}
 {{/if}}
 
----
-📋 **A. DATA DIRI**
----
 - Nama: *{{{name}}}*
 - No. WhatsApp: *{{{phone}}}*
 {{#if email}}
@@ -109,29 +96,25 @@ No. Invoice Lama: {{{previousInvoice}}}
 - Medsos ({{{socialMediaPlatform}}}): *{{{socialMediaUsername}}}*
 {{/if}}
 
----
-🏍️ **B. DETAIL PERMINTAAN SEWA**
----
 - Unit Motor: *{{{desiredMotor}}}*
 - Waktu Mulai: *{{{rentalStartDate}}} jam {{{rentalStartTime}}}*
 - Waktu Selesai: *{{{rentalEndDate}}} jam {{{rentalEndTime}}}*
 - Jumlah Unit: *{{{unitCount}}} unit*
 - Jumlah Orang: *{{{personCount}}} orang*
 
----
-📍 **C. PENGAMBILAN & PENGGUNAAN**
----
-- Metode: *{{#if deliveryAddress}}Antar ke Alamat{{else}}Ambil di Garasi{{/if}}*
+- Metode Pengambilan: *{{#if deliveryAddress}}Antar ke Alamat{{else}}Ambil di Garasi{{/if}}*
 {{#if deliveryAddress}}
 - Alamat Antar: *{{{deliveryAddress}}}*
 {{/if}}
 - Kebutuhan: *{{{usagePurpose}}}*
 - Tujuan Lokasi: *{{{destination}}}*
 
----
-ℹ️ **D. INFO TAMBAHAN**
----
 - Tahu dari: *{{{sourceOfInformation}}}*
+{{#if domain}}
+
+---
+_Pesan ini dikirim melalui domain: {{{domain}}}_
+{{/if}}
 
 Mohon segera diproses dan konfirmasi ketersediaan unitnya, min. Terima kasih!
 `,
