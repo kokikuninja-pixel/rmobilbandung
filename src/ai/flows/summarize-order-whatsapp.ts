@@ -50,14 +50,32 @@ const SummarizeOrderForWhatsAppInputSchema = z.object({
 export type SummarizeOrderForWhatsAppInput = z.infer<typeof SummarizeOrderForWhatsAppInputSchema>;
 
 const SummarizeOrderForWhatsAppOutputSchema = z.object({
-  summary: z.string().describe('A pre-formatted, detailed order message for WhatsApp. Return the message exactly as provided in the prompt, with all fields filled in. Do not summarize, shorten, or rephrase the text.'),
+  summary: z.string().describe('A pre-formatted, detailed order message for WhatsApp.'),
 });
 export type SummarizeOrderForWhatsAppOutput = z.infer<typeof SummarizeOrderForWhatsAppOutputSchema>;
 
 export async function summarizeOrderForWhatsApp(
   input: SummarizeOrderForWhatsAppInput
 ): Promise<SummarizeOrderForWhatsAppOutput> {
-  return summarizeOrderForWhatsAppFlow(input);
+  try {
+    return await summarizeOrderForWhatsAppFlow(input);
+  } catch (error) {
+    console.error('AI Flow Error:', error);
+    // Fallback message if AI fails or rate limit exceeded
+    const fallback = `Halo Admin RMB! 👋
+Ada permintaan sewa baru dari ${input.name} (${input.phone}).
+
+Detail Sewa:
+- Unit: ${input.desiredMotor} (${input.unitCount} unit)
+- Durasi: ${input.rentalStartDate} s/d ${input.rentalEndDate}
+- Tujuan: ${input.destination}
+
+Mohon segera diproses, min. Terima kasih!
+
+---
+_Pesan ini dikirim melalui domain: ${input.domain || 'RMB Rental'}_`;
+    return { summary: fallback };
+  }
 }
 
 const summarizeOrderPrompt = ai.definePrompt({
@@ -68,33 +86,17 @@ const summarizeOrderPrompt = ai.definePrompt({
 Ada permintaan sewa baru.
 
 *Status Pelanggan*: {{#if ktpCity}}Pelanggan Baru{{else}}Pelanggan Setia{{/if}}
-{{#if previousInvoice}}
-*No. Invoice Lama*: {{{previousInvoice}}}
-{{/if}}
+{{#if previousInvoice}}*No. Invoice Lama*: {{{previousInvoice}}}{{/if}}
 
 - Nama: *{{{name}}}*
 - No. WhatsApp: *{{{phone}}}*
-{{#if email}}
-- Email: *{{{email}}}*
-{{/if}}
-{{#if ktpCity}}
-- Kota Asal (KTP): *{{{ktpCity}}}*
-{{/if}}
-{{#if currentDomicile}}
-- Domisili Sekarang (Kota): *{{{currentDomicile}}}*
-{{/if}}
-{{#if occupation}}
-- Pekerjaan: *{{{occupation}}}*
-{{/if}}
-{{#if workLocation}}
-- Lokasi Kerja (Kota): *{{{workLocation}}}*
-{{/if}}
-{{#if bandungStayDuration}}
-- Lama di Bandung: *{{{bandungStayDuration}}}*
-{{/if}}
-{{#if socialMediaUsername}}
-- Medsos ({{{socialMediaPlatform}}}): *{{{socialMediaUsername}}}*
-{{/if}}
+{{#if email}}- Email: *{{{email}}}*{{/if}}
+{{#if ktpCity}}- Kota Asal (KTP): *{{{ktpCity}}}*{{/if}}
+{{#if currentDomicile}}- Domisili Sekarang: *{{{currentDomicile}}}*{{/if}}
+{{#if occupation}}- Pekerjaan: *{{{occupation}}}*{{/if}}
+{{#if workLocation}}- Lokasi Kerja: *{{{workLocation}}}*{{/if}}
+{{#if bandungStayDuration}}- Lama di Bandung: *{{{bandungStayDuration}}}*{{/if}}
+{{#if socialMediaUsername}}- Medsos ({{{socialMediaPlatform}}}): *{{{socialMediaUsername}}}*{{/if}}
 
 - Unit Motor: *{{{desiredMotor}}}*
 - Waktu Mulai: *{{{rentalStartDate}}} jam {{{rentalStartTime}}}*
@@ -103,21 +105,17 @@ Ada permintaan sewa baru.
 - Jumlah Orang: *{{{personCount}}} orang*
 
 - Metode Pengambilan: *{{#if deliveryAddress}}Antar ke Alamat{{else}}Ambil di Garasi{{/if}}*
-{{#if deliveryAddress}}
-- Alamat Antar: *{{{deliveryAddress}}}*
-{{/if}}
+{{#if deliveryAddress}}- Alamat Antar: *{{{deliveryAddress}}}*{{/if}}
 - Kebutuhan: *{{{usagePurpose}}}*
 - Tujuan Lokasi: *{{{destination}}}*
 
 - Tahu dari: *{{{sourceOfInformation}}}*
 {{#if domain}}
-
 ---
 _Pesan ini dikirim melalui domain: {{{domain}}}_
 {{/if}}
 
-Mohon segera diproses dan konfirmasi ketersediaan unitnya, min. Terima kasih!
-`,
+Mohon segera diproses dan konfirmasi ketersediaan unitnya, min. Terima kasih!`,
 });
 
 const summarizeOrderForWhatsAppFlow = ai.defineFlow(
