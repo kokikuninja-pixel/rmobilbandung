@@ -3,7 +3,7 @@ import type {Metadata} from 'next';
 import Script from 'next/script';
 import './globals.css';
 import { Toaster } from "@/components/ui/sonner";
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 import { cn } from '@/lib/utils';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rmb-rental-bandung.com';
@@ -19,15 +19,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || '';
+  // GTM ID from your snippet, with env variable fallback for multi-domain support
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KM5GLHDW';
   const adsId = process.env.NEXT_PUBLIC_ADS_ID || 'AW-11380968042';
 
   return (
     <html lang="id" className="!scroll-smooth">
+      <GoogleTagManager gtmId={gtmId} />
       <body className={cn("font-sans")}>
-        {/* Google Tag Manager */}
-        {gtmId && <GoogleTagManager gtmId={gtmId} />}
-        
         {/* Google Ads / Analytics Tag */}
         {adsId && (
           <>
