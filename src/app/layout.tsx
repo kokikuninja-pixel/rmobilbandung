@@ -19,29 +19,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // GTM ID from your snippet, with env variable fallback for multi-domain support
+  // GTM ID from your request
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KM5GLHDW';
+  // Ads ID from your manual installation request
   const adsId = process.env.NEXT_PUBLIC_ADS_ID || 'AW-11380968042';
 
   return (
     <html lang="id" className="!scroll-smooth">
-      <GoogleTagManager gtmId={gtmId} />
-      <body className={cn("font-sans")}>
-        {/* Google Ads / Analytics Tag */}
-        {adsId && (
-          <>
-            <Script async src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`}></Script>
-            <Script id="google-ads-config">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+      <head>
+        {/* Google tag (gtag.js) - Manual Installation */}
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-manual-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-                gtag('config', '${adsId}');
-              `}
-            </Script>
-          </>
-        )}
+            gtag('config', '${adsId}');
+          `}
+        </Script>
+      </head>
+      <body className={cn("font-sans")}>
+        {/* Google Tag Manager (noscript handled by the component) */}
+        <GoogleTagManager gtmId={gtmId} />
         
         {children}
         <Toaster />
