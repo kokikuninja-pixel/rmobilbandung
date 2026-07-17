@@ -1,4 +1,3 @@
-
 import { Logo } from '@/components/icons/logo';
 import { Instagram } from 'lucide-react';
 import Link from 'next/link';
@@ -55,13 +54,12 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href="/snk" className="text-background/70 hover:text-primary">Syarat &amp; Ketentuan</Link></li>
               <li><Link href="/faq" className="text-background/70 hover:text-primary">Tanya Jawab (FAQ)</Link></li>
-              <li><Link href="#" className="text-background/70 hover:text-primary">Kebijakan Privasi</Link></li>
+              <li><Link href="/admin" className="text-background/20 hover:text-background/40 transition-colors text-[10px]">Admin Login</Link></li>
             </ul>
           </div>
         </div>
       </div>
       
-      {/* SEO Footer Section */}
       <div className="container px-4 pt-8 pb-12 text-xs border-t border-background/10 text-background/60">
         <div className="max-w-screen-xl mx-auto space-y-6">
           <div>
@@ -77,17 +75,6 @@ export function Footer() {
                 <React.Fragment key={area.name}>
                   <Link href={area.href} className="hover:text-primary transition-colors">{area.name}</Link>
                   {index < seoAreas.length - 1 && <span>|</span>}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm text-background/80 mb-2">Pilihan Armada Terpopuler</h4>
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              {seoArmada.map((armada, index) => (
-                <React.Fragment key={armada}>
-                  <Link href="/armada" className="hover:text-primary transition-colors">{armada}</Link>
-                  {index < seoArmada.length - 1 && <span>|</span>}
                 </React.Fragment>
               ))}
             </div>
