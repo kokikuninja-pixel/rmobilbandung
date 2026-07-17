@@ -16,8 +16,19 @@ import {
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 export default function AdminDashboard() {
+  const pathname = usePathname();
+
+  const menuItems = [
+    { icon: LayoutDashboard, label: 'Dashboard', href: '/admin/dashboard' },
+    { icon: Bike, label: 'Kelola Armada', href: '#' },
+    { icon: Users, label: 'Data Pelanggan', href: '#' },
+    { icon: Settings, label: 'Pengaturan', href: '/admin/settings' },
+  ];
+
   return (
     <div className="min-h-screen bg-muted/10 flex">
       {/* Sidebar */}
@@ -26,22 +37,24 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-display font-bold text-primary">RMB Admin</h2>
         </div>
         <nav className="flex-grow p-4 space-y-2">
-          <Button variant="ghost" className="w-full justify-start gap-3 bg-primary/10 text-primary">
-            <LayoutDashboard className="h-5 w-5" />
-            Dashboard
-          </Button>
-          <Button variant="ghost" className="w-full justify-start gap-3 text-background/70 hover:text-primary">
-            <Bike className="h-5 w-5" />
-            Kelola Armada
-          </Button>
-          <Button variant="ghost" className="w-full justify-start gap-3 text-background/70 hover:text-primary">
-            <Users className="h-5 w-5" />
-            Data Pelanggan
-          </Button>
-          <Button variant="ghost" className="w-full justify-start gap-3 text-background/70 hover:text-primary">
-            <Settings className="h-5 w-5" />
-            Pengaturan
-          </Button>
+          {menuItems.map((item) => (
+            <Button 
+              key={item.label}
+              variant="ghost" 
+              asChild
+              className={cn(
+                "w-full justify-start gap-3 transition-colors",
+                pathname === item.href 
+                  ? "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary" 
+                  : "text-background/70 hover:text-primary hover:bg-background/5"
+              )}
+            >
+              <Link href={item.href}>
+                <item.icon className="h-5 w-5" />
+                {item.label}
+              </Link>
+            </Button>
+          ))}
         </nav>
         <div className="p-4 border-t border-background/10">
           <Button variant="ghost" asChild className="w-full justify-start gap-3 text-destructive hover:bg-destructive/10">
