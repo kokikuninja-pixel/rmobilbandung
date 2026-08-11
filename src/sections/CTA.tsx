@@ -1,14 +1,15 @@
 'use client';
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, MessageCircle, Star, Users } from 'lucide-react'
-import Link from 'next/link';
+import Link from 'next/link'
+import { getWhatsAppLink } from '@/brands'
 
 export default function CTA() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+  const whatsappUrl = getWhatsAppLink()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,7 +37,7 @@ export default function CTA() {
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         <div
-          className={`relative bg-foreground rounded-[3rem] overflow-hidden transition-all duration-1000 ${
+          className={`relative bg-foreground rounded-3xl md:rounded-[3rem] overflow-hidden transition-all duration-1000 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-12'
@@ -57,11 +58,11 @@ export default function CTA() {
           <div className="absolute top-10 right-10 w-20 h-20 bg-primary/20 rounded-full blur-2xl" />
           <div className="absolute bottom-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
 
-          <div className="relative grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16">
+          <div className="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center p-6 sm:p-8 lg:p-16">
             {/* Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <h2
-                className={`font-display font-bold text-4xl lg:text-5xl text-background leading-tight transition-all duration-700 ${
+                className={`font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-background leading-tight transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
@@ -73,7 +74,7 @@ export default function CTA() {
               </h2>
 
               <p
-                className={`text-lg text-background/70 leading-relaxed max-w-lg transition-all duration-700 ${
+                className={`text-base sm:text-lg text-background/70 leading-relaxed max-w-lg transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4'
@@ -85,7 +86,7 @@ export default function CTA() {
 
               {/* CTA Buttons */}
               <div
-                className={`flex flex-wrap gap-4 transition-all duration-700 ${
+                className={`flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 transition-all duration-700 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4'
@@ -94,7 +95,7 @@ export default function CTA() {
               >
                 <Button asChild
                   size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-background hover:text-foreground transition-all duration-300 font-semibold px-8 py-6 text-base group animate-pulse-glow"
+                  className="w-full sm:w-auto h-12 bg-primary text-primary-foreground hover:bg-background hover:text-foreground transition-all duration-300 font-semibold sm:px-8 sm:py-6 text-base group sm:animate-pulse-glow"
                 >
                   <Link href="/#pesan">
                     Sewa Sekarang
@@ -104,7 +105,7 @@ export default function CTA() {
                 <Button asChild
                   size="lg"
                   variant="outline"
-                  className="border-2 border-background/30 text-background hover:bg-background hover:text-foreground transition-all duration-300 font-semibold px-8 py-6 text-base"
+                  className="w-full sm:w-auto h-12 border-2 border-background/30 text-background hover:bg-background hover:text-foreground transition-all duration-300 font-semibold sm:px-8 sm:py-6 text-base"
                 >
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5 mr-2" />
@@ -155,25 +156,22 @@ export default function CTA() {
               }`}
               style={{ transitionDelay: '300ms' }}
             >
-              <div className="relative">
-                {/* Glow Effect */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-primary/20 rounded-full blur-3xl" />
-
-                {/* Image */}
-                <img
-                  src="/images/hero3.png"
-                  alt="Pengendara skuter"
-                  className="relative z-10 w-full h-auto rounded-3xl transform hover:scale-[1.02] transition-transform duration-500"
-                />
-
-                {/* Floating Badge */}
-                <div className="absolute -bottom-4 -left-4 bg-primary rounded-2xl p-4 shadow-glow z-20 animate-float">
-                  <p className="font-display font-bold text-2xl text-primary-foreground">
-                    24/7
-                  </p>
-                  <p className="text-sm text-primary-foreground/70">Dukungan</p>
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-primary/20 rounded-full blur-3xl" />
+                  <Image
+                    src="/images/hero3.webp"
+                    alt="Pengendara skuter"
+                    fill
+                    sizes="(max-width: 1024px) 0vw, 50vw"
+                    className="relative z-10 object-cover"
+                  />
+                  <div className="absolute -bottom-4 -left-4 bg-primary rounded-2xl p-4 shadow-glow z-20 animate-float">
+                    <p className="font-display font-bold text-2xl text-primary-foreground">
+                      24/7
+                    </p>
+                    <p className="text-sm text-primary-foreground/70">Dukungan</p>
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>

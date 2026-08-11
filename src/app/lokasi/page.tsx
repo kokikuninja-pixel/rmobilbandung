@@ -5,19 +5,19 @@ import { Footer } from '@/components/footer';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { getWhatsAppLink } from '@/brands';
 
 export const metadata: Metadata = {
-  title: 'Lokasi & Kontak | RMB Rental Motor Bandung',
-  description: 'Temukan lokasi kami di Bandung. Kami siap melayani pengantaran unit ke lokasi Anda. Hubungi kami via WhatsApp untuk respon cepat.',
-  alternates: {
-    canonical: '/lokasi',
-  },
+    title: 'Lokasi & Kontak | RMB Rental Motor Bandung',
+    description: 'Temukan lokasi kami di Bandung. Kami siap melayani pengantaran unit ke lokasi Anda. Hubungi kami via WhatsApp untuk respon cepat.',
+    alternates: {
+        canonical: '/lokasi',
+    },
 };
 
 export default function LokasiPage() {
     const googleMapsUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.985994273295!2d107.58788467590216!3d-6.89201946743118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e67041a75049%3A0xe54c1f938722b512!2sJl.%20Samiaji%20No.11a%2C%20Arjuna%2C%20Kec.%20Cicendo%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040172!5e0!3m2!1sen!2sid!4v1719234567890!5m2!1sen!2sid`;
-    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
-    const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+    const whatsappUrl = getWhatsAppLink();
 
   return (
     <>

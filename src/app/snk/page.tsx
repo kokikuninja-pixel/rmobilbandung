@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { getWhatsAppLink } from '@/brands';
 
 export const metadata: Metadata = {
   title: 'Syarat & Ketentuan Sewa Motor | RMB Rental Bandung',
@@ -61,8 +62,7 @@ export default function SnKPage() {
       },
   ];
   
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+  const whatsappUrl = getWhatsAppLink();
 
   return (
     <>

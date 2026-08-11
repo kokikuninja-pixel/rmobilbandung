@@ -1,9 +1,7 @@
-# Settings to manage and configure a Firebase App Hosting backend.
-# https://firebase.google.com/docs/app-hosting/configure
+# Firebase App Hosting (legacy).
+# This project is prepared for Vercel deployment. This file is retained only
+# as a non-destructive reference to the previous hosting setup.
+# Do not delete the Firebase project or change DNS from this repository mission.
 
 runConfig:
-  # Meningkatkan maxInstances untuk menangani traffic dan redundansi saat rollout
   maxInstances: 10
-  # Menambahkan cpu dan memory jika diperlukan (default biasanya cukup untuk NextJS dasar)
-  # cpu: 1
-  # memoryMiB: 512

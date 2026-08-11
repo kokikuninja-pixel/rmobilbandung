@@ -227,17 +227,6 @@ export const motorInventory: Motor[] = [
     cardImage: { id: 'yamaha-mio-j-card', imageUrl: '/images/yamaha-mio-j.png', description: 'Yamaha Mio J', imageHint: 'yamaha mio j' },
     detailImage: { id: 'yamaha-mio-j-detail', imageUrl: '/images/yamaha-mio-j.png', description: 'Yamaha Mio J', imageHint: 'yamaha mio j side' }
   },
-  {
-    id: 'polytron-fox-r',
-    name: 'Polytron Fox R',
-    class: 'Khusus',
-    price: 130000,
-    specs: { cc: '3000 Watt', torque: 'N/A' },
-    feature: 'Motor listrik tanpa suara dengan fitur mundur (Reverse Mode).',
-    specialLabel: 'Eco Friendly',
-    cardImage: { id: 'polytron-fox-r-card', imageUrl: '/images/polytron-fox-r.png', description: 'Polytron Fox R', imageHint: 'electric scooter' },
-    detailImage: { id: 'polytron-fox-r-detail', imageUrl: '/images/polytron-fox-r.png', description: 'Polytron Fox R', imageHint: 'electric scooter side' }
-  },
 ];
 
 export const standardFacilities = [

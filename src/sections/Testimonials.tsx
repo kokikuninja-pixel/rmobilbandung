@@ -165,11 +165,16 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <img
-                  src={testimonials[activeIndex].avatar}
-                  alt={testimonials[activeIndex].name}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary"
-                />
+                <div
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 ring-2 ring-primary font-display text-lg font-bold text-foreground"
+                  aria-hidden
+                >
+                  {testimonials[activeIndex].name
+                    .split(' ')
+                    .map((part) => part[0])
+                    .join('')
+                    .slice(0, 2)}
+                </div>
                 <div>
                   <p className="font-display font-bold text-lg text-foreground">
                     {testimonials[activeIndex].name}

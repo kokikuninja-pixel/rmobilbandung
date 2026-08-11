@@ -37,7 +37,7 @@ export default function Fleet() {
     <section
       id="armada"
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-32 bg-muted/50 overflow-hidden"
+      className="relative w-full py-14 sm:py-20 lg:py-32 bg-muted/50 overflow-hidden"
     >
       {/* Background Decoration */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -45,7 +45,7 @@ export default function Fleet() {
 
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <span
             className={`inline-block bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4 transition-all duration-700 ${
               isVisible
@@ -56,7 +56,7 @@ export default function Fleet() {
             Armada Kami
           </span>
           <h2
-            className={`font-display font-bold text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
+            className={`font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 transition-all duration-700 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
@@ -78,7 +78,7 @@ export default function Fleet() {
         </div>
 
         {/* Scooter Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {featuredMotors.map((motor, index) => (
             <div
               key={motor.id}

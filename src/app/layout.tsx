@@ -1,32 +1,82 @@
-
 import type {Metadata} from 'next';
-import Script from 'next/script';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleTagManager } from '@next/third-parties/google';
 import { cn } from '@/lib/utils';
+import { getBrand, getGtmId, getSiteUrl } from '@/brands';
+import { JsonLd } from '@/components/json-ld';
+import { buildLocalBusinessJsonLd, buildWebsiteJsonLd } from '@/lib/seo';
 
-// Menggunakan domain yang benar sebagai fallback utama
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rentalmotorbandungrmb.com';
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const brand = getBrand();
+const siteUrl = getSiteUrl();
+const defaultTitle = `${brand.shortName} - Rental Motor ${brand.city} | Sewa Matic Cepat & Aman`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'RMB - Rental Motor Bandung | Sewa Matic Cepat & Aman',
-  description: 'Sewa motor matic di Bandung dengan mudah dan cepat. Harga terjangkau mulai 60rb, layanan terpercaya, unit siap pakai. Pesan sekarang!',
+  title: defaultTitle,
+  description: brand.description,
+  applicationName: brand.legalName,
+  keywords: [
+    `sewa motor ${brand.city}`,
+    `rental motor ${brand.city}`,
+    'sewa motor matic',
+    'rental motor murah',
+    brand.shortName,
+  ],
+  authors: [{ name: brand.legalName }],
+  creator: brand.legalName,
+  publisher: brand.legalName,
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'id_ID',
     url: siteUrl,
-    siteName: 'RMB Rental Motor Bandung',
+    siteName: brand.legalName,
+    title: defaultTitle,
+    description: brand.description,
     images: [
       {
-        url: '/images/hero1.png',
+        url: brand.ogImagePath,
         width: 1200,
         height: 630,
-        alt: 'RMB Rental Motor Bandung',
+        alt: brand.legalName,
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: defaultTitle,
+    description: brand.description,
+    images: [brand.ogImagePath],
+  },
+  category: 'travel',
 };
 
 export default function RootLayout({
@@ -34,34 +84,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // GTM ID: GTM-KM5GLHDW
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KM5GLHDW';
-  // Ads ID: AW-11380968042
-  const adsId = process.env.NEXT_PUBLIC_ADS_ID || 'AW-11380968042';
+  const gtmId = getGtmId();
 
   return (
-    <html lang="id" className="!scroll-smooth">
-      <head>
-        {/* Google tag (gtag.js) - Manual Installation */}
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${adsId}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-manual-config" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', '${adsId}');
-          `}
-        </Script>
-      </head>
-      <body className={cn("font-sans")}>
-        {/* Google Tag Manager (noscript handled by the component) */}
+    <html lang="id" className={cn('!scroll-smooth', inter.variable, plusJakarta.variable)}>
+      <body className={cn('font-sans antialiased', inter.className)}>
+        <JsonLd data={buildLocalBusinessJsonLd()} />
+        <JsonLd data={buildWebsiteJsonLd()} />
+        {/* Ads conversions should be fired from GTM (single tag path for performance). */}
         <GoogleTagManager gtmId={gtmId} />
-        
         {children}
         <Toaster />
       </body>

@@ -3,34 +3,28 @@ import { Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { Tiktok } from './icons/tiktok';
 import React from 'react';
+import { getBrand } from '@/brands';
 
 export function Footer() {
-  const seoAreas = [
-    { name: 'Sewa Motor Dago', href: '/sewa-motor-dago' },
-    { name: 'Rental Motor Lembang', href: '/rental-motor-lembang' },
-    { name: 'Sewa Motor Braga', href: '/sewa-motor-braga' },
-    { name: 'Rental Motor Setiabudi', href: '/rental-motor-setiabudi' },
-    { name: 'Sewa Motor Cihampelas', href: '/sewa-motor-cihampelas' },
-    { name: 'Rental Motor Gedung Sate', href: '/rental-motor-gedung-sate' },
-    { name: 'Sewa Motor Buahbatu', href: '/sewa-motor-buahbatu' },
-    { name: 'Rental Motor Stasiun Bandung', href: '/rental-motor-stasiun-bandung' },
-    { name: 'Sewa Motor Bandara Husein Sastranegara', href: '/sewa-motor-bandara-husein' },
-  ];
-
-  const seoArmada = [
-    'Sewa Motor Aerox Bandung', 'Rental Honda Vario', 'Sewa Yamaha Gear', 
-    'Rental Scoopy Stylish', 'Sewa Motor Matic Bandung'
-  ];
+  const brand = getBrand();
 
   return (
-    <footer className="w-full border-t border-primary-foreground/10 bg-foreground text-background">
-      <div className="container grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3">
+    <footer className="w-full border-t border-primary-foreground/10 bg-foreground text-background pb-[max(0px,env(safe-area-inset-bottom))]">
+      <div className="container grid grid-cols-1 gap-8 px-4 py-10 sm:py-12 md:grid-cols-3">
         <div className="flex flex-col items-start gap-4">
           <Logo />
-          <p className="text-sm text-background/70">Your Freedom to Explore Starts Here.</p>
+          <p className="text-sm text-background/70">{brand.tagline}</p>
           <div className="flex gap-4">
-            <Link href="https://www.instagram.com/inforentalmotorbandung/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="h-5 w-5 text-background/70 hover:text-primary" /></Link>
-            <Link href="https://www.tiktok.com/@nethen.rental" target="_blank" rel="noopener noreferrer" aria-label="Tiktok"><Tiktok className="h-5 w-5 text-background/70 hover:text-primary" /></Link>
+            {brand.social.instagram && (
+              <Link href={brand.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram className="h-5 w-5 text-background/70 hover:text-primary" />
+              </Link>
+            )}
+            {brand.social.tiktok && (
+              <Link href={brand.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Tiktok">
+                <Tiktok className="h-5 w-5 text-background/70 hover:text-primary" />
+              </Link>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-3">
@@ -63,18 +57,18 @@ export function Footer() {
       <div className="container px-4 pt-8 pb-12 text-xs border-t border-background/10 text-background/60">
         <div className="max-w-screen-xl mx-auto space-y-6">
           <div>
-            <h4 className="font-semibold text-sm text-background/80 mb-2">Layanan Sewa Motor RMB</h4>
+            <h4 className="font-semibold text-sm text-background/80 mb-2">Layanan Sewa Motor {brand.shortName}</h4>
             <p>
-              RMB (Rental Motor Bandung) adalah penyedia jasa transportasi roda dua terbaik dengan layanan cepat mulai pukul 05.30 pagi. Kami berkomitmen memberikan pengalaman berkendara yang aman, nyaman, dan bebas hambatan bagi setiap pelanggan.
+              {brand.shortName} (Rental Motor {brand.city}) adalah penyedia jasa transportasi roda dua terbaik dengan layanan cepat mulai pukul 05.30 pagi. Kami berkomitmen memberikan pengalaman berkendara yang aman, nyaman, dan bebas hambatan bagi setiap pelanggan.
             </p>
           </div>
           <div>
             <h4 className="font-semibold text-sm text-background/80 mb-2">Area Layanan Kami</h4>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              {seoAreas.map((area, index) => (
+              {brand.seoLocations.map((area, index) => (
                 <React.Fragment key={area.name}>
                   <Link href={area.href} className="hover:text-primary transition-colors">{area.name}</Link>
-                  {index < seoAreas.length - 1 && <span>|</span>}
+                  {index < brand.seoLocations.length - 1 && <span>|</span>}
                 </React.Fragment>
               ))}
             </div>
@@ -84,7 +78,7 @@ export function Footer() {
       
       <div className="border-t border-background/10 py-6">
         <p className="text-center text-sm text-background/70">
-          © {new Date().getFullYear()} RMB Rental. All Rights Reserved.
+          © {new Date().getFullYear()} {brand.shortName} Rental. All Rights Reserved.
         </p>
       </div>
     </footer>

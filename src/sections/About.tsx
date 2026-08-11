@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Award, Users, Clock, Headphones } from 'lucide-react'
 import Link from 'next/link';
@@ -94,11 +95,15 @@ export default function About() {
 
             {/* Main Image */}
             <div className="relative z-10 group">
-              <img
-                src="/images/hero2.png"
-                alt="Skuter premium RMB"
-                className="w-full h-auto rounded-3xl shadow-card group-hover:shadow-card-hover transition-shadow duration-500 object-cover aspect-[4/3]"
-              />
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-card group-hover:shadow-card-hover transition-shadow duration-500">
+                <Image
+                  src="/images/hero2.webp"
+                  alt="Skuter premium RMB"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
 
               {/* Experience Badge */}
               <div className="absolute -bottom-6 -right-6 bg-primary rounded-2xl p-6 shadow-glow">

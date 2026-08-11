@@ -9,7 +9,8 @@ import { id } from 'date-fns/locale';
 import { useSearchParams } from 'next/navigation';
 
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
-import { summarizeOrderForWhatsApp } from '@/ai/flows/summarize-order-whatsapp';
+import { buildWhatsAppOrderMessage } from '@/lib/whatsapp-order-message';
+import { getWhatsAppLink } from '@/brands';
 import { motorInventory } from '@/lib/data';
 import { cities } from '@/lib/cities';
 import { cn } from '@/lib/utils';
@@ -98,18 +99,14 @@ export function OrderForm() {
     if (data.honeypot) return;
     setIsLoading(true);
     try {
-      const summaryInput = {
+      const fullMessage = buildWhatsAppOrderMessage({
         ...data,
         rentalStartDate: format(data.rentalStartDate!, 'dd MMMM yyyy', { locale: id }),
         rentalEndDate: format(data.rentalEndDate!, 'dd MMMM yyyy', { locale: id }),
         domain: window.location.host,
-      };
+      });
+      const whatsappUrl = getWhatsAppLink(fullMessage);
 
-      const result = await summarizeOrderForWhatsApp(summaryInput);
-      const fullMessage = result.summary;
-      const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6282329616166';
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
-      
       window.open(whatsappUrl, '_blank');
       toast({
         title: 'Formulir Berhasil Dibuat!',
@@ -117,7 +114,7 @@ export function OrderForm() {
       });
       form.reset();
     } catch (error) {
-      console.error('Error summarizing order:', error);
+      console.error('Error building WhatsApp order message:', error);
       toast({
         variant: 'destructive',
         title: 'Gagal memproses pesanan',
@@ -129,15 +126,15 @@ export function OrderForm() {
   }
   
   const FormSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-    <div className="space-y-4">
-      <h3 className="font-display text-lg font-semibold text-foreground">{title}</h3>
-      <div className="space-y-4 rounded-md border p-4">{children}</div>
+    <div className="space-y-3 sm:space-y-4">
+      <h3 className="font-display text-base sm:text-lg font-semibold text-foreground">{title}</h3>
+      <div className="space-y-4 rounded-xl border p-3 sm:p-4">{children}</div>
     </div>
   );
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
         
         <FormSection title="Tahap 1: Status Pelanggan">
           <FormField
