@@ -32,6 +32,7 @@ export function Footer() {
             <h3 className="mb-4 font-semibold text-background">Produk</h3>
             <ul className="space-y-2">
               <li><Link href="/armada" className="text-background/70 hover:text-primary">Motor Matic</Link></li>
+              <li><Link href="/sewa-mobil" className="text-background/70 hover:text-primary">Sewa Mobil</Link></li>
               <li><Link href="/harga" className="text-background/70 hover:text-primary">Daftar Harga</Link></li>
             </ul>
           </div>
