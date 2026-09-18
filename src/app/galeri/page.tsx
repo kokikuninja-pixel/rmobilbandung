@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Galeri & Momen Pelanggan | RMB Rental Motor Bandung',
+  title: 'Galeri & Momen Pelanggan | RMB Rental Mobil Bandung',
   description:
     'Lihat momen keseruan pelanggan dan potret di balik layar tim RMB Rental. Jadilah bagian dari cerita perjalanan kami di Bandung.',
   alternates: {
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 
 /** Local optimized assets only — avoids broken remote/missing gallery files. */
 const galleryItems = [
-  { src: '/images/hero1.webp', alt: 'Pengalaman sewa skuter di Bandung' },
-  { src: '/images/hero2.webp', alt: 'Armada skuter premium RMB' },
-  { src: '/images/hero4.webp', alt: 'Jelajah kota dengan motor matic' },
-  { src: '/images/yamaha-aerox.png', alt: 'Yamaha Aerox siap sewa' },
-  { src: '/images/Honda-Vario-150.png', alt: 'Honda Vario 150 siap sewa' },
-  { src: '/images/Honda-beat-new.png', alt: 'Honda Beat New siap sewa' },
+  { src: '/images/hero1.webp', alt: 'Momen pelanggan di Bandung' },
+  { src: '/images/hero2.webp', alt: 'Armada mobil premium RMB' },
+  { src: '/images/hero4.webp', alt: 'Jelajah kota dengan mobil nyaman' },
+  { src: 'https://placehold.co/600x800/FFF4DD/9A6300?text=Toyota+Avanza', alt: 'Toyota Avanza siap sewa' },
+  { src: 'https://placehold.co/600x800/FFF4DD/9A6300?text=Toyota+Innova', alt: 'Toyota Innova siap sewa' },
+  { src: 'https://placehold.co/600x800/FFF4DD/9A6300?text=Hyundai+Stargazer', alt: 'Hyundai Stargazer siap sewa' },
 ];
 
 export default function GalleryPage() {

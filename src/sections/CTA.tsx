@@ -69,8 +69,8 @@ export default function CTA() {
                 }`}
                 style={{ transitionDelay: '200ms' }}
               >
-                Siap untuk Turun{' '}
-                <span className="text-primary">ke Jalan?</span>
+                Siap Menjelajah{' '}
+                <span className="text-primary">Bandung?</span>
               </h2>
 
               <p
@@ -81,7 +81,7 @@ export default function CTA() {
                 }`}
                 style={{ transitionDelay: '300ms' }}
               >
-                Pesan skuter Anda dalam hitungan menit dan mulailah menjelajah hari ini. Kebebasan hanya dengan sekali klik. Bergabunglah dengan ribuan pengendara yang bahagia!
+                Pesan mobil Anda dalam hitungan menit dan mulailah menjelajah hari ini. Kebebasan hanya dengan sekali klik. Bergabunglah dengan ribuan pelanggan yang bahagia!
               </p>
 
               {/* CTA Buttons */}
@@ -135,7 +135,7 @@ export default function CTA() {
                     ))}
                   </div>
                   <span className="text-background/70 text-sm">
-                    Dipercaya oleh 10,000+ pengendara
+                    Dipercaya oleh 10,000+ pelanggan
                   </span>
                 </div>
                 <div className="flex items-center gap-2">

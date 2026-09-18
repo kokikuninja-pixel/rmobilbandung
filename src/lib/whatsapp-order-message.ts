@@ -63,7 +63,7 @@ export function buildWhatsAppOrderMessage(input: WhatsAppOrderMessageInput): str
   }
 
   lines.push('');
-  lines.push(`- Unit Motor: *${input.desiredMotor}*`);
+  lines.push(`- Unit Mobil: *${input.desiredMotor}*`);
   lines.push(`- Waktu Mulai: *${input.rentalStartDate} jam ${input.rentalStartTime}*`);
   lines.push(`- Waktu Selesai: *${input.rentalEndDate} jam ${input.rentalEndTime}*`);
   lines.push(`- Jumlah Unit: *${input.unitCount} unit*`);

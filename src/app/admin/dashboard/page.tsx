@@ -1,11 +1,11 @@
 'use client';
 
-import { motorInventory } from '@/lib/data';
+import { carInventory } from '@/lib/cars';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
   LayoutDashboard, 
-  Bike, 
+  Car, 
   Settings, 
   LogOut, 
   Plus, 
@@ -24,7 +24,7 @@ export default function AdminDashboard() {
 
   const menuItems = [
     { icon: LayoutDashboard, label: 'Dashboard', href: '/admin/dashboard' },
-    { icon: Bike, label: 'Kelola Armada', href: '#' },
+    { icon: Car, label: 'Kelola Armada', href: '#' },
     { icon: Users, label: 'Data Pelanggan', href: '#' },
     { icon: Settings, label: 'Pengaturan', href: '/admin/settings' },
   ];
@@ -84,10 +84,10 @@ export default function AdminDashboard() {
           <Card className="bg-primary/5 border-primary/20">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">Total Armada</CardTitle>
-              <Bike className="h-5 w-5 text-primary" />
+              <Car className="h-5 w-5 text-primary" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold">{motorInventory.length} Unit</div>
+              <div className="text-3xl font-bold">{carInventory.length} Unit</div>
               <p className="text-xs text-muted-foreground mt-1">+2 unit baru bulan ini</p>
             </CardContent>
           </Card>
@@ -127,21 +127,21 @@ export default function AdminDashboard() {
             <table className="w-full text-left">
               <thead className="bg-muted/50 border-b text-sm font-medium uppercase tracking-wider">
                 <tr>
-                  <th className="px-6 py-4">Unit Motor</th>
-                  <th className="px-6 py-4">Kelas</th>
+                  <th className="px-6 py-4">Unit Mobil</th>
+                  <th className="px-6 py-4">Segment</th>
                   <th className="px-6 py-4">Harga/Hari</th>
                   <th className="px-6 py-4 text-right">Aksi</th>
                 </tr>
               </thead>
               <tbody className="divide-y text-sm">
-                {motorInventory.slice(0, 10).map((motor) => (
-                  <tr key={motor.id} className="hover:bg-muted/30 transition-colors">
-                    <td className="px-6 py-4 font-semibold">{motor.name}</td>
+                {carInventory.slice(0, 10).map((car) => (
+                  <tr key={car.id} className="hover:bg-muted/30 transition-colors">
+                    <td className="px-6 py-4 font-semibold">{car.name}</td>
                     <td className="px-6 py-4">
-                      <Badge variant="outline">{motor.class}</Badge>
+                      <Badge variant="outline">{car.segment}</Badge>
                     </td>
                     <td className="px-6 py-4 text-primary font-bold">
-                      Rp {motor.price.toLocaleString('id-ID')}
+                      Rp {car.price.toLocaleString('id-ID')}
                     </td>
                     <td className="px-6 py-4 text-right">
                       <Button variant="ghost" size="sm" className="text-primary">Edit</Button>

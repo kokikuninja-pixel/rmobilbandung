@@ -1,37 +1,28 @@
-import { ArrowLeft, Clock, Info, PlusCircle } from 'lucide-react';
-import Link from 'next/link';
-import {
-  Table,
-  TableHeader,
-  TableRow,
-  TableHead,
-  TableBody,
-  TableCell,
-} from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
+import { Info, Clock } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
-  title: 'Daftar Harga Sewa Motor Bandung | RMB Rental',
-  description: 'Daftar harga sewa motor harian termurah di RMB Rental Bandung. Tarif transparan dan kompetitif mulai dari Rp 60.000 per hari.',
+  title: 'Daftar Harga Sewa Mobil Bandung | RMB Rental',
+  description: 'Daftar harga sewa mobil harian termurah di RMB Rental Bandung. Tarif transparan dan kompetitif mulai dari Rp 275.000 per hari.',
   alternates: {
     canonical: '/harga',
   },
 };
 
 const priceList = [
-  { price: 60000, models: 'Yamaha Mio J, Xeon GT, Soul GT, Honda Spacy.' },
-  { price: 70000, models: 'Honda Beat FI/Pop, Yamaha Mio Z 125cc, Mio S 125cc, Fino, X-Ride.' },
-  { price: 80000, models: 'Honda Beat ESP/Street, Vario 110cc, Honda Genio, Yamaha Gear.' },
-  { price: 100000, models: 'Honda Vario 125cc Old.' },
-  { price: 110000, models: 'Honda Vario 125cc LED, Yamaha Lexi, Fazzio.' },
-  { price: 120000, models: 'Honda Vario 150cc New, Scoopy Terbaru.' },
-  { price: 130000, models: 'Motor Listrik Polytron FOX R.' },
-  { price: 160000, models: 'Yamaha Aerox.' },
-  { price: 180000, models: 'Yamaha New NMAX, Honda PCX 150cc.' },
+  { price: 275000, models: 'Honda Brio.' },
+  { price: 300000, models: 'Toyota Calya.' },
+  { price: 350000, models: 'Toyota Avanza.' },
+  { price: 550000, models: 'Hyundai Stargazer.' },
+  { price: 600000, models: 'Toyota Innova Reborn.' },
+  { price: 1200000, models: 'Toyota Fortuner.' },
+  { price: 1500000, models: 'Toyota Hiace.' },
+  { price: 2500000, models: 'Toyota Alphard.' },
 ];
 
 export default function HargaPage() {
@@ -41,7 +32,7 @@ export default function HargaPage() {
       <main className="bg-background text-foreground min-h-screen">
         <div className="container mx-auto max-w-screen-xl px-4 py-12 md:py-24">
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Daftar Harga Sewa</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-2">Daftar Harga Sewa Mobil</h1>
             <p className="text-lg text-muted-foreground">Transparan, kompetitif, dan fleksibel untuk Anda.</p>
           </div>
 
@@ -54,7 +45,7 @@ export default function HargaPage() {
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[180px]">Harga Mulai Dari</TableHead>
-                    <TableHead>Model Motor</TableHead>
+                    <TableHead>Model Mobil</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -78,45 +69,25 @@ export default function HargaPage() {
             </CardContent>
           </Card>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <Card>
-                  <CardHeader>
-                      <CardTitle className="flex items-center gap-3 text-2xl">
-                          <PlusCircle className="h-6 w-6 text-primary" />
-                          <span>Ketentuan Biaya Tambahan</span>
-                      </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                     <div>
-                       <h4 className="font-semibold">Weekend &amp; Tanggal Merah</h4>
-                       <p className="text-muted-foreground">Dikenakan biaya tambahan sebesar <span className="text-foreground font-bold">Rp 20.000</span> dari harga dasar.</p>
-                     </div>
-                     <div>
-                       <h4 className="font-semibold">Promo Durasi</h4>
-                       <p className="text-muted-foreground">Biaya tambahan weekend <span className="text-green-500 font-bold">GRATIS</span> untuk pemakaian sewa lebih dari 3 hari.</p>
-                     </div>
-                  </CardContent>
-              </Card>
-              <Card>
-                  <CardHeader>
-                      <CardTitle className="flex items-center gap-3 text-2xl">
-                          <Clock className="h-6 w-6 text-primary" />
-                          <span>Jam Operasional</span>
-                      </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                     <div>
-                          <h4 className="font-semibold text-muted-foreground">Pemesanan &amp; Pengantaran Unit</h4>
-                          <p className="text-2xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
-                      </div>
-                       <div>
-                          <h4 className="font-semibold text-muted-foreground">Garasi (Ambil/Kembalikan Sendiri)</h4>
-                          <p className="text-2xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
-                      </div>
-                      <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
-                  </CardContent>
-              </Card>
-          </div>
+          <Card className="mt-12 max-w-md mx-auto">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-2xl">
+                <Clock className="h-6 w-6 text-primary" />
+                <span>Jam Operasional</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-muted-foreground">Pemesanan & Pengantaran Unit</h4>
+                <p className="text-2xl font-bold text-foreground mt-1">08:00 - 21:00 WIB</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-muted-foreground">Ambil & Kembalikan Sendiri</h4>
+                <p className="text-2xl font-bold text-foreground mt-1">05:00 - 21:30 WIB</p>
+              </div>
+              <p className="text-xs text-muted-foreground !mt-6">Pemesanan di luar jam operasional akan kami proses pada jam buka berikutnya.</p>
+            </CardContent>
+          </Card>
         </div>
       </main>
       <Footer />

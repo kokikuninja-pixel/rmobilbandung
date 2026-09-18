@@ -6,9 +6,9 @@ export type FaqItem = {
 /** Shared FAQ content for UI + FAQPage JSON-LD */
 export const rentalFaqs: FaqItem[] = [
   {
-    question: 'Apa saja syarat untuk menyewa motor?',
+    question: 'Apa saja syarat untuk menyewa mobil?',
     answer:
-      'Anda perlu mengirimkan foto E-KTP, SIM C yang masih aktif, dan salah satu dari dokumen berikut: ID Pegawai, Kartu Mahasiswa, tiket perjalanan, atau bukti menginap. Kirim semua ke WhatsApp admin. Saat serah terima motor, Anda juga perlu menitipkan satu identitas asli (E-KTP/SIM A) sebagai jaminan.',
+      'Anda perlu mengirimkan foto E-KTP dan SIM A yang masih aktif. Kirim semua dokumen ke WhatsApp admin. Saat serah terima mobil, Anda juga perlu menitipkan identitas asli sebagai jaminan.',
   },
   {
     question: 'Bagaimana jika ada syarat yang kurang?',
@@ -18,7 +18,7 @@ export const rentalFaqs: FaqItem[] = [
   {
     question: 'Apakah ada asuransi atau bantuan darurat?',
     answer:
-      'Kami menyediakan bantuan darurat selama jam operasional kami (05:00 - 21:30). Jika motor mengalami kendala, tim kami akan segera membantu. Keamanan dan kenyamanan Anda adalah prioritas kami.',
+      'Kami menyediakan bantuan darurat selama jam operasional kami (05:00 - 21:30). Jika mobil mengalami kendala, tim kami akan segera membantu. Keamanan dan kenyamanan Anda adalah prioritas kami.',
   },
   {
     question: 'Bagaimana jika saya ingin membatalkan pesanan?',
@@ -36,14 +36,14 @@ export const rentalFaqs: FaqItem[] = [
       'Tentu! Kami menyediakan layanan antar-jemput ke hotel, stasiun, bandara, atau alamat lain di dalam kota Bandung. Biaya pengantaran akan disesuaikan tergantung jarak lokasi Anda.',
   },
   {
-    question: 'Bagaimana kebijakan bahan bakarnya?',
+    question: 'Apakah harga sudah termasuk supir?',
     answer:
-      'Setiap motor kami sediakan dengan bahan bakar sekitar 1 liter, cukup untuk Anda menuju SPBU terdekat. Jika Anda ingin motor diserahkan dengan tangki penuh, akan ada biaya tambahan.',
+      'Harga dasar adalah tarif lepas kunci (tanpa supir). Jika Anda menginginkan mobil ber-supir, tersedia paket harian dengan tarif berbeda. Hubungi admin untuk penawaran terbaik.',
   },
   {
     question: 'Fasilitas apa saja yang saya dapatkan?',
     answer:
-      'Setiap penyewaan sudah termasuk 2 helm SNI yang bersih dan 2 jas hujan. Beberapa unit motor kami juga sudah dilengkapi dengan phone holder untuk kemudahan navigasi Anda.',
+      'Setiap penyewaan sudah termasuk mobil dalam kondisi terawat, bersih, dan ber-AC. Bahan bakar diserahkan sesuai kesepakatan dan pajak kendaraan selalu lengkap.',
   },
   {
     question: 'Apakah bisa sewa untuk jangka waktu panjang?',

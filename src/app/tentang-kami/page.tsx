@@ -7,8 +7,8 @@ import Testimonials from '@/sections/Testimonials';
 import CTA from '@/sections/CTA';
 
 export const metadata: Metadata = {
-  title: 'Tentang RMB | Partner Rental Motor Terpercaya di Bandung',
-  description: 'Kenali lebih dekat RMB Rental Bandung. Dengan pengalaman 5+ tahun, kami berkomitmen memberikan layanan sewa motor matic terbaik, aman, dan tanpa ribet.',
+  title: 'Tentang RMB | Partner Rental Mobil Terpercaya di Bandung',
+  description: 'Kenali lebih dekat RMB Rental Bandung. Dengan pengalaman 5+ tahun, kami berkomitmen memberikan layanan sewa mobil terbaik, aman, dan tanpa ribet.',
   alternates: {
     canonical: '/tentang-kami',
   },

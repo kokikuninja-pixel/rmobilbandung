@@ -6,16 +6,16 @@ import { JsonLd } from '@/components/json-ld';
 import { buildFaqPageJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Pertanyaan Umum (FAQ) | RMB Rental Motor Bandung',
+  title: 'Pertanyaan Umum (FAQ) | RMB Rental Mobil Bandung',
   description:
-    'Temukan jawaban untuk pertanyaan yang sering diajukan mengenai sewa motor di RMB, mulai dari syarat, jaminan, hingga pembatalan.',
+    'Temukan jawaban untuk pertanyaan yang sering diajukan mengenai sewa mobil di RMB, mulai dari syarat, jaminan, hingga pembatalan.',
   alternates: {
     canonical: '/faq',
   },
   openGraph: {
-    title: 'Pertanyaan Umum (FAQ) | RMB Rental Motor Bandung',
+    title: 'Pertanyaan Umum (FAQ) | RMB Rental Mobil Bandung',
     description:
-      'Temukan jawaban untuk pertanyaan yang sering diajukan mengenai sewa motor di RMB, mulai dari syarat, jaminan, hingga pembatalan.',
+      'Temukan jawaban untuk pertanyaan yang sering diajukan mengenai sewa mobil di RMB, mulai dari syarat, jaminan, hingga pembatalan.',
   },
 };
 

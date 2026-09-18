@@ -4,15 +4,19 @@ import type { BrandConfig } from './types';
  * RMB — Rental Motor Bandung
  * This is the REFERENCE brand template for all other landings.
  */
+/**
+ * RMB — Rental Mobil Bandung
+ * Full car rental brand (previously motor). All product surfaces now show cars.
+ */
 export const rmbBrand: BrandConfig = {
   id: 'rmb',
   shortName: 'RMB',
-  legalName: 'RMB Rental Motor Bandung',
+  legalName: 'RMB Rental Mobil Bandung',
   city: 'Bandung',
   tagline: 'Your Freedom to Explore Starts Here.',
   description:
-    'Sewa motor matic di Bandung dengan mudah dan cepat. Harga terjangkau mulai 60rb, layanan terpercaya, unit siap pakai. Pesan sekarang!',
-  siteUrl: 'https://rentalmotorbandungrmb.com',
+    'Sewa mobil di Bandung dengan mudah dan cepat. Harga terjangkau mulai 275rb, layanan terpercaya, unit siap pakai. Pesan sekarang!',
+  siteUrl: 'https://rentalmobilbandungrmb.com',
   whatsappNumber: '6282329616166',
   gtmId: 'GTM-KM5GLHDW',
   adsId: 'AW-11380968042',
@@ -32,24 +36,22 @@ export const rmbBrand: BrandConfig = {
     { href: '/snk', label: 'S&K' },
   ],
   seoLocations: [
-    { name: 'Sewa Motor Dago', href: '/sewa-motor-dago' },
-    { name: 'Rental Motor Lembang', href: '/rental-motor-lembang' },
-    { name: 'Sewa Motor Braga', href: '/sewa-motor-braga' },
-    { name: 'Rental Motor Setiabudi', href: '/rental-motor-setiabudi' },
-    { name: 'Sewa Motor Cihampelas', href: '/sewa-motor-cihampelas' },
-    { name: 'Rental Motor Gedung Sate', href: '/rental-motor-gedung-sate' },
-    { name: 'Sewa Motor Buahbatu', href: '/sewa-motor-buahbatu' },
-    { name: 'Rental Motor Stasiun Bandung', href: '/rental-motor-stasiun-bandung' },
-    { name: 'Sewa Motor Bandara Husein Sastranegara', href: '/sewa-motor-bandara-husein' },
+    { name: 'Sewa Mobil Dago', href: '/sewa-mobil-dago' },
+    { name: 'Rental Mobil Lembang', href: '/sewa-mobil-lembang' },
+    { name: 'Sewa Mobil Braga', href: '/sewa-mobil-braga' },
+    { name: 'Rental Mobil Setiabudi', href: '/sewa-mobil-setiabudi' },
+    { name: 'Sewa Mobil Cihampelas', href: '/sewa-mobil-cihampelas' },
+    { name: 'Rental Mobil Gedung Sate', href: '/sewa-mobil-gedung-sate' },
+    { name: 'Sewa Mobil Buahbatu', href: '/sewa-mobil-buahbatu' },
+    { name: 'Rental Mobil Stasiun Bandung', href: '/sewa-mobil-stasiun-bandung' },
+    { name: 'Sewa Mobil Bandara Husein Sastranegara', href: '/sewa-mobil-bandara-husein' },
   ],
   homepageSections: [
     'Header',
     'Hero',
-    'About',
-    'Fleet',
-    'Process',
-    'Pricing',
-    'Testimonials',
+    'Keunggulan',
+    'Armada',
+    'Proses',
     'FAQ',
     'OrderForm (#pesan)',
     'CTA',
@@ -60,10 +62,10 @@ export const rmbBrand: BrandConfig = {
   promoPopup: {
     enabled: true,
     delayMs: 12000,
-    eyebrow: 'Unit terbatas hari ini',
+    eyebrow: 'Unit mobil terbatas hari ini',
     title: 'Pesan sekarang, keburu kehabisan!',
     description:
-      'Weekend & musim liburan unit cepat ludes. Amankan motor favorit Anda sekarang sebelum penuh.',
+      'Weekend & musim liburan unit cepat ludes. Amankan mobil favorit Anda sekarang sebelum penuh.',
     primaryCta: 'Pesan Sekarang',
     secondaryCta: 'Chat WhatsApp',
     footnote: 'Respon cepat via WhatsApp · Antar jemput tersedia',
@@ -77,7 +79,7 @@ export const rmbBrand: BrandConfig = {
     latitude: -6.892019,
     longitude: 107.587885,
     openingHours: 'Mo-Su 05:00-21:30',
-    priceRange: 'Rp60.000+',
+    priceRange: 'Rp275.000+',
   },
   theme: {
     background: '43 67% 96%',

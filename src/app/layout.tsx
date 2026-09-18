@@ -23,7 +23,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const brand = getBrand();
 const siteUrl = getSiteUrl();
-const defaultTitle = `${brand.shortName} - Rental Motor ${brand.city} | Sewa Matic Cepat & Aman`;
+const defaultTitle = `${brand.shortName} - Rental Mobil ${brand.city} | Sewa Mobil Cepat & Aman`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
   description: brand.description,
   applicationName: brand.legalName,
   keywords: [
-    `sewa motor ${brand.city}`,
-    `rental motor ${brand.city}`,
-    'sewa motor matic',
-    'rental motor murah',
+    `sewa mobil ${brand.city}`,
+    `rental mobil ${brand.city}`,
+    'sewa mobil bandung',
+    'rental mobil murah bandung',
     brand.shortName,
   ],
   authors: [{ name: brand.legalName }],

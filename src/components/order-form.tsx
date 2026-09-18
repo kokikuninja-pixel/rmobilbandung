@@ -11,7 +11,7 @@ import { useSearchParams } from 'next/navigation';
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
 import { buildWhatsAppOrderMessage } from '@/lib/whatsapp-order-message';
 import { getWhatsAppLink } from '@/brands';
-import { motorInventory } from '@/lib/data';
+import { carInventory } from '@/lib/cars';
 import { cities } from '@/lib/cities';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -68,7 +68,7 @@ export function OrderForm() {
     const motorFromQuery = searchParams.get('motor');
     if (motorFromQuery) {
         const decodedMotor = decodeURIComponent(motorFromQuery);
-        const isValidMotor = motorInventory.some(motor => motor.name === decodedMotor);
+        const isValidMotor = carInventory.some(car => car.name === decodedMotor);
         if (isValidMotor) {
             form.setValue('desiredMotor', decodedMotor, { shouldValidate: true });
         }
@@ -351,7 +351,7 @@ export function OrderForm() {
                   <p className="text-sm font-medium text-foreground">Detail sewa yang Anda inginkan:</p>
 
                   <FormField name="desiredMotor" render={({ field }) => (
-                    <FormItem><FormLabel>Unit Motor</FormLabel><Select onValueChange={field.onChange} value={field.value}><FormControl><SelectTrigger><SelectValue placeholder="Pilih motor..." /></SelectTrigger></FormControl><SelectContent>{motorInventory.map((motor) => (<SelectItem key={motor.id} value={motor.name}>{motor.name}</SelectItem>))}</SelectContent></Select><FormMessage /></FormItem>
+                    <FormItem><FormLabel>Unit Mobil</FormLabel><Select onValueChange={field.onChange} value={field.value}><FormControl><SelectTrigger><SelectValue placeholder="Pilih mobil..." /></SelectTrigger></FormControl><SelectContent>{carInventory.map((car) => (<SelectItem key={car.id} value={car.name}>{car.name}</SelectItem>))}</SelectContent></Select><FormMessage /></FormItem>
                   )} />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -399,7 +399,7 @@ export function OrderForm() {
                   />
                   {pickupMethod === 'delivery' && (
                     <FormField name="deliveryAddress" control={form.control} render={({ field }) => (
-                      <FormItem><FormLabel>Alamat Pengantaran</FormLabel><FormControl><Textarea placeholder="Tuliskan alamat lengkap pengantaran motor..." {...field} /></FormControl><FormMessage /></FormItem>
+                      <FormItem><FormLabel>Alamat Pengantaran</FormLabel><FormControl><Textarea placeholder="Tuliskan alamat lengkap pengantaran mobil..." {...field} /></FormControl><FormMessage /></FormItem>
                     )} />
                   )}
 

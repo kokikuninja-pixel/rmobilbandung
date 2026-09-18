@@ -10,7 +10,7 @@ const testimonials = [
     role: 'Travel Blogger',
     avatar: 'https://picsum.photos/seed/avatar1/48/48',
     content:
-      'RMB membuat perjalanan saya di Bandung tak terlupakan. Skuternya dalam kondisi sempurna, dan layanan pengirimannya menghemat banyak waktu saya! Sangat merekomendasikan kepada siapa pun yang berkunjung.',
+      'RMB membuat perjalanan saya di Bandung tak terlupakan. Mobilnya bersih, kondisi sempurna, dan layanan antar jemputnya menghemat banyak waktu saya! Sangat merekomendasikan kepada siapa pun yang berkunjung.',
     rating: 5,
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     role: 'Digital Nomad',
     avatar: 'https://picsum.photos/seed/avatar2/48/48',
     content:
-      "Saya menyewa dari RMB setiap bulan. Skuter yang andal, harga yang wajar, dan timnya selalu membantu. Ini telah menjadi bagian penting dari gaya hidup nomaden saya.",
+      "Saya menyewa dari RMB setiap bulan. Mobil yang andal, harga yang wajar, dan timnya selalu membantu. Ini telah menjadi bagian penting dari gaya hidup nomaden saya.",
     rating: 5,
   },
   {
@@ -28,7 +28,7 @@ const testimonials = [
     role: 'Turis',
     avatar: 'https://picsum.photos/seed/avatar3/48/48',
     content:
-      'Pertama kali mengendarai skuter dan RMB membuatnya sangat mudah. Mereka bahkan memberi saya pelajaran singkat. Merasa aman sepanjang perjalanan! Pasti akan menggunakan lagi.',
+      'Pertama kali menyewa mobil di Bandung dan RMB membuatnya sangat mudah. Prosesnya cepat dan mobilnya sangat nyaman. Merasa aman sepanjang perjalanan! Pasti akan menggunakan lagi.',
     rating: 5,
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     role: 'Adventure Seeker',
     avatar: 'https://picsum.photos/seed/avatar5/48/48',
     content:
-      'Menyewa Aerox untuk perjalanan akhir pekan. Perjalanan mulus, hemat bahan bakar, dan tidak ada masalah sama sekali. Pasti akan menyewa lagi untuk petualangan saya berikutnya!',
+      'Menyewa SUV untuk perjalanan akhir pekan ke Lembang. Perjalanan mulus, nyaman, dan tidak ada masalah sama sekali. Pasti akan menyewa lagi untuk petualangan saya berikutnya!',
     rating: 5,
   },
 ]
@@ -126,7 +126,7 @@ export default function Testimonials() {
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            Apa Kata <span className="text-primary">Pengendara Kami</span>
+            Apa Kata <span className="text-primary">Pelanggan Kami</span>
           </h2>
         </div>
 

@@ -1,14 +1,13 @@
-
 import { MetadataRoute } from 'next';
-import { motorInventory } from '@/lib/data';
+import { carInventory } from '@/lib/cars';
 import { getBrand, getSiteUrl } from '@/brands';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl().replace(/\/$/, '');
   const brand = getBrand();
 
-  const motorUrls = motorInventory.map((motor) => ({
-    url: `${siteUrl}/armada/${motor.id}`,
+  const carUrls = carInventory.map((car) => ({
+    url: `${siteUrl}/armada/${car.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
@@ -78,5 +77,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticUrls, ...motorUrls, ...seoPages];
+  return [...staticUrls, ...carUrls, ...seoPages];
 }

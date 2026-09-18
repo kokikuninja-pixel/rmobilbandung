@@ -64,7 +64,7 @@ export function PromoPopup() {
   };
 
   const whatsappUrl = getWhatsAppLink(
-    `Halo Admin ${brand.shortName}! Saya ingin pesan motor sekarang sebelum kehabisan.`
+    `Halo Admin ${brand.shortName}! Saya ingin pesan mobil sekarang sebelum kehabisan.`
   );
 
   const goToForm = () => {

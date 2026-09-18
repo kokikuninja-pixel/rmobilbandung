@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { getWhatsAppLink } from '@/brands';
 
 export const metadata: Metadata = {
-    title: 'Lokasi & Kontak | RMB Rental Motor Bandung',
+    title: 'Lokasi & Kontak | RMB Rental Mobil Bandung',
     description: 'Temukan lokasi kami di Bandung. Kami siap melayani pengantaran unit ke lokasi Anda. Hubungi kami via WhatsApp untuk respon cepat.',
     alternates: {
         canonical: '/lokasi',
@@ -43,7 +43,7 @@ export default function LokasiPage() {
                             allowFullScreen={false} 
                             loading="lazy" 
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Lokasi RMB Rental Motor Bandung"
+                            title="Lokasi RMB Rental Mobil Bandung"
                         ></iframe>
                     </div>
                 </Card>

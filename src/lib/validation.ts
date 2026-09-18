@@ -8,7 +8,7 @@ const phoneRegex = new RegExp(
 const baseSchema = z.object({
   name: z.string().min(2, { message: "Nama lengkap sesuai KTP harus diisi." }),
   phone: z.string().regex(phoneRegex, 'Format nomor WhatsApp tidak valid. Harus diawali dengan kode negara.'),
-  desiredMotor: z.string({ required_error: "Silakan pilih motor yang diinginkan." }),
+  desiredMotor: z.string({ required_error: "Silakan pilih mobil yang diinginkan." }),
   rentalStartDate: z.date({ required_error: "Tanggal mulai sewa harus diisi." }),
   rentalStartTime: z.string({ required_error: "Jam mulai sewa harus diisi." }),
   rentalEndDate: z.date({ required_error: "Tanggal selesai sewa harus diisi." }),

@@ -11,7 +11,7 @@ export function FloatingActionButton() {
 
   useEffect(() => {
     const domainName = window.location.hostname;
-    const message = `Halo, saya menghubungi dari situs ${domainName}. Saya ingin bertanya tentang sewa motor.`;
+    const message = `Halo, saya menghubungi dari situs ${domainName}. Saya ingin bertanya tentang sewa mobil.`;
     setWhatsappUrl(getWhatsAppLink(message));
   }, []);
 

@@ -9,8 +9,8 @@ import { Footer } from '@/components/footer';
 import { getWhatsAppLink } from '@/brands';
 
 export const metadata: Metadata = {
-  title: 'Syarat & Ketentuan Sewa Motor | RMB Rental Bandung',
-  description: 'Pahami syarat dan ketentuan sewa motor di RMB Rental Bandung. Informasi lengkap tentang booking, jaminan, dan penggunaan unit.',
+  title: 'Syarat & Ketentuan Sewa Mobil | RMB Rental Bandung',
+  description: 'Pahami syarat dan ketentuan sewa mobil di RMB Rental Bandung. Informasi lengkap tentang booking, jaminan, dan penggunaan unit.',
   alternates: {
     canonical: '/snk',
   },
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
 
 export default function SnKPage() {
   const facilities = [
-    { text: '2 Helm SNI' },
-    { text: 'Jas Hujan' },
-    { text: 'Phone Holder (Tersedia pada unit tertentu)' },
+    { text: 'Mobil bersih, ber-AC, dan terawat' },
+    { text: 'Pajak & Surat kendaraan lengkap' },
+    { text: 'Dukungan darurat 24/7 selama masa sewa' },
   ];
 
   const bookingSteps = [
-    { text: 'Siapkan Dokumen: Foto KTP, SIM C aktif, ID Pegawai/KTM, serta tiket kereta/pesawat (jika ada).' },
+    { text: 'Siapkan Dokumen: Foto KTP dan SIM A yang masih aktif.' },
     { text: 'Kirim Data: Hubungi kami via WhatsApp di 0823-2961-6166.' },
     { text: 'Jaminan Identitas: Salah satu identitas asli akan kami simpan sebagai jaminan selama masa sewa berlangsung.' },
   ];
@@ -34,7 +34,7 @@ export default function SnKPage() {
       title: 'Batas Wilayah Operasional',
       icon: <MapPin className="h-6 w-6 text-primary" />,
       points: [
-        'Motor hanya boleh digunakan di wilayah Kota Bandung dan sekitarnya (area yang wajar).',
+        'Mobil hanya boleh digunakan di wilayah Kota Bandung dan sekitarnya (area yang wajar).',
         'Penggunaan di luar wilayah tersebut memerlukan kesepakatan baru dengan pihak RMB.',
         'Pelanggaran batas wilayah tanpa konfirmasi akan dikenakan denda tambahan sebesar IDR 100.000/hari.',
       ],
@@ -54,10 +54,8 @@ export default function SnKPage() {
         icon: <Wallet className="h-6 w-6 text-primary" />,
         points: [
           'STNK Hilang: Denda Rp 1.000.000,-.',
-          'Helm Hilang: Denda Rp 100.000,- per helm.',
-          'Jas Hujan Hilang: Denda Rp 70.000,-.',
           'Kunci Hilang: Denda Rp 200.000,-.',
-          'Holder HP Patah/Hilang: Denda Rp 20.000,-.',
+          'Fitur rusak akibat kelalaian penyewa akan dikenakan biaya perbaikan sesuai kerusakan.',
         ],
       },
   ];

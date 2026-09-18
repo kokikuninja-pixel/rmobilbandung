@@ -4,8 +4,8 @@ import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { motorInventory } from '@/lib/data';
-import { MotorCard } from '@/components/motor-card';
+import { carInventory } from '@/lib/cars';
+import { CarCard } from '@/components/car-card';
 
 interface SeoPageLayoutProps {
   title: string;
@@ -15,7 +15,7 @@ interface SeoPageLayoutProps {
 }
 
 export default function SeoPageLayout({ title, locationName, description, children }: SeoPageLayoutProps) {
-  const featuredMotors = motorInventory.slice(0, 4);
+  const featuredCars = carInventory.slice(0, 4);
 
   return (
     <>
@@ -50,12 +50,12 @@ export default function SeoPageLayout({ title, locationName, description, childr
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="font-display text-3xl md:text-4xl font-bold">Pilihan Armada Populer</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
-                        Motor matic terbaik untuk menjelajahi {locationName} dan sekitarnya.
+                        Mobil terbaik untuk menjelajahi {locationName} dan sekitarnya.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {featuredMotors.map((motor) => (
-                        <MotorCard key={motor.id} motor={motor} />
+                    {featuredCars.map((car) => (
+                        <CarCard key={car.id} car={car} />
                     ))}
                 </div>
                 <div className="text-center mt-16">

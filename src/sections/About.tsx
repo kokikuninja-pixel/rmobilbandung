@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const stats = [
   { icon: Award, value: 5, suffix: '+', label: 'Tahun Pengalaman' },
-  { icon: Users, value: 50, suffix: '+', label: 'Skuter Premium' },
+  { icon: Users, value: 8, suffix: '+', label: 'Pilihan Mobil' },
   { icon: Clock, value: 10, suffix: 'K+', label: 'Pelanggan Puas' },
   { icon: Headphones, value: 24, suffix: '/7', label: 'Dukungan' },
 ]
@@ -98,7 +98,7 @@ export default function About() {
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-card group-hover:shadow-card-hover transition-shadow duration-500">
                 <Image
                   src="/images/hero2.webp"
-                  alt="Skuter premium RMB"
+                  alt="Armada mobil premium RMB"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -156,7 +156,7 @@ export default function About() {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              Kami bukan sekadar jasa rental – kami adalah partner Anda dalam menjelajahi kota. Dengan pengalaman lebih dari 5 tahun, 50+ skuter premium, dan 10.000+ pelanggan puas, kami telah menyempurnakan seni rental skuter tanpa ribet.
+              Kami bukan sekadar jasa rental – kami adalah partner Anda dalam menjelajahi kota. Dengan pengalaman lebih dari 5 tahun, 8+ pilihan mobil premium, dan 10.000+ pelanggan puas, kami telah menyempurnakan seni sewa mobil tanpa ribet.
             </p>
 
             {/* Stats Grid */}
