@@ -25,7 +25,7 @@ export default function SewaMobilCihampelasPage() {
       <h3>Keunggulan Sewa Mobil RMB di Cihampelas:</h3>
       <ul>
         <li><strong>Mobil Bagasi Luas:</strong> MPV dan SUV dengan ruang bagasi memadai untuk belanjaan Anda.</li>
-        <li><strong>Antar Jemput:</strong> Mobil diantar ke lokasi Anda di sekitar Cihampelas.</li>
+        <li><strong>Lokasi Strategis:</strong> Dekat Cihampelas, lokasi pengambilan unit mudah dijangkau.</li>
         <li><strong>Harga Bersahabat:</strong> Tarif sewa kompetitif dengan fasilitas lengkap.</li>
         <li><strong>Unit Terawat:</strong> Semua mobil dalam kondisi prima dan nyaman dikendarai.</li>
       </ul>

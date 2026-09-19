@@ -24,7 +24,7 @@ export function CarCard({ car }: CarCardProps) {
     >
       <Card className="relative overflow-hidden h-full flex flex-col bg-card border hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-primary/20 hover:-translate-y-1.5">
         {car.popular && (
-          <Badge className="absolute top-4 right-4 z-10 bg-primary text-primary-foreground shadow-lg">
+          <Badge className="absolute top-4 right-4 z-10 bg-accent text-accent-foreground shadow-lg">
             Paling Laris
           </Badge>
         )}
@@ -60,11 +60,8 @@ export function CarCard({ car }: CarCardProps) {
 
           <div className="mt-auto">
             <div className="mb-4">
-              <p className="text-sm text-muted-foreground">Mulai dari</p>
-              <p className="text-2xl font-bold text-primary">
-                Rp {car.price.toLocaleString('id-ID')}{' '}
-                <span className="text-sm font-normal text-muted-foreground">/hari</span>
-              </p>
+              <p className="text-sm text-muted-foreground">Harga Sewa</p>
+              <p className="text-2xl font-bold text-accent">Tanya Admin</p>
             </div>
             <Button asChild className="w-full group">
               <Link href={`/?motor=${encodeURIComponent(car.name)}#pesan`}>

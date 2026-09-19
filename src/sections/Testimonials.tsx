@@ -10,7 +10,7 @@ const testimonials = [
     role: 'Travel Blogger',
     avatar: 'https://picsum.photos/seed/avatar1/48/48',
     content:
-      'RMB membuat perjalanan saya di Bandung tak terlupakan. Mobilnya bersih, kondisi sempurna, dan layanan antar jemputnya menghemat banyak waktu saya! Sangat merekomendasikan kepada siapa pun yang berkunjung.',
+      'RMB membuat perjalanan saya di Bandung tak terlupakan. Mobilnya bersih, kondisi sempurna, dan proses sewa lepas kuncinya sangat mudah! Sangat merekomendasikan kepada siapa pun yang berkunjung.',
     rating: 5,
   },
   {

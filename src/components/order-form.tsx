@@ -54,7 +54,7 @@ export function OrderForm() {
       rentalEndTime: undefined,
       unitCount: 1,
       personCount: 1,
-      pickupMethod: undefined,
+      pickupMethod: 'garage',
       deliveryAddress: '',
       usagePurpose: '',
       destination: '',
@@ -76,7 +76,6 @@ export function OrderForm() {
   }, [searchParams, form]);
 
   const previousCustomer = form.watch('previousCustomer');
-  const pickupMethod = form.watch('pickupMethod');
   const socialMediaPlatform = form.watch('socialMediaPlatform');
   const rentalStartDate = form.watch('rentalStartDate');
   const currentDomicile = form.watch('currentDomicile');
@@ -380,28 +379,10 @@ export function OrderForm() {
                   </div>
               </FormSection>
               
-              <FormSection title="Tahap 3: Pengambilan & Informasi Tambahan">
-                  <FormField
-                    control={form.control}
-                    name="pickupMethod"
-                    render={({ field }) => (
-                      <FormItem className="space-y-3">
-                        <FormLabel>Metode Pengambilan Unit</FormLabel>
-                        <FormControl>
-                          <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col space-y-1">
-                            <FormItem className="flex items-center space-x-3 space-y-0"><FormControl><RadioGroupItem value="garage" /></FormControl><FormLabel className="font-normal">Ambil di Garasi</FormLabel></FormItem>
-                            <FormItem className="flex items-center space-x-3 space-y-0"><FormControl><RadioGroupItem value="delivery" /></FormControl><FormLabel className="font-normal">Antar ke Alamat Saya (ada biaya tambahan)</FormLabel></FormItem>
-                          </RadioGroup>
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  {pickupMethod === 'delivery' && (
-                    <FormField name="deliveryAddress" control={form.control} render={({ field }) => (
-                      <FormItem><FormLabel>Alamat Pengantaran</FormLabel><FormControl><Textarea placeholder="Tuliskan alamat lengkap pengantaran mobil..." {...field} /></FormControl><FormMessage /></FormItem>
-                    )} />
-                  )}
+              <FormSection title="Tahap 3: Informasi Tambahan">
+                  <div className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
+                    Unit diambil langsung di garasi kami sesuai jam operasional (05.00–21.30 WIB).
+                  </div>
 
                   <FormField name="usagePurpose" control={form.control} render={({ field }) => (
                       <FormItem><FormLabel>Kebutuhan Sewa</FormLabel><FormControl><Input placeholder="cth: Wisata, Proyek, Kebutuhan Harian" {...field} /></FormControl><FormMessage /></FormItem>

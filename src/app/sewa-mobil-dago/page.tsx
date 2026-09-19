@@ -25,8 +25,8 @@ export default function SewaMobilDagoPage() {
       <h3>Keunggulan Sewa Mobil RMB di Dago:</h3>
       <ul>
         <li><strong>Praktis & Nyaman:</strong> Mobil terawat dan siap pakai untuk perjalanan di area Dago.</li>
-        <li><strong>Layanan Antar-Jemput:</strong> Mobil bisa diantar langsung ke penginapan atau lokasi Anda di Dago.</li>
-        <li><strong>Harga Bersahabat:</strong> Tarif kompetitif mulai dari Rp300.000/hari tanpa biaya tersembunyi.</li>
+        <li><strong>Lokasi Strategis:</strong> Lokasi pengambilan unit mudah dijangkau dari area Dago.</li>
+        <li><strong>Harga Bersahabat:</strong> Harga tanya admin via WhatsApp, tanpa biaya tersembunyi.</li>
         <li><strong>Lepas Kunci:</strong> Semua unit disewakan tanpa supir (self-drive), bebas mengemudi sendiri sesuai kebutuhan Anda.</li>
       </ul>
     </SeoPageLayout>

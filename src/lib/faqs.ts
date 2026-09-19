@@ -31,9 +31,9 @@ export const rentalFaqs: FaqItem[] = [
       'Tentu bisa. Reschedule atau perubahan jadwal bisa dilakukan maksimal 1 kali. Mohon informasikan kepada admin kami sesegera mungkin agar kami bisa menyesuaikan ketersediaan unit.',
   },
   {
-    question: 'Apakah bisa diantar ke lokasi saya?',
+    question: 'Bagaimana cara mengambil unit?',
     answer:
-      'Tentu! Kami menyediakan layanan antar-jemput ke hotel, stasiun, bandara, atau alamat lain di dalam kota Bandung. Biaya pengantaran akan disesuaikan tergantung jarak lokasi Anda.',
+      'Anda dapat mengambil unit langsung di lokasi kami sesuai jam operasional, pukul 05.00–21.30 WIB. Alamat lengkap bisa dicek di halaman Lokasi.',
   },
   {
     question: 'Apakah sistem sewanya tanpa supir?',

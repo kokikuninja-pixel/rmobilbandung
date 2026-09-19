@@ -9,7 +9,7 @@ import { getWhatsAppLink } from '@/brands';
 
 export const metadata: Metadata = {
     title: 'Lokasi & Kontak | RMB Rental Mobil Bandung',
-    description: 'Temukan lokasi kami di Bandung. Kami siap melayani pengantaran unit ke lokasi Anda. Hubungi kami via WhatsApp untuk respon cepat.',
+    description: 'Temukan lokasi garasi kami di Bandung untuk mengambil unit sewa. Hubungi kami via WhatsApp untuk info respon cepat.',
     alternates: {
         canonical: '/lokasi',
     },
@@ -27,7 +27,7 @@ export default function LokasiPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="font-display text-4xl md:text-5xl font-bold">Temukan Kami</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Kunjungi garasi kami atau hubungi kami untuk layanan antar-jemput di lokasi Anda.
+              Kunjungi garasi kami untuk mengambil unit sewa. Sebebas Anda menjelajah kota Bandung.
             </p>
           </div>
 

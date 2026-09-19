@@ -30,19 +30,19 @@ import { getWhatsAppLink } from '@/brands';
 
 const carFaqs = [
   {
-    question: 'Apakah harga sewa sudah termasuk supir?',
+    question: 'Berapa harga sewa mobil?',
     answer:
-      'Ya, semua tarif di atas adalah tarif lepas kunci (tanpa supir). Anda mengemudi sendiri, bebas mengatur rute dan waktu sesuai keinginan.',
+      'Untuk tarif terkini, silakan tanya admin melalui WhatsApp. Kami akan memberi tahu harga terbaik sesuai unit, durasi, dan kebutuhan Anda.',
   },
   {
-    question: 'Apakah ada layanan antar jemput mobil?',
+    question: 'Apakah sistem sewanya tanpa supir?',
     answer:
-      'Ya. Mobil dapat diantar ke lokasi Anda di Bandung, termasuk hotel, penginapan, atau Bandara Husein Sastranegara. Biaya antar jemput menyesuaikan jarak lokasi.',
+      'Ya, semua tarif adalah tarif lepas kunci (tanpa supir). Anda mengemudi sendiri, bebas mengatur rute dan waktu sesuai keinginan.',
   },
   {
     question: 'Syarat apa saja untuk menyewa mobil?',
     answer:
-      'Cukup bawa KTP dan SIM A yang masih aktif saat mengambil unit. Untuk mobil tertentu, kami memberlakukan uang jaminan (deposit) yang dikembalikan setelah unit kembali.',
+      'Cukup bawa KTP dan SIM A yang masih aktif saat mengambil unit. Untuk mobil tertentu, kami memberlakukan uang jaminan (deposit) yang dikembalikan setelah unit kembali. Unit diambil di lokasi kami sesuai jam operasional.',
   },
   {
     question: 'Apakah diperbolehkan keluar kota?',
@@ -69,8 +69,8 @@ const keunggulan = [
   },
   {
     icon: Ship,
-    title: 'Antar Jemput',
-    description: 'Unit bisa diantar ke hotel, villa, maupun bandara di Bandung.',
+    title: 'Harga Tanya Admin',
+    description: 'Konfirmasi tarif terbaik langsung lewat WhatsApp, tanpa biaya tersembunyi.',
   },
   {
     icon: FileCheck,
@@ -80,12 +80,51 @@ const keunggulan = [
   {
     icon: Banknote,
     title: 'Harga Transparan',
-    description: 'Tanpa hidden cost. Harga yang tertera adalah harga yang Anda bayar.',
+    description: 'Tanpa hidden cost. Info harga lengkap dan jelas, konfirmasi lewat admin.',
   },
   {
     icon: Wrench,
     title: 'Dukungan 24/7',
     description: 'Bantuan darurat di jalan tersedia kapan pun Anda membutuhkan.',
+  },
+];
+
+const bandungSpots = [
+  {
+    name: 'Kawah Putih Ciwidey',
+    description: 'Danau kawah biru kehijauan di dataran tinggi Ciwidey, berjarak ±1,5 jam dari pusat kota.',
+    imageUrl: 'https://placehold.co/600x450/1E3A8A/F5F7FA?text=Kawah+Putih',
+    hint: 'kawah putih ciwidey bandung lake',
+  },
+  {
+    name: 'Tangkuban Parahu',
+    description: 'Gunung kembar legendaris di utara Bandung dengan kawah aktif yang menakjubkan.',
+    imageUrl: 'https://placehold.co/600x450/7C2D12/F5F7FA?text=Tangkuban+Parahu',
+    hint: 'gunung tangkuban parahu bandung',
+  },
+  {
+    name: 'Jalan Braga',
+    description: 'Jalan ikonik penuh bangunan heritage, kafe, dan galeri seni ala Eropa.',
+    imageUrl: 'https://placehold.co/600x450/6D28D9/F5F7FA?text=Jalan+Braga',
+    hint: 'jalan braga bandung heritage street',
+  },
+  {
+    name: 'Dago Pakar',
+    description: 'Hamparan kota Bandung dari ketinggian, favorit menikmati matahari terbenam.',
+    imageUrl: 'https://placehold.co/600x450/0F5132/F5F7FA?text=Dago+Pakar',
+    hint: 'dago pakar bandung bukit view kota',
+  },
+  {
+    name: 'Gedung Sate',
+    description: 'Ikon arsitektur Bandung bergaya neo-klasik yang megah dan instagramable.',
+    imageUrl: 'https://placehold.co/600x450/831843/F5F7FA?text=Gedung+Sate',
+    hint: 'gedung sate bandung icon',
+  },
+  {
+    name: 'Lembang',
+    description: 'Udara sejuk, perkebunan strawberry, dan destinasi wisata keluarga.',
+    imageUrl: 'https://placehold.co/600x450/92400E/F5F7FA?text=Lembang',
+    hint: 'lembang bandung wisata sejuk',
   },
 ];
 
@@ -108,7 +147,7 @@ const proses = [
   {
     step: '04',
     title: 'Ambil & Jalan',
-    description: 'Ambil unit atau diantar ke lokasi. Selamat berkendara!',
+    description: 'Ambil unit di lokasi kami. Selamat berkendara!',
   },
 ];
 
@@ -144,7 +183,7 @@ export function CarLanding() {
                 <span className="text-primary relative inline-block">
                   Bandung
                   <svg
-                    className="absolute -bottom-1 left-0 w-full text-primary"
+                    className="absolute -bottom-1 left-0 w-full text-[hsl(var(--gold))]"
                     viewBox="0 0 200 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -161,16 +200,15 @@ export function CarLanding() {
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
                 Jelajahi Bandung dan sekitarnya dengan nyaman. Armada terawat, harga
-                bersahabat mulai{' '}
-                <span className="font-semibold text-foreground">Rp300rb/hari</span>,
-                semua unit lepas kunci tanpa supir.
+                bersahabat, semua unit lepas kunci tanpa supir. Info tarif tanya
+                admin via WhatsApp.
               </p>
 
               <div className="flex rounded-2xl bg-primary px-5 py-3 shadow-soft w-fit">
                 <p className="font-display font-bold text-primary-foreground text-xl leading-none">
-                  Mulai 300rb
+                  Tanya Admin
                 </p>
-                <p className="text-xs text-primary-foreground/80 mt-1 ml-2">per hari</p>
+                <p className="text-xs text-primary-foreground/80 mt-1 ml-2">info harga</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
@@ -222,8 +260,8 @@ export function CarLanding() {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-display font-bold text-foreground">Antar Jemput</p>
-                    <p className="text-sm text-muted-foreground">Hotel &amp; Bandara</p>
+                    <p className="font-display font-bold text-foreground">Lepas Kunci</p>
+                    <p className="text-sm text-muted-foreground">Tanpa Supir</p>
                   </div>
                 </div>
               </div>
@@ -287,6 +325,46 @@ export function CarLanding() {
                 Tanya Unit Lain
               </a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Jelajahi Bandung */}
+      <section className="py-16 md:py-24 bg-muted">
+        <div className="container px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
+              Jelajahi <span className="text-primary">Bandung</span>
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Sebebas roda kemudi Anda. Beberapa spot favorit yang sayang untuk
+              dilewatkan bersama RMB.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {bandungSpots.map((spot) => (
+              <Card
+                key={spot.name}
+                className="group overflow-hidden border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={spot.imageUrl}
+                    alt={spot.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    data-ai-hint={spot.hint}
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display font-bold text-lg mb-1">{spot.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {spot.description}
+                  </p>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

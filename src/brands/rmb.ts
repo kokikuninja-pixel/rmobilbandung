@@ -15,12 +15,12 @@ export const rmbBrand: BrandConfig = {
   city: 'Bandung',
   tagline: 'Your Freedom to Explore Starts Here.',
   description:
-    'Sewa mobil di Bandung dengan mudah dan cepat. Harga terjangkau mulai 300rb, sistem lepas kunci tanpa supir, layanan terpercaya, unit siap pakai. Pesan sekarang!',
+    'Sewa mobil di Bandung dengan mudah dan cepat. Harga tanya admin, sistem lepas kunci tanpa supir, layanan terpercaya, unit siap pakai. Pesan sekarang!',
   siteUrl: 'https://rentalmobilbandungrmb.com',
   whatsappNumber: '6282329616166',
   gtmId: 'GTM-KM5GLHDW',
   adsId: 'AW-11380968042',
-  logoPath: '/images/logo-rmb.svg',
+  logoPath: '/images/logo.png',
   ogImagePath: '/images/Family_looking_out_car_window_20260919114928.jpeg',
   social: {
     instagram: 'https://www.instagram.com/inforentalmotorbandung/',
@@ -68,7 +68,7 @@ export const rmbBrand: BrandConfig = {
       'Weekend & musim liburan unit cepat ludes. Amankan mobil favorit Anda sekarang sebelum penuh.',
     primaryCta: 'Pesan Sekarang',
     secondaryCta: 'Chat WhatsApp',
-    footnote: 'Respon cepat via WhatsApp · Antar jemput tersedia',
+    footnote: 'Respon cepat via WhatsApp · Harga tanya admin',
   },
   business: {
     streetAddress: 'Jl. Samiaji No.11A, Arjuna, Kec. Cicendo',
@@ -79,7 +79,7 @@ export const rmbBrand: BrandConfig = {
     latitude: -6.892019,
     longitude: 107.587885,
     openingHours: 'Mo-Su 05:00-21:30',
-    priceRange: 'Rp300.000+',
+    priceRange: 'Harga tanya admin',
   },
   theme: {
     background: '43 67% 96%',

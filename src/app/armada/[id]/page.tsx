@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { getWhatsAppLink } from '@/brands';
 
 interface CarDetailPageProps {
   params: {
@@ -99,15 +100,20 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
                    
                   <div className="mt-auto">
                       <div className="mb-6 text-center lg:text-left">
-                          <p className="text-muted-foreground">Mulai dari</p>
-                          <p className="text-4xl font-extrabold text-primary">
-                              Rp {car.price.toLocaleString('id-ID')}
-                              <span className="text-xl font-medium text-muted-foreground">/hari</span>
+                          <p className="text-muted-foreground">Harga Sewa</p>
+                          <p className="text-4xl font-extrabold text-accent">
+                              Tanya Admin
                           </p>
+                          <p className="text-sm text-muted-foreground mt-1">Info tarif via WhatsApp</p>
                       </div>
+                      <div className="flex flex-col gap-3">
                       <Button asChild size="lg" className="w-full shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
                           <Link href={`/?motor=${encodeURIComponent(car.name)}#pesan`}>Sewa Mobil Ini</Link>
                       </Button>
+                      <Button asChild size="lg" variant="outline" className="w-full">
+                          <Link href={getWhatsAppLink(`Halo RMB, mau tanya harga sewa mobil ${car.name}`)} target="_blank" rel="noopener noreferrer">Tanya Harga</Link>
+                      </Button>
+                      </div>
                   </div>
               </div>
 

@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Gedung Sate";
 const pagePath = "/sewa-mobil-gedung-sate";
 const title = `Sewa Mobil di Gedung Sate Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Gedung Sate Bandung dari RMB Rental. Armada terbaik, harga transparan, layanan antar jemput tersedia. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Gedung Sate Bandung dari RMB Rental. Harga tanya admin, armada terbaik dan unit siap pakai. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 
@@ -24,7 +24,7 @@ export default function SewaMobilGedungSatePage() {
         <li><strong>Lokasi Strategis:</strong> Mudah diakses dari kawasan Gedung Sate untuk pengambilan unit.</li>
         <li><strong>Mobil Irit Bahan Bakar:</strong> Pilihan MPV irit untuk perjalanan dalam kota.</li>
         <li><strong>Lepas Kunci Tanpa Supir:</strong> Semua unit disewakan self-drive, bebas di kendarai sendiri ke seluruh jalur Bandung.</li>
-        <li><strong>Proses Mudah:</strong> Cukup chat WhatsApp, unit siap dijemput atau diantar ke lokasi.</li>
+        <li><strong>Proses Mudah:</strong> Cukup chat WhatsApp, unit siap diambil di lokasi kami.</li>
       </ul>
     </SeoPageLayout>
   );

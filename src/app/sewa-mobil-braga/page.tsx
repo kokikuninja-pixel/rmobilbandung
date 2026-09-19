@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Braga";
 const pagePath = "/sewa-mobil-braga";
 const title = `Sewa Mobil di Braga Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Braga Bandung dengan mudah dari RMB Rental. Armada terawat mulai dari Rp300rb/hari. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Braga Bandung dengan mudah dari RMB Rental. Harga tanya admin via WhatsApp, armada terawat. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 
@@ -20,7 +20,7 @@ export default function SewaMobilBragaPage() {
         Jalan Braga merupakan salah satu destinasi paling ikonik di Bandung dengan arsitektur kuno Eropa dan berbagai restoran serta kafe unik. Menyewa mobil dari RMB memungkinkan Anda menjelajahi kawasan bersejarah ini dengan nyaman, lalu melanjutkan ke destinasi lain di Bandung.
       </p>
       <p>
-        Kami melayani pengantaran mobil langsung ke hotel atau penginapan di sekitar Braga, sehingga Anda bisa langsung memulai perjalanan tanpa repot.
+        Kami melayani ambil mobil langsung ke hotel atau penginapan di sekitar Braga, sehingga Anda bisa langsung memulai perjalanan tanpa repot.
       </p>
       <h3>Keunggulan Sewa Mobil RMB di Braga:</h3>
       <ul>
