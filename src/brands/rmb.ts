@@ -13,7 +13,7 @@ export const rmbBrand: BrandConfig = {
   shortName: 'RMB',
   legalName: 'RMB Rental Mobil Bandung',
   city: 'Bandung',
-  tagline: 'Your Freedom to Explore Starts Here.',
+  tagline: 'Kebebasan Menjelajah Dimulai di Sini.',
   description:
     'Sewa mobil di Bandung dengan mudah dan cepat. Harga tanya admin, sistem lepas kunci tanpa supir, layanan terpercaya, unit siap pakai. Pesan sekarang!',
   siteUrl: 'https://rentalmobilbandungrmb.com',

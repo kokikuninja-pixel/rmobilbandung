@@ -78,7 +78,7 @@ export function Footer() {
       
       <div className="border-t border-background/10 py-6">
         <p className="text-center text-sm text-background/70">
-          © {new Date().getFullYear()} {brand.shortName} Rental. All Rights Reserved.
+          © {new Date().getFullYear()} {brand.shortName} Rental. Hak Cipta Dilindungi.
         </p>
       </div>
     </footer>

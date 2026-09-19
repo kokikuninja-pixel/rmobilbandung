@@ -181,15 +181,15 @@ export function CarLanding() {
           <div className="container px-4 md:px-6 lg:px-8 pt-24 md:pt-28 pb-8">
             <div className="max-w-3xl">
               <h1 className="font-display font-bold text-[30px] leading-[1.05] sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] text-white drop-shadow-lg text-balance">
-                Explore Bandung
+                Jelajahi Bandung
                 <br />
-                with Ease, Start
+                dengan Mudah, dari
                 <br />
-                to Finish.
+                Awal hingga Akhir.
               </h1>
               <p className="mt-4 md:mt-6 text-sm sm:text-base text-white/80 max-w-xl leading-relaxed">
-                Discover the beauty of West Java with our reliable car rental solutions. Perfect for families, tourists, and
-                corporate trips. We ensure a comfortable and memorable journey.
+                Temukan keindahan Jawa Barat bersama layanan rental mobil terpercaya. Cocok untuk keluarga, wisatawan,
+                hingga perjalanan bisnis. Kami pastikan perjalanan nyaman dan berkesan.
               </p>
               <div className="mt-6 md:mt-8 flex flex-wrap gap-3">
                 <Button
@@ -198,7 +198,7 @@ export function CarLanding() {
                   className="h-11 rounded-full bg-white text-black hover:bg-white/90 px-6 font-semibold shadow-lg"
                 >
                   <Link href="#pesan" className="flex items-center">
-                    Rent Now
+                    Sewa Sekarang
                     <span className="ml-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
                       <ArrowRight className="h-3.5 w-3.5" />
                     </span>
@@ -210,7 +210,7 @@ export function CarLanding() {
                   size="lg"
                   className="h-11 rounded-full text-white hover:bg-white/10 hover:text-white px-6 font-medium"
                 >
-                  <Link href="#armada">View Fleet</Link>
+                  <Link href="#armada">Lihat Armada</Link>
                 </Button>
               </div>
             </div>
@@ -222,15 +222,15 @@ export function CarLanding() {
           <div className="grid grid-cols-3 gap-0 bg-black/30 backdrop-blur-md border border-white/15 rounded-2xl px-2 sm:px-6 md:px-8 py-5 md:py-6">
             <div className="text-center md:text-left px-2 sm:px-4 border-r border-white/15 last:border-0">
               <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">50+</p>
-              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Vehicles Available</p>
+              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Armada Tersedia</p>
             </div>
             <div className="text-center md:text-left px-2 sm:px-4 border-r border-white/15 last:border-0">
-              <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">15K+</p>
-              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Happy Customers</p>
+              <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">15Rb+</p>
+              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Pelanggan Puas</p>
             </div>
             <div className="text-center md:text-left px-2 sm:px-4">
-              <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">200k+</p>
-              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Kilometers Driven</p>
+              <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">200Rb+</p>
+              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Kilometer Ditempuh</p>
             </div>
           </div>
         </div>

@@ -145,7 +145,7 @@ export function Header() {
             variant={isTransparent ? 'secondary' : 'default'}
           >
             <Link href="/#pesan" onClick={(e) => handleLinkClick(e, '/#pesan')}>
-              Book Now
+              Sewa Sekarang
             </Link>
           </Button>
           {brand.social.instagram && (
