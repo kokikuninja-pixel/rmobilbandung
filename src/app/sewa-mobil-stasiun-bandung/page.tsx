@@ -24,7 +24,7 @@ export default function SewaMobilStasiunBandungPage() {
         <li><strong>Antar Langsung ke Stasiun:</strong> Mobil diantar ke lokasi Anda sesaat setelah tiba di Bandung.</li>
         <li><strong>Proses Cepat:</strong> Konfirmasi pesanan cepat, unit langsung siap setelah pembayaran DP.</li>
         <li><strong>MPV & SUV:</strong> Pilihan mobil untuk perjalanan bisnis atau wisata dari stasiun.</li>
-        <li><strong>Harga Terjangkau:</strong> Mulai dari Rp275.000/hari, cocok untuk perjalanan singkat atau panjang.</li>
+        <li><strong>Harga Terjangkau:</strong> Mulai dari Rp300.000/hari, cocok untuk perjalanan singkat atau panjang.</li>
       </ul>
     </SeoPageLayout>
   );

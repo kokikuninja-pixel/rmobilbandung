@@ -8,21 +8,17 @@ import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
   title: 'Daftar Harga Sewa Mobil Bandung | RMB Rental',
-  description: 'Daftar harga sewa mobil harian termurah di RMB Rental Bandung. Tarif transparan dan kompetitif mulai dari Rp 275.000 per hari.',
+  description: 'Daftar harga sewa mobil harian termurah di RMB Rental Bandung. Tarif transparan dan kompetitif mulai dari Rp 300.000 per hari.',
   alternates: {
     canonical: '/harga',
   },
 };
 
 const priceList = [
-  { price: 275000, models: 'Honda Brio.' },
   { price: 300000, models: 'Toyota Calya.' },
+  { price: 300000, models: 'Daihatsu Sigra.' },
   { price: 350000, models: 'Toyota Avanza.' },
-  { price: 550000, models: 'Hyundai Stargazer.' },
-  { price: 600000, models: 'Toyota Innova Reborn.' },
   { price: 1200000, models: 'Toyota Fortuner.' },
-  { price: 1500000, models: 'Toyota Hiace.' },
-  { price: 2500000, models: 'Toyota Alphard.' },
 ];
 
 export default function HargaPage() {

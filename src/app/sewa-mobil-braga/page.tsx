@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Braga";
 const pagePath = "/sewa-mobil-braga";
 const title = `Sewa Mobil di Braga Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Braga Bandung dengan mudah dari RMB Rental. Armada terawat mulai dari Rp275rb/hari. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Braga Bandung dengan mudah dari RMB Rental. Armada terawat mulai dari Rp300rb/hari. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 

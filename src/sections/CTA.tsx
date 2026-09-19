@@ -159,8 +159,8 @@ export default function CTA() {
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-primary/20 rounded-full blur-3xl" />
                   <Image
-                    src="/images/hero3.webp"
-                    alt="Pengendara skuter"
+                    src="/images/Family_looking_out_car_window_20260919114928.jpeg"
+                    alt="Keluarga menikmati perjalanan"
                     fill
                     sizes="(max-width: 1024px) 0vw, 50vw"
                     className="relative z-10 object-cover"

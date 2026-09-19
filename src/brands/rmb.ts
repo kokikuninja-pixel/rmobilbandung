@@ -15,13 +15,13 @@ export const rmbBrand: BrandConfig = {
   city: 'Bandung',
   tagline: 'Your Freedom to Explore Starts Here.',
   description:
-    'Sewa mobil di Bandung dengan mudah dan cepat. Harga terjangkau mulai 275rb, layanan terpercaya, unit siap pakai. Pesan sekarang!',
+    'Sewa mobil di Bandung dengan mudah dan cepat. Harga terjangkau mulai 300rb, sistem lepas kunci tanpa supir, layanan terpercaya, unit siap pakai. Pesan sekarang!',
   siteUrl: 'https://rentalmobilbandungrmb.com',
   whatsappNumber: '6282329616166',
   gtmId: 'GTM-KM5GLHDW',
   adsId: 'AW-11380968042',
-  logoPath: '/images/logo-rmb.webp',
-  ogImagePath: '/images/hero1.webp',
+  logoPath: '/images/logo-rmb.svg',
+  ogImagePath: '/images/Family_looking_out_car_window_20260919114928.jpeg',
   social: {
     instagram: 'https://www.instagram.com/inforentalmotorbandung/',
     tiktok: 'https://www.tiktok.com/@nethen.rental',
@@ -79,7 +79,7 @@ export const rmbBrand: BrandConfig = {
     latitude: -6.892019,
     longitude: 107.587885,
     openingHours: 'Mo-Su 05:00-21:30',
-    priceRange: 'Rp275.000+',
+    priceRange: 'Rp300.000+',
   },
   theme: {
     background: '43 67% 96%',

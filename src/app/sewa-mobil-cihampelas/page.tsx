@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Cihampelas";
 const pagePath = "/sewa-mobil-cihampelas";
 const title = `Sewa Mobil di Cihampelas Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Cihampelas Bandung dari RMB Rental. Armada terawat, harga bersahabat, bisa lepas kunci atau ber-supir. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Cihampelas Bandung dari RMB Rental. Armada terawat, harga bersahabat, lepas kunci tanpa supir. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 

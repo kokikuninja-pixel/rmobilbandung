@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Buahbatu";
 const pagePath = "/sewa-mobil-buahbatu";
 const title = `Sewa Mobil di Buahbatu Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Buahbatu Bandung dari RMB Rental. Harga mulai 275rb/hari, unit terawat dan siap pakai. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Buahbatu Bandung dari RMB Rental. Harga mulai 300rb/hari, unit terawat dan siap pakai. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 
@@ -22,7 +22,7 @@ export default function SewaMobilBuahbatuPage() {
       <h3>Keunggulan Sewa Mobil RMB di Buahbatu:</h3>
       <ul>
         <li><strong>Akses Mudah:</strong> Mobil bisa dijemput atau diantar ke lokasi Anda di Buahbatu.</li>
-        <li><strong>Mobil MPV Keluarga:</strong> Pilihan Avanza, Innova, hingga Stargazer untuk perjalanan nyaman.</li>
+        <li><strong>Mobil MPV Keluarga:</strong> Pilihan Avanza, Calya, dan Sigra untuk perjalanan nyaman.</li>
         <li><strong>Harga Transparan:</strong> Biaya sewa jelas tanpa biaya tersembunyi.</li>
         <li><strong>Dukungan 24/7:</strong> Bantuan darurat di jalan tersedia kapan saja.</li>
       </ul>

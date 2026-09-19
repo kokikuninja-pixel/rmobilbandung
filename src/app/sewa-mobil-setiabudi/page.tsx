@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Setiabudi";
 const pagePath = "/sewa-mobil-setiabudi";
 const title = `Sewa Mobil di Setiabudi Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Setiabudi Bandung dari RMB Rental. Harga terjangkau mulai 275rb/hari, unit terawat dan siap pakai. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Setiabudi Bandung dari RMB Rental. Harga terjangkau mulai 300rb/hari, unit terawat dan siap pakai. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 
@@ -26,7 +26,7 @@ export default function SewaMobilSetiabudiPage() {
       <ul>
         <li><strong>Akses Mudah:</strong> Mobil bisa diantar langsung ke lokasi Anda di Setiabudi.</li>
         <li><strong>Armada Lengkap:</strong> Pilihan mobil sesuai kebutuhan: irit, lega, atau premium.</li>
-        <li><strong>Harga Kompetitif:</strong> Mulai dari Rp275.000/hari untuk mobil irit kota.</li>
+        <li><strong>Harga Kompetitif:</strong> Mulai dari Rp300.000/hari untuk mobil irit kota.</li>
         <li><strong>Flexible Duration:</strong> Sewa harian, mingguan, atau bulanan dengan harga khusus.</li>
       </ul>
     </SeoPageLayout>

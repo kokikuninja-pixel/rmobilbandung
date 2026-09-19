@@ -15,14 +15,12 @@ export const metadata: Metadata = {
   },
 };
 
-/** Local optimized assets only — avoids broken remote/missing gallery files. */
 const galleryItems = [
-  { src: '/images/hero1.webp', alt: 'Momen pelanggan di Bandung' },
-  { src: '/images/hero2.webp', alt: 'Armada mobil premium RMB' },
-  { src: '/images/hero4.webp', alt: 'Jelajah kota dengan mobil nyaman' },
-  { src: 'https://placehold.co/600x800/FFF4DD/9A6300?text=Toyota+Avanza', alt: 'Toyota Avanza siap sewa' },
-  { src: 'https://placehold.co/600x800/FFF4DD/9A6300?text=Toyota+Innova', alt: 'Toyota Innova siap sewa' },
-  { src: 'https://placehold.co/600x800/FFF4DD/9A6300?text=Hyundai+Stargazer', alt: 'Hyundai Stargazer siap sewa' },
+  { src: '/images/Family_looking_out_car_window_20260919114928.jpeg', alt: 'Keluarga menikmati perjalanan dengan mobil sewaan' },
+  { src: '/images/Toyota_Avanza_parked_in_driveway_20260919114928.jpeg', alt: 'Toyota Avanza siap sewa' },
+  { src: '/images/Toyota_Calya_parked_on_street_20260919114928.jpeg', alt: 'Toyota Calya siap sewa' },
+  { src: '/images/Daihatsu_Sigra_parked_at_cafe_20260919114928.jpeg', alt: 'Daihatsu Sigra siap sewa' },
+  { src: '/images/Toyota_Fortuner_parked_on_road_20260919114928.jpeg', alt: 'Toyota Fortuner siap sewa' },
 ];
 
 export default function GalleryPage() {

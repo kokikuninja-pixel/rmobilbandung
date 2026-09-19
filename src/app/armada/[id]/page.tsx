@@ -112,15 +112,26 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
               </div>
 
               {/* Right Column - Image */}
-              <div className="lg:col-span-3 relative min-h-[400px] lg:min-h-0">
-                  <Image 
-                      src={car.imageUrl}
-                      alt={car.name}
-                      fill
-                      className="object-cover"
-                      priority
-                      data-ai-hint={car.imageHint}
-                  />
+              <div className="lg:col-span-3 flex flex-col gap-6">
+                  <div className="relative min-h-[400px] lg:min-h-[460px] w-full">
+                      <Image 
+                          src={car.imageUrl}
+                          alt={car.name}
+                          fill
+                          className="object-cover rounded-2xl"
+                          priority
+                      />
+                  </div>
+                  {car.sceneImage && (
+                      <div className="relative min-h-[220px] lg:min-h-[280px] w-full">
+                          <Image 
+                              src={car.sceneImage}
+                              alt={`${car.name} siap melaju`}
+                              fill
+                              className="object-cover rounded-2xl"
+                          />
+                      </div>
+                  )}
               </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ export default function SewaMobilLembangPage() {
         <li><strong>Armada Tangguh:</strong> Tersedia mobil dengan tenaga besar untuk menaklukkan tanjakan Lembang.</li>
         <li><strong>Layanan Antar-Jemput:</strong> Kami antar mobil ke villa, hotel, atau penginapan Anda di Lembang.</li>
         <li><strong>Harga Terbaik:</strong> Tarif sewa harian kompetitif untuk perjalanan wisata Lembang.</li>
-        <li><strong>Supir Berpengalaman:</strong> Pilihan paket dengan supir yang hafal jalur wisata Lembang.</li>
+        <li><strong>Lepas Kunci Tanpa Supir:</strong> Semua unit disewakan self-drive, cocok untuk mengeksplorasi jalur wisata Lembang dengan bebas.</li>
       </ul>
     </SeoPageLayout>
   );

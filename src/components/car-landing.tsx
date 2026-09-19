@@ -30,9 +30,9 @@ import { getWhatsAppLink } from '@/brands';
 
 const carFaqs = [
   {
-    question: 'Apakah harga sewa mobil sudah termasuk supir?',
+    question: 'Apakah harga sewa sudah termasuk supir?',
     answer:
-      'Harga di atas adalah tarif lepas kunci (tanpa supir). Jika membutuhkan mobil ber-supir, kami juga menyediakan paket harian dengan tarif berbeda. Hubungi tim kami via WhatsApp untuk penawaran terbaik.',
+      'Ya, semua tarif di atas adalah tarif lepas kunci (tanpa supir). Anda mengemudi sendiri, bebas mengatur rute dan waktu sesuai keinginan.',
   },
   {
     question: 'Apakah ada layanan antar jemput mobil?',
@@ -42,7 +42,7 @@ const carFaqs = [
   {
     question: 'Syarat apa saja untuk menyewa mobil?',
     answer:
-      'Cukup bawa KTP dan SIM A yang masih aktif. Untuk unit premium seperti Alphard atau Hiace, kami memberlakukan uang jaminan (deposit) yang dikembalikan setelah unit kembali.',
+      'Cukup bawa KTP dan SIM A yang masih aktif saat mengambil unit. Untuk mobil tertentu, kami memberlakukan uang jaminan (deposit) yang dikembalikan setelah unit kembali.',
   },
   {
     question: 'Apakah diperbolehkan keluar kota?',
@@ -64,8 +64,8 @@ const keunggulan = [
   },
   {
     icon: Users,
-    title: 'Lepas Kunci atau Ber-Supir',
-    description: 'Bebas pilih: self-drive untuk gaya santai atau dengan supir profesional.',
+    title: 'Lepas Kunci Tanpa Supir',
+    description: 'Ambil kunci, langsung jalan. Semua unit disewakan secara self-drive, bebas dan fleksibel.',
   },
   {
     icon: Ship,
@@ -162,13 +162,13 @@ export function CarLanding() {
               <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
                 Jelajahi Bandung dan sekitarnya dengan nyaman. Armada terawat, harga
                 bersahabat mulai{' '}
-                <span className="font-semibold text-foreground">Rp275rb/hari</span>,
-                bisa lepas kunci atau ber-supir.
+                <span className="font-semibold text-foreground">Rp300rb/hari</span>,
+                semua unit lepas kunci tanpa supir.
               </p>
 
               <div className="flex rounded-2xl bg-primary px-5 py-3 shadow-soft w-fit">
                 <p className="font-display font-bold text-primary-foreground text-xl leading-none">
-                  Mulai 275rb
+                  Mulai 300rb
                 </p>
                 <p className="text-xs text-primary-foreground/80 mt-1 ml-2">per hari</p>
               </div>
@@ -190,7 +190,7 @@ export function CarLanding() {
 
               <div className="flex flex-wrap gap-8 pt-2">
                 <div>
-                  <p className="font-display font-bold text-2xl sm:text-3xl">8+</p>
+                  <p className="font-display font-bold text-2xl sm:text-3xl">4+</p>
                   <p className="text-xs sm:text-sm text-muted-foreground">Pilihan Unit</p>
                 </div>
                 <div>
@@ -208,13 +208,12 @@ export function CarLanding() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] aspect-square bg-primary/20 rounded-full blur-3xl" />
               <div className="relative z-10 aspect-[4/3] w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-card-hover">
                 <Image
-                  src="https://placehold.co/1200x900/FFF4DD/9A6300?text=Rental+Mobil+Bandung"
+                  src="/images/Family_looking_out_car_window_20260919114928.jpeg"
                   alt="Armada mobil sewa RMB di Bandung"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
-                  data-ai-hint="rental car fleet bandung"
                 />
               </div>
               <div className="absolute -bottom-4 -left-2 sm:-left-6 bg-card rounded-2xl p-4 shadow-card animate-float hidden sm:block">

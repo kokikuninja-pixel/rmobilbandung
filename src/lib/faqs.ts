@@ -36,9 +36,9 @@ export const rentalFaqs: FaqItem[] = [
       'Tentu! Kami menyediakan layanan antar-jemput ke hotel, stasiun, bandara, atau alamat lain di dalam kota Bandung. Biaya pengantaran akan disesuaikan tergantung jarak lokasi Anda.',
   },
   {
-    question: 'Apakah harga sudah termasuk supir?',
+    question: 'Apakah sistem sewanya tanpa supir?',
     answer:
-      'Harga dasar adalah tarif lepas kunci (tanpa supir). Jika Anda menginginkan mobil ber-supir, tersedia paket harian dengan tarif berbeda. Hubungi admin untuk penawaran terbaik.',
+      'Ya, kami hanya melayani sistem lepas kunci (tanpa supir). Anda mengemudi sendiri dan bebas mengatur perjalanan sesuai keinginan.',
   },
   {
     question: 'Fasilitas apa saja yang saya dapatkan?',

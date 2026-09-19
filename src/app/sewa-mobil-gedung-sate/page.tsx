@@ -23,7 +23,7 @@ export default function SewaMobilGedungSatePage() {
       <ul>
         <li><strong>Lokasi Strategis:</strong> Mudah diakses dari kawasan Gedung Sate untuk pengambilan unit.</li>
         <li><strong>Mobil Irit Bahan Bakar:</strong> Pilihan MPV irit untuk perjalanan dalam kota.</li>
-        <li><strong>Supir Berpengalaman:</strong> Tersedia paket dengan supir yang hafal seluruh jalur Bandung.</li>
+        <li><strong>Lepas Kunci Tanpa Supir:</strong> Semua unit disewakan self-drive, bebas di kendarai sendiri ke seluruh jalur Bandung.</li>
         <li><strong>Proses Mudah:</strong> Cukup chat WhatsApp, unit siap dijemput atau diantar ke lokasi.</li>
       </ul>
     </SeoPageLayout>

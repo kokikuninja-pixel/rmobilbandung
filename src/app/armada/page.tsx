@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Daftar Armada Mobil | RMB Rental Mobil Bandung',
-  description: 'Lihat semua pilihan mobil yang tersedia untuk disewa di RMB Rental. Pilihan lengkap mulai dari Avanza, Calya, Innova, Fortuner, hingga Alphard dan Hiace.',
+  description: 'Lihat semua pilihan mobil yang tersedia untuk disewa lepas kunci (tanpa supir) di RMB Rental. Pilihan mulai dari Avanza, Calya, Sigra, hingga Fortuner.',
   alternates: {
     canonical: '/armada',
   },

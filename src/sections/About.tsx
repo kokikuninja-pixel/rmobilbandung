@@ -97,7 +97,7 @@ export default function About() {
             <div className="relative z-10 group">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-card group-hover:shadow-card-hover transition-shadow duration-500">
                 <Image
-                  src="/images/hero2.webp"
+                  src="/images/Toyota_Avanza_parked_in_driveway_20260919114928.jpeg"
                   alt="Armada mobil premium RMB"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -156,7 +156,7 @@ export default function About() {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              Kami bukan sekadar jasa rental – kami adalah partner Anda dalam menjelajahi kota. Dengan pengalaman lebih dari 5 tahun, 8+ pilihan mobil premium, dan 10.000+ pelanggan puas, kami telah menyempurnakan seni sewa mobil tanpa ribet.
+              Kami bukan sekadar jasa rental – kami adalah partner Anda dalam menjelajahi kota. Dengan pengalaman lebih dari 5 tahun, 4+ pilihan mobil, dan 10.000+ pelanggan puas, kami telah menyempurnakan seni sewa mobil lepas kunci tanpa ribet.
             </p>
 
             {/* Stats Grid */}
