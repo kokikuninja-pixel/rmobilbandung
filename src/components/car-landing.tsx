@@ -93,37 +93,37 @@ const bandungSpots = [
   {
     name: 'Kawah Putih Ciwidey',
     description: 'Danau kawah biru kehijauan di dataran tinggi Ciwidey, berjarak ±1,5 jam dari pusat kota.',
-    imageUrl: 'https://placehold.co/600x450/1E3A8A/F5F7FA?text=Kawah+Putih',
+    imageUrl: '/images/Kawah_Putih_crater_lake_20260919143051.jpeg',
     hint: 'kawah putih ciwidey bandung lake',
   },
   {
     name: 'Tangkuban Parahu',
     description: 'Gunung kembar legendaris di utara Bandung dengan kawah aktif yang menakjubkan.',
-    imageUrl: 'https://placehold.co/600x450/7C2D12/F5F7FA?text=Tangkuban+Parahu',
+    imageUrl: '/images/Tangkuban_Perahu_volcano_20260919143051.jpeg',
     hint: 'gunung tangkuban parahu bandung',
   },
   {
     name: 'Jalan Braga',
     description: 'Jalan ikonik penuh bangunan heritage, kafe, dan galeri seni ala Eropa.',
-    imageUrl: 'https://placehold.co/600x450/6D28D9/F5F7FA?text=Jalan+Braga',
+    imageUrl: '/images/Braga_Street_bandung_20260919143051.jpeg',
     hint: 'jalan braga bandung heritage street',
   },
   {
     name: 'Dago Pakar',
     description: 'Hamparan kota Bandung dari ketinggian, favorit menikmati matahari terbenam.',
-    imageUrl: 'https://placehold.co/600x450/0F5132/F5F7FA?text=Dago+Pakar',
+    imageUrl: '/images/Dago_Pakar_pine_forest_20260919143051.jpeg',
     hint: 'dago pakar bandung bukit view kota',
   },
   {
     name: 'Gedung Sate',
     description: 'Ikon arsitektur Bandung bergaya neo-klasik yang megah dan instagramable.',
-    imageUrl: 'https://placehold.co/600x450/831843/F5F7FA?text=Gedung+Sate',
+    imageUrl: '/images/Gedung_Sate_bandung_20260919143051.jpeg',
     hint: 'gedung sate bandung icon',
   },
   {
     name: 'Lembang',
     description: 'Udara sejuk, perkebunan strawberry, dan destinasi wisata keluarga.',
-    imageUrl: 'https://placehold.co/600x450/92400E/F5F7FA?text=Lembang',
+    imageUrl: '/images/Tea_plantation_lembang_20260919143051.jpeg',
     hint: 'lembang bandung wisata sejuk',
   },
 ];
