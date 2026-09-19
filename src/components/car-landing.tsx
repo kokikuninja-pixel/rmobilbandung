@@ -158,113 +158,77 @@ export function CarLanding() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative w-full overflow-hidden bg-background">
-        <div className="absolute inset-0 opacity-20 text-foreground md:opacity-30">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-              backgroundSize: '40px 40px',
-            }}
+      {/* Hero - Bandung Rentals reference */}
+      <section className="relative w-full min-h-[88vh] lg:min-h-[92vh] flex flex-col overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/White_SUV_tea_plantation_road_20260919064149.jpeg"
+            alt="SUV putih di jalan perkebunan teh Bandung"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
-        <div className="absolute top-32 left-10 w-16 h-16 bg-primary/20 rounded-full animate-float hidden lg:block" />
-        <div className="absolute bottom-40 right-24 w-10 h-10 bg-primary/30 rounded-full animate-float-delayed hidden lg:block" />
 
-        <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-20 py-12 sm:py-16 lg:py-24">
-          <div className="container px-0 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            <div className="space-y-6">
-              <Badge className="w-fit bg-primary/15 text-primary border-primary/30 text-sm px-4 py-1.5">
-                Rental Mobil Terpercaya di Bandung
-              </Badge>
-              <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.1]">
-                Sewa Mobil{' '}
-                <span className="text-primary relative inline-block">
-                  Bandung
-                  <svg
-                    className="absolute -bottom-1 left-0 w-full text-[hsl(var(--gold))]"
-                    viewBox="0 0 200 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden
-                  >
-                    <path
-                      d="M2 10C50 2 150 2 198 10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
+        {/* Content */}
+        <div className="relative z-10 flex-1 flex flex-col justify-center">
+          <div className="container px-4 md:px-6 lg:px-8 pt-24 md:pt-28 pb-8">
+            <div className="max-w-3xl">
+              <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] leading-[1.05] text-white drop-shadow-lg">
+                Explore Bandung
+                <br />
+                with Ease, Start
+                <br />
+                to Finish.
               </h1>
-              <p className="text-base sm:text-lg text-muted-foreground max-w-lg leading-relaxed">
-                Jelajahi Bandung dan sekitarnya dengan nyaman. Armada terawat, harga
-                bersahabat, semua unit lepas kunci tanpa supir. Info tarif tanya
-                admin via WhatsApp.
+              <p className="mt-4 md:mt-6 text-sm sm:text-base text-white/80 max-w-xl leading-relaxed">
+                Discover the beauty of West Java with our reliable car rental solutions. Perfect for families, tourists, and
+                corporate trips. We ensure a comfortable and memorable journey.
               </p>
-
-              <div className="flex rounded-2xl bg-primary px-5 py-3 shadow-soft w-fit">
-                <p className="font-display font-bold text-primary-foreground text-xl leading-none">
-                  Tanya Admin
-                </p>
-                <p className="text-xs text-primary-foreground/80 mt-1 ml-2">info harga</p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-                <Button asChild size="lg" className="group h-12 sm:h-auto sm:px-8 sm:py-6 text-base font-semibold sm:animate-pulse-glow">
-                  <Link href="#armada">
-                    Lihat Armada
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <div className="mt-6 md:mt-8 flex flex-wrap gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-11 rounded-full bg-white text-black hover:bg-white/90 px-6 font-semibold shadow-lg"
+                >
+                  <Link href="#pesan" className="flex items-center">
+                    Rent Now
+                    <span className="ml-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="h-12 sm:h-auto sm:px-8 sm:py-6 text-base font-semibold border-2 border-foreground">
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Chat WhatsApp
-                  </a>
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="lg"
+                  className="h-11 rounded-full text-white hover:bg-white/10 hover:text-white px-6 font-medium"
+                >
+                  <Link href="#armada">View Fleet</Link>
                 </Button>
               </div>
-
-              <div className="flex flex-wrap gap-8 pt-2">
-                <div>
-                  <p className="font-display font-bold text-2xl sm:text-3xl">4+</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Pilihan Unit</p>
-                </div>
-                <div>
-                  <p className="font-display font-bold text-2xl sm:text-3xl">10K+</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Pelanggan Puas</p>
-                </div>
-                <div>
-                  <p className="font-display font-bold text-2xl sm:text-3xl">24/7</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Dukungan</p>
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
 
-            <div className="relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] aspect-square bg-primary/20 rounded-full blur-3xl" />
-              <div className="relative z-10 aspect-[4/3] w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-card-hover">
-                <Image
-                  src="/images/White_SUV_tea_plantation_road_20260919064149.jpeg"
-                  alt="SUV putih di jalan perkebunan teh sekitar Bandung"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-4 -left-2 sm:-left-6 bg-card rounded-2xl p-4 shadow-card animate-float hidden sm:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-display font-bold text-foreground">Lepas Kunci</p>
-                    <p className="text-sm text-muted-foreground">Tanpa Supir</p>
-                  </div>
-                </div>
-              </div>
+        {/* Stats frosted glass */}
+        <div className="relative z-10 container px-4 md:px-6 lg:px-8 pb-6 md:pb-8">
+          <div className="grid grid-cols-3 gap-0 bg-black/30 backdrop-blur-md border border-white/15 rounded-2xl px-2 sm:px-6 md:px-8 py-5 md:py-6">
+            <div className="text-center md:text-left px-2 sm:px-4 border-r border-white/15 last:border-0">
+              <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">50+</p>
+              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Vehicles Available</p>
+            </div>
+            <div className="text-center md:text-left px-2 sm:px-4 border-r border-white/15 last:border-0">
+              <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">15K+</p>
+              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Happy Customers</p>
+            </div>
+            <div className="text-center md:text-left px-2 sm:px-4">
+              <p className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">200k+</p>
+              <p className="text-[11px] sm:text-xs md:text-sm text-white/70 mt-1">Kilometers Driven</p>
             </div>
           </div>
         </div>
