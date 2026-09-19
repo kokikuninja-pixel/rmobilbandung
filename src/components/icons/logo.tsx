@@ -8,10 +8,13 @@ export function Logo() {
     <Image
       src={brand.logoPath}
       alt={`${brand.legalName} Logo`}
-      width={256}
-      height={256}
+      width={128}
+      height={128}
       priority
-      className="h-12 w-12 object-contain drop-shadow-lg transition-all duration-300 md:h-20 md:w-20"
+      fetchPriority="high"
+      sizes="(max-width: 768px) 48px, 80px"
+      quality={85}
+      className="h-12 w-12 object-contain drop-shadow-sm transition-all duration-300 md:h-20 md:w-20"
     />
   );
 }

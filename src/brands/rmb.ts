@@ -21,7 +21,7 @@ export const rmbBrand: BrandConfig = {
   gtmId: 'GTM-KM5GLHDW',
   adsId: 'AW-11380968042',
   logoPath: '/images/logo.png',
-  ogImagePath: '/images/Family_looking_out_car_window_20260919114928.jpeg',
+  ogImagePath: '/images/Hero_White_car_driving_on_road_20260919164146.webp',
   social: {
     instagram: 'https://www.instagram.com/inforentalmotorbandung/',
     tiktok: 'https://www.tiktok.com/@nethen.rental',

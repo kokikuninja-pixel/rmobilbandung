@@ -23,6 +23,13 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const brand = getBrand();
 const siteUrl = getSiteUrl();
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#2563EB',
+};
+
 const defaultTitle = `${brand.shortName} - Rental Mobil ${brand.city} | Sewa Mobil Cepat & Aman`;
 
 export const metadata: Metadata = {

@@ -31,10 +31,12 @@ export function CarCard({ car }: CarCardProps) {
         <div className="relative aspect-[4/3] bg-muted">
           <Image
             src={car.imageUrl}
-            alt={car.name}
+            alt={`${car.name} - sewa mobil Bandung lepas kunci`}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            quality={75}
+            loading="lazy"
             data-ai-hint={car.imageHint}
           />
         </div>

@@ -159,15 +159,17 @@ export function CarLanding() {
   return (
     <>
       {/* Hero - Bandung Rentals reference */}
-      <section className="relative w-full min-h-[88vh] lg:min-h-[92vh] flex flex-col overflow-hidden">
+      <section className="relative w-full min-h-[600px] min-h-[88svh] lg:min-h-[92svh] flex flex-col overflow-hidden -mt-16 md:-mt-20">
         {/* Background */}
         <div className="absolute inset-0">
           <Image
-            src="/images/White_SUV_tea_plantation_road_20260919064149.jpeg"
-            alt="SUV putih di jalan perkebunan teh Bandung"
+            src="/images/Hero_White_car_driving_on_road_20260919164146.webp"
+            alt="SUV putih melaju di jalan perkebunan teh Bandung dengan pemandangan pegunungan"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
+            quality={85}
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
@@ -178,7 +180,7 @@ export function CarLanding() {
         <div className="relative z-10 flex-1 flex flex-col justify-center">
           <div className="container px-4 md:px-6 lg:px-8 pt-24 md:pt-28 pb-8">
             <div className="max-w-3xl">
-              <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] leading-[1.05] text-white drop-shadow-lg">
+              <h1 className="font-display font-bold text-[30px] leading-[1.05] sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] text-white drop-shadow-lg text-balance">
                 Explore Bandung
                 <br />
                 with Ease, Start
@@ -311,12 +313,14 @@ export function CarLanding() {
                 key={spot.name}
                 className="group overflow-hidden border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                   <Image
                     src={spot.imageUrl}
-                    alt={spot.name}
+                    alt={`${spot.name} - destinasi wisata Bandung`}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={75}
+                    loading="lazy"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     data-ai-hint={spot.hint}
                   />
