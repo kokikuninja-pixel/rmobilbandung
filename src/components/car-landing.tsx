@@ -246,8 +246,8 @@ export function CarLanding() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] aspect-square bg-primary/20 rounded-full blur-3xl" />
               <div className="relative z-10 aspect-[4/3] w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-card-hover">
                 <Image
-                  src="/images/Family_looking_out_car_window_20260919114928.jpeg"
-                  alt="Armada mobil sewa RMB di Bandung"
+                  src="/images/White_SUV_tea_plantation_road_20260919064149.jpeg"
+                  alt="SUV putih di jalan perkebunan teh sekitar Bandung"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
