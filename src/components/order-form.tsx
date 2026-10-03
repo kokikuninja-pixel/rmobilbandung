@@ -10,6 +10,7 @@ import { useSearchParams } from 'next/navigation';
 
 import { rentalFormSchema, type RentalFormValues } from '@/lib/validation';
 import { buildWhatsAppOrderMessage } from '@/lib/whatsapp-order-message';
+import { trackConversion, trackEvent } from '@/lib/track';
 import { getWhatsAppLink } from '@/brands';
 import { carInventory } from '@/lib/cars';
 import { cities } from '@/lib/cities';
@@ -105,6 +106,10 @@ export function OrderForm() {
         domain: window.location.host,
       });
       const whatsappUrl = getWhatsAppLink(fullMessage);
+
+      // Conversion signal for Google Ads / GA4 (no-op when tags are absent).
+      trackConversion('generate_lead');
+      trackEvent('generate_lead', { method: 'whatsapp', car_type: data.motor ?? 'unknown' });
 
       window.open(whatsappUrl, '_blank');
       toast({

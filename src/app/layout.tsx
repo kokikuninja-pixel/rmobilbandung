@@ -6,7 +6,21 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import { cn } from '@/lib/utils';
 import { getBrand, getGtmId, getSiteUrl } from '@/brands';
 import { JsonLd } from '@/components/json-ld';
+import { GoogleTags } from '@/components/google-tags';
 import { buildLocalBusinessJsonLd, buildWebsiteJsonLd } from '@/lib/seo';
+import { cookies } from 'next/headers';
+import { TAG_SETTINGS_COOKIE, resolveTagSettings, sanitizeTagSettings, type TagSettings } from '@/lib/tag-settings';
+
+/** Reads tag settings saved by the admin panel (signed cookie, httpOnly). */
+async function readSavedTagSettings(cookieStore: Awaited<ReturnType<typeof cookies>>) {
+  const raw = cookieStore.get(TAG_SETTINGS_COOKIE)?.value;
+  if (!raw) return null;
+  try {
+    return sanitizeTagSettings(JSON.parse(raw) as Partial<TagSettings>);
+  } catch {
+    return null;
+  }
+}
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,6 +37,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const brand = getBrand();
 const siteUrl = getSiteUrl();
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -86,20 +101,25 @@ export const metadata: Metadata = {
   category: 'travel',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gtmId = getGtmId();
+  // GTM id can come from env or from the admin panel (saved in a cookie).
+  const cookieStore = await cookies();
+  const savedTags = await readSavedTagSettings(cookieStore);
+  const tags = resolveTagSettings(savedTags);
+  const gtmId = tags.gtmId || getGtmId();
 
   return (
     <html lang="id" className={cn('!scroll-smooth', inter.variable, plusJakarta.variable)}>
       <body className={cn('font-sans antialiased', inter.className)}>
         <JsonLd data={buildLocalBusinessJsonLd()} />
         <JsonLd data={buildWebsiteJsonLd()} />
-        {/* Ads conversions should be fired from GTM (single tag path for performance). */}
         <GoogleTagManager gtmId={gtmId} />
+        {/* Direct GA4 / Google Ads tags. Skip when GTM already fires these tags. */}
+        {!gtmId && <GoogleTags ga4Id={tags.ga4Id} adsId={tags.adsId} />}
         {children}
         <Toaster />
       </body>

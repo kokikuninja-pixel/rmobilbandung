@@ -1,161 +1,121 @@
-'use client';
-
-import { carInventory } from '@/lib/cars';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { 
-  LayoutDashboard, 
-  Car, 
-  Settings, 
-  LogOut, 
-  Plus, 
-  Search,
-  TrendingUp,
-  Users
-} from 'lucide-react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { Car, Settings, ShieldCheck, TrendingUp } from 'lucide-react';
+import { carInventory } from '@/lib/cars';
+import { renderAdminScreen } from '../render-admin-screen';
+import { getSavedTagSettings } from '../actions';
+import { getTagSettingsFromEnv, resolveTagSettings } from '@/lib/tag-settings';
 
-export default function AdminDashboard() {
-  const pathname = usePathname();
+export const metadata: Metadata = {
+  title: 'Dashboard Admin',
+  robots: { index: false, follow: false },
+};
 
-  const menuItems = [
-    { icon: LayoutDashboard, label: 'Dashboard', href: '/admin/dashboard' },
-    { icon: Car, label: 'Kelola Armada', href: '#' },
-    { icon: Users, label: 'Data Pelanggan', href: '#' },
-    { icon: Settings, label: 'Pengaturan', href: '/admin/settings' },
+export default async function AdminDashboard() {
+  const saved = await getSavedTagSettings();
+  const fromEnv = getTagSettingsFromEnv();
+  const settings = resolveTagSettings(saved);
+
+  const cards = [
+    {
+      title: 'Total Armada',
+      value: `${carInventory.length} Unit`,
+      note: 'Unit aktif siap disewakan',
+      icon: Car,
+      tone: 'text-primary',
+    },
+    {
+      title: 'Google Tag Manager',
+      value: settings.gtmId || 'Belum diisi',
+      note: fromEnv.gtmId ? 'Sumber: environment variable' : 'Sumber: pengaturan browser',
+      icon: ShieldCheck,
+      tone: 'text-green-600',
+    },
+    {
+      title: 'Google Ads',
+      value: settings.adsId || 'Belum diisi',
+      note: settings.conversionLabel ? 'Conversion label aktif' : 'Conversion label belum diisi',
+      icon: TrendingUp,
+      tone: 'text-blue-600',
+    },
   ];
 
-  return (
-    <div className="min-h-screen bg-muted/10 flex">
-      {/* Sidebar */}
-      <aside className="w-64 bg-foreground text-background hidden md:flex flex-col border-r">
-        <div className="p-6 border-b border-background/10">
-          <h2 className="text-xl font-display font-bold text-primary">RMB Admin</h2>
+  return renderAdminScreen(
+    '/admin/dashboard',
+    <>
+      <header className="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-display font-bold text-foreground">Dashboard</h1>
+          <p className="text-muted-foreground mt-1">Ringkasan armada dan status tag iklan.</p>
         </div>
-        <nav className="flex-grow p-4 space-y-2">
-          {menuItems.map((item) => (
-            <Button 
-              key={item.label}
-              variant="ghost" 
-              asChild
-              className={cn(
-                "w-full justify-start gap-3 transition-colors",
-                pathname === item.href 
-                  ? "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary" 
-                  : "text-background/70 hover:text-primary hover:bg-background/5"
-              )}
-            >
-              <Link href={item.href}>
-                <item.icon className="h-5 w-5" />
-                {item.label}
-              </Link>
-            </Button>
-          ))}
-        </nav>
-        <div className="p-4 border-t border-background/10">
-          <Button variant="ghost" asChild className="w-full justify-start gap-3 text-destructive hover:bg-destructive/10">
-            <Link href="/admin">
-              <LogOut className="h-5 w-5" />
-              Keluar
+        <div className="flex gap-2">
+          <Button asChild variant="outline" className="gap-2">
+            <Link href="/admin/cek-tag">
+              <ShieldCheck className="h-4 w-4" />
+              Verifikasi Tag
+            </Link>
+          </Button>
+          <Button asChild className="gap-2">
+            <Link href="/admin/settings">
+              <Settings className="h-4 w-4" />
+              Tag &amp; Iklan
             </Link>
           </Button>
         </div>
-      </aside>
+      </header>
 
-      {/* Main Content */}
-      <main className="flex-1 p-6 md:p-10">
-        <header className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-3xl font-display font-bold text-foreground">Dashboard</h1>
-            <p className="text-muted-foreground">Ringkasan status rental Anda hari ini.</p>
-          </div>
-          <Button className="gap-2">
-            <Plus className="h-5 w-5" />
-            Tambah Unit Baru
-          </Button>
-        </header>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          <Card className="bg-primary/5 border-primary/20">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+        {cards.map((card) => (
+          <Card key={card.title}>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Total Armada</CardTitle>
-              <Car className="h-5 w-5 text-primary" />
+              <CardTitle className="text-sm font-medium text-muted-foreground">{card.title}</CardTitle>
+              <card.icon className={`h-5 w-5 ${card.tone}`} />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold">{carInventory.length} Unit</div>
-              <p className="text-xs text-muted-foreground mt-1">+2 unit baru bulan ini</p>
+              <div className="text-2xl font-bold break-all">{card.value}</div>
+              <p className="text-xs text-muted-foreground mt-1">{card.note}</p>
             </CardContent>
           </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Estimasi Pesanan</CardTitle>
-              <TrendingUp className="h-5 w-5 text-green-500" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold">12 Pesanan</div>
-              <p className="text-xs text-muted-foreground mt-1">Menunggu konfirmasi WA</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Pelanggan Aktif</CardTitle>
-              <Users className="h-5 w-5 text-blue-500" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold">8 Pengguna</div>
-              <p className="text-xs text-muted-foreground mt-1">Sedang di jalan</p>
-            </CardContent>
-          </Card>
-        </div>
+        ))}
+      </div>
 
-        {/* Fleet List */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-4 mb-4">
-             <h2 className="text-xl font-bold">Status Unit Saat Ini</h2>
-             <div className="relative flex-grow max-w-sm ml-auto">
-                <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Cari unit..." className="pl-9 h-10" />
-             </div>
-          </div>
-          
-          <div className="bg-card border rounded-xl overflow-hidden shadow-sm">
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg">Armada Aktif</CardTitle>
+          <CardDescription>Daftar unit yang tampil di situs.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead className="bg-muted/50 border-b text-sm font-medium uppercase tracking-wider">
                 <tr>
-                  <th className="px-6 py-4">Unit Mobil</th>
-                  <th className="px-6 py-4">Segment</th>
-                  <th className="px-6 py-4">Harga/Hari</th>
-                  <th className="px-6 py-4 text-right">Aksi</th>
+                  <th className="px-4 py-3">Unit Mobil</th>
+                  <th className="px-4 py-3">Segment</th>
+                  <th className="px-4 py-3">Kursi</th>
+                  <th className="px-4 py-3">Transmisi</th>
+                  <th className="px-4 py-3 text-right">Harga</th>
                 </tr>
               </thead>
               <tbody className="divide-y text-sm">
-                {carInventory.slice(0, 10).map((car) => (
+                {carInventory.map((car) => (
                   <tr key={car.id} className="hover:bg-muted/30 transition-colors">
-                    <td className="px-6 py-4 font-semibold">{car.name}</td>
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3 font-semibold">{car.name}</td>
+                    <td className="px-4 py-3">
                       <Badge variant="outline">{car.segment}</Badge>
                     </td>
-                    <td className="px-6 py-4 text-primary font-bold">
-                      Rp {car.price.toLocaleString('id-ID')}
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <Button variant="ghost" size="sm" className="text-primary">Edit</Button>
-                    </td>
+                    <td className="px-4 py-3">{car.seats}</td>
+                    <td className="px-4 py-3">{car.transmission}</td>
+                    <td className="px-4 py-3 text-right text-primary font-semibold">Tanya Admin</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <div className="text-center pt-4">
-             <Button variant="outline" className="text-muted-foreground">Lihat Semua Armada</Button>
-          </div>
-        </div>
-      </main>
-    </div>
+        </CardContent>
+      </Card>
+    </>,
   );
 }

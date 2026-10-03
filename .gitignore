@@ -49,3 +49,7 @@ firestore-debug.log
 .agents/
 .idx/
 
+
+# nested empty repos
+rmbmobil/
+sewamotorbandung/
