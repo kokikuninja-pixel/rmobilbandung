@@ -8,19 +8,7 @@ import { getBrand, getGtmId, getSiteUrl } from '@/brands';
 import { JsonLd } from '@/components/json-ld';
 import { GoogleTags } from '@/components/google-tags';
 import { buildLocalBusinessJsonLd, buildWebsiteJsonLd } from '@/lib/seo';
-import { cookies } from 'next/headers';
-import { TAG_SETTINGS_COOKIE, resolveTagSettings, sanitizeTagSettings, type TagSettings } from '@/lib/tag-settings';
-
-/** Reads tag settings saved by the admin panel (signed cookie, httpOnly). */
-async function readSavedTagSettings(cookieStore: Awaited<ReturnType<typeof cookies>>) {
-  const raw = cookieStore.get(TAG_SETTINGS_COOKIE)?.value;
-  if (!raw) return null;
-  try {
-    return sanitizeTagSettings(JSON.parse(raw) as Partial<TagSettings>);
-  } catch {
-    return null;
-  }
-}
+import { getTagSettingsFromEnv } from '@/lib/tag-settings';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -101,16 +89,20 @@ export const metadata: Metadata = {
   category: 'travel',
 };
 
-export default async function RootLayout({
+/**
+ * Tag IDs are read from env only, never from cookies.
+ *
+ * This keeps every public page statically rendered (no per-request storage
+ * read). Reading cookies here would opt the whole site into dynamic rendering,
+ * which costs TTFB on every page for values that change maybe once a year.
+ */
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // GTM id can come from env or from the admin panel (saved in a cookie).
-  const cookieStore = await cookies();
-  const savedTags = await readSavedTagSettings(cookieStore);
-  const tags = resolveTagSettings(savedTags);
-  const gtmId = tags.gtmId || getGtmId();
+  const envTags = getTagSettingsFromEnv();
+  const gtmId = envTags.gtmId || getGtmId();
 
   return (
     <html lang="id" className={cn('!scroll-smooth', inter.variable, plusJakarta.variable)}>
@@ -118,8 +110,8 @@ export default async function RootLayout({
         <JsonLd data={buildLocalBusinessJsonLd()} />
         <JsonLd data={buildWebsiteJsonLd()} />
         <GoogleTagManager gtmId={gtmId} />
-        {/* Direct GA4 / Google Ads tags. Skip when GTM already fires these tags. */}
-        {!gtmId && <GoogleTags ga4Id={tags.ga4Id} adsId={tags.adsId} />}
+        {/* Direct GA4 / Google Ads tags. Skipped when GTM already fires them. */}
+        {!gtmId && <GoogleTags ga4Id={envTags.ga4Id} adsId={envTags.adsId} />}
         {children}
         <Toaster />
       </body>

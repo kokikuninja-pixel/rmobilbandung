@@ -152,14 +152,25 @@ export function TagSettingsForm({
 
       <Card className="shadow-sm border-amber-500/30">
         <CardHeader>
-          <CardTitle className="text-base">Penerapan ke Pengunjung</CardTitle>
+          <CardTitle className="text-base">Cara Menerapkan ke Pengunjung</CardTitle>
           <CardDescription>
-            Nilai di atas disimpan di browser ini (cookie). Agar berlaku untuk{' '}
-            <strong>semua pengunjung</strong>, salin variabel ini ke Vercel → Settings → Environment
-            Variables, lalu redeploy.
+            Tag situs dibaca dari <strong>environment variable</strong> saat build, bukan dari
+            penyimpanan. Ini disengaja: menjaga semua halaman tetap static (cepat & ramah
+            Google).
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          <ol className="list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
+            <li>
+              Salin nilai di bawah ini ke <strong>Vercel → Settings → Environment Variables</strong>.
+            </li>
+            <li>
+              Klik <strong>Redeploy</strong> (Settings → Deployments → ⋯ → Redeploy).
+            </li>
+            <li>
+              Buka <strong>Verifikasi Tag</strong> untuk memastikan.
+            </li>
+          </ol>
           <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-xs leading-relaxed">
 {`NEXT_PUBLIC_GTM_ID=${envValue('gtmId') || defaults.gtmId || 'GTM-XXXXXXX'}
 NEXT_PUBLIC_GA4_ID=${envValue('ga4Id') || defaults.ga4Id || 'G-XXXXXXXXXX'}
@@ -172,6 +183,10 @@ ADMIN_USERNAME=admin
 ADMIN_PASSWORD=ganti-dengan-password-kuat
 ADMIN_SESSION_SECRET=buka-random-32-byte-di-situs-seperti-random.org`}
           </pre>
+          <p className="text-xs text-muted-foreground">
+            Nilai yang disimpan di form dipakai untuk menjalankan simulasi di browser ini, bukan
+            untuk produksi. Setelah env diisi, form ini otomatis mengikuti nilai env.
+          </p>
           <form action={resetAction}>
             <Button type="submit" variant="outline" size="sm" disabled={resetting} className="gap-2">
               {resetting ? (
@@ -179,7 +194,7 @@ ADMIN_SESSION_SECRET=buka-random-32-byte-di-situs-seperti-random.org`}
               ) : (
                 <RotateCcw className="h-4 w-4" />
               )}
-              Reset Pengaturan Browser
+              Reset Nilai Simulator
             </Button>
           </form>
         </CardContent>
