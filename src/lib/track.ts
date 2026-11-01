@@ -20,8 +20,12 @@ function gtag(...args: GtagArgs): void {
     g(...args);
     return;
   }
+  // gtag.js hanya memproses objek `arguments`, bukan array biasa.
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(args);
+  (function (..._: unknown[]) {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer!.push(arguments);
+  })(...args);
 }
 
 /** Fires a Google Ads / GA4 conversion event. */
