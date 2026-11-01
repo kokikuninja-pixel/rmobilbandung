@@ -27,12 +27,15 @@ import {
 } from 'lucide-react';
 import { carInventory } from '@/lib/cars';
 import { getWhatsAppLink } from '@/brands';
+import { WhatsAppLink } from '@/components/whatsapp-link';
+import { WhatsappIcon } from '@/components/icons/whatsapp';
+import { formatRupiah, PRICE_BASIS, PRICE_NOTE } from '@/lib/cars';
 
 const carFaqs = [
   {
     question: 'Berapa harga sewa mobil?',
     answer:
-      'Untuk tarif terkini, silakan tanya admin melalui WhatsApp. Kami akan memberi tahu harga terbaik sesuai unit, durasi, dan kebutuhan Anda.',
+      'Calya dan Sigra mulai Rp 319.000 per hari, Avanza Rp 385.000 per hari, Fortuner Rp 1.100.000 per hari (lepas kunci, matic, per 24 jam). Tersedia tarif mingguan dan bulanan. Harga bisa naik saat libur panjang dan akan dikonfirmasi via WhatsApp.',
   },
   {
     question: 'Apakah sistem sewanya tanpa supir?',
@@ -69,8 +72,8 @@ const keunggulan = [
   },
   {
     icon: Ship,
-    title: 'Harga Tanya Admin',
-    description: 'Konfirmasi tarif terbaik langsung lewat WhatsApp, tanpa biaya tersembunyi.',
+    title: 'Harga Jelas, Mulai Rp 319.000',
+    description: 'Tarif per hari, minggu, dan bulan tertera di situs. Konfirmasi final via WhatsApp.',
   },
   {
     icon: FileCheck,
@@ -80,7 +83,7 @@ const keunggulan = [
   {
     icon: Banknote,
     title: 'Harga Transparan',
-    description: 'Tanpa hidden cost. Info harga lengkap dan jelas, konfirmasi lewat admin.',
+    description: 'Tanpa hidden cost. Harga tertera jelas, dikonfirmasi lewat admin sebelum booking.',
   },
   {
     icon: Wrench,
@@ -181,24 +184,47 @@ export function CarLanding() {
           <div className="container px-4 md:px-6 lg:px-8 pt-24 md:pt-28 pb-8">
             <div className="max-w-3xl">
               <h1 className="font-display font-bold text-[30px] leading-[1.05] sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] text-white drop-shadow-lg text-balance">
-                Jelajahi Bandung
+                Sewa Mobil Bandung
                 <br />
-                dengan Mudah, dari
+                Lepas Kunci, Matic.
                 <br />
-                Awal hingga Akhir.
+                Booking via WhatsApp.
               </h1>
-              <p className="mt-4 md:mt-6 text-sm sm:text-base text-white/80 max-w-xl leading-relaxed">
-                Temukan keindahan Jawa Barat bersama layanan rental mobil terpercaya. Cocok untuk keluarga, wisatawan,
-                hingga perjalanan bisnis. Kami pastikan perjalanan nyaman dan berkesan.
+              <p className="mt-4 md:mt-5 text-sm sm:text-base text-white/90 max-w-xl leading-relaxed">
+                Pilih Avanza, Calya, Sigra, atau Fortuner. Semua unit matic, lepas kunci tanpa supir, mulai dari{' '}
+                <strong className="text-white">{formatRupiah(carInventory[1].pricing.day)}/hari</strong>.
               </p>
+              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Pilihan unit">
+                {carInventory.map((car) => (
+                  <li key={car.id}>
+                    <Link
+                      href="#armada"
+                      className="inline-flex items-center rounded-full border border-white/30 bg-black/30 px-3 py-1.5 text-xs sm:text-sm font-medium text-white backdrop-blur-sm hover:bg-white/15"
+                    >
+                      {car.name.split(' ')[1]} · {formatRupiah(car.pricing.day)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2 text-[11px] sm:text-xs text-white/70">{PRICE_BASIS}. {PRICE_NOTE}</p>
               <div className="mt-6 md:mt-8 flex flex-wrap gap-3">
                 <Button
                   asChild
                   size="lg"
-                  className="h-11 rounded-full bg-white text-black hover:bg-white/90 px-6 font-semibold shadow-lg"
+                  className="h-12 rounded-full bg-green-500 text-white hover:bg-green-600 px-6 font-semibold shadow-lg"
+                >
+                  <WhatsAppLink location="hero">
+                    <WhatsappIcon className="mr-2 h-5 w-5" />
+                    Booking via WhatsApp
+                  </WhatsAppLink>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-12 rounded-full bg-white text-black hover:bg-white/90 px-6 font-semibold shadow-lg"
                 >
                   <Link href="#pesan" className="flex items-center">
-                    Sewa Sekarang
+                    Isi Formulir
                     <span className="ml-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
                       <ArrowRight className="h-3.5 w-3.5" />
                     </span>

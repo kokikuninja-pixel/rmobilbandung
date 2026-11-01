@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Tiktok } from './icons/tiktok';
 import { getBrand } from '@/brands';
+import { WhatsAppLink } from '@/components/whatsapp-link';
+import { WhatsappIcon } from './icons/whatsapp';
 
 export function Header() {
   const brand = getBrand();
@@ -138,15 +140,12 @@ export function Header() {
           <Button
             asChild
             size="sm"
-            className={cn(
-              'h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm font-semibold',
-              isTransparent && 'bg-white text-black hover:bg-white/90 border border-white'
-            )}
-            variant={isTransparent ? 'secondary' : 'default'}
+            className="h-9 px-3 text-xs sm:h-10 sm:px-4 sm:text-sm font-semibold bg-green-600 text-white hover:bg-green-700 shadow-md"
           >
-            <Link href="/#pesan" onClick={(e) => handleLinkClick(e, '/#pesan')}>
-              Sewa Sekarang
-            </Link>
+            <WhatsAppLink location="header">
+              <WhatsappIcon className="mr-1.5 h-4 w-4" />
+              Booking WhatsApp
+            </WhatsAppLink>
           </Button>
           {brand.social.instagram && (
             <Button

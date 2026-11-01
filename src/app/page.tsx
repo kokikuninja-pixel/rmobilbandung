@@ -11,7 +11,7 @@ import { generateSeoMetadata } from '@/lib/seo';
 export const metadata: Metadata = generateSeoMetadata(
   'Sewa Mobil Bandung',
   'Sewa Mobil Bandung | Rental Mobil Terbaik RMB',
-  'Sewa mobil di Bandung dengan harga tanya admin. Tersedia Avanza, Calya, Sigra & Fortuner. Semua unit lepas kunci tanpa supir. Pesan sekarang!',
+  'Sewa mobil Bandung lepas kunci, matic, mulai Rp 319.000/hari. Avanza, Calya, Sigra & Fortuner. Booking cepat via WhatsApp.',
   '/'
 );
 

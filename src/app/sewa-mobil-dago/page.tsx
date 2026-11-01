@@ -26,7 +26,7 @@ export default function SewaMobilDagoPage() {
       <ul>
         <li><strong>Praktis & Nyaman:</strong> Mobil terawat dan siap pakai untuk perjalanan di area Dago.</li>
         <li><strong>Lokasi Strategis:</strong> Lokasi pengambilan unit mudah dijangkau dari area Dago.</li>
-        <li><strong>Harga Bersahabat:</strong> Harga tanya admin via WhatsApp, tanpa biaya tersembunyi.</li>
+        <li><strong>Harga Bersahabat:</strong> Mulai Rp 319.000/hari, konfirmasi via WhatsApp, tanpa biaya tersembunyi.</li>
         <li><strong>Lepas Kunci:</strong> Semua unit disewakan tanpa supir (self-drive), bebas mengemudi sendiri sesuai kebutuhan Anda.</li>
       </ul>
     </SeoPageLayout>

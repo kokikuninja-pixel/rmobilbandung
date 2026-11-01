@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Users, Cog } from 'lucide-react';
 import type { Car } from '@/lib/cars';
+import { PriceList } from '@/components/price-list';
 
 interface CarCardProps {
   car: Car;
@@ -62,8 +63,7 @@ export function CarCard({ car }: CarCardProps) {
 
           <div className="mt-auto">
             <div className="mb-4">
-              <p className="text-sm text-muted-foreground">Harga Sewa</p>
-              <p className="text-2xl font-bold text-accent">Tanya Admin</p>
+              <PriceList pricing={car.pricing} />
             </div>
             <Button asChild className="w-full group">
               <Link href={`/?motor=${encodeURIComponent(car.name)}#pesan`}>

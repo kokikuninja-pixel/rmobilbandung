@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Bandara Husein Sastranegara";
 const pagePath = "/sewa-mobil-bandara-husein";
 const title = `Sewa Mobil di Bandara Husein Sastranegara Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Bandara Husein Sastranegara Bandung dari RMB Rental. Harga tanya admin, lokasi pengambilan mudah dijangkau dari bandara, unit terawat dan siap pakai. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Bandara Husein Sastranegara Bandung dari RMB Rental. Mulai Rp 319.000/hari, lokasi pengambilan mudah dijangkau dari bandara, unit terawat dan siap pakai. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 

@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 const pageSlug = '/sewa-mobil';
 const title = 'Sewa Mobil Bandung | Rental Mobil Terbaik RMB';
 const description =
-  'Sewa mobil di Bandung dengan harga tanya admin. Tersedia Avanza, Calya, Sigra & Fortuner. Semua unit lepas kunci tanpa supir. Pesan sekarang!';
+  'Sewa mobil di Bandung mulai Rp 319.000/hari. Tersedia Avanza, Calya, Sigra & Fortuner. Semua unit lepas kunci tanpa supir. Pesan sekarang!';
 
 export const metadata: Metadata = generateSeoMetadata(
   'Sewa Mobil Bandung',

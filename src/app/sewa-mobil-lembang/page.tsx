@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Lembang";
 const pagePath = "/sewa-mobil-lembang";
 const title = `Sewa Mobil di Lembang Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Lembang Bandung dengan mudah dari RMB Rental. Harga tanya admin, unit siap diambil lalu jelajahi Lembang sesuka hati. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Lembang Bandung dengan mudah dari RMB Rental. Mulai Rp 319.000/hari, unit siap diambil lalu jelajahi Lembang sesuka hati. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 

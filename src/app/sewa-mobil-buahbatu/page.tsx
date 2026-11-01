@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Buahbatu";
 const pagePath = "/sewa-mobil-buahbatu";
 const title = `Sewa Mobil di Buahbatu Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Buahbatu Bandung dari RMB Rental. Harga tanya admin via WhatsApp, unit terawat dan siap pakai. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Buahbatu Bandung dari RMB Rental. Mulai Rp 319.000/hari via WhatsApp, unit terawat dan siap pakai. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 

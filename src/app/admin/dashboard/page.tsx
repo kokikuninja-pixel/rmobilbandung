@@ -108,7 +108,7 @@ export default async function AdminDashboard() {
                     </td>
                     <td className="px-4 py-3">{car.seats}</td>
                     <td className="px-4 py-3">{car.transmission}</td>
-                    <td className="px-4 py-3 text-right text-primary font-semibold">Tanya Admin</td>
+                    <td className="px-4 py-3 text-right text-primary font-semibold">Rp {car.pricing.day.toLocaleString('id-ID')} / hari</td>
                   </tr>
                 ))}
               </tbody>

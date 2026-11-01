@@ -5,20 +5,18 @@ import { Info, Clock, MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { getWhatsAppLink } from '@/brands';
-import { carInventory } from '@/lib/cars';
+import { WhatsAppLink } from '@/components/whatsapp-link';
+import { carInventory, formatRupiah, PRICE_BASIS, PRICE_NOTE } from '@/lib/cars';
 
 export const metadata: Metadata = {
   title: 'Harga Sewa Mobil Bandung | RMB Rental',
-  description: 'Cek harga sewa mobil di RMB Rental Bandung. Tarif transparan dan kompetitif. Hubungi admin via WhatsApp untuk informasi harga terbaik.',
+  description: 'Harga sewa mobil Bandung lepas kunci: Calya & Sigra mulai Rp 319.000/hari, Avanza Rp 385.000/hari, Fortuner Rp 1.100.000/hari. Booking via WhatsApp.',
   alternates: {
     canonical: '/harga',
   },
 };
 
 export default function HargaPage() {
-  const whatsappUrl = getWhatsAppLink('Halo RMB, saya mau tanya harga sewa mobil. Tolong info tarifnya ya.');
-
   return (
     <>
       <Header />
@@ -31,29 +29,55 @@ export default function HargaPage() {
 
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle>Pilihan Unit</CardTitle>
+              <CardTitle>Tarif Sewa Mobil</CardTitle>
+              <p className="text-sm text-muted-foreground">
+                Mulai dari · {PRICE_BASIS}
+              </p>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2.5">
-                {carInventory.map((car) => (
-                  <span key={car.id} className="rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium">
-                    {car.name} · {car.seats} Kursi · {car.transmission}
-                  </span>
-                ))}
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b text-left text-muted-foreground">
+                      <th className="py-3 pr-4 font-medium">Unit</th>
+                      <th className="py-3 px-4 font-medium text-right">Per hari</th>
+                      <th className="py-3 px-4 font-medium text-right">Per minggu</th>
+                      <th className="py-3 pl-4 font-medium text-right">Per bulan</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    {carInventory.map((car) => (
+                      <tr key={car.id}>
+                        <td className="py-4 pr-4">
+                          <p className="font-semibold">{car.name}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {car.seats} Kursi · {car.transmission}
+                          </p>
+                        </td>
+                        <td className="py-4 px-4 text-right font-bold text-accent whitespace-nowrap">
+                          {formatRupiah(car.pricing.day)}
+                        </td>
+                        <td className="py-4 px-4 text-right font-semibold whitespace-nowrap">
+                          {formatRupiah(car.pricing.week)}
+                        </td>
+                        <td className="py-4 pl-4 text-right font-semibold whitespace-nowrap">
+                          {formatRupiah(car.pricing.month)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
               <Alert className="mt-6 border-accent/40 bg-accent/10">
                 <Info className="h-4 w-4 text-[hsl(var(--gold))]" />
-                <AlertTitle className="text-accent">Harga Tanya Admin</AlertTitle>
-                <AlertDescription>
-                  Untuk mendapatkan tarif terbaik sesuai unit dan durasi, silakan hubungi admin kami
-                  melalui WhatsApp. Respon cepat dan tanpa biaya tersembunyi.
-                </AlertDescription>
+                <AlertTitle className="text-accent">Catatan Harga</AlertTitle>
+                <AlertDescription>{PRICE_NOTE}</AlertDescription>
               </Alert>
-              <Button asChild size="lg" className="mt-6 w-full sm:w-auto h-12 px-8 font-semibold">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <Button asChild size="lg" className="mt-6 w-full sm:w-auto h-12 px-8 font-semibold bg-green-600 hover:bg-green-700 text-white">
+                <WhatsAppLink location="halaman-harga">
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  Tanya Harga via WhatsApp
-                </a>
+                  Booking via WhatsApp
+                </WhatsAppLink>
               </Button>
             </CardContent>
           </Card>

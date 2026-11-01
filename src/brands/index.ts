@@ -30,7 +30,7 @@ export function getSiteUrl(): string {
 }
 
 export function getWhatsAppNumber(): string {
-  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || getBrand().whatsappNumber;
+  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER_MOBIL || getBrand().whatsappNumber;
 }
 
 export function getGtmId(): string {

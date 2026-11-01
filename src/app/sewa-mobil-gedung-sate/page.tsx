@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 const locationName = "Gedung Sate";
 const pagePath = "/sewa-mobil-gedung-sate";
 const title = `Sewa Mobil di Gedung Sate Bandung | RMB Rental`;
-const pageDescription = `Sewa mobil di Gedung Sate Bandung dari RMB Rental. Harga tanya admin, armada terbaik dan unit siap pakai. Pesan sekarang!`;
+const pageDescription = `Sewa mobil di Gedung Sate Bandung dari RMB Rental. Mulai Rp 319.000/hari, armada terbaik dan unit siap pakai. Pesan sekarang!`;
 
 export const metadata: Metadata = generateSeoMetadata(locationName, title, pageDescription, pagePath);
 

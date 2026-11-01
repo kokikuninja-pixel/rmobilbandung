@@ -4,7 +4,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/sonner";
 import { GoogleTagManager } from '@next/third-parties/google';
 import { cn } from '@/lib/utils';
-import { getBrand, getGtmId, getSiteUrl } from '@/brands';
+import { getBrand, getAdsId, getGtmId, getSiteUrl } from '@/brands';
 import { JsonLd } from '@/components/json-ld';
 import { GoogleTags } from '@/components/google-tags';
 import { buildLocalBusinessJsonLd, buildWebsiteJsonLd } from '@/lib/seo';
@@ -103,6 +103,7 @@ export default function RootLayout({
 }>) {
   const envTags = getTagSettingsFromEnv();
   const gtmId = envTags.gtmId || getGtmId();
+  const adsId = envTags.adsId || getAdsId();
 
   return (
     <html lang="id" className={cn('!scroll-smooth', inter.variable, plusJakarta.variable)}>
@@ -110,8 +111,8 @@ export default function RootLayout({
         <JsonLd data={buildLocalBusinessJsonLd()} />
         <JsonLd data={buildWebsiteJsonLd()} />
         <GoogleTagManager gtmId={gtmId} />
-        {/* Direct GA4 / Google Ads tags. Skipped when GTM already fires them. */}
-        {!gtmId && <GoogleTags ga4Id={envTags.ga4Id} adsId={envTags.adsId} />}
+        {/* Google Ads gtag.js (konversi "Klik WhatsApp"). GA4 langsung hanya bila tanpa GTM. */}
+        <GoogleTags ga4Id={gtmId ? undefined : envTags.ga4Id} adsId={adsId} />
         {children}
         <Toaster />
       </body>
