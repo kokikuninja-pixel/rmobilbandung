@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, HelpCircle, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { getWhatsAppLink } from '@/brands'
+import { WhatsAppLink } from '@/components/whatsapp-link'
 import { rentalFaqs } from '@/lib/faqs'
 
 const faqs = rentalFaqs
@@ -11,7 +11,6 @@ export default function FAQ() {
   const [isVisible, setIsVisible] = useState(false)
   const [openIndex, setOpenIndex] = useState<number | null>(0)
   const sectionRef = useRef<HTMLElement>(null)
-  const whatsappUrl = getWhatsAppLink()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,13 +96,9 @@ export default function FAQ() {
                     Masih punya pertanyaan?
                   </p>
                     <Button asChild variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
-                         <a
-                            href={whatsappUrl}
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            >
+                         <WhatsAppLink location="faq">
                             Hubungi kami via WhatsApp
-                        </a>
+                        </WhatsAppLink>
                     </Button>
                 </div>
               </div>

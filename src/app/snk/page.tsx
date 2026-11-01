@@ -1,4 +1,5 @@
 
+import { WhatsAppLink } from '@/components/whatsapp-link';
 import { Ban, CheckCircle, FileText, MapPin, Milestone, Phone, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,7 +7,6 @@ import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { getWhatsAppLink } from '@/brands';
 
 export const metadata: Metadata = {
   title: 'Syarat & Ketentuan Sewa Mobil | RMB Rental Bandung',
@@ -59,8 +59,6 @@ export default function SnKPage() {
         ],
       },
   ];
-  
-  const whatsappUrl = getWhatsAppLink();
 
   return (
     <>
@@ -148,9 +146,9 @@ export default function SnKPage() {
                   Jangan ragu untuk menghubungi kami jika ada ketentuan yang kurang jelas. Tim kami siap membantu Anda.
                   </p>
                   <Button asChild>
-                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                      <WhatsAppLink location="snk">
                           <Phone className="mr-2 h-4 w-4" /> Hubungi via WhatsApp
-                      </a>
+                      </WhatsAppLink>
                   </Button>
               </div>
 

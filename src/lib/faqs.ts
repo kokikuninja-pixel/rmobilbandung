@@ -33,7 +33,7 @@ export const rentalFaqs: FaqItem[] = [
   {
     question: 'Bagaimana cara mengambil unit?',
     answer:
-      'Anda dapat mengambil unit langsung di lokasi kami sesuai jam operasional, pukul 05.00–21.30 WIB. Alamat lengkap bisa dicek di halaman Lokasi.',
+      'Anda dapat mengambil unit langsung di lokasi kami sesuai jam operasional, pukul 05.00–21.30 WIB. Alamat: Jl. Samiaji No.11A, Arjuna, Kec. Cicendo, Kota Bandung 40172 (peta di halaman Lokasi).',
   },
   {
     question: 'Apakah sistem sewanya tanpa supir?',

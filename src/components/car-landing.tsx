@@ -26,7 +26,6 @@ import {
   Banknote,
 } from 'lucide-react';
 import { carInventory } from '@/lib/cars';
-import { getWhatsAppLink } from '@/brands';
 import { WhatsAppLink } from '@/components/whatsapp-link';
 import { WhatsappIcon } from '@/components/icons/whatsapp';
 import { formatRupiah, PRICE_BASIS, PRICE_NOTE } from '@/lib/cars';
@@ -150,14 +149,11 @@ const proses = [
   {
     step: '04',
     title: 'Ambil & Jalan',
-    description: 'Ambil unit di lokasi kami. Selamat berkendara!',
+    description: 'Ambil unit di Jl. Samiaji No.11A, Arjuna, Cicendo, Bandung (05.00–21.30 WIB). Selamat berkendara!',
   },
 ];
 
 export function CarLanding() {
-  const whatsappUrl = getWhatsAppLink(
-    'Halo RMB, saya ingin sewa mobil di Bandung. Mohon info ketersediaan unit.'
-  );
 
   return (
     <>
@@ -207,6 +203,7 @@ export function CarLanding() {
                 ))}
               </ul>
               <p className="mt-2 text-[11px] sm:text-xs text-white/70">{PRICE_BASIS}. {PRICE_NOTE}</p>
+              <p className="mt-1 text-[11px] sm:text-xs text-white/70">Lokasi ambil unit: Jl. Samiaji No.11A, Arjuna, Cicendo, Bandung 40172.</p>
               <div className="mt-6 md:mt-8 flex flex-wrap gap-3">
                 <Button
                   asChild
@@ -312,10 +309,10 @@ export function CarLanding() {
           </div>
           <div className="text-center mt-16">
             <Button asChild size="lg" variant="outline" className="h-12 px-8 font-semibold">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <WhatsAppLink location="armada-landing">
                 <PhoneCall className="w-5 h-5 mr-2" />
                 Tanya Unit Lain
-              </a>
+              </WhatsAppLink>
             </Button>
           </div>
         </div>
@@ -462,10 +459,10 @@ export function CarLanding() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8">
             <Button asChild size="lg" className="h-12 sm:px-8 font-semibold bg-primary text-primary-foreground hover:bg-background hover:text-foreground sm:animate-pulse-glow">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <WhatsAppLink location="armada-landing">
                 Pesan via WhatsApp
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
+              </WhatsAppLink>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-12 sm:px-8 font-semibold border-2 border-background/30 text-background hover:bg-background hover:text-foreground">
               <Link href="#armada">

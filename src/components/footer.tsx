@@ -57,6 +57,12 @@ export function Footer() {
       <div className="container px-4 pt-8 pb-12 text-xs border-t border-background/10 text-background/60">
         <div className="max-w-screen-xl mx-auto space-y-6">
           <div>
+            <h4 className="font-semibold text-sm text-background/80 mb-2">Alamat</h4>
+            <address className="not-italic">
+              {brand.business.streetAddress}, {brand.business.addressLocality}, {brand.business.addressRegion} {brand.business.postalCode}
+            </address>
+          </div>
+          <div>
             <h4 className="font-semibold text-sm text-background/80 mb-2">Layanan Sewa Mobil {brand.shortName}</h4>
             <p>
               {brand.shortName} (Rental Mobil {brand.city}) adalah penyedia jasa transportasi terbaik dengan layanan cepat mulai pukul 05.30 pagi. Kami berkomitmen memberikan pengalaman berkendara yang aman, nyaman, dan bebas hambatan bagi setiap pelanggan.

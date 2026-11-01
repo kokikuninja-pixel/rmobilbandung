@@ -11,7 +11,8 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { getBrand, getWhatsAppLink } from '@/brands';
+import { getBrand } from '@/brands';
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 const STORAGE_KEY = 'rmb-promo-popup-dismissed';
 
@@ -63,9 +64,6 @@ export function PromoPopup() {
     }
   };
 
-  const whatsappUrl = getWhatsAppLink(
-    `Halo Admin ${brand.shortName}! Saya ingin pesan mobil sekarang sebelum kehabisan.`
-  );
 
   const goToForm = () => {
     dismiss();
@@ -117,10 +115,10 @@ export function PromoPopup() {
             variant="outline"
             className="h-12 w-full border-2 text-base font-semibold"
           >
-            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={dismiss}>
+            <WhatsAppLink location="popup" onClick={dismiss}>
               <MessageCircle className="h-5 w-5" />
               {popup.secondaryCta}
-            </Link>
+            </WhatsAppLink>
           </Button>
           {popup.footnote && (
             <p className="text-center text-xs text-muted-foreground">{popup.footnote}</p>

@@ -4,12 +4,11 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, MessageCircle, Star, Users } from 'lucide-react'
 import Link from 'next/link'
-import { getWhatsAppLink } from '@/brands'
+import { WhatsAppLink } from '@/components/whatsapp-link'
 
 export default function CTA() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  const whatsappUrl = getWhatsAppLink()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -107,10 +106,10 @@ export default function CTA() {
                   variant="outline"
                   className="w-full sm:w-auto h-12 border-2 border-background/30 text-background hover:bg-background hover:text-foreground transition-all duration-300 font-semibold sm:px-8 sm:py-6 text-base"
                 >
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <WhatsAppLink location="cta">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Hubungi Kami
-                  </a>
+                  </WhatsAppLink>
                 </Button>
               </div>
 
